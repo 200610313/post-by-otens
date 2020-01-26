@@ -29,6 +29,7 @@ Partial Class RegisterTab
         Me.shoppingCard_pnl = New System.Windows.Forms.Panel()
         Me.BunifuTileButton4 = New Bunifu.Framework.UI.BunifuTileButton()
         Me.BunifuCards1 = New Bunifu.Framework.UI.BunifuCards()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.shoppingCart_flow = New System.Windows.Forms.FlowLayoutPanel()
         Me.product_pnl = New System.Windows.Forms.Panel()
         Me.BunifuMaterialTextbox1 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
@@ -52,7 +53,6 @@ Partial Class RegisterTab
         Me.BunifuTileButton1 = New Bunifu.Framework.UI.BunifuTileButton()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.register_pnl.SuspendLayout()
         Me.shoppingCard_pnl.SuspendLayout()
         Me.BunifuCards1.SuspendLayout()
@@ -124,6 +124,17 @@ Partial Class RegisterTab
         Me.BunifuCards1.ShadowDepth = 20
         Me.BunifuCards1.Size = New System.Drawing.Size(256, 543)
         Me.BunifuCards1.TabIndex = 0
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Roboto Lt", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(75, 22)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(99, 17)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "Shopping Cart"
         '
         'shoppingCart_flow
         '
@@ -431,29 +442,19 @@ Partial Class RegisterTab
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Roboto Lt", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(75, 22)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(99, 17)
-        Me.Label7.TabIndex = 2
-        Me.Label7.Text = "Shopping Cart"
-        '
         'RegisterTab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1513, 718)
+        Me.ClientSize = New System.Drawing.Size(1513, 719)
         Me.Controls.Add(Me.register_pnl)
         Me.Controls.Add(Me.rightSidebar_pnl)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.MinimumSize = New System.Drawing.Size(1513, 719)
         Me.Name = "RegisterTab"
         Me.Text = "Form1"
         Me.register_pnl.ResumeLayout(False)
