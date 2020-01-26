@@ -109,12 +109,14 @@
         End If
     End Sub
     Private Sub decrement_btn_Click(sender As Object, e As EventArgs) Handles decrement_btn.Click
-        If shoppingCartCount > 0 Then
+        If shoppingCartCount - 1 > 0 Then
             incrementVisualStock()
             shoppingCartCount = shoppingCartCount - 1
             item.ShoppingCart_Count = shoppingCartCount 'update count on shopping cart
             item.ShoppingCart_Subtotal = CDbl(Val(shoppingCartCount * prodPrice)) 'update subtotal on shopping cart
             RegisterTab.updateTotals()
+        Else
+            tryRemoveFromShoppingCart()
         End If
     End Sub
     Public Sub tryRemoveFromShoppingCart()
