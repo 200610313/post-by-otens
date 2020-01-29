@@ -2,7 +2,6 @@
     Private products As List(Of product)
     Private shoppingCartItems As List(Of shoppingCartItem)
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'POSDBDS.Table' table. You can move, or remove it, as needed.
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
         'Load products from DB, display in panel
