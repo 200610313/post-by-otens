@@ -2,11 +2,20 @@
     Private products As List(Of product)
     Private shoppingCartItems As List(Of shoppingCartItem)
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'POSDBDS.Table' table. You can move, or remove it, as needed.
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
         'Load products from DB, display in panel
         loadProducts()
         initShoppingCart()
+
+        Dim DB As New POSDataSetTableAdapters.productTableAdapter
+        'DB.GetData.Columns.Count
+        'DB.GetData.Rows.Count
+        'DB.GetData.Rows(0).Item(1) = get field at first row, second column
+
+
+
     End Sub
 
     Private Sub initShoppingCart()

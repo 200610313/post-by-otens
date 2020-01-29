@@ -35,6 +35,7 @@ Partial Class RegisterTab
         Me.BunifuMaterialTextbox1 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.totals = New System.Windows.Forms.Panel()
         Me.card = New Bunifu.Framework.UI.BunifuCards()
         Me.amtRecvd = New Bunifu.Framework.UI.BunifuMetroTextbox()
@@ -58,6 +59,7 @@ Partial Class RegisterTab
         Me.BunifuCards1.SuspendLayout()
         Me.product_pnl.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.totals.SuspendLayout()
         Me.card.SuspendLayout()
         Me.rightSidebar_pnl.SuspendLayout()
@@ -196,6 +198,12 @@ Partial Class RegisterTab
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(965, 460)
         Me.FlowLayoutPanel1.TabIndex = 1
+        '
+        'TableBindingSource
+        '
+        '
+        'POSDBDS
+        '
         '
         'totals
         '
@@ -442,6 +450,12 @@ Partial Class RegisterTab
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'TableTableAdapter
+        '
+        '
+        'TableAdapterManager
+        '
+        '
         'RegisterTab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -463,6 +477,7 @@ Partial Class RegisterTab
         Me.BunifuCards1.PerformLayout()
         Me.product_pnl.ResumeLayout(False)
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.totals.ResumeLayout(False)
         Me.card.ResumeLayout(False)
         Me.card.PerformLayout()
@@ -503,4 +518,6 @@ Partial Class RegisterTab
     Friend WithEvents Label5 As Label
     Friend WithEvents shoppingCart_flow As FlowLayoutPanel
     Friend WithEvents Label7 As Label
+    Friend WithEvents TableBindingSource As BindingSource
+
 End Class
