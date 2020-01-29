@@ -142,7 +142,7 @@ Partial Class RegisterTab
         Me.shoppingCart_flow.Location = New System.Drawing.Point(9, 52)
         Me.shoppingCart_flow.Name = "shoppingCart_flow"
         Me.shoppingCart_flow.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.shoppingCart_flow.Size = New System.Drawing.Size(244, 429)
+        Me.shoppingCart_flow.Size = New System.Drawing.Size(245, 429)
         Me.shoppingCart_flow.TabIndex = 1
         '
         'product_pnl
@@ -172,7 +172,7 @@ Partial Class RegisterTab
         Me.BunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.BunifuMaterialTextbox1.LineThickness = 3
         Me.BunifuMaterialTextbox1.Location = New System.Drawing.Point(382, -1)
-        Me.BunifuMaterialTextbox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.BunifuMaterialTextbox1.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.BunifuMaterialTextbox1.MaxLength = 32767
         Me.BunifuMaterialTextbox1.Name = "BunifuMaterialTextbox1"
         Me.BunifuMaterialTextbox1.Size = New System.Drawing.Size(224, 30)
@@ -192,9 +192,9 @@ Partial Class RegisterTab
         '
         'FlowLayoutPanel1
         '
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(12, 31)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(11, 31)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(964, 460)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(965, 460)
         Me.FlowLayoutPanel1.TabIndex = 1
         '
         'totals
@@ -221,7 +221,7 @@ Partial Class RegisterTab
         Me.card.Controls.Add(Me.Label5)
         Me.card.Controls.Add(Me.totalAmt)
         Me.card.LeftSahddow = False
-        Me.card.Location = New System.Drawing.Point(12, 3)
+        Me.card.Location = New System.Drawing.Point(11, 3)
         Me.card.Name = "card"
         Me.card.RightSahddow = True
         Me.card.ShadowDepth = 20
@@ -240,7 +240,7 @@ Partial Class RegisterTab
         Me.amtRecvd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.amtRecvd.isPassword = False
         Me.amtRecvd.Location = New System.Drawing.Point(112, 54)
-        Me.amtRecvd.Margin = New System.Windows.Forms.Padding(4)
+        Me.amtRecvd.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.amtRecvd.MaxLength = 32767
         Me.amtRecvd.Name = "amtRecvd"
         Me.amtRecvd.Size = New System.Drawing.Size(370, 44)
@@ -253,7 +253,7 @@ Partial Class RegisterTab
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Roboto Th", 13.0!)
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(12, 104)
+        Me.Label4.Location = New System.Drawing.Point(11, 104)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(97, 27)
         Me.Label4.TabIndex = 1
@@ -264,7 +264,7 @@ Partial Class RegisterTab
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Roboto Th", 13.0!)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(12, 23)
+        Me.Label3.Location = New System.Drawing.Point(11, 23)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(207, 27)
         Me.Label3.TabIndex = 1
@@ -379,7 +379,7 @@ Partial Class RegisterTab
         Me.BunifuTileButton3.LabelPosition = 41
         Me.BunifuTileButton3.LabelText = "MANAGE STOCKS"
         Me.BunifuTileButton3.Location = New System.Drawing.Point(0, 327)
-        Me.BunifuTileButton3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BunifuTileButton3.Margin = New System.Windows.Forms.Padding(5)
         Me.BunifuTileButton3.Name = "BunifuTileButton3"
         Me.BunifuTileButton3.Size = New System.Drawing.Size(263, 164)
         Me.BunifuTileButton3.TabIndex = 2
@@ -398,7 +398,7 @@ Partial Class RegisterTab
         Me.BunifuTileButton2.LabelPosition = 41
         Me.BunifuTileButton2.LabelText = "SALES REPORT"
         Me.BunifuTileButton2.Location = New System.Drawing.Point(0, 163)
-        Me.BunifuTileButton2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BunifuTileButton2.Margin = New System.Windows.Forms.Padding(5)
         Me.BunifuTileButton2.Name = "BunifuTileButton2"
         Me.BunifuTileButton2.Size = New System.Drawing.Size(263, 164)
         Me.BunifuTileButton2.TabIndex = 2
@@ -417,7 +417,7 @@ Partial Class RegisterTab
         Me.BunifuTileButton1.LabelPosition = 41
         Me.BunifuTileButton1.LabelText = "REGISTER"
         Me.BunifuTileButton1.Location = New System.Drawing.Point(0, -1)
-        Me.BunifuTileButton1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BunifuTileButton1.Margin = New System.Windows.Forms.Padding(5)
         Me.BunifuTileButton1.Name = "BunifuTileButton1"
         Me.BunifuTileButton1.Size = New System.Drawing.Size(263, 164)
         Me.BunifuTileButton1.TabIndex = 2
