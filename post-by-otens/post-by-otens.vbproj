@@ -93,6 +93,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="POSDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RegisterTab.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +163,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="POSDataSet.xsc">
+      <DependentUpon>POSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="POSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POSDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POSDataSet.xss">
+      <DependentUpon>POSDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\icons8_filled_circle_16px.png" />
   </ItemGroup>
   <ItemGroup>
