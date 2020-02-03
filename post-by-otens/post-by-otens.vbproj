@@ -63,6 +63,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AlphaBlendTextBox">
+      <HintPath>..\..\..\..\..\..\Some Useful things\AlphaBlendTextBox_demo\AlphaBlendTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
@@ -95,6 +98,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Loginfrm.Designer.vb">
+      <DependentUpon>Loginfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Loginfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="POSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,6 +148,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Loginfrm.resx">
+      <DependentUpon>Loginfrm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="RegisterTab.resx">
       <DependentUpon>RegisterTab.vb</DependentUpon>
@@ -259,6 +271,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-password-26.png" />
+    <None Include="Resources\icons8-user-301.png" />
+    <None Include="Resources\icons8-user-30.png" />
+    <None Include="Resources\Pewter Engineers.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -9,7 +9,7 @@
     <Shape ID="DesignTable:product" ZOrder="9" X="132" Y="116" Height="204" Width="223" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
     <Shape ID="DesignTable:productDetail" ZOrder="8" X="131" Y="405" Height="204" Width="265" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
     <Shape ID="DesignTable:business" ZOrder="6" X="483" Y="103" Height="227" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
-    <Shape ID="DesignTable:customer" ZOrder="4" X="868" Y="200" Height="273" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
+    <Shape ID="DesignTable:customer" ZOrder="4" X="892" Y="127" Height="273" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
     <Shape ID="DesignTable:invoice" ZOrder="3" X="566" Y="416" Height="204" Width="217" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
   </Shapes>
   <Connectors>
@@ -40,12 +40,16 @@
     <Connector ID="DesignRelation:customer_invoice" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>868</X>
-          <Y>444</Y>
+          <X>909</X>
+          <Y>400</Y>
+        </Point>
+        <Point>
+          <X>909</X>
+          <Y>433</Y>
         </Point>
         <Point>
           <X>783</X>
-          <Y>444</Y>
+          <Y>433</Y>
         </Point>
       </RoutePoints>
     </Connector>
