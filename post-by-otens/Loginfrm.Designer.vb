@@ -25,12 +25,12 @@ Partial Class Loginfrm
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Loginfrm))
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.AlphaBlendTextBox1 = New ZBobb.AlphaBlendTextBox()
         Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.AlphaBlendTextBox2 = New ZBobb.AlphaBlendTextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.AlphaBlendTextBox2 = New ZBobb.AlphaBlendTextBox()
-        Me.AlphaBlendTextBox1 = New ZBobb.AlphaBlendTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BunifuGradientPanel1.SuspendLayout()
@@ -42,10 +42,36 @@ Partial Class Loginfrm
         Me.BunifuElipse1.ElipseRadius = 30
         Me.BunifuElipse1.TargetControl = Me.AlphaBlendTextBox1
         '
+        'AlphaBlendTextBox1
+        '
+        Me.AlphaBlendTextBox1.BackAlpha = 25
+        Me.AlphaBlendTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.AlphaBlendTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.AlphaBlendTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AlphaBlendTextBox1.Location = New System.Drawing.Point(94, 102)
+        Me.AlphaBlendTextBox1.Multiline = True
+        Me.AlphaBlendTextBox1.Name = "AlphaBlendTextBox1"
+        Me.AlphaBlendTextBox1.Size = New System.Drawing.Size(229, 37)
+        Me.AlphaBlendTextBox1.TabIndex = 1
+        Me.AlphaBlendTextBox1.Text = "Username"
+        '
         'BunifuElipse2
         '
         Me.BunifuElipse2.ElipseRadius = 30
         Me.BunifuElipse2.TargetControl = Me.AlphaBlendTextBox2
+        '
+        'AlphaBlendTextBox2
+        '
+        Me.AlphaBlendTextBox2.BackAlpha = 25
+        Me.AlphaBlendTextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.AlphaBlendTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.AlphaBlendTextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AlphaBlendTextBox2.Location = New System.Drawing.Point(94, 158)
+        Me.AlphaBlendTextBox2.Multiline = True
+        Me.AlphaBlendTextBox2.Name = "AlphaBlendTextBox2"
+        Me.AlphaBlendTextBox2.Size = New System.Drawing.Size(229, 37)
+        Me.AlphaBlendTextBox2.TabIndex = 1
+        Me.AlphaBlendTextBox2.Text = "Password"
         '
         'PictureBox1
         '
@@ -85,32 +111,6 @@ Partial Class Loginfrm
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox2.TabIndex = 2
         Me.PictureBox2.TabStop = False
-        '
-        'AlphaBlendTextBox2
-        '
-        Me.AlphaBlendTextBox2.BackAlpha = 25
-        Me.AlphaBlendTextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.AlphaBlendTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.AlphaBlendTextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AlphaBlendTextBox2.Location = New System.Drawing.Point(94, 165)
-        Me.AlphaBlendTextBox2.Multiline = True
-        Me.AlphaBlendTextBox2.Name = "AlphaBlendTextBox2"
-        Me.AlphaBlendTextBox2.Size = New System.Drawing.Size(229, 37)
-        Me.AlphaBlendTextBox2.TabIndex = 1
-        Me.AlphaBlendTextBox2.Text = "Password"
-        '
-        'AlphaBlendTextBox1
-        '
-        Me.AlphaBlendTextBox1.BackAlpha = 25
-        Me.AlphaBlendTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.AlphaBlendTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.AlphaBlendTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AlphaBlendTextBox1.Location = New System.Drawing.Point(94, 102)
-        Me.AlphaBlendTextBox1.Multiline = True
-        Me.AlphaBlendTextBox1.Name = "AlphaBlendTextBox1"
-        Me.AlphaBlendTextBox1.Size = New System.Drawing.Size(229, 37)
-        Me.AlphaBlendTextBox1.TabIndex = 1
-        Me.AlphaBlendTextBox1.Text = "Username"
         '
         'Label1
         '
