@@ -32,10 +32,9 @@ Partial Class RegisterTab
         Me.Label7 = New System.Windows.Forms.Label()
         Me.shoppingCart_flow = New System.Windows.Forms.FlowLayoutPanel()
         Me.product_pnl = New System.Windows.Forms.Panel()
-        Me.BunifuMaterialTextbox1 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.searchBox = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.totals = New System.Windows.Forms.Panel()
         Me.card = New Bunifu.Framework.UI.BunifuCards()
         Me.amtRecvd = New Bunifu.Framework.UI.BunifuMetroTextbox()
@@ -47,6 +46,7 @@ Partial Class RegisterTab
         Me.changeAmt = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.totalAmt = New System.Windows.Forms.Label()
+        Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rightSidebar_pnl = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.BunifuTileButton3 = New Bunifu.Framework.UI.BunifuTileButton()
@@ -59,9 +59,9 @@ Partial Class RegisterTab
         Me.BunifuCards1.SuspendLayout()
         Me.product_pnl.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.totals.SuspendLayout()
         Me.card.SuspendLayout()
+        CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.rightSidebar_pnl.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,7 +149,7 @@ Partial Class RegisterTab
         '
         'product_pnl
         '
-        Me.product_pnl.Controls.Add(Me.BunifuMaterialTextbox1)
+        Me.product_pnl.Controls.Add(Me.searchBox)
         Me.product_pnl.Controls.Add(Me.PictureBox4)
         Me.product_pnl.Controls.Add(Me.FlowLayoutPanel1)
         Me.product_pnl.Controls.Add(Me.totals)
@@ -158,28 +158,28 @@ Partial Class RegisterTab
         Me.product_pnl.Size = New System.Drawing.Size(979, 665)
         Me.product_pnl.TabIndex = 0
         '
-        'BunifuMaterialTextbox1
+        'searchBox
         '
-        Me.BunifuMaterialTextbox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
-        Me.BunifuMaterialTextbox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
-        Me.BunifuMaterialTextbox1.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.BunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.BunifuMaterialTextbox1.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.BunifuMaterialTextbox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty
-        Me.BunifuMaterialTextbox1.HintText = ""
-        Me.BunifuMaterialTextbox1.isPassword = False
-        Me.BunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.BunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Gray
-        Me.BunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.BunifuMaterialTextbox1.LineThickness = 3
-        Me.BunifuMaterialTextbox1.Location = New System.Drawing.Point(382, -1)
-        Me.BunifuMaterialTextbox1.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.BunifuMaterialTextbox1.MaxLength = 32767
-        Me.BunifuMaterialTextbox1.Name = "BunifuMaterialTextbox1"
-        Me.BunifuMaterialTextbox1.Size = New System.Drawing.Size(224, 30)
-        Me.BunifuMaterialTextbox1.TabIndex = 4
-        Me.BunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.searchBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.searchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.searchBox.characterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.searchBox.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.searchBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.searchBox.HintForeColor = System.Drawing.Color.Empty
+        Me.searchBox.HintText = ""
+        Me.searchBox.isPassword = False
+        Me.searchBox.LineFocusedColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchBox.LineIdleColor = System.Drawing.Color.Gray
+        Me.searchBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchBox.LineThickness = 3
+        Me.searchBox.Location = New System.Drawing.Point(382, -1)
+        Me.searchBox.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.searchBox.MaxLength = 32767
+        Me.searchBox.Name = "searchBox"
+        Me.searchBox.Size = New System.Drawing.Size(224, 30)
+        Me.searchBox.TabIndex = 4
+        Me.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'PictureBox4
         '
@@ -198,12 +198,6 @@ Partial Class RegisterTab
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(965, 460)
         Me.FlowLayoutPanel1.TabIndex = 1
-        '
-        'TableBindingSource
-        '
-        '
-        'POSDBDS
-        '
         '
         'totals
         '
@@ -450,12 +444,6 @@ Partial Class RegisterTab
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'TableTableAdapter
-        '
-        '
-        'TableAdapterManager
-        '
-        '
         'RegisterTab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -477,10 +465,10 @@ Partial Class RegisterTab
         Me.BunifuCards1.PerformLayout()
         Me.product_pnl.ResumeLayout(False)
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.totals.ResumeLayout(False)
         Me.card.ResumeLayout(False)
         Me.card.PerformLayout()
+        CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.rightSidebar_pnl.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -513,7 +501,7 @@ Partial Class RegisterTab
     Friend WithEvents amtRecvd As Bunifu.Framework.UI.BunifuMetroTextbox
     Friend WithEvents Label4 As Label
     Friend WithEvents changeAmt As Label
-    Friend WithEvents BunifuMaterialTextbox1 As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents searchBox As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents shoppingCart_flow As FlowLayoutPanel

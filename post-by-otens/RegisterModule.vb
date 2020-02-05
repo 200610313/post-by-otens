@@ -12,4 +12,23 @@
         Next
     End Sub
 
+    Public Sub updateProductsView()
+        'get names of like what's in the textbox
+        Dim adapter As New POSDataSetTableAdapters.product1TableAdapter
+        Dim i, rows As Integer
+        rows = CInt(adapter.getProductsLike(RegisterTab.searchBox.Text, RegisterTab.loggedInBusinessName).Rows.Count) 'getProductsOf(loggedInBusinessName).Rows.Count)
+        'clear the flowlayout panel
+        RegisterTab.FlowLayoutPanel1.Controls.Clear()
+        For i = 0 To rows - 1
+            For j = 0 To RegisterTab.products.Count - 1
+                If RegisterTab.products.Item(j).getProdName = adapter.getProductsLike(RegisterTab.searchBox.Text, RegisterTab.loggedInBusinessName).Rows(i).Item(0) Then
+                    'if result.get(i) = products.getprodname.j then add to flowlayout panel
+                    RegisterTab.FlowLayoutPanel1.Controls.Add(RegisterTab.products.Item(j))
+                End If
+            Next
+        Next
+        'at the end, refresh flow layout panel
+        RegisterTab.FlowLayoutPanel1.Refresh()
+    End Sub
+
 End Module

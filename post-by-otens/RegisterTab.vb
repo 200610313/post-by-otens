@@ -1,14 +1,15 @@
 ﻿Public Class RegisterTab
-    Private products As List(Of product)
+    Public products As List(Of product)
     Private shoppingCartItems As List(Of shoppingCartItem)
     Public loggedInBusinessName As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
 
-        loggedInBusinessName = "Kain Now" 'set businessname
+        loggedInBusinessName = "Boboy's Refreshers" 'set businessname
 
         loadProducts()
+
         initShoppingCart()
     End Sub
 
@@ -18,7 +19,6 @@
     End Sub
 
     Private Sub loadProducts()
-        MessageBox.Show(loggedInBusinessName)
         'Getting business' products from database
         loadProductsOf(loggedInBusinessName, products)
         FlowLayoutPanel1.FlowDirection = FlowDirection.LeftToRight
@@ -92,5 +92,9 @@
             End If
         Next
         RegisterTab.updateShoppingCart()
+    End Sub
+
+    Private Sub BunifuMaterialTextbox1_OnValueChanged(sender As Object, e As EventArgs) Handles searchBox.OnValueChanged
+        updateProductsView()
     End Sub
 End Class

@@ -26,6 +26,10 @@
         shoppingCartIsIncluded = False
         updateRenders()
     End Sub
+
+    Public Function getProdName()
+        Return prodName
+    End Function
     'Update what the user can see
     Private Sub updateRenders()
         pName.Text = prodName

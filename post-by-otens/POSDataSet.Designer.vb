@@ -5862,13 +5862,20 @@ Namespace POSDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT pName, pNumber, pPrice, pStock, bName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     product"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (bName = @"& _ 
                 "userBusinessName)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userBusinessName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT pName, pNumber, bName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     product"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (pName LIKE @productName +"& _ 
+                " '%') AND (bName = @businessName)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@productName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "pName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@businessName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5899,6 +5906,50 @@ Namespace POSDataSetTableAdapters
                 Throw New Global.System.ArgumentNullException("userBusinessName")
             Else
                 Me.Adapter.SelectCommand.Parameters(0).Value = CType(userBusinessName,String)
+            End If
+            Dim dataTable As POSDataSet.product1DataTable = New POSDataSet.product1DataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As POSDataSet.product1DataTable, ByVal productName As String, ByVal businessName As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (productName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("productName")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(productName,String)
+            End If
+            If (businessName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("businessName")
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(businessName,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function getProductsLike(ByVal productName As String, ByVal businessName As String) As POSDataSet.product1DataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (productName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("productName")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(productName,String)
+            End If
+            If (businessName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("businessName")
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(businessName,String)
             End If
             Dim dataTable As POSDataSet.product1DataTable = New POSDataSet.product1DataTable()
             Me.Adapter.Fill(dataTable)
