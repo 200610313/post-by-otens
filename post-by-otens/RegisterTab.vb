@@ -1,6 +1,6 @@
 ﻿Public Class RegisterTab
     Public products As List(Of product)
-    Private shoppingCartItems As List(Of shoppingCartItem)
+    Public shoppingCartItems As List(Of shoppingCartItem)
     Public loggedInBusinessName As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         products = New List(Of product)

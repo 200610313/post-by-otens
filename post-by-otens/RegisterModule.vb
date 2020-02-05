@@ -30,5 +30,22 @@
         'at the end, refresh flow layout panel
         RegisterTab.FlowLayoutPanel1.Refresh()
     End Sub
+    'Insert customer data
+    Public Sub registerCustomer()
 
+    End Sub
+    'Generate invoice for the customer
+    Public Sub generateInvoiceForCustomer()
+
+    End Sub
+    'Compute the totals of the cart items
+    Public Sub computeSubtotals()
+
+        Dim total As Double
+
+        total = 0
+        For Each shoppingcartitem In RegisterTab.shoppingCartItems
+            total = +shoppingcartitem.getSubtotal
+        Next
+    End Sub
 End Module

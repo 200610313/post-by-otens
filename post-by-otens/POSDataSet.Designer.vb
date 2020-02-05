@@ -4052,12 +4052,23 @@ Namespace POSDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT pNumber, prodDetail_ID, pQuantity, pSubtotal, invoiceNumber FROM dbo.produ"& _ 
                 "ctDetail"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "INSERT INTO productDetail"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (pNumber, prodDetail_ID, pQuantity, "& _ 
+                "pSubtotal, invoiceNumber, bName, pNumber_FKproduct, pBName_FKproduct)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@"& _ 
+                "pNumber,@prodDetail_ID,@pQuantity,@pSubtotal,@invoiceNumber,,,); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pNumber", Global.System.Data.SqlDbType.[Variant], 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "pNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@prodDetail_ID", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "prodDetail_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pQuantity", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "pQuantity", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pSubtotal", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "pSubtotal", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@invoiceNumber", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "invoiceNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4258,6 +4269,41 @@ Namespace POSDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update(ByVal prodDetail_ID As String, ByVal pQuantity As String, ByVal pSubtotal As String, ByVal invoiceNumber As Long, ByVal Original_pNumber As Long, ByVal Original_prodDetail_ID As String, ByVal Original_pQuantity As String, ByVal Original_pSubtotal As String, ByVal Original_invoiceNumber As Long) As Integer
             Return Me.Update(Original_pNumber, prodDetail_ID, pQuantity, pSubtotal, invoiceNumber, Original_pNumber, Original_prodDetail_ID, Original_pQuantity, Original_pSubtotal, Original_invoiceNumber)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function insertProductLine(ByVal pNumber As Object, ByVal prodDetail_ID As Long, ByVal pQuantity As Integer, ByVal pSubtotal As Global.System.Nullable(Of Decimal), ByVal invoiceNumber As Long) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (pNumber Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("pNumber")
+            Else
+                command.Parameters(0).Value = CType(pNumber,Object)
+            End If
+            command.Parameters(1).Value = CType(prodDetail_ID,Long)
+            command.Parameters(2).Value = CType(pQuantity,Integer)
+            If (pSubtotal.HasValue = true) Then
+                command.Parameters(3).Value = CType(pSubtotal.Value,Decimal)
+            Else
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            command.Parameters(4).Value = CType(invoiceNumber,Long)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     

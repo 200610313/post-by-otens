@@ -18,6 +18,10 @@
 
     End Sub
 
+    Function getSubtotal() As Double
+        Return shoppingCartSubtotal
+    End Function
+
     Private Sub updateVisuals()
         pNum.Text = "#" + prodNum.ToString
         pName.Text = prodName.ToString
