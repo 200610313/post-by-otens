@@ -103,6 +103,7 @@
     <Compile Include="POSDataSet.vb">
       <DependentUpon>POSDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RegisterModule.vb" />
     <Compile Include="RegisterTab.vb">
       <SubType>Form</SubType>
     </Compile>
