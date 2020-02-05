@@ -32,22 +32,33 @@
     End Sub
     'Insert customer data
     Public Sub registerCustomer()
-
+        Dim adapter As New POSDataSetTableAdapters.customerTableAdapter
+        'adapter.registerCustomer()
     End Sub
     'Generate invoice for the customer
     Public Sub generateInvoiceForCustomer()
-        'get the ID of the most recent customer
-
-
-    End Sub
-    'Compute the totals of the cart items
-    Public Sub computeSubtotals()
-
+        'first compute for the totals of the subtotals so that the totals entry won't be left blank
         Dim total As Double
-
         total = 0
         For Each shoppingcartitem In RegisterTab.shoppingCartItems
             total = +shoppingcartitem.getSubtotal
         Next
+
+        'total holds the value to be inserted in invoice.total
+
+
+        'get the ID of the most recent customer
+        Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter
+        'adapter.generateInvoiceForRecentCustomer()
+
     End Sub
+    'Compute the totals of the cart items
+    Public Sub generateProductLine()
+        Dim adapter As New POSDataSetTableAdapters.productDetailTableAdapter
+        For Each shoppingcartitem In RegisterTab.shoppingCartItems
+            'insert row in product detail
+            'adapter.newProductLine()
+        Next
+    End Sub
+    'And then correct renders in products list
 End Module
