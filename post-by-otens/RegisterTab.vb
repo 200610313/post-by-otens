@@ -1,6 +1,7 @@
 ﻿Public Class RegisterTab
     Private products As List(Of product)
     Private shoppingCartItems As List(Of shoppingCartItem)
+    Private loggedInBusinessName As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
@@ -13,8 +14,6 @@
         'DB.GetData.Rows.Count
         'DB.GetData.Rows(0).Item(1) = get field at first row, second column
 
-
-
     End Sub
 
     Private Sub initShoppingCart()
@@ -23,9 +22,22 @@
     End Sub
 
     Private Sub loadProducts()
-        For i = 1 To 20
-            products.Add(New product("Default", i.ToString, 10.23 * i, i * 3)) 'product name/product number/product price/product stock = Load these from DB
+        'Getting business' products from database
+        loggedInBusinessName = "Kain Now"
+        Dim adapter As New POSDataSetTableAdapters.product1TableAdapter
+        Dim i, rows As Integer
+        rows = CInt(adapter.getProductsOf(loggedInBusinessName).Rows.Count)
+        For i = 0 To rows - 1
+            Dim prodName = adapter.getProductsOf(loggedInBusinessName).Rows(i).Item(0)
+            Dim prodPrice = adapter.getProductsOf(loggedInBusinessName).Rows(i).Item(1)
+            Dim prodStock = adapter.getProductsOf(loggedInBusinessName).Rows(i).Item(2)
+            Dim prodNumber = adapter.getProductsOf(loggedInBusinessName).Rows(i).Item(3)
+            products.Add(New product(prodName, prodNumber, prodPrice, prodStock))
         Next
+
+        'For i = 1 To 20
+        '    products.Add(New product("Default", i.ToString, 10.23 * i, i * 3)) 'product name/product number/product price/product stock = Load these from DB
+        'Next
 
         FlowLayoutPanel1.FlowDirection = FlowDirection.LeftToRight
         FlowLayoutPanel1.AutoScroll = True
