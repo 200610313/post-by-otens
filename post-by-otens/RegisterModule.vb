@@ -36,6 +36,8 @@
     End Sub
     'Generate invoice for the customer
     Public Sub generateInvoiceForCustomer()
+        'get the ID of the most recent customer
+
 
     End Sub
     'Compute the totals of the cart items
