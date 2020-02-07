@@ -100,7 +100,6 @@
     End Sub
 
     Private Sub BunifuTileButton4_Click(sender As Object, e As EventArgs) Handles BunifuTileButton4.Click
-        registerCustomer("Sergio", "Ramos", "A", "Butuan", "Bagumbayan", "7000", "382345678")
-        generateInvoiceForCustomer()
+        registerCustomer("Sergio", "Ramos", "A", "Butuan", "Bagumbayan", "7000", "09267052345")
     End Sub
 End Class

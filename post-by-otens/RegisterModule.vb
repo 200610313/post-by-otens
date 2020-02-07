@@ -34,43 +34,40 @@
     Public Sub registerCustomer(cFname As String, cLName As String, cMinit As Char, cCity As String, cState As String, cZip As String, cPhone As String)
         Dim adapter As New POSDataSetTableAdapters.customerTableAdapter
         Try
-            adapter.registerCustomer(cFname, cLName, cMinit, cCity, cState, cZip, cPhone)
+            Dim customerID As Integer
+            adapter.InsertQuery(cFname, cLName, cMinit, cCity, cState, cZip, cPhone)
+            customerID = adapter.getCustID
+            generateInvoiceForCustomer(customerID)
         Catch ex As Exception
-            MessageBox.Show("error")
+            MessageBox.Show(ex.Message)
         End Try
 
     End Sub
     'Generate invoice for the customer
-    Public Sub generateInvoiceForCustomer()
-        'first compute for the totals of the subtotals so that the totals entry won't be left blank
+    Public Sub generateInvoiceForCustomer(customerID As Integer)
+        Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter
         Dim total As Double
+        Dim customerInvoiceNumber As Integer
+
         total = 0
+
+        'compute total of subtotals
         For Each shoppingcartitem In RegisterTab.shoppingCartItems
-            total = +shoppingcartitem.getSubtotal
+            total = total + shoppingcartitem.getSubtotal
         Next
 
-        'total holds the value to be inserted in invoice.total
+        'then fill invoice
+        adapter.fillInvoiceForRecentCustomer(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), total, RegisterTab.loggedInBusinessName, customerID)
+        customerInvoiceNumber = adapter.getCustomerInvoice
+        generateProductLine(customerID, customerInvoiceNumber)
 
-        Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter
-        'get the ID of the most recent customer
-        Dim adapter2 As New POSDataSetTableAdapters.customerTableAdapter
-
-        Dim mostRecentCustomerID As Integer
-        mostRecentCustomerID = adapter2.getAllCustomerID().Rows(adapter2.getAllCustomerID.Rows.Count - 1).Item(0)
-        adapter.generateInvoiceForRecentCustomer(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), total, RegisterTab.loggedInBusinessName, mostRecentCustomerID)
-
-
-        Dim mostRecentInvoiceResultsCount, mostRecentInvoiceNumber As Integer
-        mostRecentInvoiceResultsCount = adapter.getRecentInvoiceOfCustomer(RegisterTab.loggedInBusinessName, mostRecentCustomerID).Count
-        mostRecentInvoiceNumber = adapter.getRecentInvoiceOfCustomer(RegisterTab.loggedInBusinessName, mostRecentCustomerID).Rows(mostRecentInvoiceResultsCount - 1).Item(0)
-        generateProductLine(mostRecentCustomerID, mostRecentInvoiceNumber)
     End Sub
-    'Compute the totals of the cart items
-    Public Sub generateProductLine(mostRecentCustomerID As Integer, mostRecentInvoiceNumber As Integer)
+
+    Public Sub generateProductLine(customerID As Integer, InvoiceNumber As Integer)
         Dim adapter As New POSDataSetTableAdapters.productDetailTableAdapter
         For Each shoppingcartitem In RegisterTab.shoppingCartItems
             'insert row in product detail
-            adapter.newProductLine(shoppingcartitem.getShoppingCartCount, shoppingcartitem.getShoppingCartSubtotal, RegisterTab.loggedInBusinessName, mostRecentInvoiceNumber, shoppingcartitem.getProdNum, RegisterTab.loggedInBusinessName)
+            adapter.newProductLineFinal(shoppingcartitem.getShoppingCartCount, shoppingcartitem.getShoppingCartSubtotal, RegisterTab.loggedInBusinessName, InvoiceNumber)
         Next
     End Sub
     'And then correct renders in products list
