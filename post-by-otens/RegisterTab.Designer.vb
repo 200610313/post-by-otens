@@ -23,7 +23,6 @@ Partial Class RegisterTab
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegisterTab))
         Me.windowShape = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.register_pnl = New System.Windows.Forms.Panel()
         Me.shoppingCard_pnl = New System.Windows.Forms.Panel()
@@ -47,11 +46,6 @@ Partial Class RegisterTab
         Me.Label5 = New System.Windows.Forms.Label()
         Me.totalAmt = New System.Windows.Forms.Label()
         Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.rightSidebar_pnl = New Bunifu.Framework.UI.BunifuGradientPanel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.BunifuTileButton3 = New Bunifu.Framework.UI.BunifuTileButton()
-        Me.BunifuTileButton2 = New Bunifu.Framework.UI.BunifuTileButton()
-        Me.BunifuTileButton1 = New Bunifu.Framework.UI.BunifuTileButton()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.register_pnl.SuspendLayout()
@@ -62,8 +56,6 @@ Partial Class RegisterTab
         Me.totals.SuspendLayout()
         Me.card.SuspendLayout()
         CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.rightSidebar_pnl.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -80,7 +72,7 @@ Partial Class RegisterTab
         Me.register_pnl.Controls.Add(Me.product_pnl)
         Me.register_pnl.Location = New System.Drawing.Point(0, 53)
         Me.register_pnl.Name = "register_pnl"
-        Me.register_pnl.Size = New System.Drawing.Size(1232, 665)
+        Me.register_pnl.Size = New System.Drawing.Size(1512, 665)
         Me.register_pnl.TabIndex = 2
         '
         'shoppingCard_pnl
@@ -89,7 +81,7 @@ Partial Class RegisterTab
         Me.shoppingCard_pnl.Controls.Add(Me.BunifuCards1)
         Me.shoppingCard_pnl.Location = New System.Drawing.Point(976, 0)
         Me.shoppingCard_pnl.Name = "shoppingCard_pnl"
-        Me.shoppingCard_pnl.Size = New System.Drawing.Size(256, 665)
+        Me.shoppingCard_pnl.Size = New System.Drawing.Size(536, 665)
         Me.shoppingCard_pnl.TabIndex = 1
         '
         'BunifuTileButton4
@@ -124,7 +116,7 @@ Partial Class RegisterTab
         Me.BunifuCards1.Name = "BunifuCards1"
         Me.BunifuCards1.RightSahddow = True
         Me.BunifuCards1.ShadowDepth = 20
-        Me.BunifuCards1.Size = New System.Drawing.Size(256, 543)
+        Me.BunifuCards1.Size = New System.Drawing.Size(536, 491)
         Me.BunifuCards1.TabIndex = 0
         '
         'Label7
@@ -132,7 +124,7 @@ Partial Class RegisterTab
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Roboto Lt", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(75, 22)
+        Me.Label7.Location = New System.Drawing.Point(222, 22)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(99, 17)
         Me.Label7.TabIndex = 2
@@ -144,7 +136,7 @@ Partial Class RegisterTab
         Me.shoppingCart_flow.Location = New System.Drawing.Point(9, 52)
         Me.shoppingCart_flow.Name = "shoppingCart_flow"
         Me.shoppingCart_flow.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.shoppingCart_flow.Size = New System.Drawing.Size(245, 429)
+        Me.shoppingCart_flow.Size = New System.Drawing.Size(516, 429)
         Me.shoppingCart_flow.TabIndex = 1
         '
         'product_pnl
@@ -338,92 +330,6 @@ Partial Class RegisterTab
         Me.totalAmt.TabIndex = 1
         Me.totalAmt.Text = "0"
         '
-        'rightSidebar_pnl
-        '
-        Me.rightSidebar_pnl.BackColor = System.Drawing.Color.Transparent
-        Me.rightSidebar_pnl.BackgroundImage = CType(resources.GetObject("rightSidebar_pnl.BackgroundImage"), System.Drawing.Image)
-        Me.rightSidebar_pnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.rightSidebar_pnl.Controls.Add(Me.PictureBox3)
-        Me.rightSidebar_pnl.Controls.Add(Me.BunifuTileButton3)
-        Me.rightSidebar_pnl.Controls.Add(Me.BunifuTileButton2)
-        Me.rightSidebar_pnl.Controls.Add(Me.BunifuTileButton1)
-        Me.rightSidebar_pnl.GradientBottomLeft = System.Drawing.Color.White
-        Me.rightSidebar_pnl.GradientBottomRight = System.Drawing.Color.White
-        Me.rightSidebar_pnl.GradientTopLeft = System.Drawing.Color.White
-        Me.rightSidebar_pnl.GradientTopRight = System.Drawing.Color.White
-        Me.rightSidebar_pnl.Location = New System.Drawing.Point(1250, 53)
-        Me.rightSidebar_pnl.Name = "rightSidebar_pnl"
-        Me.rightSidebar_pnl.Quality = 10
-        Me.rightSidebar_pnl.Size = New System.Drawing.Size(263, 665)
-        Me.rightSidebar_pnl.TabIndex = 1
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.post_by_otens.My.Resources.Resources.pos21
-        Me.PictureBox3.Location = New System.Drawing.Point(0, 490)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(263, 175)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 3
-        Me.PictureBox3.TabStop = False
-        '
-        'BunifuTileButton3
-        '
-        Me.BunifuTileButton3.BackColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.BunifuTileButton3.color = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.BunifuTileButton3.colorActive = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.BunifuTileButton3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTileButton3.Font = New System.Drawing.Font("Roboto Th", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuTileButton3.ForeColor = System.Drawing.Color.White
-        Me.BunifuTileButton3.Image = Global.post_by_otens.My.Resources.Resources.icons8_depot_64px_1
-        Me.BunifuTileButton3.ImagePosition = 65
-        Me.BunifuTileButton3.ImageZoom = 10
-        Me.BunifuTileButton3.LabelPosition = 41
-        Me.BunifuTileButton3.LabelText = "MANAGE STOCKS"
-        Me.BunifuTileButton3.Location = New System.Drawing.Point(0, 327)
-        Me.BunifuTileButton3.Margin = New System.Windows.Forms.Padding(5)
-        Me.BunifuTileButton3.Name = "BunifuTileButton3"
-        Me.BunifuTileButton3.Size = New System.Drawing.Size(263, 164)
-        Me.BunifuTileButton3.TabIndex = 2
-        '
-        'BunifuTileButton2
-        '
-        Me.BunifuTileButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.BunifuTileButton2.color = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.BunifuTileButton2.colorActive = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.BunifuTileButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTileButton2.Font = New System.Drawing.Font("Roboto Th", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuTileButton2.ForeColor = System.Drawing.Color.White
-        Me.BunifuTileButton2.Image = Global.post_by_otens.My.Resources.Resources.icons8_report_file_32px
-        Me.BunifuTileButton2.ImagePosition = 70
-        Me.BunifuTileButton2.ImageZoom = 10
-        Me.BunifuTileButton2.LabelPosition = 41
-        Me.BunifuTileButton2.LabelText = "SALES REPORT"
-        Me.BunifuTileButton2.Location = New System.Drawing.Point(0, 163)
-        Me.BunifuTileButton2.Margin = New System.Windows.Forms.Padding(5)
-        Me.BunifuTileButton2.Name = "BunifuTileButton2"
-        Me.BunifuTileButton2.Size = New System.Drawing.Size(263, 164)
-        Me.BunifuTileButton2.TabIndex = 2
-        '
-        'BunifuTileButton1
-        '
-        Me.BunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.BunifuTileButton1.color = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.BunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.BunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTileButton1.Font = New System.Drawing.Font("Roboto Th", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuTileButton1.ForeColor = System.Drawing.Color.White
-        Me.BunifuTileButton1.Image = Global.post_by_otens.My.Resources.Resources.icons8_cash_register_32px
-        Me.BunifuTileButton1.ImagePosition = 70
-        Me.BunifuTileButton1.ImageZoom = 10
-        Me.BunifuTileButton1.LabelPosition = 41
-        Me.BunifuTileButton1.LabelText = "REGISTER"
-        Me.BunifuTileButton1.Location = New System.Drawing.Point(0, -1)
-        Me.BunifuTileButton1.Margin = New System.Windows.Forms.Padding(5)
-        Me.BunifuTileButton1.Name = "BunifuTileButton1"
-        Me.BunifuTileButton1.Size = New System.Drawing.Size(263, 164)
-        Me.BunifuTileButton1.TabIndex = 2
-        '
         'PictureBox2
         '
         Me.PictureBox2.BackgroundImage = Global.post_by_otens.My.Resources.Resources.icons8_filled_circle_30px_3
@@ -452,7 +358,6 @@ Partial Class RegisterTab
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1513, 719)
         Me.Controls.Add(Me.register_pnl)
-        Me.Controls.Add(Me.rightSidebar_pnl)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -469,8 +374,6 @@ Partial Class RegisterTab
         Me.card.ResumeLayout(False)
         Me.card.PerformLayout()
         CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.rightSidebar_pnl.ResumeLayout(False)
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -480,11 +383,6 @@ Partial Class RegisterTab
     Friend WithEvents windowShape As Bunifu.Framework.UI.BunifuElipse
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents rightSidebar_pnl As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents BunifuTileButton1 As Bunifu.Framework.UI.BunifuTileButton
-    Friend WithEvents BunifuTileButton3 As Bunifu.Framework.UI.BunifuTileButton
-    Friend WithEvents BunifuTileButton2 As Bunifu.Framework.UI.BunifuTileButton
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents register_pnl As Panel
     Friend WithEvents product_pnl As Panel
     Friend WithEvents shoppingCard_pnl As Panel

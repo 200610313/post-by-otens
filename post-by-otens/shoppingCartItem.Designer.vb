@@ -44,7 +44,7 @@ Partial Class shoppingCartItem
         Me.included.Checked = True
         Me.included.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.included.ForeColor = System.Drawing.Color.White
-        Me.included.Location = New System.Drawing.Point(170, 6)
+        Me.included.Location = New System.Drawing.Point(462, 5)
         Me.included.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.included.Name = "included"
         Me.included.Size = New System.Drawing.Size(20, 20)
@@ -54,7 +54,7 @@ Partial Class shoppingCartItem
         '
         Me.pSubTotal.Font = New System.Drawing.Font("Roboto Lt", 11.0!)
         Me.pSubTotal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.pSubTotal.Location = New System.Drawing.Point(3, 63)
+        Me.pSubTotal.Location = New System.Drawing.Point(289, 32)
         Me.pSubTotal.Name = "pSubTotal"
         Me.pSubTotal.Size = New System.Drawing.Size(193, 23)
         Me.pSubTotal.TabIndex = 2
@@ -74,13 +74,13 @@ Partial Class shoppingCartItem
         '
         'pName
         '
-        Me.pName.Font = New System.Drawing.Font("Roboto Lt", 7.0!)
+        Me.pName.Font = New System.Drawing.Font("Roboto Lt", 15.0!)
         Me.pName.ForeColor = System.Drawing.Color.White
-        Me.pName.Location = New System.Drawing.Point(61, 34)
+        Me.pName.Location = New System.Drawing.Point(61, 27)
         Me.pName.Name = "pName"
-        Me.pName.Size = New System.Drawing.Size(133, 22)
+        Me.pName.Size = New System.Drawing.Size(206, 34)
         Me.pName.TabIndex = 2
-        Me.pName.Text = "ProdNamewadawad"
+        Me.pName.Text = "gw"
         Me.pName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pNum
@@ -114,7 +114,7 @@ Partial Class shoppingCartItem
         Me.Controls.Add(Me.pSubTotal)
         Me.Controls.Add(Me.included)
         Me.Name = "shoppingCartItem"
-        Me.Size = New System.Drawing.Size(199, 89)
+        Me.Size = New System.Drawing.Size(487, 82)
         Me.ResumeLayout(False)
 
     End Sub
