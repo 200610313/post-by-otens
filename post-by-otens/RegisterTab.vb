@@ -3,6 +3,7 @@
     Public shoppingCartItems As List(Of shoppingCartItem)
     Public loggedInBusinessName As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'MessageBox.Show(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
 
@@ -96,5 +97,10 @@
 
     Private Sub BunifuMaterialTextbox1_OnValueChanged(sender As Object, e As EventArgs) Handles searchBox.OnValueChanged
         updateProductsView()
+    End Sub
+
+    Private Sub BunifuTileButton4_Click(sender As Object, e As EventArgs) Handles BunifuTileButton4.Click
+        registerCustomer("Sergio", "Ramos", "A", "Butuan", "Bagumbayan", "7000", "382345678")
+        generateInvoiceForCustomer()
     End Sub
 End Class

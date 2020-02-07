@@ -17,7 +17,15 @@
         updateVisuals()
 
     End Sub
-
+    Function getShoppingCartCount() As Integer
+        Return shoppingCartCount
+    End Function
+    Function getShoppingCartSubtotal() As Double
+        Return shoppingCartSubtotal
+    End Function
+    Function getProdNum() As String
+        Return prodNum
+    End Function
     Function getSubtotal() As Double
         Return shoppingCartSubtotal
     End Function

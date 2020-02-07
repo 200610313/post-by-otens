@@ -31,9 +31,14 @@
         RegisterTab.FlowLayoutPanel1.Refresh()
     End Sub
     'Insert customer data
-    Public Sub registerCustomer()
+    Public Sub registerCustomer(cFname As String, cLName As String, cMinit As Char, cCity As String, cState As String, cZip As String, cPhone As String)
         Dim adapter As New POSDataSetTableAdapters.customerTableAdapter
-        'adapter.registerCustomer()
+        Try
+            adapter.registerCustomer(cFname, cLName, cMinit, cCity, cState, cZip, cPhone)
+        Catch ex As Exception
+            MessageBox.Show("error")
+        End Try
+
     End Sub
     'Generate invoice for the customer
     Public Sub generateInvoiceForCustomer()
@@ -46,18 +51,26 @@
 
         'total holds the value to be inserted in invoice.total
 
-
-        'get the ID of the most recent customer
         Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter
-        'adapter.generateInvoiceForRecentCustomer()
+        'get the ID of the most recent customer
+        Dim adapter2 As New POSDataSetTableAdapters.customerTableAdapter
 
+        Dim mostRecentCustomerID As Integer
+        mostRecentCustomerID = adapter2.getAllCustomerID().Rows(adapter2.getAllCustomerID.Rows.Count - 1).Item(0)
+        adapter.generateInvoiceForRecentCustomer(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), total, RegisterTab.loggedInBusinessName, mostRecentCustomerID)
+
+
+        Dim mostRecentInvoiceResultsCount, mostRecentInvoiceNumber As Integer
+        mostRecentInvoiceResultsCount = adapter.getRecentInvoiceOfCustomer(RegisterTab.loggedInBusinessName, mostRecentCustomerID).Count
+        mostRecentInvoiceNumber = adapter.getRecentInvoiceOfCustomer(RegisterTab.loggedInBusinessName, mostRecentCustomerID).Rows(mostRecentInvoiceResultsCount - 1).Item(0)
+        generateProductLine(mostRecentCustomerID, mostRecentInvoiceNumber)
     End Sub
     'Compute the totals of the cart items
-    Public Sub generateProductLine()
+    Public Sub generateProductLine(mostRecentCustomerID As Integer, mostRecentInvoiceNumber As Integer)
         Dim adapter As New POSDataSetTableAdapters.productDetailTableAdapter
         For Each shoppingcartitem In RegisterTab.shoppingCartItems
             'insert row in product detail
-            'adapter.newProductLine()
+            adapter.newProductLine(shoppingcartitem.getShoppingCartCount, shoppingcartitem.getShoppingCartSubtotal, RegisterTab.loggedInBusinessName, mostRecentInvoiceNumber, shoppingcartitem.getProdNum, RegisterTab.loggedInBusinessName)
         Next
     End Sub
     'And then correct renders in products list
