@@ -37,17 +37,19 @@ Partial Public Class POSDataSet
     
     Private tableproduct1 As product1DataTable
     
+    Private relationFK_productDetail_invoice As Global.System.Data.DataRelation
+    
     Private relationinvoice_productDetail As Global.System.Data.DataRelation
     
     Private relationFK_invoice_customer As Global.System.Data.DataRelation
-    
-    Private relationFK_productDetail_invoice As Global.System.Data.DataRelation
     
     Private relationFK_product_business1 As Global.System.Data.DataRelation
     
     Private relationFK_invoice_business As Global.System.Data.DataRelation
     
     Private relationFK_product_business11 As Global.System.Data.DataRelation
+    
+    Private relationproduct_productDetail As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -326,12 +328,13 @@ Partial Public Class POSDataSet
                 Me.tableproduct1.InitVars
             End If
         End If
+        Me.relationFK_productDetail_invoice = Me.Relations("FK_productDetail_invoice")
         Me.relationinvoice_productDetail = Me.Relations("invoice_productDetail")
         Me.relationFK_invoice_customer = Me.Relations("FK_invoice_customer")
-        Me.relationFK_productDetail_invoice = Me.Relations("FK_productDetail_invoice")
         Me.relationFK_product_business1 = Me.Relations("FK_product_business1")
         Me.relationFK_invoice_business = Me.Relations("FK_invoice_business")
         Me.relationFK_product_business11 = Me.Relations("FK_product_business11")
+        Me.relationproduct_productDetail = Me.Relations("product_productDetail")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -354,18 +357,26 @@ Partial Public Class POSDataSet
         MyBase.Tables.Add(Me.tableinvoice)
         Me.tableproduct1 = New product1DataTable()
         MyBase.Tables.Add(Me.tableproduct1)
+        Dim fkc As Global.System.Data.ForeignKeyConstraint
+        fkc = New Global.System.Data.ForeignKeyConstraint("FK_productDetail_invoice", New Global.System.Data.DataColumn() {Me.tableinvoice.invoiceNumberColumn, Me.tableinvoice.bNameColumn}, New Global.System.Data.DataColumn() {Me.tableproductDetail.invoiceNumberColumn, Me.tableproductDetail.bNameColumn})
+        Me.tableproductDetail.Constraints.Add(fkc)
+        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
+        fkc.DeleteRule = Global.System.Data.Rule.Cascade
+        fkc.UpdateRule = Global.System.Data.Rule.Cascade
+        Me.relationFK_productDetail_invoice = New Global.System.Data.DataRelation("FK_productDetail_invoice", New Global.System.Data.DataColumn() {Me.tableinvoice.invoiceNumberColumn, Me.tableinvoice.bNameColumn}, New Global.System.Data.DataColumn() {Me.tableproductDetail.invoiceNumberColumn, Me.tableproductDetail.bNameColumn}, false)
+        Me.Relations.Add(Me.relationFK_productDetail_invoice)
         Me.relationinvoice_productDetail = New Global.System.Data.DataRelation("invoice_productDetail", New Global.System.Data.DataColumn() {Me.tableinvoice.invoiceNumberColumn}, New Global.System.Data.DataColumn() {Me.tableproductDetail.invoiceNumberColumn}, false)
         Me.Relations.Add(Me.relationinvoice_productDetail)
         Me.relationFK_invoice_customer = New Global.System.Data.DataRelation("FK_invoice_customer", New Global.System.Data.DataColumn() {Me.tablecustomer.cIDColumn}, New Global.System.Data.DataColumn() {Me.tableinvoice.cIDColumn}, false)
         Me.Relations.Add(Me.relationFK_invoice_customer)
-        Me.relationFK_productDetail_invoice = New Global.System.Data.DataRelation("FK_productDetail_invoice", New Global.System.Data.DataColumn() {Me.tableinvoice.invoiceNumberColumn, Me.tableinvoice.bNameColumn}, New Global.System.Data.DataColumn() {Me.tableproductDetail.invoiceNumberColumn, Me.tableproductDetail.bNameColumn}, false)
-        Me.Relations.Add(Me.relationFK_productDetail_invoice)
         Me.relationFK_product_business1 = New Global.System.Data.DataRelation("FK_product_business1", New Global.System.Data.DataColumn() {Me.tablebusiness.bNameColumn}, New Global.System.Data.DataColumn() {Me.tableproduct.bNameColumn}, false)
         Me.Relations.Add(Me.relationFK_product_business1)
         Me.relationFK_invoice_business = New Global.System.Data.DataRelation("FK_invoice_business", New Global.System.Data.DataColumn() {Me.tablebusiness.bNameColumn}, New Global.System.Data.DataColumn() {Me.tableinvoice.bNameColumn}, false)
         Me.Relations.Add(Me.relationFK_invoice_business)
         Me.relationFK_product_business11 = New Global.System.Data.DataRelation("FK_product_business11", New Global.System.Data.DataColumn() {Me.tablebusiness.bNameColumn}, New Global.System.Data.DataColumn() {Me.tableproduct1.bNameColumn}, false)
         Me.Relations.Add(Me.relationFK_product_business11)
+        Me.relationproduct_productDetail = New Global.System.Data.DataRelation("product_productDetail", New Global.System.Data.DataColumn() {Me.tableproduct.pNumberColumn, Me.tableproduct.bNameColumn}, New Global.System.Data.DataColumn() {Me.tableproductDetail.productNumberColumn, Me.tableproductDetail.productBusinessOwnerColumn}, false)
+        Me.Relations.Add(Me.relationproduct_productDetail)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -821,6 +832,10 @@ Partial Public Class POSDataSet
         
         Private columnbName As Global.System.Data.DataColumn
         
+        Private columnproductNumber As Global.System.Data.DataColumn
+        
+        Private columnproductBusinessOwner As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -897,6 +912,22 @@ Partial Public Class POSDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property productNumberColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnproductNumber
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property productBusinessOwnerColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnproductBusinessOwner
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -933,9 +964,9 @@ Partial Public Class POSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddproductDetailRow(ByVal parentinvoiceRowByinvoice_productDetail As invoiceRow, ByVal pQuantity As Integer, ByVal pSubtotal As Decimal, ByVal bName As String) As productDetailRow
+        Public Overloads Function AddproductDetailRow(ByVal parentinvoiceRowByinvoice_productDetail As invoiceRow, ByVal pQuantity As Integer, ByVal pSubtotal As Decimal, ByVal bName As String, ByVal productNumber As Long, ByVal productBusinessOwner As String) As productDetailRow
             Dim rowproductDetailRow As productDetailRow = CType(Me.NewRow,productDetailRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, pQuantity, pSubtotal, Nothing, bName}
+            Dim columnValuesArray() As Object = New Object() {Nothing, pQuantity, pSubtotal, Nothing, bName, productNumber, productBusinessOwner}
             If (Not (parentinvoiceRowByinvoice_productDetail) Is Nothing) Then
                 columnValuesArray(0) = parentinvoiceRowByinvoice_productDetail(0)
             End If
@@ -972,6 +1003,8 @@ Partial Public Class POSDataSet
             Me.columnpSubtotal = MyBase.Columns("pSubtotal")
             Me.columnprodDetail_ID = MyBase.Columns("prodDetail_ID")
             Me.columnbName = MyBase.Columns("bName")
+            Me.columnproductNumber = MyBase.Columns("productNumber")
+            Me.columnproductBusinessOwner = MyBase.Columns("productBusinessOwner")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -987,6 +1020,10 @@ Partial Public Class POSDataSet
             MyBase.Columns.Add(Me.columnprodDetail_ID)
             Me.columnbName = New Global.System.Data.DataColumn("bName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnbName)
+            Me.columnproductNumber = New Global.System.Data.DataColumn("productNumber", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnproductNumber)
+            Me.columnproductBusinessOwner = New Global.System.Data.DataColumn("productBusinessOwner", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnproductBusinessOwner)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnprodDetail_ID, Me.columnbName, Me.columninvoiceNumber}, true))
             Me.columninvoiceNumber.AllowDBNull = false
             Me.columnpQuantity.AllowDBNull = false
@@ -997,6 +1034,7 @@ Partial Public Class POSDataSet
             Me.columnprodDetail_ID.ReadOnly = true
             Me.columnbName.AllowDBNull = false
             Me.columnbName.MaxLength = 50
+            Me.columnproductBusinessOwner.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2018,6 +2056,7 @@ Partial Public Class POSDataSet
             Me.columncID = New Global.System.Data.DataColumn("cID", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncID)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columninvoiceNumber}, true))
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint2", New Global.System.Data.DataColumn() {Me.columninvoiceNumber, Me.columnbName}, false))
             Me.columninvoiceNumber.AutoIncrement = true
             Me.columninvoiceNumber.AutoIncrementSeed = -1
             Me.columninvoiceNumber.AutoIncrementStep = -1
@@ -2591,6 +2630,16 @@ Partial Public Class POSDataSet
         Public Sub SetpStockNull()
             Me(Me.tableproduct.pStockColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetproductDetailRows() As productDetailRow()
+            If (Me.Table.ChildRelations("product_productDetail") Is Nothing) Then
+                Return New productDetailRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("product_productDetail")),productDetailRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -2669,12 +2718,31 @@ Partial Public Class POSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property invoiceRow() As invoiceRow
+        Public Property productNumber() As Long
             Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("invoice_productDetail")),invoiceRow)
+                Try 
+                    Return CType(Me(Me.tableproductDetail.productNumberColumn),Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'productNumber' in table 'productDetail' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("invoice_productDetail"))
+                Me(Me.tableproductDetail.productNumberColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property productBusinessOwner() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableproductDetail.productBusinessOwnerColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'productBusinessOwner' in table 'productDetail' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableproductDetail.productBusinessOwnerColumn) = value
             End Set
         End Property
         
@@ -2691,6 +2759,28 @@ Partial Public Class POSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property invoiceRow() As invoiceRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("invoice_productDetail")),invoiceRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("invoice_productDetail"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property productRowParent() As productRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("product_productDetail")),productRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("product_productDetail"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IspSubtotalNull() As Boolean
             Return Me.IsNull(Me.tableproductDetail.pSubtotalColumn)
         End Function
@@ -2699,6 +2789,30 @@ Partial Public Class POSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetpSubtotalNull()
             Me(Me.tableproductDetail.pSubtotalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsproductNumberNull() As Boolean
+            Return Me.IsNull(Me.tableproductDetail.productNumberColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetproductNumberNull()
+            Me(Me.tableproductDetail.productNumberColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsproductBusinessOwnerNull() As Boolean
+            Return Me.IsNull(Me.tableproductDetail.productBusinessOwnerColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetproductBusinessOwnerNull()
+            Me(Me.tableproductDetail.productBusinessOwnerColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -3054,21 +3168,21 @@ Partial Public Class POSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function GetproductDetailRows() As productDetailRow()
-            If (Me.Table.ChildRelations("invoice_productDetail") Is Nothing) Then
-                Return New productDetailRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("invoice_productDetail")),productDetailRow())
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function GetproductDetailRowsByFK_productDetail_invoice() As productDetailRow()
             If (Me.Table.ChildRelations("FK_productDetail_invoice") Is Nothing) Then
                 Return New productDetailRow(-1) {}
             Else
                 Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("FK_productDetail_invoice")),productDetailRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function GetproductDetailRows() As productDetailRow()
+            If (Me.Table.ChildRelations("invoice_productDetail") Is Nothing) Then
+                Return New productDetailRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("invoice_productDetail")),productDetailRow())
             End If
         End Function
     End Class
@@ -3788,13 +3902,18 @@ Namespace POSDataSetTableAdapters
             tableMapping.ColumnMappings.Add("pSubtotal", "pSubtotal")
             tableMapping.ColumnMappings.Add("prodDetail_ID", "prodDetail_ID")
             tableMapping.ColumnMappings.Add("bName", "bName")
+            tableMapping.ColumnMappings.Add("productNumber", "productNumber")
+            tableMapping.ColumnMappings.Add("productBusinessOwner", "productBusinessOwner")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[productDetail] WHERE (([pQuantity] = @Original_pQuantity) AND "& _ 
-                "((@IsNull_pSubtotal = 1 AND [pSubtotal] IS NULL) OR ([pSubtotal] = @Original_pSu"& _ 
-                "btotal)) AND ([prodDetail_ID] = @Original_prodDetail_ID) AND ([bName] = @Origina"& _ 
-                "l_bName) AND ([invoiceNumber] = @Original_invoiceNumber))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [productDetail] WHERE (([pQuantity] = @Original_pQuantity) AND ((@IsN"& _ 
+                "ull_pSubtotal = 1 AND [pSubtotal] IS NULL) OR ([pSubtotal] = @Original_pSubtotal"& _ 
+                ")) AND ([prodDetail_ID] = @Original_prodDetail_ID) AND ([bName] = @Original_bNam"& _ 
+                "e) AND ([invoiceNumber] = @Original_invoiceNumber) AND ((@IsNull_productNumber ="& _ 
+                " 1 AND [productNumber] IS NULL) OR ([productNumber] = @Original_productNumber)) "& _ 
+                "AND ((@IsNull_productBusinessOwner = 1 AND [productBusinessOwner] IS NULL) OR (["& _ 
+                "productBusinessOwner] = @Original_productBusinessOwner)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_pQuantity", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pQuantity", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_pSubtotal", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pSubtotal", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -3802,39 +3921,56 @@ Namespace POSDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_prodDetail_ID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "prodDetail_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_bName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_invoiceNumber", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "invoiceNumber", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_productNumber", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productNumber", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_productNumber", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productNumber", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_productBusinessOwner", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productBusinessOwner", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_productBusinessOwner", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productBusinessOwner", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[productDetail] ([pQuantity], [pSubtotal], [bName], [invoiceNum"& _ 
-                "ber]) VALUES (@pQuantity, @pSubtotal, @bName, @invoiceNumber);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT pQuantity"& _ 
-                ", pSubtotal, prodDetail_ID, bName, invoiceNumber FROM productDetail WHERE (bName"& _ 
-                " = @bName) AND (invoiceNumber = @invoiceNumber) AND (prodDetail_ID = SCOPE_IDENT"& _ 
-                "ITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [productDetail] ([pQuantity], [pSubtotal], [bName], [invoiceNumber], "& _ 
+                "[productNumber], [productBusinessOwner]) VALUES (@pQuantity, @pSubtotal, @bName,"& _ 
+                " @invoiceNumber, @productNumber, @productBusinessOwner);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT pQuantity, pSub"& _ 
+                "total, prodDetail_ID, bName, invoiceNumber, productNumber, productBusinessOwner "& _ 
+                "FROM productDetail WHERE (bName = @bName) AND (invoiceNumber = @invoiceNumber) A"& _ 
+                "ND (prodDetail_ID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pQuantity", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pQuantity", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pSubtotal", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "pSubtotal", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@invoiceNumber", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "invoiceNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@productNumber", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@productBusinessOwner", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productBusinessOwner", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[productDetail] SET [pQuantity] = @pQuantity, [pSubtotal] = @pSubtot"& _ 
-                "al, [bName] = @bName, [invoiceNumber] = @invoiceNumber WHERE (([pQuantity] = @Or"& _ 
-                "iginal_pQuantity) AND ((@IsNull_pSubtotal = 1 AND [pSubtotal] IS NULL) OR ([pSub"& _ 
-                "total] = @Original_pSubtotal)) AND ([prodDetail_ID] = @Original_prodDetail_ID) A"& _ 
-                "ND ([bName] = @Original_bName) AND ([invoiceNumber] = @Original_invoiceNumber));"& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT pQuantity, pSubtotal, prodDetail_ID, bName, invoiceNumber FROM productD"& _ 
-                "etail WHERE (bName = @bName) AND (invoiceNumber = @invoiceNumber) AND (prodDetai"& _ 
-                "l_ID = @prodDetail_ID)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [productDetail] SET [pQuantity] = @pQuantity, [pSubtotal] = @pSubtotal, [b"& _ 
+                "Name] = @bName, [invoiceNumber] = @invoiceNumber, [productNumber] = @productNumb"& _ 
+                "er, [productBusinessOwner] = @productBusinessOwner WHERE (([pQuantity] = @Origin"& _ 
+                "al_pQuantity) AND ((@IsNull_pSubtotal = 1 AND [pSubtotal] IS NULL) OR ([pSubtota"& _ 
+                "l] = @Original_pSubtotal)) AND ([prodDetail_ID] = @Original_prodDetail_ID) AND ("& _ 
+                "[bName] = @Original_bName) AND ([invoiceNumber] = @Original_invoiceNumber) AND ("& _ 
+                "(@IsNull_productNumber = 1 AND [productNumber] IS NULL) OR ([productNumber] = @O"& _ 
+                "riginal_productNumber)) AND ((@IsNull_productBusinessOwner = 1 AND [productBusin"& _ 
+                "essOwner] IS NULL) OR ([productBusinessOwner] = @Original_productBusinessOwner))"& _ 
+                ");"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT pQuantity, pSubtotal, prodDetail_ID, bName, invoiceNumber, productNum"& _ 
+                "ber, productBusinessOwner FROM productDetail WHERE (bName = @bName) AND (invoice"& _ 
+                "Number = @invoiceNumber) AND (prodDetail_ID = @prodDetail_ID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pQuantity", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pQuantity", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pSubtotal", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "pSubtotal", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@invoiceNumber", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "invoiceNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@productNumber", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@productBusinessOwner", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productBusinessOwner", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_pQuantity", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pQuantity", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_pSubtotal", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pSubtotal", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_pSubtotal", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "pSubtotal", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_prodDetail_ID", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "prodDetail_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_bName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_invoiceNumber", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "invoiceNumber", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_productNumber", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productNumber", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_productNumber", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productNumber", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_productBusinessOwner", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productBusinessOwner", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_productBusinessOwner", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "productBusinessOwner", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@prodDetail_ID", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "prodDetail_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -3851,18 +3987,20 @@ Namespace POSDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT pQuantity, pSubtotal, prodDetail_ID, bName, invoiceNumber FROM productDeta"& _ 
-                "il"
+            Me._commandCollection(0).CommandText = "SELECT * FROM productDetail"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "INSERT INTO productDetail"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (pQuantity, pSubtotal, bName, invoic"& _ 
-                "eNumber)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@pQuantity,@pSubtotal,@bName,@invoiceNumber)"
+                "eNumber, productNumber, productBusinessOwner)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (@pQuantity,@pSubtotal,@bN"& _ 
+                "ame,@invoiceNumber,@productNumber,@productBusinessOwner)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pQuantity", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "pQuantity", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pSubtotal", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "pSubtotal", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@invoiceNumber", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "invoiceNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@productNumber", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "productNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@productBusinessOwner", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "productBusinessOwner", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3921,7 +4059,7 @@ Namespace POSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function newProductLineFinal(ByVal pQuantity As Integer, ByVal pSubtotal As Global.System.Nullable(Of Decimal), ByVal bName As String, ByVal invoiceNumber As Long) As Integer
+        Public Overloads Overridable Function newProductLine(ByVal pQuantity As Integer, ByVal pSubtotal As Global.System.Nullable(Of Decimal), ByVal bName As String, ByVal invoiceNumber As Long, ByVal productNumber As Global.System.Nullable(Of Long), ByVal productBusinessOwner As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
             command.Parameters(0).Value = CType(pQuantity,Integer)
             If (pSubtotal.HasValue = true) Then
@@ -3935,6 +4073,16 @@ Namespace POSDataSetTableAdapters
                 command.Parameters(2).Value = CType(bName,String)
             End If
             command.Parameters(3).Value = CType(invoiceNumber,Long)
+            If (productNumber.HasValue = true) Then
+                command.Parameters(4).Value = CType(productNumber.Value,Long)
+            Else
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (productBusinessOwner Is Nothing) Then
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(5).Value = CType(productBusinessOwner,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5542,21 +5690,21 @@ Namespace POSDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._invoiceTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.invoice.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._invoiceTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._productTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.product.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._productTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._invoiceTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.invoice.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._invoiceTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -5604,19 +5752,19 @@ Namespace POSDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._invoiceTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.invoice.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._invoiceTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._productTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.product.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._productTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._invoiceTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.invoice.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._invoiceTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -5662,19 +5810,19 @@ Namespace POSDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._productTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.product.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._productTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._invoiceTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.invoice.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._invoiceTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._productTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.product.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._productTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If

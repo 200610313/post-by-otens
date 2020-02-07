@@ -67,7 +67,7 @@
         Dim adapter As New POSDataSetTableAdapters.productDetailTableAdapter
         For Each shoppingcartitem In RegisterTab.shoppingCartItems
             'insert row in product detail
-            adapter.newProductLineFinal(shoppingcartitem.getShoppingCartCount, shoppingcartitem.getShoppingCartSubtotal, RegisterTab.loggedInBusinessName, InvoiceNumber)
+            adapter.newProductLine(shoppingcartitem.getShoppingCartCount, shoppingcartitem.getShoppingCartSubtotal, RegisterTab.loggedInBusinessName, InvoiceNumber, shoppingcartitem.getProdNum, RegisterTab.loggedInBusinessName)
         Next
     End Sub
     'And then correct renders in products list
