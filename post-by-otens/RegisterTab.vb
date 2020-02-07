@@ -99,7 +99,7 @@
         updateProductsView()
     End Sub
 
-    Private Sub BunifuTileButton4_Click(sender As Object, e As EventArgs) Handles BunifuTileButton4.Click
+    Private Sub BunifuTileButton4_Click(sender As Object, e As EventArgs) Handles confirm.Click
         If shoppingCartItems.Count <> 0 Then
             registerCustomer("Sergio", "Ramos", "A", "Butuan", "Bagumbayan", "7000", "09267052345")
         End If
