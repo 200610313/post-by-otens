@@ -31,10 +31,6 @@
         Next
     End Sub
 
-    Private Sub amtReceivedKeyPress(sender As Object, e As EventArgs) Handles amtRecvd.KeyPress
-        validateInput(e)
-    End Sub
-
     Private Sub validateInput(ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If (Asc(e.KeyChar) >= 48 And Asc(e.KeyChar) <= 57) Or Asc(e.KeyChar) = 8 Or Asc(e.KeyChar) = 46 Then
         Else
@@ -98,10 +94,24 @@
     Private Sub BunifuMaterialTextbox1_OnValueChanged(sender As Object, e As EventArgs) Handles searchBox.OnValueChanged
         updateProductsView()
     End Sub
-
+    'Saves to database but does not produce invoice form
     Private Sub BunifuTileButton4_Click(sender As Object, e As EventArgs) Handles confirm.Click
         If shoppingCartItems.Count <> 0 Then
-            registerCustomer("Sergio", "Ramos", "A", "Butuan", "Bagumbayan", "7000", "09267052345")
+            'registerCustomer("", "", "", "", "", "", "")
+            resetView()
         End If
+    End Sub
+
+    Private Sub confirmWreceipt_Click(sender As Object, e As EventArgs) Handles confirmWreceipt.Click
+        Dim crf As New custRegistrationForm
+
+        'registerCustomer("", "", "", "", "", "", "")
+        'resetView()
+    End Sub
+
+    Private Sub resetView()
+        Me.shoppingCartItems = New List(Of shoppingCartItem)
+        shoppingCart_flow.Controls.Clear()
+        updateTotals()
     End Sub
 End Class

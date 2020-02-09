@@ -95,6 +95,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="custRegistrationForm.Designer.vb">
+      <DependentUpon>custRegistrationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="custRegistrationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="POSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +146,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="custRegistrationForm.resx">
+      <DependentUpon>custRegistrationForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="RegisterTab.resx">
       <DependentUpon>RegisterTab.vb</DependentUpon>
@@ -260,6 +269,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8_ok_48px.png" />
     <None Include="Resources\icons8-password-26.png" />
     <None Include="Resources\icons8-user-301.png" />
     <None Include="Resources\icons8-user-30.png" />

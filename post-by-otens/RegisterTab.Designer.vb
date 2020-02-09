@@ -26,6 +26,8 @@ Partial Class RegisterTab
         Me.windowShape = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.register_pnl = New System.Windows.Forms.Panel()
         Me.shoppingCard_pnl = New System.Windows.Forms.Panel()
+        Me.void = New Bunifu.Framework.UI.BunifuTileButton()
+        Me.confirmWreceipt = New Bunifu.Framework.UI.BunifuTileButton()
         Me.confirm = New Bunifu.Framework.UI.BunifuTileButton()
         Me.BunifuCards1 = New Bunifu.Framework.UI.BunifuCards()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -48,8 +50,6 @@ Partial Class RegisterTab
         Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.void = New Bunifu.Framework.UI.BunifuTileButton()
-        Me.confirmWreceipt = New Bunifu.Framework.UI.BunifuTileButton()
         Me.register_pnl.SuspendLayout()
         Me.shoppingCard_pnl.SuspendLayout()
         Me.BunifuCards1.SuspendLayout()
@@ -87,6 +87,44 @@ Partial Class RegisterTab
         Me.shoppingCard_pnl.Name = "shoppingCard_pnl"
         Me.shoppingCard_pnl.Size = New System.Drawing.Size(536, 665)
         Me.shoppingCard_pnl.TabIndex = 1
+        '
+        'void
+        '
+        Me.void.BackColor = System.Drawing.Color.Brown
+        Me.void.color = System.Drawing.Color.Brown
+        Me.void.colorActive = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.void.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.void.Font = New System.Drawing.Font("Roboto Lt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.void.ForeColor = System.Drawing.Color.White
+        Me.void.Image = Nothing
+        Me.void.ImagePosition = 22
+        Me.void.ImageZoom = 50
+        Me.void.LabelPosition = 60
+        Me.void.LabelText = "VOID"
+        Me.void.Location = New System.Drawing.Point(9, 624)
+        Me.void.Margin = New System.Windows.Forms.Padding(6)
+        Me.void.Name = "void"
+        Me.void.Size = New System.Drawing.Size(516, 48)
+        Me.void.TabIndex = 1
+        '
+        'confirmWreceipt
+        '
+        Me.confirmWreceipt.BackColor = System.Drawing.Color.SeaGreen
+        Me.confirmWreceipt.color = System.Drawing.Color.SeaGreen
+        Me.confirmWreceipt.colorActive = System.Drawing.Color.MediumSeaGreen
+        Me.confirmWreceipt.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.confirmWreceipt.Font = New System.Drawing.Font("Roboto Lt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.confirmWreceipt.ForeColor = System.Drawing.Color.White
+        Me.confirmWreceipt.Image = Nothing
+        Me.confirmWreceipt.ImagePosition = 21
+        Me.confirmWreceipt.ImageZoom = 50
+        Me.confirmWreceipt.LabelPosition = 80
+        Me.confirmWreceipt.LabelText = "CONFRM + INVOICE"
+        Me.confirmWreceipt.Location = New System.Drawing.Point(265, 490)
+        Me.confirmWreceipt.Margin = New System.Windows.Forms.Padding(6)
+        Me.confirmWreceipt.Name = "confirmWreceipt"
+        Me.confirmWreceipt.Size = New System.Drawing.Size(260, 134)
+        Me.confirmWreceipt.TabIndex = 1
         '
         'confirm
         '
@@ -353,44 +391,6 @@ Partial Class RegisterTab
         Me.PictureBox1.Size = New System.Drawing.Size(24, 26)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'void
-        '
-        Me.void.BackColor = System.Drawing.Color.Brown
-        Me.void.color = System.Drawing.Color.Brown
-        Me.void.colorActive = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.void.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.void.Font = New System.Drawing.Font("Roboto Lt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.void.ForeColor = System.Drawing.Color.White
-        Me.void.Image = Nothing
-        Me.void.ImagePosition = 22
-        Me.void.ImageZoom = 50
-        Me.void.LabelPosition = 60
-        Me.void.LabelText = "VOID"
-        Me.void.Location = New System.Drawing.Point(9, 624)
-        Me.void.Margin = New System.Windows.Forms.Padding(6)
-        Me.void.Name = "void"
-        Me.void.Size = New System.Drawing.Size(516, 41)
-        Me.void.TabIndex = 1
-        '
-        'confirmWreceipt
-        '
-        Me.confirmWreceipt.BackColor = System.Drawing.Color.SeaGreen
-        Me.confirmWreceipt.color = System.Drawing.Color.SeaGreen
-        Me.confirmWreceipt.colorActive = System.Drawing.Color.MediumSeaGreen
-        Me.confirmWreceipt.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.confirmWreceipt.Font = New System.Drawing.Font("Roboto Lt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.confirmWreceipt.ForeColor = System.Drawing.Color.White
-        Me.confirmWreceipt.Image = Nothing
-        Me.confirmWreceipt.ImagePosition = 21
-        Me.confirmWreceipt.ImageZoom = 50
-        Me.confirmWreceipt.LabelPosition = 80
-        Me.confirmWreceipt.LabelText = "CONFIRM"
-        Me.confirmWreceipt.Location = New System.Drawing.Point(265, 490)
-        Me.confirmWreceipt.Margin = New System.Windows.Forms.Padding(6)
-        Me.confirmWreceipt.Name = "confirmWreceipt"
-        Me.confirmWreceipt.Size = New System.Drawing.Size(260, 134)
-        Me.confirmWreceipt.TabIndex = 1
         '
         'RegisterTab
         '
