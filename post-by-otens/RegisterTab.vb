@@ -97,16 +97,14 @@
     'Saves to database but does not produce invoice form
     Private Sub BunifuTileButton4_Click(sender As Object, e As EventArgs) Handles confirm.Click
         If shoppingCartItems.Count <> 0 Then
-            'registerCustomer("", "", "", "", "", "", "")
+            registerCustomer("", "", "", "", "", "", "")
             resetView()
         End If
     End Sub
 
     Private Sub confirmWreceipt_Click(sender As Object, e As EventArgs) Handles confirmWreceipt.Click
         Dim crf As New custRegistrationForm
-
-        'registerCustomer("", "", "", "", "", "", "")
-        'resetView()
+        resetView()
     End Sub
 
     Private Sub resetView()

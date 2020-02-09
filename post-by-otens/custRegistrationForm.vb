@@ -19,17 +19,22 @@ Public Class custRegistrationForm
         If String.IsNullOrEmpty(phone.Text) Or Not IsNumeric(phone.Text) Or phone.Text.Length <> 11 Then
             phone.LineFocusedColor = Color.FromArgb(192, 255, 192)
             phone.LineIdleColor = Color.FromArgb(255, 128, 128)
-            MessageBox.Show(phone.LineIdleColor.ToString)
+
             phone.LineMouseHoverColor = Color.FromArgb(255, 128, 128)
         Else
             phone.LineFocusedColor = Color.FromArgb(192, 255, 192)
             phone.LineIdleColor = Color.FromArgb(192, 255, 192)
-            MessageBox.Show(phone.LineIdleColor.ToString)
+
             phone.LineMouseHoverColor = Color.FromArgb(192, 255, 192)
         End If
     End Sub
 
     Private Sub submitbutton_Click(sender As Object, e As EventArgs) Handles submitbutton.Click
+        If fN.LineIdleColor <> Color.FromArgb(192, 255, 192) Or mI.LineIdleColor <> Color.FromArgb(192, 255, 192) Or lN.LineIdleColor <> Color.FromArgb(192, 255, 192) Or city.LineIdleColor <> Color.FromArgb(192, 255, 192) Or state.LineIdleColor <> Color.FromArgb(192, 255, 192) Or zip.LineIdleColor <> Color.FromArgb(192, 255, 192) Or phone.LineIdleColor <> Color.FromArgb(192, 255, 192) Then
+        Else
+            registerCustomer(fN.Text, lN.Text, mI.Text, city.Text, state.Text, zip.Text, phone.Text)
+            Me.Close()
+        End If
     End Sub
 
     Public Sub New()
