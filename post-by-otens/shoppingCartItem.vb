@@ -15,7 +15,6 @@
         Me.shoppingCartIsIncluded = True
         Me.prodItem = prodItem
         updateVisuals()
-
     End Sub
     Function getShoppingCartCount() As Integer
         Return shoppingCartCount

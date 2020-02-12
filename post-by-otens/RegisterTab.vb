@@ -1,4 +1,5 @@
-﻿Public Class RegisterTab
+﻿Imports System.Drawing.Text
+Public Class RegisterTab
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
     Public loggedInBusinessName As String
@@ -98,18 +99,31 @@
     Private Sub BunifuTileButton4_Click(sender As Object, e As EventArgs) Handles confirm.Click
         If shoppingCartItems.Count <> 0 Then
             registerCustomer("", "", "", "", "", "", "")
+            updateDBStock()
             resetView()
         End If
     End Sub
 
     Private Sub confirmWreceipt_Click(sender As Object, e As EventArgs) Handles confirmWreceipt.Click
-        Dim crf As New custRegistrationForm
-        resetView()
+        If shoppingCartItems.Count <> 0 Then
+            Dim crf As New custRegistrationForm
+            updateDBStock()
+            resetView()
+        End If
     End Sub
 
     Private Sub resetView()
         Me.shoppingCartItems = New List(Of shoppingCartItem)
         shoppingCart_flow.Controls.Clear()
+        products = New List(Of product)
+        loadProducts()
         updateTotals()
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Me.shoppingCartItems = New List(Of shoppingCartItem)
+        shoppingCart_flow.Controls.Clear()
+        products = New List(Of product)
+        loadProducts()
     End Sub
 End Class

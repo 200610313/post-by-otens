@@ -87,30 +87,34 @@
     End Property
 #End Region
     Private Sub add_btn_Click(sender As Object, e As EventArgs) Handles add_btn.Click
-        'If not yed added to shopping cart, add it.
-        If Not shoppingCartIsIncluded Then
-            decrementVisualStock()
-            shoppingCartIsIncluded = True
-            shoppingCartCount = +1
-
-            'Make new shopping cart item
-            item = New shoppingCartItem(Me.prodName, Me.prodNum, Me.shoppingCartCount, Me.shoppingCartSubtotal, Me)
-
-            item.ShoppingCart_Count = shoppingCartCount 'update count on shopping cart
-            item.ShoppingCart_Subtotal = CDbl(Val(shoppingCartCount * prodPrice)) 'update subtotal on shopping cart
-
-            'Add to shopping cart view
-            RegisterTab.addToShoppingCart(item)
-            RegisterTab.updateTotals()
-        Else
-            If shoppingCartCount + 1 <= prodStock Then
+        If prodStock > 0 Then
+            'If not yed added to shopping cart, add it.
+            If Not shoppingCartIsIncluded Then
                 decrementVisualStock()
-                shoppingCartCount = shoppingCartCount + 1
+                shoppingCartIsIncluded = True
+                shoppingCartCount = +1
+
+                'Make new shopping cart item
+                item = New shoppingCartItem(Me.prodName, Me.prodNum, Me.shoppingCartCount, Me.shoppingCartSubtotal, Me)
+
                 item.ShoppingCart_Count = shoppingCartCount 'update count on shopping cart
                 item.ShoppingCart_Subtotal = CDbl(Val(shoppingCartCount * prodPrice)) 'update subtotal on shopping cart
+
+                'Add to shopping cart view
+                RegisterTab.addToShoppingCart(item)
                 RegisterTab.updateTotals()
+            Else
+                If shoppingCartCount + 1 <= prodStock Then
+                    decrementVisualStock()
+                    shoppingCartCount = shoppingCartCount + 1
+                    item.ShoppingCart_Count = shoppingCartCount 'update count on shopping cart
+                    item.ShoppingCart_Subtotal = CDbl(Val(shoppingCartCount * prodPrice)) 'update subtotal on shopping cart
+                    RegisterTab.updateTotals()
+                End If
             End If
         End If
+
+
     End Sub
     Private Sub decrement_btn_Click(sender As Object, e As EventArgs) Handles decrement_btn.Click
         If shoppingCartCount - 1 > 0 Then
@@ -124,17 +128,20 @@
         End If
     End Sub
     Public Sub tryRemoveFromShoppingCart()
-        item.ShoppingCart_Count = 0
-        If item.ShoppingCart_Count = 0 Then
-            shoppingCartIsIncluded = False
-            item.Is_InShoppingCart = False
+        If shoppingCartIsIncluded Then
+            item.ShoppingCart_Count = 0
+            If item.ShoppingCart_Count = 0 Then
+                shoppingCartIsIncluded = False
+                item.Is_InShoppingCart = False
 
-            visualProductStock = prodStock
-            pStock.Text = visualProductStock.ToString + " left" 'Update label
-            pStock.ForeColor = Color.FromArgb(192, 255, 192)
-            RegisterTab.removeFromShoppingCart(item.Product_Number) 'get its index from the list
-            RegisterTab.updateTotals()
+                visualProductStock = prodStock
+                pStock.Text = visualProductStock.ToString + " left" 'Update label
+                pStock.ForeColor = Color.FromArgb(192, 255, 192)
+                RegisterTab.removeFromShoppingCart(item.Product_Number) 'get its index from the list
+                RegisterTab.updateTotals()
+            End If
         End If
+
     End Sub
     Private Sub decrementVisualStock()
         visualProductStock = visualProductStock - 1 'Decrement visual stock

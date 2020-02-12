@@ -27,14 +27,11 @@ Partial Class RegisterTab
         Me.register_pnl = New System.Windows.Forms.Panel()
         Me.shoppingCard_pnl = New System.Windows.Forms.Panel()
         Me.void = New Bunifu.Framework.UI.BunifuTileButton()
-        Me.confirmWreceipt = New Bunifu.Framework.UI.BunifuTileButton()
-        Me.confirm = New Bunifu.Framework.UI.BunifuTileButton()
         Me.BunifuCards1 = New Bunifu.Framework.UI.BunifuCards()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.shoppingCart_flow = New System.Windows.Forms.FlowLayoutPanel()
         Me.product_pnl = New System.Windows.Forms.Panel()
         Me.searchBox = New Bunifu.Framework.UI.BunifuMaterialTextbox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.totals = New System.Windows.Forms.Panel()
         Me.card = New Bunifu.Framework.UI.BunifuCards()
@@ -47,19 +44,24 @@ Partial Class RegisterTab
         Me.changeAmt = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.totalAmt = New System.Windows.Forms.Label()
-        Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.confirmWreceipt = New Bunifu.Framework.UI.BunifuTileButton()
+        Me.confirm = New Bunifu.Framework.UI.BunifuTileButton()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.register_pnl.SuspendLayout()
         Me.shoppingCard_pnl.SuspendLayout()
         Me.BunifuCards1.SuspendLayout()
         Me.product_pnl.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.totals.SuspendLayout()
         Me.card.SuspendLayout()
-        CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'windowShape
@@ -90,16 +92,16 @@ Partial Class RegisterTab
         '
         'void
         '
-        Me.void.BackColor = System.Drawing.Color.Brown
-        Me.void.color = System.Drawing.Color.Brown
-        Me.void.colorActive = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.void.BackColor = System.Drawing.Color.DarkGray
+        Me.void.color = System.Drawing.Color.DarkGray
+        Me.void.colorActive = System.Drawing.Color.Silver
         Me.void.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.void.Font = New System.Drawing.Font("Roboto Lt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.void.Font = New System.Drawing.Font("Open Sans Light", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.void.ForeColor = System.Drawing.Color.White
         Me.void.Image = Nothing
-        Me.void.ImagePosition = 22
+        Me.void.ImagePosition = 15
         Me.void.ImageZoom = 50
-        Me.void.LabelPosition = 60
+        Me.void.LabelPosition = 41
         Me.void.LabelText = "VOID"
         Me.void.Location = New System.Drawing.Point(9, 624)
         Me.void.Margin = New System.Windows.Forms.Padding(6)
@@ -107,50 +109,13 @@ Partial Class RegisterTab
         Me.void.Size = New System.Drawing.Size(516, 48)
         Me.void.TabIndex = 1
         '
-        'confirmWreceipt
-        '
-        Me.confirmWreceipt.BackColor = System.Drawing.Color.SeaGreen
-        Me.confirmWreceipt.color = System.Drawing.Color.SeaGreen
-        Me.confirmWreceipt.colorActive = System.Drawing.Color.MediumSeaGreen
-        Me.confirmWreceipt.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.confirmWreceipt.Font = New System.Drawing.Font("Roboto Lt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.confirmWreceipt.ForeColor = System.Drawing.Color.White
-        Me.confirmWreceipt.Image = Nothing
-        Me.confirmWreceipt.ImagePosition = 21
-        Me.confirmWreceipt.ImageZoom = 50
-        Me.confirmWreceipt.LabelPosition = 80
-        Me.confirmWreceipt.LabelText = "CONFRM + INVOICE"
-        Me.confirmWreceipt.Location = New System.Drawing.Point(265, 490)
-        Me.confirmWreceipt.Margin = New System.Windows.Forms.Padding(6)
-        Me.confirmWreceipt.Name = "confirmWreceipt"
-        Me.confirmWreceipt.Size = New System.Drawing.Size(260, 134)
-        Me.confirmWreceipt.TabIndex = 1
-        '
-        'confirm
-        '
-        Me.confirm.BackColor = System.Drawing.Color.SeaGreen
-        Me.confirm.color = System.Drawing.Color.SeaGreen
-        Me.confirm.colorActive = System.Drawing.Color.MediumSeaGreen
-        Me.confirm.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.confirm.Font = New System.Drawing.Font("Roboto Lt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.confirm.ForeColor = System.Drawing.Color.White
-        Me.confirm.Image = Nothing
-        Me.confirm.ImagePosition = 21
-        Me.confirm.ImageZoom = 50
-        Me.confirm.LabelPosition = 80
-        Me.confirm.LabelText = "CONFIRM"
-        Me.confirm.Location = New System.Drawing.Point(9, 490)
-        Me.confirm.Margin = New System.Windows.Forms.Padding(6)
-        Me.confirm.Name = "confirm"
-        Me.confirm.Size = New System.Drawing.Size(256, 134)
-        Me.confirm.TabIndex = 1
-        '
         'BunifuCards1
         '
         Me.BunifuCards1.BackColor = System.Drawing.Color.White
         Me.BunifuCards1.BorderRadius = 5
         Me.BunifuCards1.BottomSahddow = True
         Me.BunifuCards1.color = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.BunifuCards1.Controls.Add(Me.PictureBox3)
         Me.BunifuCards1.Controls.Add(Me.Label7)
         Me.BunifuCards1.Controls.Add(Me.shoppingCart_flow)
         Me.BunifuCards1.LeftSahddow = False
@@ -207,7 +172,7 @@ Partial Class RegisterTab
         Me.searchBox.LineIdleColor = System.Drawing.Color.Gray
         Me.searchBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.searchBox.LineThickness = 3
-        Me.searchBox.Location = New System.Drawing.Point(382, -1)
+        Me.searchBox.Location = New System.Drawing.Point(382, 5)
         Me.searchBox.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.searchBox.MaxLength = 32767
         Me.searchBox.Name = "searchBox"
@@ -215,22 +180,11 @@ Partial Class RegisterTab
         Me.searchBox.TabIndex = 4
         Me.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox4.Image = Global.post_by_otens.My.Resources.Resources.icons8_search_50px
-        Me.PictureBox4.Location = New System.Drawing.Point(343, 0)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(32, 29)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 3
-        Me.PictureBox4.TabStop = False
-        '
         'FlowLayoutPanel1
         '
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(11, 31)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(11, 52)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(965, 460)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(965, 439)
         Me.FlowLayoutPanel1.TabIndex = 1
         '
         'totals
@@ -372,6 +326,65 @@ Partial Class RegisterTab
         Me.totalAmt.TabIndex = 1
         Me.totalAmt.Text = "0"
         '
+        'confirmWreceipt
+        '
+        Me.confirmWreceipt.BackColor = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.confirmWreceipt.color = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.confirmWreceipt.colorActive = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(245, Byte), Integer))
+        Me.confirmWreceipt.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.confirmWreceipt.Font = New System.Drawing.Font("Open Sans Light", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.confirmWreceipt.ForeColor = System.Drawing.Color.White
+        Me.confirmWreceipt.Image = Global.post_by_otens.My.Resources.Resources.icons8_cash_register_32px2
+        Me.confirmWreceipt.ImagePosition = 50
+        Me.confirmWreceipt.ImageZoom = 20
+        Me.confirmWreceipt.LabelPosition = 90
+        Me.confirmWreceipt.LabelText = "CONFRM + INVOICE"
+        Me.confirmWreceipt.Location = New System.Drawing.Point(265, 490)
+        Me.confirmWreceipt.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
+        Me.confirmWreceipt.Name = "confirmWreceipt"
+        Me.confirmWreceipt.Size = New System.Drawing.Size(260, 217)
+        Me.confirmWreceipt.TabIndex = 1
+        '
+        'confirm
+        '
+        Me.confirm.BackColor = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.confirm.color = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.confirm.colorActive = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(245, Byte), Integer))
+        Me.confirm.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.confirm.Font = New System.Drawing.Font("Open Sans Light", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.confirm.ForeColor = System.Drawing.Color.White
+        Me.confirm.Image = Global.post_by_otens.My.Resources.Resources.norecepticons8_cash_register_32px
+        Me.confirm.ImagePosition = 50
+        Me.confirm.ImageZoom = 20
+        Me.confirm.LabelPosition = 90
+        Me.confirm.LabelText = "Register"
+        Me.confirm.Location = New System.Drawing.Point(9, 490)
+        Me.confirm.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
+        Me.confirm.Name = "confirm"
+        Me.confirm.Size = New System.Drawing.Size(256, 217)
+        Me.confirm.TabIndex = 1
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.post_by_otens.My.Resources.Resources.icons8_multiply_32px
+        Me.PictureBox3.Location = New System.Drawing.Point(497, 14)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox3.TabIndex = 3
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox4.Image = Global.post_by_otens.My.Resources.Resources.icons8_search_50px
+        Me.PictureBox4.Location = New System.Drawing.Point(343, 6)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(32, 29)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 3
+        Me.PictureBox4.TabStop = False
+        '
         'PictureBox2
         '
         Me.PictureBox2.BackgroundImage = Global.post_by_otens.My.Resources.Resources.icons8_filled_circle_30px_3
@@ -411,13 +424,14 @@ Partial Class RegisterTab
         Me.BunifuCards1.ResumeLayout(False)
         Me.BunifuCards1.PerformLayout()
         Me.product_pnl.ResumeLayout(False)
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.totals.ResumeLayout(False)
         Me.card.ResumeLayout(False)
         Me.card.PerformLayout()
-        CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -449,4 +463,5 @@ Partial Class RegisterTab
     Friend WithEvents TableBindingSource As BindingSource
     Friend WithEvents void As Bunifu.Framework.UI.BunifuTileButton
     Friend WithEvents confirmWreceipt As Bunifu.Framework.UI.BunifuTileButton
+    Friend WithEvents PictureBox3 As PictureBox
 End Class

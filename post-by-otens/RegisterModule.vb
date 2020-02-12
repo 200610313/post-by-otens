@@ -71,4 +71,11 @@
         Next
     End Sub
     'And then correct renders in products list
+
+    Public Sub updateDBStock()
+        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
+        For Each shoppingCartItem In RegisterTab.shoppingCartItems
+            adapter.decrementStock(shoppingCartItem.getShoppingCartCount, RegisterTab.loggedInBusinessName, shoppingCartItem.getProdNum)
+        Next
+    End Sub
 End Module

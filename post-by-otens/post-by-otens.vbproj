@@ -177,6 +177,22 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <EmbeddedResource Include="Resources\Roboto-Black.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-BlackItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-BoldCondensed.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-BoldCondensedItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-BoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Condensed.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-CondensedItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Italic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Light.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-LightItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-MediumItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Thin.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-ThinItalic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="POSDataSet.xsc">
@@ -190,6 +206,10 @@
     <None Include="POSDataSet.xss">
       <DependentUpon>POSDataSet.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="Resources\GOTHIC.TTF" />
+    <EmbeddedResource Include="Resources\GOTHICB.TTF" />
+    <EmbeddedResource Include="Resources\GOTHICBI.TTF" />
+    <EmbeddedResource Include="Resources\GOTHICI.TTF" />
     <None Include="Resources\icons8_filled_circle_16px.png" />
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +228,16 @@
     <None Include="Resources\icons8_filled_circle_30px1.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\OpenSans-Bold.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-BoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-ExtraBold.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-ExtraBoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-Italic.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-Light.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-LightItalic.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-Regular.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-Semibold.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-SemiboldItalic.ttf" />
     <None Include="Resources\pos21.JPG" />
   </ItemGroup>
   <ItemGroup>
@@ -269,6 +299,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8_cash_register_32px2.png" />
+    <None Include="Resources\norecepticons8_cash_register_32px.png" />
+    <None Include="Resources\icons8_cash_register_32px1.png" />
+    <None Include="Resources\icons8_multiply_32px.png" />
+    <None Include="Resources\icons8_multiply_16px.png" />
     <None Include="Resources\icons8_ok_48px.png" />
     <None Include="Resources\icons8-password-26.png" />
     <None Include="Resources\icons8-user-301.png" />
