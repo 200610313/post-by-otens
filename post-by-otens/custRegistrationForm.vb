@@ -37,6 +37,11 @@ Public Class custRegistrationForm
         End If
     End Sub
 
+
+    Private Sub custRegistrationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
     Public Sub New()
         Me.Show()
         ' This call is required by the designer.

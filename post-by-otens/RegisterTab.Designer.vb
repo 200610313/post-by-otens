@@ -27,38 +27,38 @@ Partial Class RegisterTab
         Me.register_pnl = New System.Windows.Forms.Panel()
         Me.shoppingCard_pnl = New System.Windows.Forms.Panel()
         Me.void = New Bunifu.Framework.UI.BunifuTileButton()
+        Me.confirmWreceipt = New Bunifu.Framework.UI.BunifuTileButton()
+        Me.confirm = New Bunifu.Framework.UI.BunifuTileButton()
         Me.BunifuCards1 = New Bunifu.Framework.UI.BunifuCards()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.shoppingCart_flow = New System.Windows.Forms.FlowLayoutPanel()
         Me.product_pnl = New System.Windows.Forms.Panel()
         Me.searchBox = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.totals = New System.Windows.Forms.Panel()
         Me.card = New Bunifu.Framework.UI.BunifuCards()
         Me.amtRecvd = New Bunifu.Framework.UI.BunifuMetroTextbox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.change = New System.Windows.Forms.Label()
+        Me.amountreceived = New System.Windows.Forms.Label()
+        Me.total = New System.Windows.Forms.Label()
+        Me.php = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.changeAmt = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.phptotal = New System.Windows.Forms.Label()
         Me.totalAmt = New System.Windows.Forms.Label()
-        Me.confirmWreceipt = New Bunifu.Framework.UI.BunifuTileButton()
-        Me.confirm = New Bunifu.Framework.UI.BunifuTileButton()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.register_pnl.SuspendLayout()
         Me.shoppingCard_pnl.SuspendLayout()
         Me.BunifuCards1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.product_pnl.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.totals.SuspendLayout()
         Me.card.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,6 +109,44 @@ Partial Class RegisterTab
         Me.void.Size = New System.Drawing.Size(516, 48)
         Me.void.TabIndex = 1
         '
+        'confirmWreceipt
+        '
+        Me.confirmWreceipt.BackColor = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.confirmWreceipt.color = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.confirmWreceipt.colorActive = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(245, Byte), Integer))
+        Me.confirmWreceipt.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.confirmWreceipt.Font = New System.Drawing.Font("Open Sans Light", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.confirmWreceipt.ForeColor = System.Drawing.Color.White
+        Me.confirmWreceipt.Image = Global.post_by_otens.My.Resources.Resources.icons8_cash_register_32px2
+        Me.confirmWreceipt.ImagePosition = 50
+        Me.confirmWreceipt.ImageZoom = 20
+        Me.confirmWreceipt.LabelPosition = 90
+        Me.confirmWreceipt.LabelText = "CONFRM + INVOICE"
+        Me.confirmWreceipt.Location = New System.Drawing.Point(265, 490)
+        Me.confirmWreceipt.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
+        Me.confirmWreceipt.Name = "confirmWreceipt"
+        Me.confirmWreceipt.Size = New System.Drawing.Size(260, 217)
+        Me.confirmWreceipt.TabIndex = 1
+        '
+        'confirm
+        '
+        Me.confirm.BackColor = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.confirm.color = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.confirm.colorActive = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(245, Byte), Integer))
+        Me.confirm.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.confirm.Font = New System.Drawing.Font("Open Sans Light", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.confirm.ForeColor = System.Drawing.Color.White
+        Me.confirm.Image = Global.post_by_otens.My.Resources.Resources.norecepticons8_cash_register_32px
+        Me.confirm.ImagePosition = 50
+        Me.confirm.ImageZoom = 20
+        Me.confirm.LabelPosition = 90
+        Me.confirm.LabelText = "Register"
+        Me.confirm.Location = New System.Drawing.Point(9, 490)
+        Me.confirm.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
+        Me.confirm.Name = "confirm"
+        Me.confirm.Size = New System.Drawing.Size(256, 217)
+        Me.confirm.TabIndex = 1
+        '
         'BunifuCards1
         '
         Me.BunifuCards1.BackColor = System.Drawing.Color.White
@@ -125,6 +163,16 @@ Partial Class RegisterTab
         Me.BunifuCards1.ShadowDepth = 20
         Me.BunifuCards1.Size = New System.Drawing.Size(536, 491)
         Me.BunifuCards1.TabIndex = 0
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.post_by_otens.My.Resources.Resources.icons8_multiply_32px
+        Me.PictureBox3.Location = New System.Drawing.Point(497, 14)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox3.TabIndex = 3
+        Me.PictureBox3.TabStop = False
         '
         'Label7
         '
@@ -180,6 +228,17 @@ Partial Class RegisterTab
         Me.searchBox.TabIndex = 4
         Me.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox4.Image = Global.post_by_otens.My.Resources.Resources.icons8_search_50px
+        Me.PictureBox4.Location = New System.Drawing.Point(343, 6)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(32, 29)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 3
+        Me.PictureBox4.TabStop = False
+        '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(11, 52)
@@ -202,13 +261,13 @@ Partial Class RegisterTab
         Me.card.BottomSahddow = True
         Me.card.color = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.card.Controls.Add(Me.amtRecvd)
-        Me.card.Controls.Add(Me.Label4)
-        Me.card.Controls.Add(Me.Label3)
-        Me.card.Controls.Add(Me.Label1)
-        Me.card.Controls.Add(Me.Label2)
+        Me.card.Controls.Add(Me.change)
+        Me.card.Controls.Add(Me.amountreceived)
+        Me.card.Controls.Add(Me.total)
+        Me.card.Controls.Add(Me.php)
         Me.card.Controls.Add(Me.Label6)
         Me.card.Controls.Add(Me.changeAmt)
-        Me.card.Controls.Add(Me.Label5)
+        Me.card.Controls.Add(Me.phptotal)
         Me.card.Controls.Add(Me.totalAmt)
         Me.card.LeftSahddow = False
         Me.card.Location = New System.Drawing.Point(11, 3)
@@ -238,49 +297,49 @@ Partial Class RegisterTab
         Me.amtRecvd.Text = "0"
         Me.amtRecvd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'Label4
+        'change
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Roboto Th", 13.0!)
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(11, 104)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(97, 27)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "CHANGE"
+        Me.change.AutoSize = True
+        Me.change.Font = New System.Drawing.Font("Roboto Th", 13.0!)
+        Me.change.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.change.Location = New System.Drawing.Point(11, 104)
+        Me.change.Name = "change"
+        Me.change.Size = New System.Drawing.Size(97, 27)
+        Me.change.TabIndex = 1
+        Me.change.Text = "CHANGE"
         '
-        'Label3
+        'amountreceived
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Roboto Th", 13.0!)
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(11, 23)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(207, 27)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "AMOUNT RECEIVED"
+        Me.amountreceived.AutoSize = True
+        Me.amountreceived.Font = New System.Drawing.Font("Roboto Th", 13.0!)
+        Me.amountreceived.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.amountreceived.Location = New System.Drawing.Point(11, 23)
+        Me.amountreceived.Name = "amountreceived"
+        Me.amountreceived.Size = New System.Drawing.Size(207, 27)
+        Me.amountreceived.TabIndex = 1
+        Me.amountreceived.Text = "AMOUNT RECEIVED"
         '
-        'Label1
+        'total
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Roboto Th", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(583, 47)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(90, 31)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "TOTAL"
+        Me.total.AutoSize = True
+        Me.total.Font = New System.Drawing.Font("Roboto Th", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.total.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.total.Location = New System.Drawing.Point(583, 47)
+        Me.total.Name = "total"
+        Me.total.Size = New System.Drawing.Size(90, 31)
+        Me.total.TabIndex = 1
+        Me.total.Text = "TOTAL"
         '
-        'Label2
+        'php
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Roboto Lt", 28.0!)
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(3, 47)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 57)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "PHP"
+        Me.php.AutoSize = True
+        Me.php.Font = New System.Drawing.Font("Roboto Lt", 28.0!)
+        Me.php.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.php.Location = New System.Drawing.Point(3, 47)
+        Me.php.Name = "php"
+        Me.php.Size = New System.Drawing.Size(118, 57)
+        Me.php.TabIndex = 1
+        Me.php.Text = "PHP"
         '
         'Label6
         '
@@ -304,16 +363,16 @@ Partial Class RegisterTab
         Me.changeAmt.TabIndex = 1
         Me.changeAmt.Text = "0"
         '
-        'Label5
+        'phptotal
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Roboto Lt", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(578, 70)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(126, 61)
-        Me.Label5.TabIndex = 1
-        Me.Label5.Text = "PHP"
+        Me.phptotal.AutoSize = True
+        Me.phptotal.Font = New System.Drawing.Font("Roboto Lt", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.phptotal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.phptotal.Location = New System.Drawing.Point(578, 70)
+        Me.phptotal.Name = "phptotal"
+        Me.phptotal.Size = New System.Drawing.Size(126, 61)
+        Me.phptotal.TabIndex = 1
+        Me.phptotal.Text = "PHP"
         '
         'totalAmt
         '
@@ -325,65 +384,6 @@ Partial Class RegisterTab
         Me.totalAmt.Size = New System.Drawing.Size(55, 61)
         Me.totalAmt.TabIndex = 1
         Me.totalAmt.Text = "0"
-        '
-        'confirmWreceipt
-        '
-        Me.confirmWreceipt.BackColor = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.confirmWreceipt.color = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.confirmWreceipt.colorActive = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(245, Byte), Integer))
-        Me.confirmWreceipt.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.confirmWreceipt.Font = New System.Drawing.Font("Open Sans Light", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.confirmWreceipt.ForeColor = System.Drawing.Color.White
-        Me.confirmWreceipt.Image = Global.post_by_otens.My.Resources.Resources.icons8_cash_register_32px2
-        Me.confirmWreceipt.ImagePosition = 50
-        Me.confirmWreceipt.ImageZoom = 20
-        Me.confirmWreceipt.LabelPosition = 90
-        Me.confirmWreceipt.LabelText = "CONFRM + INVOICE"
-        Me.confirmWreceipt.Location = New System.Drawing.Point(265, 490)
-        Me.confirmWreceipt.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
-        Me.confirmWreceipt.Name = "confirmWreceipt"
-        Me.confirmWreceipt.Size = New System.Drawing.Size(260, 217)
-        Me.confirmWreceipt.TabIndex = 1
-        '
-        'confirm
-        '
-        Me.confirm.BackColor = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.confirm.color = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.confirm.colorActive = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(245, Byte), Integer))
-        Me.confirm.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.confirm.Font = New System.Drawing.Font("Open Sans Light", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.confirm.ForeColor = System.Drawing.Color.White
-        Me.confirm.Image = Global.post_by_otens.My.Resources.Resources.norecepticons8_cash_register_32px
-        Me.confirm.ImagePosition = 50
-        Me.confirm.ImageZoom = 20
-        Me.confirm.LabelPosition = 90
-        Me.confirm.LabelText = "Register"
-        Me.confirm.Location = New System.Drawing.Point(9, 490)
-        Me.confirm.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
-        Me.confirm.Name = "confirm"
-        Me.confirm.Size = New System.Drawing.Size(256, 217)
-        Me.confirm.TabIndex = 1
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.post_by_otens.My.Resources.Resources.icons8_multiply_32px
-        Me.PictureBox3.Location = New System.Drawing.Point(497, 14)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox3.TabIndex = 3
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox4.Image = Global.post_by_otens.My.Resources.Resources.icons8_search_50px
-        Me.PictureBox4.Location = New System.Drawing.Point(343, 6)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(32, 29)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 3
-        Me.PictureBox4.TabStop = False
         '
         'PictureBox2
         '
@@ -423,12 +423,12 @@ Partial Class RegisterTab
         Me.shoppingCard_pnl.ResumeLayout(False)
         Me.BunifuCards1.ResumeLayout(False)
         Me.BunifuCards1.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.product_pnl.ResumeLayout(False)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.totals.ResumeLayout(False)
         Me.card.ResumeLayout(False)
         Me.card.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -449,15 +449,15 @@ Partial Class RegisterTab
     Friend WithEvents confirm As Bunifu.Framework.UI.BunifuTileButton
     Friend WithEvents card As Bunifu.Framework.UI.BunifuCards
     Friend WithEvents totalAmt As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents amountreceived As Label
+    Friend WithEvents total As Label
+    Friend WithEvents php As Label
     Friend WithEvents amtRecvd As Bunifu.Framework.UI.BunifuMetroTextbox
-    Friend WithEvents Label4 As Label
+    Friend WithEvents change As Label
     Friend WithEvents changeAmt As Label
     Friend WithEvents searchBox As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents phptotal As Label
     Friend WithEvents shoppingCart_flow As FlowLayoutPanel
     Friend WithEvents Label7 As Label
     Friend WithEvents TableBindingSource As BindingSource

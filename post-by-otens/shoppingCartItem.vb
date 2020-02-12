@@ -15,6 +15,11 @@
         Me.shoppingCartIsIncluded = True
         Me.prodItem = prodItem
         updateVisuals()
+
+        pName.Font = New Font("Roboto Lt", pName.Font.Size)
+        pNum.Font = New Font("Roboto Lt", pNum.Font.Size)
+        pCount.Font = New Font("Roboto Lt", pCount.Font.Size)
+        pSubTotal.Font = New Font("Roboto Lt", pSubTotal.Font.Size)
     End Sub
     Function getShoppingCartCount() As Integer
         Return shoppingCartCount

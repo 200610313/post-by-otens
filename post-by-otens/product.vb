@@ -24,6 +24,15 @@
         shoppingCartCount = 0
         shoppingCartSubtotal = 0
         shoppingCartIsIncluded = False
+
+
+        pStock.Font = New Font("Roboto Lt", pStock.Font.Size)
+        pNum.Font = New Font("Roboto Lt", pNum.Font.Size)
+
+        pPrice.Font = New Font("Roboto Lt", pPrice.Font.Size)
+        pName.Font = New Font("Roboto Lt", pName.Font.Size)
+
+
         updateRenders()
     End Sub
 
