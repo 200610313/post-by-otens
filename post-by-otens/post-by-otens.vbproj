@@ -62,9 +62,12 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\..\Desktop\Latest Bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -95,6 +98,26 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="LoginFrm.Designer.vb">
+      <DependentUpon>LoginFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainManagevb.Designer.vb">
+      <DependentUpon>MainManagevb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainManagevb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage.Designer.vb">
+      <DependentUpon>Manage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\SendMessageModule.vb" />
     <Compile Include="POSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +163,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="LoginFrm.resx">
+      <DependentUpon>LoginFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainManagevb.resx">
+      <DependentUpon>MainManagevb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage.resx">
+      <DependentUpon>Manage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="RegisterTab.resx">
       <DependentUpon>RegisterTab.vb</DependentUpon>
@@ -158,6 +190,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -260,6 +293,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\imageedit_12_6014486617.png" />
+    <None Include="Resources\imageedit_11_6611322399.png" />
+    <None Include="Resources\icons8-add-50 %281%29.png" />
+    <None Include="Resources\icons8-invoice-24 %281%29.png" />
+    <None Include="Resources\icons8-invoice-24.png" />
+    <None Include="Resources\icons8-new-message-24.png" />
+    <None Include="Resources\icons8-menu-24.png" />
+    <None Include="Resources\Pewter Engineers1.png" />
     <None Include="Resources\icons8-password-26.png" />
     <None Include="Resources\icons8-user-301.png" />
     <None Include="Resources\icons8-user-30.png" />

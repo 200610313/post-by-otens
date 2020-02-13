@@ -104,4 +104,10 @@
             registerCustomer("Sergio", "Ramos", "A", "Butuan", "Bagumbayan", "7000", "09267052345")
         End If
     End Sub
+
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+        Me.Close()
+    End Sub
 End Class

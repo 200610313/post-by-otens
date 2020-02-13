@@ -26,6 +26,8 @@ Partial Class RegisterTab
         Me.windowShape = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.register_pnl = New System.Windows.Forms.Panel()
         Me.shoppingCard_pnl = New System.Windows.Forms.Panel()
+        Me.void = New Bunifu.Framework.UI.BunifuTileButton()
+        Me.confirmWreceipt = New Bunifu.Framework.UI.BunifuTileButton()
         Me.confirm = New Bunifu.Framework.UI.BunifuTileButton()
         Me.BunifuCards1 = New Bunifu.Framework.UI.BunifuCards()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -48,8 +50,7 @@ Partial Class RegisterTab
         Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.void = New Bunifu.Framework.UI.BunifuTileButton()
-        Me.confirmWreceipt = New Bunifu.Framework.UI.BunifuTileButton()
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.register_pnl.SuspendLayout()
         Me.shoppingCard_pnl.SuspendLayout()
         Me.BunifuCards1.SuspendLayout()
@@ -88,13 +89,51 @@ Partial Class RegisterTab
         Me.shoppingCard_pnl.Size = New System.Drawing.Size(536, 665)
         Me.shoppingCard_pnl.TabIndex = 1
         '
+        'void
+        '
+        Me.void.BackColor = System.Drawing.Color.Brown
+        Me.void.color = System.Drawing.Color.Brown
+        Me.void.colorActive = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.void.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.void.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.void.ForeColor = System.Drawing.Color.White
+        Me.void.Image = Nothing
+        Me.void.ImagePosition = 22
+        Me.void.ImageZoom = 50
+        Me.void.LabelPosition = 60
+        Me.void.LabelText = "VOID"
+        Me.void.Location = New System.Drawing.Point(9, 624)
+        Me.void.Margin = New System.Windows.Forms.Padding(6)
+        Me.void.Name = "void"
+        Me.void.Size = New System.Drawing.Size(516, 41)
+        Me.void.TabIndex = 1
+        '
+        'confirmWreceipt
+        '
+        Me.confirmWreceipt.BackColor = System.Drawing.Color.SeaGreen
+        Me.confirmWreceipt.color = System.Drawing.Color.SeaGreen
+        Me.confirmWreceipt.colorActive = System.Drawing.Color.MediumSeaGreen
+        Me.confirmWreceipt.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.confirmWreceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.confirmWreceipt.ForeColor = System.Drawing.Color.White
+        Me.confirmWreceipt.Image = Nothing
+        Me.confirmWreceipt.ImagePosition = 21
+        Me.confirmWreceipt.ImageZoom = 50
+        Me.confirmWreceipt.LabelPosition = 80
+        Me.confirmWreceipt.LabelText = "CONFIRM"
+        Me.confirmWreceipt.Location = New System.Drawing.Point(265, 490)
+        Me.confirmWreceipt.Margin = New System.Windows.Forms.Padding(6)
+        Me.confirmWreceipt.Name = "confirmWreceipt"
+        Me.confirmWreceipt.Size = New System.Drawing.Size(260, 134)
+        Me.confirmWreceipt.TabIndex = 1
+        '
         'confirm
         '
         Me.confirm.BackColor = System.Drawing.Color.SeaGreen
         Me.confirm.color = System.Drawing.Color.SeaGreen
         Me.confirm.colorActive = System.Drawing.Color.MediumSeaGreen
         Me.confirm.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.confirm.Font = New System.Drawing.Font("Roboto Lt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.confirm.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.confirm.ForeColor = System.Drawing.Color.White
         Me.confirm.Image = Nothing
         Me.confirm.ImagePosition = 21
@@ -126,11 +165,11 @@ Partial Class RegisterTab
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Roboto Lt", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(222, 22)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(99, 17)
+        Me.Label7.Size = New System.Drawing.Size(98, 17)
         Me.Label7.TabIndex = 2
         Me.Label7.Text = "Shopping Cart"
         '
@@ -249,88 +288,88 @@ Partial Class RegisterTab
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Roboto Th", 13.0!)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!)
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(11, 104)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(97, 27)
+        Me.Label4.Size = New System.Drawing.Size(107, 26)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "CHANGE"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Roboto Th", 13.0!)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(11, 23)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(207, 27)
+        Me.Label3.Size = New System.Drawing.Size(226, 26)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "AMOUNT RECEIVED"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Roboto Th", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(583, 47)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(90, 31)
+        Me.Label1.Size = New System.Drawing.Size(93, 29)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "TOTAL"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Roboto Lt", 28.0!)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.0!)
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(3, 47)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(118, 57)
+        Me.Label2.Size = New System.Drawing.Size(119, 54)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "PHP"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Roboto Lt", 15.0!)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(8, 131)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(63, 30)
+        Me.Label6.Size = New System.Drawing.Size(65, 29)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "PHP"
         '
         'changeAmt
         '
         Me.changeAmt.AutoSize = True
-        Me.changeAmt.Font = New System.Drawing.Font("Roboto Lt", 15.0!)
+        Me.changeAmt.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.changeAmt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.changeAmt.Location = New System.Drawing.Point(65, 131)
+        Me.changeAmt.Location = New System.Drawing.Point(91, 130)
         Me.changeAmt.Name = "changeAmt"
-        Me.changeAmt.Size = New System.Drawing.Size(27, 30)
+        Me.changeAmt.Size = New System.Drawing.Size(27, 29)
         Me.changeAmt.TabIndex = 1
         Me.changeAmt.Text = "0"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Roboto Lt", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(578, 70)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(126, 61)
+        Me.Label5.Size = New System.Drawing.Size(127, 58)
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "PHP"
         '
         'totalAmt
         '
         Me.totalAmt.AutoSize = True
-        Me.totalAmt.Font = New System.Drawing.Font("Roboto Lt", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totalAmt.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.totalAmt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.totalAmt.Location = New System.Drawing.Point(690, 70)
+        Me.totalAmt.Location = New System.Drawing.Point(711, 70)
         Me.totalAmt.Name = "totalAmt"
-        Me.totalAmt.Size = New System.Drawing.Size(55, 61)
+        Me.totalAmt.Size = New System.Drawing.Size(53, 58)
         Me.totalAmt.TabIndex = 1
         Me.totalAmt.Text = "0"
         '
@@ -354,43 +393,12 @@ Partial Class RegisterTab
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'void
+        'BunifuDragControl1
         '
-        Me.void.BackColor = System.Drawing.Color.Brown
-        Me.void.color = System.Drawing.Color.Brown
-        Me.void.colorActive = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.void.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.void.Font = New System.Drawing.Font("Roboto Lt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.void.ForeColor = System.Drawing.Color.White
-        Me.void.Image = Nothing
-        Me.void.ImagePosition = 22
-        Me.void.ImageZoom = 50
-        Me.void.LabelPosition = 60
-        Me.void.LabelText = "VOID"
-        Me.void.Location = New System.Drawing.Point(9, 624)
-        Me.void.Margin = New System.Windows.Forms.Padding(6)
-        Me.void.Name = "void"
-        Me.void.Size = New System.Drawing.Size(516, 41)
-        Me.void.TabIndex = 1
-        '
-        'confirmWreceipt
-        '
-        Me.confirmWreceipt.BackColor = System.Drawing.Color.SeaGreen
-        Me.confirmWreceipt.color = System.Drawing.Color.SeaGreen
-        Me.confirmWreceipt.colorActive = System.Drawing.Color.MediumSeaGreen
-        Me.confirmWreceipt.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.confirmWreceipt.Font = New System.Drawing.Font("Roboto Lt", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.confirmWreceipt.ForeColor = System.Drawing.Color.White
-        Me.confirmWreceipt.Image = Nothing
-        Me.confirmWreceipt.ImagePosition = 21
-        Me.confirmWreceipt.ImageZoom = 50
-        Me.confirmWreceipt.LabelPosition = 80
-        Me.confirmWreceipt.LabelText = "CONFIRM"
-        Me.confirmWreceipt.Location = New System.Drawing.Point(265, 490)
-        Me.confirmWreceipt.Margin = New System.Windows.Forms.Padding(6)
-        Me.confirmWreceipt.Name = "confirmWreceipt"
-        Me.confirmWreceipt.Size = New System.Drawing.Size(260, 134)
-        Me.confirmWreceipt.TabIndex = 1
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Me
+        Me.BunifuDragControl1.Vertical = True
         '
         'RegisterTab
         '
@@ -405,6 +413,7 @@ Partial Class RegisterTab
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MinimumSize = New System.Drawing.Size(1513, 719)
         Me.Name = "RegisterTab"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.register_pnl.ResumeLayout(False)
         Me.shoppingCard_pnl.ResumeLayout(False)
@@ -449,4 +458,5 @@ Partial Class RegisterTab
     Friend WithEvents TableBindingSource As BindingSource
     Friend WithEvents void As Bunifu.Framework.UI.BunifuTileButton
     Friend WithEvents confirmWreceipt As Bunifu.Framework.UI.BunifuTileButton
+    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
 End Class
