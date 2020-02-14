@@ -299,6 +299,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8_multiply_16px1.png" />
     <None Include="Resources\icons8_cash_register_32px2.png" />
     <None Include="Resources\norecepticons8_cash_register_32px.png" />
     <None Include="Resources\icons8_cash_register_32px1.png" />

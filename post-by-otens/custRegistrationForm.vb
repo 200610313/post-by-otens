@@ -2,7 +2,10 @@
 
 Public Class custRegistrationForm
     Private cFName, cLName, cMInit, cCity, cState, cZip, cPhone
-
+    Private exited As Boolean
+    Public Function hasExit() As Boolean
+        Return exited
+    End Function
     Private Sub zip_OnValueChanged(sender As Object, e As EventArgs) Handles zip.OnValueChanged
         If String.IsNullOrEmpty(zip.Text) Or Not IsNumeric(zip.Text) Then
             zip.LineFocusedColor = Color.FromArgb(192, 255, 192)
@@ -42,7 +45,13 @@ Public Class custRegistrationForm
 
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        exited = True
+        Me.Close()
+    End Sub
+
     Public Sub New()
+        exited = False
         Me.Show()
         ' This call is required by the designer.
         InitializeComponent()

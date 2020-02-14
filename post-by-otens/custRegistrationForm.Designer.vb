@@ -23,7 +23,6 @@ Partial Class custRegistrationForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.submitbutton = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -39,13 +38,17 @@ Partial Class custRegistrationForm
         Me.lN = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.mI = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.fN = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.submitbutton = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.submitbutton, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.submitbutton)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label6)
@@ -66,16 +69,6 @@ Partial Class custRegistrationForm
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(286, 457)
         Me.Panel1.TabIndex = 0
-        '
-        'submitbutton
-        '
-        Me.submitbutton.Image = Global.post_by_otens.My.Resources.Resources.icons8_ok_48px
-        Me.submitbutton.Location = New System.Drawing.Point(114, 404)
-        Me.submitbutton.Name = "submitbutton"
-        Me.submitbutton.Size = New System.Drawing.Size(47, 43)
-        Me.submitbutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.submitbutton.TabIndex = 4
-        Me.submitbutton.TabStop = False
         '
         'Label8
         '
@@ -146,11 +139,11 @@ Partial Class custRegistrationForm
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Open Sans", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.Label7.Font = New System.Drawing.Font("Open Sans", 11.0!, System.Drawing.FontStyle.Bold)
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(15, 8)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(263, 30)
+        Me.Label7.Size = New System.Drawing.Size(225, 26)
         Me.Label7.TabIndex = 3
         Me.Label7.Text = "Customer Registration"
         '
@@ -326,6 +319,26 @@ Partial Class custRegistrationForm
         Me.fN.TabIndex = 2
         Me.fN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.post_by_otens.My.Resources.Resources.icons8_multiply_16px1
+        Me.PictureBox1.Location = New System.Drawing.Point(262, 8)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
+        'submitbutton
+        '
+        Me.submitbutton.Image = Global.post_by_otens.My.Resources.Resources.icons8_ok_48px
+        Me.submitbutton.Location = New System.Drawing.Point(114, 404)
+        Me.submitbutton.Name = "submitbutton"
+        Me.submitbutton.Size = New System.Drawing.Size(47, 43)
+        Me.submitbutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.submitbutton.TabIndex = 4
+        Me.submitbutton.TabStop = False
+        '
         'custRegistrationForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -337,6 +350,7 @@ Partial Class custRegistrationForm
         Me.Text = "custRegistrationForm"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.submitbutton, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -358,4 +372,5 @@ Partial Class custRegistrationForm
     Friend WithEvents Label7 As Label
     Friend WithEvents phone As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents submitbutton As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -126,8 +126,10 @@ Public Class RegisterTab
     Private Sub confirmWreceipt_Click(sender As Object, e As EventArgs) Handles confirmWreceipt.Click
         If shoppingCartItems.Count <> 0 Then
             Dim crf As New custRegistrationForm
-            updateDBStock()
-            resetView()
+            If crf.hasExit = False Then
+                updateDBStock()
+                resetView()
+            End If
         End If
     End Sub
 
