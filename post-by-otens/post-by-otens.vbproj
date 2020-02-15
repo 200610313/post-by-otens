@@ -101,6 +101,12 @@
     <Compile Include="custRegistrationForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="popUpBox.Designer.vb">
+      <DependentUpon>popUpBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="popUpBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="POSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -150,6 +156,9 @@
       <DependentUpon>custRegistrationForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="popUpBox.resx">
+      <DependentUpon>popUpBox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegisterTab.resx">
       <DependentUpon>RegisterTab.vb</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +308,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-filled-circle-16.png" />
+    <None Include="Resources\icons8_filled_circle_30px_12.png" />
+    <None Include="Resources\icons8_filled_circle_30px_11.png" />
     <None Include="Resources\icons8_multiply_16px1.png" />
     <None Include="Resources\icons8_cash_register_32px2.png" />
     <None Include="Resources\norecepticons8_cash_register_32px.png" />
