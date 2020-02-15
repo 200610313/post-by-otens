@@ -95,6 +95,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="customerSearch.Designer.vb">
+      <DependentUpon>customerSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="customerSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="custRegistrationForm.Designer.vb">
       <DependentUpon>custRegistrationForm.vb</DependentUpon>
     </Compile>
@@ -152,6 +158,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="customerSearch.resx">
+      <DependentUpon>customerSearch.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="custRegistrationForm.resx">
       <DependentUpon>custRegistrationForm.vb</DependentUpon>
     </EmbeddedResource>
