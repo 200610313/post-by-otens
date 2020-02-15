@@ -418,6 +418,7 @@ Partial Class RegisterTab
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MinimumSize = New System.Drawing.Size(1513, 719)
         Me.Name = "RegisterTab"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.register_pnl.ResumeLayout(False)
         Me.shoppingCard_pnl.ResumeLayout(False)

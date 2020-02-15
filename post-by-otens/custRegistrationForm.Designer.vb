@@ -23,6 +23,8 @@ Partial Class custRegistrationForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.submitbutton = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -38,8 +40,6 @@ Partial Class custRegistrationForm
         Me.lN = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.mI = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.fN = New Bunifu.Framework.UI.BunifuMaterialTextbox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.submitbutton = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.submitbutton, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +69,26 @@ Partial Class custRegistrationForm
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(286, 457)
         Me.Panel1.TabIndex = 0
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.post_by_otens.My.Resources.Resources.icons8_multiply_16px1
+        Me.PictureBox1.Location = New System.Drawing.Point(262, 8)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
+        'submitbutton
+        '
+        Me.submitbutton.Image = Global.post_by_otens.My.Resources.Resources.icons8_ok_48px
+        Me.submitbutton.Location = New System.Drawing.Point(114, 404)
+        Me.submitbutton.Name = "submitbutton"
+        Me.submitbutton.Size = New System.Drawing.Size(47, 43)
+        Me.submitbutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.submitbutton.TabIndex = 4
+        Me.submitbutton.TabStop = False
         '
         'Label8
         '
@@ -319,26 +339,6 @@ Partial Class custRegistrationForm
         Me.fN.TabIndex = 2
         Me.fN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.post_by_otens.My.Resources.Resources.icons8_multiply_16px1
-        Me.PictureBox1.Location = New System.Drawing.Point(262, 8)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 5
-        Me.PictureBox1.TabStop = False
-        '
-        'submitbutton
-        '
-        Me.submitbutton.Image = Global.post_by_otens.My.Resources.Resources.icons8_ok_48px
-        Me.submitbutton.Location = New System.Drawing.Point(114, 404)
-        Me.submitbutton.Name = "submitbutton"
-        Me.submitbutton.Size = New System.Drawing.Size(47, 43)
-        Me.submitbutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.submitbutton.TabIndex = 4
-        Me.submitbutton.TabStop = False
-        '
         'custRegistrationForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -347,6 +347,7 @@ Partial Class custRegistrationForm
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "custRegistrationForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "custRegistrationForm"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

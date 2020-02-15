@@ -4,6 +4,7 @@ Public Class RegisterTab
     Public shoppingCartItems As List(Of shoppingCartItem)
     Public loggedInBusinessName As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'MessageBox.Show(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
@@ -32,6 +33,7 @@ Public Class RegisterTab
         Label7.Font = New Font("Roboto Lt", Label7.Font.Size)
 
         void.Font = New Font("Open Sans Light", void.Font.Size)
+
     End Sub
 
     Private Sub initShoppingCart()
@@ -125,15 +127,12 @@ Public Class RegisterTab
 
     Private Sub confirmWreceipt_Click(sender As Object, e As EventArgs) Handles confirmWreceipt.Click
         If shoppingCartItems.Count <> 0 Then
-            Dim crf As New custRegistrationForm
-            If crf.hasExit = False Then
-                updateDBStock()
-                resetView()
-            End If
+            Me.Hide()
+            Dim choice As New popUpBox
         End If
     End Sub
 
-    Private Sub resetView()
+    Public Sub resetView()
         Me.shoppingCartItems = New List(Of shoppingCartItem)
         shoppingCart_flow.Controls.Clear()
         products = New List(Of product)

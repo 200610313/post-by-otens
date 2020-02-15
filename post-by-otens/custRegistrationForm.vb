@@ -2,10 +2,6 @@
 
 Public Class custRegistrationForm
     Private cFName, cLName, cMInit, cCity, cState, cZip, cPhone
-    Private exited As Boolean
-    Public Function hasExit() As Boolean
-        Return exited
-    End Function
     Private Sub zip_OnValueChanged(sender As Object, e As EventArgs) Handles zip.OnValueChanged
         If String.IsNullOrEmpty(zip.Text) Or Not IsNumeric(zip.Text) Then
             zip.LineFocusedColor = Color.FromArgb(192, 255, 192)
@@ -36,28 +32,29 @@ Public Class custRegistrationForm
         If fN.LineIdleColor <> Color.FromArgb(192, 255, 192) Or mI.LineIdleColor <> Color.FromArgb(192, 255, 192) Or lN.LineIdleColor <> Color.FromArgb(192, 255, 192) Or city.LineIdleColor <> Color.FromArgb(192, 255, 192) Or state.LineIdleColor <> Color.FromArgb(192, 255, 192) Or zip.LineIdleColor <> Color.FromArgb(192, 255, 192) Or phone.LineIdleColor <> Color.FromArgb(192, 255, 192) Then
         Else
             registerCustomer(fN.Text, lN.Text, mI.Text, city.Text, state.Text, zip.Text, phone.Text)
+            RegisterTab.Show()
+            updateDBStock()
+            RegisterTab.resetView()
             Me.Close()
         End If
     End Sub
-
 
     Private Sub custRegistrationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        exited = True
+
+        RegisterTab.Show()
         Me.Close()
     End Sub
 
     Public Sub New()
-        exited = False
-        Me.Show()
         ' This call is required by the designer.
         InitializeComponent()
-
         ' Add any initialization after the InitializeComponent() call.
-
+        Me.StartPosition = FormStartPosition.CenterScreen
+        Me.Show()
     End Sub
 
     Private Sub fN_OnValueChanged(sender As Object, e As EventArgs) Handles fN.OnValueChanged
