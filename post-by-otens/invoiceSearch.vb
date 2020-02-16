@@ -8,6 +8,12 @@
         Me.Show()
         businessName = "Boboy's Refreshers"
 
+        loadInvoices()
+
+    End Sub
+
+    Private Sub loadInvoices()
+
         DataGridView1.Rows.Clear()
 
         Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter
@@ -30,27 +36,14 @@
                 pName = adapter2.getProductsOfInvoice(businessName, invoiceNum).Rows(j).Item(1)
 
                 If j <> adapter2.getProductsOfInvoice(businessName, invoiceNum).Rows.Count - 1 Then
-                    entry = entry & pCount & "x" & " " & pName &
+                    entry = entry & pCount & "x" & " " & pName & ","
                 Else
-                    entry = entry & pCount & "x" & " " & pName
+                    entry = entry & pCount & "x" & " " & pName & vbCrLf & "dwadawdawdad"
                 End If
             Next
 
             DataGridView1.Rows.Add(invoiceNum, dateP, total, entry)
         Next
-
-        'Dim rows As Integer
-        'rows = adapter.getCustomersOf("Boboy's Refreshers", searchBox.Text).Rows.Count
-        ''adapter.getCustomersOf(businessName, searchBox.Text).Rows(i).Item(3) = custId of the customer
-        'For i = 0 To rows - 1
-        '    'get all invoices of the specific customer from the company
-        '    Dim adapter2 As New POSDataSetTableAdapters.invoice1TableAdapter
-        '    Dim cID, numberOfPurchases As Integer
-        '    cID = adapter.getCustomersOf(businessName, searchBox.Text).Rows(i).Item(3)
-        '    numberOfPurchases = adapter2.getRecentDateOfPurchase(businessName, cID).Rows.Count
-        '    'get the last the date from the last index
-        '    DataGridView1.Rows.Add(cID, adapter.getCustomersOf(businessName, searchBox.Text).Rows(i).Item(0) + " " + adapter.getCustomersOf(businessName, searchBox.Text).Rows(i).Item(1) + " " + adapter.getCustomersOf(businessName, searchBox.Text).Rows(i).Item(2), adapter2.getRecentDateOfPurchase(businessName, cID).Rows(numberOfPurchases - 1).Item(0), numberOfPurchases)
-        'Next
     End Sub
 
     Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
@@ -60,11 +53,20 @@
     End Sub
 
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
-        generateInvoiceForCustomer(DataGridView1.Rows(curRowIndex).Cells(0).Value)
-        updateDBStock()
-        RegisterTab.resetView()
-        Me.Close()
-        RegisterTab.Show()
+        Dim invoiceNum, bName As String
+        invoiceNum = DataGridView1.Rows(curRowIndex).Cells(0).Value
+        bName = businessName
+
+        'POSDataSetTableAdapters.invoiceTableAdapter
+
+        'adapter3.deleteInvoice(CInt(Val(invoiceNum)), businessName)
+
+
+        'generateInvoiceForCustomer(DataGridView1.Rows(curRowIndex).Cells(0).Value)
+        'updateDBStock()
+        'RegisterTab.resetView()
+        'Me.Close()
+        'RegisterTab.Show()
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click

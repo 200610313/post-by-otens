@@ -174,14 +174,6 @@
       <DependentUpon>invoiceSearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
-    <EmbeddedResource Include="obj\Debug\post_by_otens.customerSearch.resources" />
-    <EmbeddedResource Include="obj\Debug\post_by_otens.custRegistrationForm.resources" />
-    <EmbeddedResource Include="obj\Debug\post_by_otens.invoiceSearch.resources" />
-    <EmbeddedResource Include="obj\Debug\post_by_otens.popUpBox.resources" />
-    <EmbeddedResource Include="obj\Debug\post_by_otens.product.resources" />
-    <EmbeddedResource Include="obj\Debug\post_by_otens.RegisterTab.resources" />
-    <EmbeddedResource Include="obj\Debug\post_by_otens.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\post_by_otens.shoppingCartItem.resources" />
     <EmbeddedResource Include="popUpBox.resx">
       <DependentUpon>popUpBox.vb</DependentUpon>
     </EmbeddedResource>
@@ -202,7 +194,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\post-by-otens.exe.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -231,11 +222,6 @@
     <EmbeddedResource Include="Resources\Roboto-ThinItalic.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\post-by-otens.vbproj.CopyComplete" />
-    <None Include="obj\Debug\post-by-otens.vbproj.GenerateResource.cache" />
-    <None Include="obj\Debug\post-by-otens.vbprojAssemblyReference.cache" />
     <None Include="POSDataSet.xsc">
       <DependentUpon>POSDataSet.xsd</DependentUpon>
     </None>
@@ -333,25 +319,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\Bunifu_UI_v1.5.3.dll" />
-    <Content Include="bin\Debug\Bunifu_UI_v1.5.3.xml" />
-    <Content Include="bin\Debug\POS.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Debug\post-by-otens.exe" />
-    <Content Include="bin\Debug\post-by-otens.pdb" />
-    <Content Include="bin\Debug\post-by-otens.xml" />
-    <Content Include="bin\Debug\POS_log.ldf">
-      <DependentUpon>POS.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="obj\Debug\post-by-otens.exe" />
-    <Content Include="obj\Debug\post-by-otens.exe.licenses" />
-    <Content Include="obj\Debug\post-by-otens.pdb" />
-    <Content Include="obj\Debug\post-by-otens.vbproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\post-by-otens.xml" />
-    <Content Include="obj\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
-    <Content Include="obj\Debug\TempPE\POSDataSet.Designer.vb.dll" />
     <Content Include="POS.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -359,6 +326,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8_cancel_24px.png" />
     <None Include="Resources\icons8_cancel_48px2.png" />
     <None Include="Resources\newminus1.png" />
     <None Include="Resources\icons8_minus_26px_1.png" />
@@ -380,9 +348,6 @@
     <None Include="Resources\icons8-user-30.png" />
     <None Include="Resources\Pewter Engineers.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
-    <Folder Include="obj\Release\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
