@@ -13,7 +13,7 @@
     End Sub
 
     Private Sub existingbtn_Click(sender As Object, e As EventArgs) Handles existingbtn.Click
-        MessageBox.Show("Implement me")
+        Dim data As New customerSearch
         Me.Close()
     End Sub
 

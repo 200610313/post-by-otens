@@ -42,8 +42,8 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
     End Sub
+
     'Generate invoice for the customer
     Public Sub generateInvoiceForCustomer(customerID As Integer)
         Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter

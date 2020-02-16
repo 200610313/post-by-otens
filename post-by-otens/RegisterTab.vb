@@ -146,4 +146,8 @@ Public Class RegisterTab
         products = New List(Of product)
         loadProducts()
     End Sub
+
+    Private Sub void_Click(sender As Object, e As EventArgs) Handles void.Click
+
+    End Sub
 End Class

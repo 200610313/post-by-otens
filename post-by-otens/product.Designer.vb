@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class product
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class product
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
@@ -29,9 +29,9 @@ Partial Class product
         Me.pPrice = New System.Windows.Forms.Label()
         Me.pNum = New System.Windows.Forms.Label()
         Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
-        Me.remove_btn = New System.Windows.Forms.PictureBox()
-        Me.decrement_btn = New System.Windows.Forms.PictureBox()
-        Me.add_btn = New System.Windows.Forms.PictureBox()
+        Me.remove_btn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.decrement_btn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.add_btn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.pImage = New System.Windows.Forms.PictureBox()
         CType(Me.remove_btn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.decrement_btn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,33 +95,39 @@ Partial Class product
         '
         'remove_btn
         '
-        Me.remove_btn.BackgroundImage = Global.post_by_otens.My.Resources.Resources.icons8_cancel_48px1
-        Me.remove_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.remove_btn.Location = New System.Drawing.Point(401, 111)
+        Me.remove_btn.Image = Global.post_by_otens.My.Resources.Resources.icons8_cancel_48px2
+        Me.remove_btn.ImageActive = Nothing
+        Me.remove_btn.Location = New System.Drawing.Point(410, 110)
         Me.remove_btn.Name = "remove_btn"
-        Me.remove_btn.Size = New System.Drawing.Size(58, 38)
-        Me.remove_btn.TabIndex = 3
+        Me.remove_btn.Size = New System.Drawing.Size(40, 39)
+        Me.remove_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.remove_btn.TabIndex = 6
         Me.remove_btn.TabStop = False
+        Me.remove_btn.Zoom = 10
         '
         'decrement_btn
         '
-        Me.decrement_btn.BackgroundImage = Global.post_by_otens.My.Resources.Resources.newminus
-        Me.decrement_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.decrement_btn.Location = New System.Drawing.Point(406, 68)
+        Me.decrement_btn.Image = Global.post_by_otens.My.Resources.Resources.newminus1
+        Me.decrement_btn.ImageActive = Nothing
+        Me.decrement_btn.Location = New System.Drawing.Point(412, 66)
         Me.decrement_btn.Name = "decrement_btn"
-        Me.decrement_btn.Size = New System.Drawing.Size(47, 30)
-        Me.decrement_btn.TabIndex = 3
+        Me.decrement_btn.Size = New System.Drawing.Size(37, 34)
+        Me.decrement_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.decrement_btn.TabIndex = 5
         Me.decrement_btn.TabStop = False
+        Me.decrement_btn.Zoom = 10
         '
         'add_btn
         '
-        Me.add_btn.BackgroundImage = Global.post_by_otens.My.Resources.Resources.add_48px
-        Me.add_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.add_btn.Location = New System.Drawing.Point(406, 17)
+        Me.add_btn.Image = Global.post_by_otens.My.Resources.Resources.add_48px1
+        Me.add_btn.ImageActive = Nothing
+        Me.add_btn.Location = New System.Drawing.Point(410, 17)
         Me.add_btn.Name = "add_btn"
-        Me.add_btn.Size = New System.Drawing.Size(47, 39)
-        Me.add_btn.TabIndex = 3
+        Me.add_btn.Size = New System.Drawing.Size(40, 39)
+        Me.add_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.add_btn.TabIndex = 4
         Me.add_btn.TabStop = False
+        Me.add_btn.Zoom = 10
         '
         'pImage
         '
@@ -164,8 +170,8 @@ Partial Class product
     Friend WithEvents pStock As Label
     Friend WithEvents pPrice As Label
     Friend WithEvents pNum As Label
-    Friend WithEvents add_btn As PictureBox
-    Friend WithEvents decrement_btn As PictureBox
-    Friend WithEvents remove_btn As PictureBox
     Friend WithEvents BunifuElipse2 As Bunifu.Framework.UI.BunifuElipse
+    Friend WithEvents add_btn As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents decrement_btn As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents remove_btn As Bunifu.Framework.UI.BunifuImageButton
 End Class
