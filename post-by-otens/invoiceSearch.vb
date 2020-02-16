@@ -30,7 +30,7 @@
                 pName = adapter2.getProductsOfInvoice(businessName, invoiceNum).Rows(j).Item(1)
 
                 If j <> adapter2.getProductsOfInvoice(businessName, invoiceNum).Rows.Count - 1 Then
-                    entry = entry & pCount & "x" & " " & pName & ", "
+                    entry = entry & pCount & "x" & " " & pName &
                 Else
                     entry = entry & pCount & "x" & " " & pName
                 End If
