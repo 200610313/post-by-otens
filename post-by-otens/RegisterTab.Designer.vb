@@ -102,10 +102,10 @@ Partial Class RegisterTab
         Me.void.ImageZoom = 50
         Me.void.LabelPosition = 60
         Me.void.LabelText = "VOID"
-        Me.void.Location = New System.Drawing.Point(9, 624)
+        Me.void.Location = New System.Drawing.Point(9, 597)
         Me.void.Margin = New System.Windows.Forms.Padding(6)
         Me.void.Name = "void"
-        Me.void.Size = New System.Drawing.Size(516, 41)
+        Me.void.Size = New System.Drawing.Size(516, 68)
         Me.void.TabIndex = 1
         '
         'confirmWreceipt
@@ -121,7 +121,7 @@ Partial Class RegisterTab
         Me.confirmWreceipt.ImageZoom = 50
         Me.confirmWreceipt.LabelPosition = 80
         Me.confirmWreceipt.LabelText = "CONFIRM"
-        Me.confirmWreceipt.Location = New System.Drawing.Point(265, 490)
+        Me.confirmWreceipt.Location = New System.Drawing.Point(265, 457)
         Me.confirmWreceipt.Margin = New System.Windows.Forms.Padding(6)
         Me.confirmWreceipt.Name = "confirmWreceipt"
         Me.confirmWreceipt.Size = New System.Drawing.Size(260, 134)
@@ -140,7 +140,7 @@ Partial Class RegisterTab
         Me.confirm.ImageZoom = 50
         Me.confirm.LabelPosition = 80
         Me.confirm.LabelText = "CONFIRM"
-        Me.confirm.Location = New System.Drawing.Point(9, 490)
+        Me.confirm.Location = New System.Drawing.Point(12, 457)
         Me.confirm.Margin = New System.Windows.Forms.Padding(6)
         Me.confirm.Name = "confirm"
         Me.confirm.Size = New System.Drawing.Size(256, 134)

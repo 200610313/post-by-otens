@@ -1,4 +1,8 @@
 ﻿Public Class MainManagevb
+    Public products As List(Of product)
+    Public shoppingCartItems As List(Of shoppingCartItem)
+    Public loggedInBusinessName As String
+    Dim index As Integer
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles Exit_bttn.Click
         Me.Close()
     End Sub
@@ -49,10 +53,63 @@
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LogoPanel.Visible = True
         MessagePanel.Visible = False
+        StockPanel.Visible = False
     End Sub
 
     Private Sub SendSMS_Click(sender As Object, e As EventArgs) Handles SendSMS.Click
         LogoPanel.Visible = False
         MessagePanel.Visible = True
+        StockPanel.Visible = False
+    End Sub
+
+    Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click
+        LogoPanel.Visible = False
+        MessagePanel.Visible = False
+        StockPanel.Visible = True
+    End Sub
+
+    Private Sub Logo_Click(sender As Object, e As EventArgs) Handles Logo.Click
+        LogoPanel.Visible = True
+        MessagePanel.Visible = False
+        StockPanel.Visible = False
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.TextChanged, Label6.TextChanged, Label5.TextChanged
+        Label4.Text = RegisterTab.loggedInBusinessName
+    End Sub
+
+
+
+
+
+    Private Sub stock_combotext_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim adapter As New POSDataSetTableAdapters.product2TableAdapter
+        Dim userBusinessName As String = "Boboy's Refreshers"
+        If RegisterTab.loggedInBusinessName = userBusinessName Then
+            stock_combotext.DataSource = adapter.GetDataProduct(userBusinessName)
+            stock_combotext.DisplayMember = "pName"
+            stock_combotext.ValueMember = "pStock"
+        End If
+    End Sub
+
+
+
+
+
+    Private Sub stock_combotext_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles stock_combotext.SelectionChangeCommitted
+        qty_txt.Text = stock_combotext.SelectedValue.ToString()
+    End Sub
+
+    Private Sub Add_Stock_Click(sender As Object, e As EventArgs) Handles Add_Stock.Click
+
+        Dim adapter As New POSDataSetTableAdapters.product2TableAdapter
+        Dim adapterupdate As New POSDataSetTableAdapters.TableAdapterManager
+        Dim POS As New POSDataSet
+
+        Dim userBusinessName As String = "Boboy's Refreshers"
+        If RegisterTab.loggedInBusinessName = userBusinessName Then
+            adapter.AddStock(AddStock_txt.Text, stock_combotext.Text)
+            adapter.Update(POS)
+        End If
     End Sub
 End Class

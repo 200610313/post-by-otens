@@ -1,7 +1,7 @@
 ﻿Public Class RegisterTab
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public loggedInBusinessName As String
+    Public loggedInBusinessName As String = "Boboy's Refreshers"
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'MessageBox.Show(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
         products = New List(Of product)
@@ -109,5 +109,9 @@
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 
         Me.Close()
+    End Sub
+
+    Private Sub confirmWreceipt_Click(sender As Object, e As EventArgs) Handles confirmWreceipt.Click
+
     End Sub
 End Class

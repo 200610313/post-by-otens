@@ -33,6 +33,7 @@ Partial Class product
         Me.decrement_btn = New System.Windows.Forms.PictureBox()
         Me.add_btn = New System.Windows.Forms.PictureBox()
         Me.pImage = New System.Windows.Forms.PictureBox()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         CType(Me.remove_btn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.decrement_btn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.add_btn, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,44 +48,44 @@ Partial Class product
         'pName
         '
         Me.pName.AutoSize = True
-        Me.pName.Font = New System.Drawing.Font("Roboto Lt", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pName.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pName.ForeColor = System.Drawing.Color.White
         Me.pName.Location = New System.Drawing.Point(206, 71)
         Me.pName.Name = "pName"
-        Me.pName.Size = New System.Drawing.Size(117, 39)
+        Me.pName.Size = New System.Drawing.Size(115, 38)
         Me.pName.TabIndex = 2
         Me.pName.Text = "Burger"
         '
         'pStock
         '
         Me.pStock.AutoSize = True
-        Me.pStock.Font = New System.Drawing.Font("Roboto Lt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pStock.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.pStock.Location = New System.Drawing.Point(209, 111)
         Me.pStock.Name = "pStock"
-        Me.pStock.Size = New System.Drawing.Size(66, 24)
+        Me.pStock.Size = New System.Drawing.Size(64, 25)
         Me.pStock.TabIndex = 2
         Me.pStock.Text = "10 left"
         '
         'pPrice
         '
         Me.pPrice.AutoSize = True
-        Me.pPrice.Font = New System.Drawing.Font("Roboto Lt", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pPrice.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.pPrice.Location = New System.Drawing.Point(206, 34)
         Me.pPrice.Name = "pPrice"
-        Me.pPrice.Size = New System.Drawing.Size(194, 39)
+        Me.pPrice.Size = New System.Drawing.Size(193, 38)
         Me.pPrice.TabIndex = 2
         Me.pPrice.Text = "PHP 100.00"
         '
         'pNum
         '
         Me.pNum.AutoSize = True
-        Me.pNum.Font = New System.Drawing.Font("Roboto Lt", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pNum.ForeColor = System.Drawing.Color.White
         Me.pNum.Location = New System.Drawing.Point(-1, 1)
         Me.pNum.Name = "pNum"
-        Me.pNum.Size = New System.Drawing.Size(77, 24)
+        Me.pNum.Size = New System.Drawing.Size(78, 25)
         Me.pNum.TabIndex = 2
         Me.pNum.Text = "#12315"
         '
@@ -134,11 +135,19 @@ Partial Class product
         Me.pImage.TabIndex = 1
         Me.pImage.TabStop = False
         '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(248, 132)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(200, 100)
+        Me.FlowLayoutPanel1.TabIndex = 4
+        '
         'product
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.remove_btn)
         Me.Controls.Add(Me.decrement_btn)
         Me.Controls.Add(Me.add_btn)
@@ -168,4 +177,5 @@ Partial Class product
     Friend WithEvents decrement_btn As PictureBox
     Friend WithEvents remove_btn As PictureBox
     Friend WithEvents BunifuElipse2 As Bunifu.Framework.UI.BunifuElipse
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
 End Class

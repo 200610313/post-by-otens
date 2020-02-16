@@ -128,6 +128,7 @@
         If item.ShoppingCart_Count = 0 Then
             shoppingCartIsIncluded = False
             item.Is_InShoppingCart = False
+            decrement_btn.Visible = False
 
             visualProductStock = prodStock
             pStock.Text = visualProductStock.ToString + " left" 'Update label
@@ -157,6 +158,10 @@
             item.ShoppingCart_Count = 0
             tryRemoveFromShoppingCart()
         End If
+
+    End Sub
+
+    Private Sub product_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

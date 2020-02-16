@@ -23,9 +23,9 @@ Partial Class MainManagevb
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation4 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim Animation3 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainManagevb))
+        Dim Animation4 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.PanelTop = New Bunifu.Framework.UI.BunifuGradientPanel()
@@ -33,12 +33,18 @@ Partial Class MainManagevb
         Me.SlidingPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.Logo = New System.Windows.Forms.PictureBox()
         Me.Menu_bttn = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuFlatButton2 = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.Stocks_bttn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BunifuFlatButton1 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.SendSMS = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PanelTransition = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.MainPanel = New System.Windows.Forms.Panel()
-        Me.LogoPanel = New System.Windows.Forms.Panel()
+        Me.StockPanel = New System.Windows.Forms.Panel()
+        Me.qty_txt = New System.Windows.Forms.TextBox()
+        Me.stock_combotext = New System.Windows.Forms.ComboBox()
+        Me.Add_Stock = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.MessagePanel = New System.Windows.Forms.Panel()
         Me.Send_bttn = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -47,16 +53,19 @@ Partial Class MainManagevb
         Me.TextBoxMessage = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxNumber = New System.Windows.Forms.TextBox()
+        Me.LogoPanel = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PanelTransition2 = New BunifuAnimatorNS.BunifuTransition(Me.components)
+        Me.AddStock_txt = New System.Windows.Forms.TextBox()
         Me.PanelTop.SuspendLayout()
         CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SlidingPanel.SuspendLayout()
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Menu_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainPanel.SuspendLayout()
-        Me.LogoPanel.SuspendLayout()
+        Me.StockPanel.SuspendLayout()
         Me.MessagePanel.SuspendLayout()
+        Me.LogoPanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -111,7 +120,7 @@ Partial Class MainManagevb
         Me.SlidingPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.SlidingPanel.Controls.Add(Me.Logo)
         Me.SlidingPanel.Controls.Add(Me.Menu_bttn)
-        Me.SlidingPanel.Controls.Add(Me.BunifuFlatButton2)
+        Me.SlidingPanel.Controls.Add(Me.Stocks_bttn)
         Me.SlidingPanel.Controls.Add(Me.BunifuFlatButton1)
         Me.SlidingPanel.Controls.Add(Me.SendSMS)
         Me.PanelTransition2.SetDecoration(Me.SlidingPanel, BunifuAnimatorNS.DecorationType.None)
@@ -156,43 +165,43 @@ Partial Class MainManagevb
         Me.Menu_bttn.TabStop = False
         Me.Menu_bttn.Zoom = 10
         '
-        'BunifuFlatButton2
+        'Stocks_bttn
         '
-        Me.BunifuFlatButton2.Active = False
-        Me.BunifuFlatButton2.Activecolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton2.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton2.BorderRadius = 0
-        Me.BunifuFlatButton2.ButtonText = "       Stocks"
-        Me.BunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PanelTransition.SetDecoration(Me.BunifuFlatButton2, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.BunifuFlatButton2, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton2.Iconimage = CType(resources.GetObject("BunifuFlatButton2.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton2.Iconimage_right = Nothing
-        Me.BunifuFlatButton2.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton2.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton2.IconMarginLeft = 0
-        Me.BunifuFlatButton2.IconMarginRight = 0
-        Me.BunifuFlatButton2.IconRightVisible = True
-        Me.BunifuFlatButton2.IconRightZoom = 0R
-        Me.BunifuFlatButton2.IconVisible = True
-        Me.BunifuFlatButton2.IconZoom = 50.0R
-        Me.BunifuFlatButton2.IsTab = False
-        Me.BunifuFlatButton2.Location = New System.Drawing.Point(0, 263)
-        Me.BunifuFlatButton2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.BunifuFlatButton2.Name = "BunifuFlatButton2"
-        Me.BunifuFlatButton2.Normalcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton2.OnHovercolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(162, Byte), Integer))
-        Me.BunifuFlatButton2.selected = False
-        Me.BunifuFlatButton2.Size = New System.Drawing.Size(349, 59)
-        Me.BunifuFlatButton2.TabIndex = 2
-        Me.BunifuFlatButton2.Text = "       Stocks"
-        Me.BunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton2.Textcolor = System.Drawing.Color.White
-        Me.BunifuFlatButton2.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Stocks_bttn.Active = False
+        Me.Stocks_bttn.Activecolor = System.Drawing.Color.Transparent
+        Me.Stocks_bttn.BackColor = System.Drawing.Color.Transparent
+        Me.Stocks_bttn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Stocks_bttn.BorderRadius = 0
+        Me.Stocks_bttn.ButtonText = "       Stocks"
+        Me.Stocks_bttn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PanelTransition.SetDecoration(Me.Stocks_bttn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Stocks_bttn, BunifuAnimatorNS.DecorationType.None)
+        Me.Stocks_bttn.DisabledColor = System.Drawing.Color.Gray
+        Me.Stocks_bttn.Iconcolor = System.Drawing.Color.Transparent
+        Me.Stocks_bttn.Iconimage = CType(resources.GetObject("Stocks_bttn.Iconimage"), System.Drawing.Image)
+        Me.Stocks_bttn.Iconimage_right = Nothing
+        Me.Stocks_bttn.Iconimage_right_Selected = Nothing
+        Me.Stocks_bttn.Iconimage_Selected = Nothing
+        Me.Stocks_bttn.IconMarginLeft = 0
+        Me.Stocks_bttn.IconMarginRight = 0
+        Me.Stocks_bttn.IconRightVisible = True
+        Me.Stocks_bttn.IconRightZoom = 0R
+        Me.Stocks_bttn.IconVisible = True
+        Me.Stocks_bttn.IconZoom = 50.0R
+        Me.Stocks_bttn.IsTab = False
+        Me.Stocks_bttn.Location = New System.Drawing.Point(0, 263)
+        Me.Stocks_bttn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Stocks_bttn.Name = "Stocks_bttn"
+        Me.Stocks_bttn.Normalcolor = System.Drawing.Color.Transparent
+        Me.Stocks_bttn.OnHovercolor = System.Drawing.Color.Transparent
+        Me.Stocks_bttn.OnHoverTextColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(162, Byte), Integer))
+        Me.Stocks_bttn.selected = False
+        Me.Stocks_bttn.Size = New System.Drawing.Size(349, 59)
+        Me.Stocks_bttn.TabIndex = 2
+        Me.Stocks_bttn.Text = "       Stocks"
+        Me.Stocks_bttn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Stocks_bttn.Textcolor = System.Drawing.Color.White
+        Me.Stocks_bttn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'BunifuFlatButton1
         '
@@ -274,22 +283,22 @@ Partial Class MainManagevb
         '
         Me.PanelTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles
         Me.PanelTransition.Cursor = Nothing
-        Animation4.AnimateOnlyDifferences = True
-        Animation4.BlindCoeff = CType(resources.GetObject("Animation4.BlindCoeff"), System.Drawing.PointF)
-        Animation4.LeafCoeff = 0!
-        Animation4.MaxTime = 1.0!
-        Animation4.MinTime = 0!
-        Animation4.MosaicCoeff = CType(resources.GetObject("Animation4.MosaicCoeff"), System.Drawing.PointF)
-        Animation4.MosaicShift = CType(resources.GetObject("Animation4.MosaicShift"), System.Drawing.PointF)
-        Animation4.MosaicSize = 1
-        Animation4.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
-        Animation4.RotateCoeff = 0!
-        Animation4.RotateLimit = 0!
-        Animation4.ScaleCoeff = CType(resources.GetObject("Animation4.ScaleCoeff"), System.Drawing.PointF)
-        Animation4.SlideCoeff = CType(resources.GetObject("Animation4.SlideCoeff"), System.Drawing.PointF)
-        Animation4.TimeCoeff = 2.0!
-        Animation4.TransparencyCoeff = 0!
-        Me.PanelTransition.DefaultAnimation = Animation4
+        Animation3.AnimateOnlyDifferences = True
+        Animation3.BlindCoeff = CType(resources.GetObject("Animation3.BlindCoeff"), System.Drawing.PointF)
+        Animation3.LeafCoeff = 0!
+        Animation3.MaxTime = 1.0!
+        Animation3.MinTime = 0!
+        Animation3.MosaicCoeff = CType(resources.GetObject("Animation3.MosaicCoeff"), System.Drawing.PointF)
+        Animation3.MosaicShift = CType(resources.GetObject("Animation3.MosaicShift"), System.Drawing.PointF)
+        Animation3.MosaicSize = 1
+        Animation3.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
+        Animation3.RotateCoeff = 0!
+        Animation3.RotateLimit = 0!
+        Animation3.ScaleCoeff = CType(resources.GetObject("Animation3.ScaleCoeff"), System.Drawing.PointF)
+        Animation3.SlideCoeff = CType(resources.GetObject("Animation3.SlideCoeff"), System.Drawing.PointF)
+        Animation3.TimeCoeff = 2.0!
+        Animation3.TransparencyCoeff = 0!
+        Me.PanelTransition.DefaultAnimation = Animation3
         Me.PanelTransition.Interval = 20
         '
         'MainPanel
@@ -297,6 +306,7 @@ Partial Class MainManagevb
         Me.MainPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MainPanel.Controls.Add(Me.StockPanel)
         Me.MainPanel.Controls.Add(Me.MessagePanel)
         Me.MainPanel.Controls.Add(Me.LogoPanel)
         Me.PanelTransition2.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
@@ -306,15 +316,85 @@ Partial Class MainManagevb
         Me.MainPanel.Size = New System.Drawing.Size(549, 523)
         Me.MainPanel.TabIndex = 3
         '
-        'LogoPanel
+        'StockPanel
         '
-        Me.LogoPanel.Controls.Add(Me.PictureBox1)
-        Me.PanelTransition2.SetDecoration(Me.LogoPanel, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.LogoPanel, BunifuAnimatorNS.DecorationType.None)
-        Me.LogoPanel.Location = New System.Drawing.Point(0, -1)
-        Me.LogoPanel.Name = "LogoPanel"
-        Me.LogoPanel.Size = New System.Drawing.Size(552, 527)
-        Me.LogoPanel.TabIndex = 0
+        Me.StockPanel.Controls.Add(Me.AddStock_txt)
+        Me.StockPanel.Controls.Add(Me.qty_txt)
+        Me.StockPanel.Controls.Add(Me.stock_combotext)
+        Me.StockPanel.Controls.Add(Me.Add_Stock)
+        Me.StockPanel.Controls.Add(Me.Label6)
+        Me.StockPanel.Controls.Add(Me.Label5)
+        Me.StockPanel.Controls.Add(Me.Label4)
+        Me.PanelTransition2.SetDecoration(Me.StockPanel, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.StockPanel, BunifuAnimatorNS.DecorationType.None)
+        Me.StockPanel.Location = New System.Drawing.Point(0, 0)
+        Me.StockPanel.Name = "StockPanel"
+        Me.StockPanel.Size = New System.Drawing.Size(552, 527)
+        Me.StockPanel.TabIndex = 20
+        '
+        'qty_txt
+        '
+        Me.PanelTransition.SetDecoration(Me.qty_txt, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.qty_txt, BunifuAnimatorNS.DecorationType.None)
+        Me.qty_txt.Location = New System.Drawing.Point(371, 147)
+        Me.qty_txt.Name = "qty_txt"
+        Me.qty_txt.ReadOnly = True
+        Me.qty_txt.Size = New System.Drawing.Size(47, 22)
+        Me.qty_txt.TabIndex = 5
+        '
+        'stock_combotext
+        '
+        Me.PanelTransition2.SetDecoration(Me.stock_combotext, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.stock_combotext, BunifuAnimatorNS.DecorationType.None)
+        Me.stock_combotext.FormattingEnabled = True
+        Me.stock_combotext.Location = New System.Drawing.Point(206, 145)
+        Me.stock_combotext.Name = "stock_combotext"
+        Me.stock_combotext.Size = New System.Drawing.Size(121, 24)
+        Me.stock_combotext.TabIndex = 4
+        '
+        'Add_Stock
+        '
+        Me.PanelTransition.SetDecoration(Me.Add_Stock, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Add_Stock, BunifuAnimatorNS.DecorationType.None)
+        Me.Add_Stock.Location = New System.Drawing.Point(323, 263)
+        Me.Add_Stock.Name = "Add_Stock"
+        Me.Add_Stock.Size = New System.Drawing.Size(75, 23)
+        Me.Add_Stock.TabIndex = 2
+        Me.Add_Stock.Text = "Add"
+        Me.Add_Stock.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.PanelTransition.SetDecoration(Me.Label6, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label6, BunifuAnimatorNS.DecorationType.None)
+        Me.Label6.Location = New System.Drawing.Point(331, 149)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(34, 17)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Qty."
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.PanelTransition.SetDecoration(Me.Label5, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label5, BunifuAnimatorNS.DecorationType.None)
+        Me.Label5.Location = New System.Drawing.Point(143, 148)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(57, 17)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Product"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.PanelTransition.SetDecoration(Me.Label4, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label4, BunifuAnimatorNS.DecorationType.None)
+        Me.Label4.Location = New System.Drawing.Point(143, 104)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(51, 17)
+        Me.Label4.TabIndex = 1
+        Me.Label4.Text = "Label4"
         '
         'MessagePanel
         '
@@ -411,6 +491,16 @@ Partial Class MainManagevb
         Me.TextBoxNumber.Size = New System.Drawing.Size(268, 22)
         Me.TextBoxNumber.TabIndex = 13
         '
+        'LogoPanel
+        '
+        Me.LogoPanel.Controls.Add(Me.PictureBox1)
+        Me.PanelTransition2.SetDecoration(Me.LogoPanel, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.LogoPanel, BunifuAnimatorNS.DecorationType.None)
+        Me.LogoPanel.Location = New System.Drawing.Point(0, -1)
+        Me.LogoPanel.Name = "LogoPanel"
+        Me.LogoPanel.Size = New System.Drawing.Size(552, 527)
+        Me.LogoPanel.TabIndex = 0
+        '
         'PictureBox1
         '
         Me.PanelTransition.SetDecoration(Me.PictureBox1, BunifuAnimatorNS.DecorationType.None)
@@ -427,23 +517,32 @@ Partial Class MainManagevb
         '
         Me.PanelTransition2.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide
         Me.PanelTransition2.Cursor = Nothing
-        Animation3.AnimateOnlyDifferences = True
-        Animation3.BlindCoeff = CType(resources.GetObject("Animation3.BlindCoeff"), System.Drawing.PointF)
-        Animation3.LeafCoeff = 0!
-        Animation3.MaxTime = 1.0!
-        Animation3.MinTime = 0!
-        Animation3.MosaicCoeff = CType(resources.GetObject("Animation3.MosaicCoeff"), System.Drawing.PointF)
-        Animation3.MosaicShift = CType(resources.GetObject("Animation3.MosaicShift"), System.Drawing.PointF)
-        Animation3.MosaicSize = 0
-        Animation3.Padding = New System.Windows.Forms.Padding(0)
-        Animation3.RotateCoeff = 0!
-        Animation3.RotateLimit = 0!
-        Animation3.ScaleCoeff = CType(resources.GetObject("Animation3.ScaleCoeff"), System.Drawing.PointF)
-        Animation3.SlideCoeff = CType(resources.GetObject("Animation3.SlideCoeff"), System.Drawing.PointF)
-        Animation3.TimeCoeff = 0!
-        Animation3.TransparencyCoeff = 0!
-        Me.PanelTransition2.DefaultAnimation = Animation3
+        Animation4.AnimateOnlyDifferences = True
+        Animation4.BlindCoeff = CType(resources.GetObject("Animation4.BlindCoeff"), System.Drawing.PointF)
+        Animation4.LeafCoeff = 0!
+        Animation4.MaxTime = 1.0!
+        Animation4.MinTime = 0!
+        Animation4.MosaicCoeff = CType(resources.GetObject("Animation4.MosaicCoeff"), System.Drawing.PointF)
+        Animation4.MosaicShift = CType(resources.GetObject("Animation4.MosaicShift"), System.Drawing.PointF)
+        Animation4.MosaicSize = 0
+        Animation4.Padding = New System.Windows.Forms.Padding(0)
+        Animation4.RotateCoeff = 0!
+        Animation4.RotateLimit = 0!
+        Animation4.ScaleCoeff = CType(resources.GetObject("Animation4.ScaleCoeff"), System.Drawing.PointF)
+        Animation4.SlideCoeff = CType(resources.GetObject("Animation4.SlideCoeff"), System.Drawing.PointF)
+        Animation4.TimeCoeff = 0!
+        Animation4.TransparencyCoeff = 0!
+        Me.PanelTransition2.DefaultAnimation = Animation4
         Me.PanelTransition2.Interval = 14
+        '
+        'AddStock_txt
+        '
+        Me.PanelTransition.SetDecoration(Me.AddStock_txt, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.AddStock_txt, BunifuAnimatorNS.DecorationType.None)
+        Me.AddStock_txt.Location = New System.Drawing.Point(270, 263)
+        Me.AddStock_txt.Name = "AddStock_txt"
+        Me.AddStock_txt.Size = New System.Drawing.Size(47, 22)
+        Me.AddStock_txt.TabIndex = 5
         '
         'MainManagevb
         '
@@ -466,10 +565,12 @@ Partial Class MainManagevb
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Menu_bttn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MainPanel.ResumeLayout(False)
-        Me.LogoPanel.ResumeLayout(False)
-        Me.LogoPanel.PerformLayout()
+        Me.StockPanel.ResumeLayout(False)
+        Me.StockPanel.PerformLayout()
         Me.MessagePanel.ResumeLayout(False)
         Me.MessagePanel.PerformLayout()
+        Me.LogoPanel.ResumeLayout(False)
+        Me.LogoPanel.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -483,7 +584,7 @@ Partial Class MainManagevb
     Friend WithEvents SendSMS As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Exit_bttn As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
-    Friend WithEvents BunifuFlatButton2 As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents Stocks_bttn As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuFlatButton1 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents PanelTransition As BunifuAnimatorNS.BunifuTransition
     Friend WithEvents PanelTransition2 As BunifuAnimatorNS.BunifuTransition
@@ -498,4 +599,12 @@ Partial Class MainManagevb
     Friend WithEvents TextBoxMessage As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBoxNumber As TextBox
+    Friend WithEvents StockPanel As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Add_Stock As Button
+    Friend WithEvents stock_combotext As ComboBox
+    Friend WithEvents qty_txt As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents AddStock_txt As TextBox
 End Class
