@@ -18,10 +18,13 @@
 End Class
 
 Namespace POSDataSetTableAdapters
-
-End Namespace
-
-Namespace POSDataSetTableAdapters
     Partial Public Class invoiceTableAdapter
+
+    End Class
+
+    Partial Public Class customerTableAdapter
+    End Class
+
+    Partial Public Class product1TableAdapter
     End Class
 End Namespace

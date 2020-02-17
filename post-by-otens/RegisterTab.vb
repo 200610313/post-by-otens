@@ -1,8 +1,10 @@
-﻿Public Class RegisterTab
+﻿Imports System.Drawing.Text
+Public Class RegisterTab
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public loggedInBusinessName As String = "Boboy's Refreshers"
+    Public loggedInBusinessName As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'MessageBox.Show(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
@@ -12,6 +14,26 @@
         loadProducts()
 
         initShoppingCart()
+
+
+        searchBox.Font = New Font("Century Gothic", searchBox.Font.Size)
+        amtRecvd.Font = New Font("Century Gothic", amtRecvd.Font.Size)
+
+        amountreceived.Font = New Font("Roboto Th", amountreceived.Font.Size)
+        change.Font = New Font("Roboto Th", change.Font.Size)
+        total.Font = New Font("Roboto Th", total.Font.Size)
+
+        php.Font = New Font("Roboto Lt", php.Font.Size)
+        phptotal.Font = New Font("Roboto Lt", phptotal.Font.Size)
+        totalAmt.Font = New Font("Roboto Lt", totalAmt.Font.Size)
+
+        changeAmt.Font = New Font("Roboto Lt", changeAmt.Font.Size)
+        Label6.Font = New Font("Roboto Lt", Label6.Font.Size)
+
+        Label7.Font = New Font("Roboto Lt", Label7.Font.Size)
+
+        void.Font = New Font("Open Sans Light", void.Font.Size)
+
     End Sub
 
     Private Sub initShoppingCart()
@@ -29,10 +51,6 @@
         For Each product In products
             FlowLayoutPanel1.Controls.Add(product)
         Next
-    End Sub
-
-    Private Sub amtReceivedKeyPress(sender As Object, e As EventArgs) Handles amtRecvd.KeyPress
-        validateInput(e)
     End Sub
 
     Private Sub validateInput(ByVal e As System.Windows.Forms.KeyPressEventArgs)
@@ -98,20 +116,38 @@
     Private Sub BunifuMaterialTextbox1_OnValueChanged(sender As Object, e As EventArgs) Handles searchBox.OnValueChanged
         updateProductsView()
     End Sub
-
+    'Saves to database but does not produce invoice form
     Private Sub BunifuTileButton4_Click(sender As Object, e As EventArgs) Handles confirm.Click
         If shoppingCartItems.Count <> 0 Then
-            registerCustomer("Sergio", "Ramos", "A", "Butuan", "Bagumbayan", "7000", "09267052345")
+            registerCustomer("", "", "", "", "", "", "")
+            updateDBStock()
+            resetView()
         End If
     End Sub
 
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-        Me.Close()
+    Private Sub confirmWreceipt_Click(sender As Object, e As EventArgs) Handles confirmWreceipt.Click
+        If shoppingCartItems.Count <> 0 Then
+            Me.Hide()
+            Dim choice As New popUpBox
+        End If
     End Sub
 
-    Private Sub confirmWreceipt_Click(sender As Object, e As EventArgs) Handles confirmWreceipt.Click
+    Public Sub resetView()
+        Me.shoppingCartItems = New List(Of shoppingCartItem)
+        shoppingCart_flow.Controls.Clear()
+        products = New List(Of product)
+        loadProducts()
+        updateTotals()
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Me.shoppingCartItems = New List(Of shoppingCartItem)
+        shoppingCart_flow.Controls.Clear()
+        products = New List(Of product)
+        loadProducts()
+    End Sub
+
+    Private Sub void_Click(sender As Object, e As EventArgs) Handles void.Click
 
     End Sub
 End Class

@@ -62,13 +62,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\Desktop\Latest Bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -99,20 +95,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="LoginFrm.Designer.vb">
-      <DependentUpon>LoginFrm.vb</DependentUpon>
+    <Compile Include="customerSearch.Designer.vb">
+      <DependentUpon>customerSearch.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginFrm.vb">
+    <Compile Include="customerSearch.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainManagevb.Designer.vb">
-      <DependentUpon>MainManagevb.vb</DependentUpon>
+    <Compile Include="custRegistrationForm.Designer.vb">
+      <DependentUpon>custRegistrationForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="MainManagevb.vb">
+    <Compile Include="custRegistrationForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\SendMessageModule.vb" />
+    <Compile Include="invoiceSearch.Designer.vb">
+      <DependentUpon>invoiceSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="invoiceSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="popUpBox.Designer.vb">
+      <DependentUpon>popUpBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="popUpBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="POSDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -158,13 +164,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoginFrm.resx">
-      <DependentUpon>LoginFrm.vb</DependentUpon>
+    <EmbeddedResource Include="customerSearch.resx">
+      <DependentUpon>customerSearch.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainManagevb.resx">
-      <DependentUpon>MainManagevb.vb</DependentUpon>
+    <EmbeddedResource Include="custRegistrationForm.resx">
+      <DependentUpon>custRegistrationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="invoiceSearch.resx">
+      <DependentUpon>invoiceSearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="popUpBox.resx">
+      <DependentUpon>popUpBox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegisterTab.resx">
       <DependentUpon>RegisterTab.vb</DependentUpon>
     </EmbeddedResource>
@@ -182,7 +194,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -193,6 +204,22 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <EmbeddedResource Include="Resources\Roboto-Black.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-BlackItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-BoldCondensed.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-BoldCondensedItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-BoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Condensed.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-CondensedItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Italic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Light.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-LightItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-MediumItalic.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-Thin.ttf" />
+    <EmbeddedResource Include="Resources\Roboto-ThinItalic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="POSDataSet.xsc">
@@ -206,6 +233,10 @@
     <None Include="POSDataSet.xss">
       <DependentUpon>POSDataSet.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="Resources\GOTHIC.TTF" />
+    <EmbeddedResource Include="Resources\GOTHICB.TTF" />
+    <EmbeddedResource Include="Resources\GOTHICBI.TTF" />
+    <EmbeddedResource Include="Resources\GOTHICI.TTF" />
     <None Include="Resources\icons8_filled_circle_16px.png" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +255,16 @@
     <None Include="Resources\icons8_filled_circle_30px1.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\OpenSans-Bold.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-BoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-ExtraBold.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-ExtraBoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-Italic.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-Light.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-LightItalic.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-Regular.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-Semibold.ttf" />
+    <EmbeddedResource Include="Resources\OpenSans-SemiboldItalic.ttf" />
     <None Include="Resources\pos21.JPG" />
   </ItemGroup>
   <ItemGroup>
@@ -285,18 +326,28 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\imageedit_12_6014486617.png" />
-    <None Include="Resources\imageedit_11_6611322399.png" />
-    <None Include="Resources\icons8-add-50 %281%29.png" />
-    <None Include="Resources\icons8-invoice-24 %281%29.png" />
-    <None Include="Resources\icons8-invoice-24.png" />
-    <None Include="Resources\icons8-new-message-24.png" />
-    <None Include="Resources\icons8-menu-24.png" />
-    <None Include="Resources\Pewter Engineers1.png" />
+    <None Include="Resources\icons8_cancel_24px.png" />
+    <None Include="Resources\icons8_cancel_48px2.png" />
+    <None Include="Resources\newminus1.png" />
+    <None Include="Resources\icons8_minus_26px_1.png" />
+    <None Include="Resources\add_48px1.png" />
+    <None Include="Resources\icons8_filled_circle_30px_13.png" />
+    <None Include="Resources\icons8_ok_48px1.png" />
+    <None Include="Resources\icons8-filled-circle-16.png" />
+    <None Include="Resources\icons8_filled_circle_30px_12.png" />
+    <None Include="Resources\icons8_filled_circle_30px_11.png" />
+    <None Include="Resources\icons8_multiply_16px1.png" />
+    <None Include="Resources\icons8_cash_register_32px2.png" />
+    <None Include="Resources\norecepticons8_cash_register_32px.png" />
+    <None Include="Resources\icons8_cash_register_32px1.png" />
+    <None Include="Resources\icons8_multiply_32px.png" />
+    <None Include="Resources\icons8_multiply_16px.png" />
+    <None Include="Resources\icons8_ok_48px.png" />
     <None Include="Resources\icons8-password-26.png" />
     <None Include="Resources\icons8-user-301.png" />
     <None Include="Resources\icons8-user-30.png" />
     <None Include="Resources\Pewter Engineers.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

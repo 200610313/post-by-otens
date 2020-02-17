@@ -2,6 +2,7 @@
     Public Sub loadProductsOf(loggedInBusinessName As String, ByRef products As List(Of product))
         Dim adapter As New POSDataSetTableAdapters.product1TableAdapter
         Dim i, rows As Integer
+
         rows = CInt(adapter.getProductsOf(loggedInBusinessName).Rows.Count)
         For i = 0 To rows - 1
             Dim prodName = adapter.getProductsOf(loggedInBusinessName).Rows(i).Item(0)
@@ -44,8 +45,8 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
     End Sub
+
     'Generate invoice for the customer
     Public Sub generateInvoiceForCustomer(customerID As Integer)
         Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter
@@ -74,4 +75,11 @@
         Next
     End Sub
     'And then correct renders in products list
+
+    Public Sub updateDBStock()
+        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
+        For Each shoppingCartItem In RegisterTab.shoppingCartItems
+            adapter.decrementStock(shoppingCartItem.getShoppingCartCount, RegisterTab.loggedInBusinessName, shoppingCartItem.getProdNum)
+        Next
+    End Sub
 End Module
