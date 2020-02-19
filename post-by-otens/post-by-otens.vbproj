@@ -113,6 +113,12 @@
     <Compile Include="invoiceSearch.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="managerVerifier.Designer.vb">
+      <DependentUpon>managerVerifier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="managerVerifier.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="popUpBox.Designer.vb">
       <DependentUpon>popUpBox.vb</DependentUpon>
     </Compile>
@@ -162,6 +168,7 @@
     <Compile Include="shoppingCartItem.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="voidInvoice.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="customerSearch.resx">
@@ -172,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="invoiceSearch.resx">
       <DependentUpon>invoiceSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerVerifier.resx">
+      <DependentUpon>managerVerifier.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="popUpBox.resx">

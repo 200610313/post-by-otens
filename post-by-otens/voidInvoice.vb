@@ -1,0 +1,3 @@
+﻿Module voidInvoice
+
+End Module
