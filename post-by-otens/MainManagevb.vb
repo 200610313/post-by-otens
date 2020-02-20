@@ -1,8 +1,11 @@
-﻿Public Class MainManagevb
+﻿Imports System.Data.DataTable
+Public Class MainManagevb
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
     Public loggedInBusinessName As String
-    Dim index As Integer
+    Public table As New DataTable("product")
+    Public index As Integer = 0
+    Public ck As Integer = 0
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles Exit_bttn.Click
         Me.Close()
     End Sub
@@ -51,9 +54,27 @@
     End Sub
 
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'POSDataSet.product' table. You can move, or remove it, as needed.
+
         LogoPanel.Visible = True
         MessagePanel.Visible = False
         StockPanel.Visible = False
+
+        'Add header in datagridview
+        ' ProductDataGrid.DataSource = table
+        '   With ProductDataGrid
+        '.RowHeadersVisible = False
+        '  .Columns(0).HeaderCell.Value = "Product Name"
+        '   .Columns(1).HeaderCell.Value = "Stock"
+        ' .Columns(2).HeaderCell.Value = "Price"
+        'olumns(3).HeaderCell.Value = "ID"
+        ' .Columns(4).HeaderCell.Value = "Owner"
+        ' End With
+
+
+
+
+
     End Sub
 
     Private Sub SendSMS_Click(sender As Object, e As EventArgs) Handles SendSMS.Click
@@ -62,7 +83,7 @@
         StockPanel.Visible = False
     End Sub
 
-    Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click
+    Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click, Elipse_Edit.TargetControlResized
         LogoPanel.Visible = False
         MessagePanel.Visible = False
         StockPanel.Visible = True
@@ -74,42 +95,84 @@
         StockPanel.Visible = False
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.TextChanged, Label6.TextChanged, Label5.TextChanged
-        Label4.Text = RegisterTab.loggedInBusinessName
+    Private Sub AddStock_bttn_Click(sender As Object, e As EventArgs) Handles AddStock_bttn.Click
+        '  Dim adapter As New POSDataSet.productDataTable
+        ' ProductBindingSource.DataSource = adapter
+        ' ProductDataGrid.DataSource = ProductBindingSource
+        ' Dim newRow As DataRow
+        ' newRow = adapter.NewRow
+        ' With newRow
+        '.Item(0) = "NewProduct"
+        '.Item(1) = 0
+        '   .Item(2) = 0
+        '.Item(3) = 12345678911
+        '  .Item(4) = "Boboy's Refreshers"
+        ' End With
+        ' adapter.Rows.Add(newRow)
+        '  adapter.AcceptChanges()
+        index += 1
+        Me.ProductDataGrid.Rows.Add("", 0, 0, index, "Check")
+
     End Sub
 
+    Private Sub ProductDataGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProductDataGrid.CellContentClick
+
+    End Sub
+
+    Private Sub Edit_btn_Click(sender As Object, e As EventArgs) Handles Edit_btn.Click
+
+        If ProductDataGrid.SelectedRows.ToString Then
 
 
-
-
-    Private Sub stock_combotext_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim adapter As New POSDataSetTableAdapters.product2TableAdapter
-        Dim userBusinessName As String = "Boboy's Refreshers"
-        If RegisterTab.loggedInBusinessName = userBusinessName Then
-            stock_combotext.DataSource = adapter.GetDataProduct(userBusinessName)
-            stock_combotext.DisplayMember = "pName"
-            stock_combotext.ValueMember = "pStock"
         End If
+
     End Sub
 
 
 
 
 
-    Private Sub stock_combotext_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles stock_combotext.SelectionChangeCommitted
-        qty_txt.Text = stock_combotext.SelectedValue.ToString()
-    End Sub
 
-    Private Sub Add_Stock_Click(sender As Object, e As EventArgs) Handles Add_Stock.Click
+    ' Private Sub Label4_Click(sender As Object, e As EventArgs)
+    '   Label4.Text = RegisterTab.loggedInBusinessName
+    '  End Sub
 
-        Dim adapter As New POSDataSetTableAdapters.product2TableAdapter
-        Dim adapterupdate As New POSDataSetTableAdapters.TableAdapterManager
-        Dim POS As New POSDataSet
 
-        Dim userBusinessName As String = "Boboy's Refreshers"
-        If RegisterTab.loggedInBusinessName = userBusinessName Then
-            adapter.AddStock(AddStock_txt.Text, stock_combotext.Text)
-            adapter.Update(POS)
-        End If
-    End Sub
+
+
+
+    ' Private Sub stock_combotext_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MyBase.Load
+    'Dim adapter As New POSDataSetTableAdapters.product2TableAdapter
+    'Dim userBusinessName As String = "Boboy's Refreshers"
+    'If RegisterTab.loggedInBusinessName = userBusinessName Then
+    '       stock_combotext.DataSource = adapter.GetDataProduct(userBusinessName)
+    '       stock_combotext.DisplayMember = "pName"
+    '        stock_combotext.ValueMember = "pStock"
+    'End If
+    ' End Sub
+
+
+
+
+
+    ' Private Sub stock_combotext_SelectionChangeCommitted(sender As Object, e As EventArgs)
+    '    qty_txt.Text = stock_combotext.SelectedValue.ToString()
+    ' End Sub
+
+    ' Private Sub Add_Stock_Click(sender As Object, e As EventArgs)
+
+    ' Dim adapter As New POSDataSetTableAdapters.product2TableAdapter
+    ' Dim adapterupdate As New POSDataSetTableAdapters.TableAdapterManager
+    'Dim POS As New POSDataSet
+    '
+    'Dim userBusinessName As String = "Boboy's Refreshers"
+    'RegisterTab.loggedInBusinessName = userBusinessName Then
+    '      adapter.AddStock(AddStock_txt.Text, stock_combotext.Text)
+    '    adapter.Update(POS)
+    '  End If
+    '   End Sub
+
+    ' Private Sub StockPanel_Paint(sender As Object, e As PaintEventArgs) Handles StockPanel.Paint
+
+    ' End Sub
 End Class

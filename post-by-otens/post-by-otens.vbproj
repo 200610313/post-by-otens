@@ -63,8 +63,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\..\Desktop\Latest Bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -213,6 +214,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -345,6 +349,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-delete-bin-24.png" />
+    <None Include="Resources\icons8-save-642.png" />
+    <None Include="Resources\icons8-edit-property-26.png" />
+    <None Include="Resources\icons8-box-641.png" />
+    <None Include="Resources\icons8-edit-241.png" />
+    <None Include="Resources\icons8-save-641.png" />
     <None Include="Resources\icons8_cancel_24px.png" />
     <None Include="Resources\icons8_cancel_48px2.png" />
     <None Include="Resources\newminus1.png" />

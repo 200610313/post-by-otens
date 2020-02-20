@@ -619,6 +619,8 @@ Partial Public Class POSDataSet
         
         Private columnbName As Global.System.Data.DataColumn
         
+        Private columnrbgghg As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -695,6 +697,14 @@ Partial Public Class POSDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property rbgghgColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnrbgghg
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -731,9 +741,9 @@ Partial Public Class POSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddproductRow(ByVal pName As String, ByVal pPrice As Decimal, ByVal pStock As Integer, ByVal parentbusinessRowByFK_product_business1 As businessRow) As productRow
+        Public Overloads Function AddproductRow(ByVal pName As String, ByVal pPrice As Decimal, ByVal pStock As Integer, ByVal parentbusinessRowByFK_product_business1 As businessRow, ByVal rbgghg As String) As productRow
             Dim rowproductRow As productRow = CType(Me.NewRow,productRow)
-            Dim columnValuesArray() As Object = New Object() {pName, pPrice, pStock, Nothing, Nothing}
+            Dim columnValuesArray() As Object = New Object() {pName, pPrice, pStock, Nothing, Nothing, rbgghg}
             If (Not (parentbusinessRowByFK_product_business1) Is Nothing) Then
                 columnValuesArray(4) = parentbusinessRowByFK_product_business1(0)
             End If
@@ -770,6 +780,7 @@ Partial Public Class POSDataSet
             Me.columnpStock = MyBase.Columns("pStock")
             Me.columnpNumber = MyBase.Columns("pNumber")
             Me.columnbName = MyBase.Columns("bName")
+            Me.columnrbgghg = MyBase.Columns("rbgghg")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -785,6 +796,8 @@ Partial Public Class POSDataSet
             MyBase.Columns.Add(Me.columnpNumber)
             Me.columnbName = New Global.System.Data.DataColumn("bName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnbName)
+            Me.columnrbgghg = New Global.System.Data.DataColumn("rbgghg", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnrbgghg)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnpNumber, Me.columnbName}, true))
             Me.columnpName.AllowDBNull = false
             Me.columnpName.MaxLength = 50
@@ -3689,6 +3702,21 @@ Partial Public Class POSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property rbgghg() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableproduct.rbgghgColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'rbgghg' in table 'product' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableproduct.rbgghgColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property businessRow() As businessRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_product_business1")),businessRow)
@@ -3720,6 +3748,18 @@ Partial Public Class POSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetpStockNull()
             Me(Me.tableproduct.pStockColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsrbgghgNull() As Boolean
+            Return Me.IsNull(Me.tableproduct.rbgghgColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetrbgghgNull()
+            Me(Me.tableproduct.rbgghgColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5296,8 +5336,9 @@ Namespace POSDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT * FROM dbo.product"
+            Me._commandCollection(0).CommandText = "SELECT * FROM dbo.product where bName = @userBusinessName"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userBusinessName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "UPDATE product"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET          pStock = pStock - @pStock"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (bName = @bName) A"& _ 
@@ -5312,8 +5353,13 @@ Namespace POSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As POSDataSet.productDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As POSDataSet.productDataTable, ByVal userBusinessName As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (userBusinessName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("userBusinessName")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(userBusinessName,String)
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -5325,8 +5371,13 @@ Namespace POSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As POSDataSet.productDataTable
+        Public Overloads Overridable Function GetDataProduct(ByVal userBusinessName As String) As POSDataSet.productDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (userBusinessName Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("userBusinessName")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(userBusinessName,String)
+            End If
             Dim dataTable As POSDataSet.productDataTable = New POSDataSet.productDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
