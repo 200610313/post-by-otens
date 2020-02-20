@@ -52,7 +52,7 @@ Partial Class shoppingCartItem
         '
         'pSubTotal
         '
-        Me.pSubTotal.Font = New System.Drawing.Font("Roboto Lt", 11.0!)
+        Me.pSubTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.pSubTotal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.pSubTotal.Location = New System.Drawing.Point(289, 32)
         Me.pSubTotal.Name = "pSubTotal"
@@ -63,7 +63,7 @@ Partial Class shoppingCartItem
         '
         'pCount
         '
-        Me.pCount.Font = New System.Drawing.Font("Roboto Lt", 11.0!)
+        Me.pCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
         Me.pCount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.pCount.Location = New System.Drawing.Point(-34, 32)
         Me.pCount.Name = "pCount"
@@ -74,7 +74,7 @@ Partial Class shoppingCartItem
         '
         'pName
         '
-        Me.pName.Font = New System.Drawing.Font("Roboto Lt", 15.0!)
+        Me.pName.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.pName.ForeColor = System.Drawing.Color.White
         Me.pName.Location = New System.Drawing.Point(61, 27)
         Me.pName.Name = "pName"
@@ -85,7 +85,7 @@ Partial Class shoppingCartItem
         '
         'pNum
         '
-        Me.pNum.Font = New System.Drawing.Font("Roboto Lt", 7.0!)
+        Me.pNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!)
         Me.pNum.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.pNum.Location = New System.Drawing.Point(17, 7)
         Me.pNum.Name = "pNum"

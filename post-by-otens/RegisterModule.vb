@@ -13,6 +13,9 @@
         Next
     End Sub
 
+
+
+
     Public Sub updateProductsView()
         'get names of like what's in the textbox
         Dim adapter As New POSDataSetTableAdapters.product1TableAdapter
