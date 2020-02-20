@@ -117,12 +117,25 @@
     <Compile Include="invoiceSearch.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LoginFrm.Designer.vb">
+      <DependentUpon>LoginFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainManagevb.Designer.vb">
+      <DependentUpon>MainManagevb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainManagevb.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="managerVerifier.Designer.vb">
       <DependentUpon>managerVerifier.vb</DependentUpon>
     </Compile>
     <Compile Include="managerVerifier.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\SendMessageModule.vb" />
     <Compile Include="popUpBox.Designer.vb">
       <DependentUpon>popUpBox.vb</DependentUpon>
     </Compile>
@@ -189,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="invoiceSearch.resx">
       <DependentUpon>invoiceSearch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFrm.resx">
+      <DependentUpon>LoginFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainManagevb.resx">
+      <DependentUpon>MainManagevb.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="managerVerifier.resx">
       <DependentUpon>managerVerifier.vb</DependentUpon>
