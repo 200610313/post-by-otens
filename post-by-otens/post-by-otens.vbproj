@@ -186,12 +186,6 @@
     <Compile Include="shoppingCartItem.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="testform.Designer.vb">
-      <DependentUpon>testform.vb</DependentUpon>
-    </Compile>
-    <Compile Include="testform.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="voidInvoice.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -231,9 +225,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="shoppingCartItem.resx">
       <DependentUpon>shoppingCartItem.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="testform.resx">
-      <DependentUpon>testform.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

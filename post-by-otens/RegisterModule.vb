@@ -73,6 +73,9 @@
             'insert row in product detail
             adapter.newProductLine(shoppingcartitem.getShoppingCartCount, shoppingcartitem.getShoppingCartSubtotal, RegisterTab.loggedInBusinessName, InvoiceNumber, shoppingcartitem.getProdNum, RegisterTab.loggedInBusinessName)
         Next
+
+        'Generate sheet file.
+        generate(customerID, InvoiceNumber, RegisterTab.loggedInBusinessName)
     End Sub
     'And then correct renders in products list
 

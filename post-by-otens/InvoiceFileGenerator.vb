@@ -1,7 +1,14 @@
 ﻿Imports Excel = Microsoft.Office.Interop.Excel
 Module InvoiceFileGenerator
     Public xlApp As Excel.Application, xlWorkBook As Excel.Workbook, xlWorkSheet As Excel.Worksheet
-    Public Sub generate()
+    Private cID As Integer
+    Private iNum As Integer
+    Private bName As String
+    Public Sub generate(customerID As Integer, invoiceNumber As Integer, loggedInBusinessName As String)
+        cID = customerID
+        iNum = invoiceNumber
+        bName = loggedInBusinessName
+
         xlApp = New Excel.Application
         xlWorkBook = xlApp.Workbooks.Open("C:\Users\angelu.angelu-PC\Desktop\sales-invoice.xlsx")
         xlWorkSheet = xlWorkBook.Worksheets("Invoice1a")
@@ -42,19 +49,18 @@ Module InvoiceFileGenerator
     Private Sub fillUpProductDetails()
         Dim adapter As New POSDataSetTableAdapters.DataTable3TableAdapter
         Dim rows As Integer
-        rows = adapter.getInvoiceData().Rows.Count
+        rows = adapter.getInvoiceData(cID, iNum, bName).Rows.Count
 
         Dim pNum, pName, pQty, pPrice, pSub, pTotal As String
 
-        For i = 0 To rows - 1
-            pNum = adapter.getInvoiceData().Rows(i).Item(11)
-            pName = adapter.getInvoiceData().Rows(i).Item(12)
-            pQty = adapter.getInvoiceData().Rows(i).Item(13)
-            pPrice = adapter.getInvoiceData().Rows(i).Item(14)
-            pSub = adapter.getInvoiceData().Rows(i).Item(15)
-        Next
+        'getProductLinesOfInvoice(InvoiceNumber) 'just this??
 
-        pTotal = adapter.getInvoiceData().Rows(0).Item(16)
+        'For Each productLine
+        'cell(x, x) = productLine.getX
+        'cell(x, y) = productLine.getY
+
+
+        pTotal = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(16)
     End Sub
 
     Private Sub fillUPCustomerData()
@@ -62,40 +68,40 @@ Module InvoiceFileGenerator
         'Customer Full Name
         Dim fullName, addr As String
         fullName = ""
-        fullName = adapter.getInvoiceData().Rows(0).Item(5)
-        fullName = fullName & " " & adapter.getInvoiceData().Rows(0).Item(6)
-        fullName = fullName & " " & adapter.getInvoiceData().Rows(0).Item(7)
+        fullName = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(5)
+        fullName = fullName & " " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(6)
+        fullName = fullName & " " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(7)
         xlWorkSheet.Cells(10, 1) = fullName
         addr = ""
-        addr = adapter.getInvoiceData().Rows(0).Item(8)
-        addr = addr & ", " & adapter.getInvoiceData().Rows(0).Item(9)
-        addr = addr & " " & adapter.getInvoiceData().Rows(0).Item(10)
+        addr = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(8)
+        addr = addr & ", " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(9)
+        addr = addr & " " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(10)
         xlWorkSheet.Cells(11, 1) = addr
         'Customer Phone
-        xlWorkSheet.Cells(12, 1) = adapter.getInvoiceData().Rows(0).Item(11)
+        xlWorkSheet.Cells(12, 1) = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(11)
     End Sub
 
     Private Sub fillUpCompanyFields()
         Dim adapter As New POSDataSetTableAdapters.DataTable3TableAdapter
         'Company Name
-        xlWorkSheet.Cells(1, 1) = adapter.getInvoiceData().Rows(0).Item(0)
+        xlWorkSheet.Cells(1, 1) = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(0)
         'Phone
-        xlWorkSheet.Cells(4, 1) = adapter.getInvoiceData().Rows(0).Item(1)
+        xlWorkSheet.Cells(4, 1) = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(1)
         'Date
-        xlWorkSheet.Cells(2, 8) = adapter.getInvoiceData().Rows(0).Item(2)
+        xlWorkSheet.Cells(2, 8) = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(2)
         'Invoice Number
-        xlWorkSheet.Cells(3, 8) = adapter.getInvoiceData().Rows(0).Item(3)
+        xlWorkSheet.Cells(3, 8) = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(3)
         'cID
-        xlWorkSheet.Cells(4, 8) = adapter.getInvoiceData().Rows(0).Item(4)
+        xlWorkSheet.Cells(4, 8) = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(4)
         'Contact Name
         Dim fullName, eMail As String
         fullName = ""
-        fullName = adapter.getInvoiceData().Rows(0).Item(18)
-        fullName = fullName & " " & adapter.getInvoiceData().Rows(0).Item(19)
-        fullName = fullName & " " & adapter.getInvoiceData().Rows(0).Item(20)
+        fullName = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(18)
+        fullName = fullName & " " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(19)
+        fullName = fullName & " " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(20)
         eMail = ""
         'Email
-        eMail = adapter.getInvoiceData().Rows(0).Item(21)
+        eMail = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(21)
         'Fill contact details
         xlWorkSheet.Cells(36, 4) = fullName & ", " & eMail
 
