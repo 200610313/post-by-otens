@@ -37,13 +37,13 @@ Module InvoiceFileGenerator
     End Sub
 
     Private Sub fillUpForm()
-        Try
-            fillUpCompanyFields()
+        'Try
+        fillUpCompanyFields()
             fillUPCustomerData()
             fillUpProductDetails()
-        Catch ex As Exception
-
-        End Try
+        'Catch ex As Exception
+        ' MessageBox.Show(ex.Message)
+        'End Try
     End Sub
 
     Private Sub fillUpProductDetails()
@@ -51,16 +51,37 @@ Module InvoiceFileGenerator
         Dim rows As Integer
         rows = adapter.getInvoiceData(cID, iNum, bName).Rows.Count
 
-        Dim pNum, pName, pQty, pPrice, pSub, pTotal As String
-
-        'getProductLinesOfInvoice(InvoiceNumber) 'just this??
-
-        'For Each productLine
-        'cell(x, x) = productLine.getX
-        'cell(x, y) = productLine.getY
+        Dim pNum As Integer
+        Dim pName, pQty, pPrice, pSub, pTotal As String
 
 
+        Dim adapter2 As New POSDataSetTableAdapters.DataTable4TableAdapter
+        Dim adapter3 As New POSDataSetTableAdapters.productTableAdapter
+
+        Dim numberOfProdLines As String
+        numberOfProdLines = adapter2.getPLines(iNum).Rows.Count
+
+        Dim currRow, currColumn As Integer
+        currRow = 18
+        For i = 0 To numberOfProdLines - 1
+            pNum = adapter2.getPLines(iNum).Rows(i).Item(0)
+            pName = adapter3.getProdName(pNum)
+            pQty = adapter2.getPLines(iNum).Rows(i).Item(2)
+            pPrice = adapter2.getPLines(iNum).Rows(i).Item(3)
+            pSub = adapter2.getPLines(iNum).Rows(i).Item(4)
+
+            'Write to sheet
+            xlWorkSheet.Cells(pNum, 1) = pNum
+            xlWorkSheet.Cells(pName, 2) = pNum
+            xlWorkSheet.Cells(pQty, 3) = pNum
+            xlWorkSheet.Cells(pPrice, 4) = pNum
+            xlWorkSheet.Cells(pSub, 5) = pNum
+            'Next row
+            currRow = currRow + 1
+        Next
+        'Finally, write the total
         pTotal = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(16)
+        xlWorkSheet.Cells(33, 7) = pTotal
     End Sub
 
     Private Sub fillUPCustomerData()
@@ -82,6 +103,7 @@ Module InvoiceFileGenerator
     End Sub
 
     Private Sub fillUpCompanyFields()
+
         Dim adapter As New POSDataSetTableAdapters.DataTable3TableAdapter
         'Company Name
         xlWorkSheet.Cells(1, 1) = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(0)

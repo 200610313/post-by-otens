@@ -1,4 +1,18 @@
 ﻿Partial Class POSDataSet
+    Partial Public Class DataTable3DataTable
+        Private Sub DataTable3DataTable_DataTable3RowChanging(sender As Object, e As DataTable3RowChangeEvent) Handles Me.DataTable3RowChanging
+
+        End Sub
+
+    End Class
+
+    Partial Public Class DataTable4DataTable
+        Private Sub DataTable4DataTable_DataTable4RowChanging(sender As Object, e As DataTable4RowChangeEvent) Handles Me.DataTable4RowChanging
+
+        End Sub
+
+    End Class
+
     Partial Public Class productDataTable
         Private Sub productDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
             If (e.Column.ColumnName = Me.pNameColumn.ColumnName) Then
