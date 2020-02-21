@@ -66,9 +66,8 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\Latest Bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -152,6 +151,12 @@
       <DependentUpon>POSDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="RegisterModule.vb" />
+    <Compile Include="RegisterStock.Designer.vb">
+      <DependentUpon>RegisterStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RegisterTab.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +215,9 @@
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="popUpBox.resx">
       <DependentUpon>popUpBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterStock.resx">
+      <DependentUpon>RegisterStock.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterTab.resx">
       <DependentUpon>RegisterTab.vb</DependentUpon>
@@ -361,6 +369,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-delete-302.png" />
+    <None Include="Resources\icons8-add-property-801.png" />
+    <None Include="Resources\icons8-delete-301.png" />
     <None Include="Resources\icons8_cancel_24px.png" />
     <None Include="Resources\icons8_cancel_48px2.png" />
     <None Include="Resources\newminus1.png" />
