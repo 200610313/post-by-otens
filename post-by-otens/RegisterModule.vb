@@ -37,14 +37,14 @@
     'Insert customer data
     Public Sub registerCustomer(cFname As String, cLName As String, cMinit As Char, cCity As String, cState As String, cZip As String, cPhone As String)
         Dim adapter As New POSDataSetTableAdapters.customerTableAdapter
-        Try
-            Dim customerID As Integer
+        'Try
+        Dim customerID As Integer
             adapter.InsertQuery(cFname, cLName, cMinit, cCity, cState, cZip, cPhone)
             customerID = adapter.getCustID
             generateInvoiceForCustomer(customerID)
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
+        'Catch ex As Exception
+        'MessageBox.Show(ex.Message)
+        'End Try
     End Sub
 
     'Generate invoice for the customer

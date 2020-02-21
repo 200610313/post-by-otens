@@ -10,7 +10,7 @@ Module InvoiceFileGenerator
         bName = loggedInBusinessName
 
         xlApp = New Excel.Application
-        xlWorkBook = xlApp.Workbooks.Open("C:\Users\angelu.angelu-PC\Desktop\sales-invoice.xlsx")
+        xlWorkBook = xlApp.Workbooks.Open("C:\Users\angelu.angelu-PC\Desktop\posInvoice.xlsx")
         xlWorkSheet = xlWorkBook.Worksheets("Invoice1a")
         ''display the cells value B2
         'MsgBox(xlWorkSheet.Cells(2, 2).value)
@@ -66,21 +66,21 @@ Module InvoiceFileGenerator
         For i = 0 To numberOfProdLines - 1
             pNum = adapter2.getPLines(iNum).Rows(i).Item(0)
             pName = adapter3.getProdName(pNum)
-            pQty = adapter2.getPLines(iNum).Rows(i).Item(2)
-            pPrice = adapter2.getPLines(iNum).Rows(i).Item(3)
-            pSub = adapter2.getPLines(iNum).Rows(i).Item(4)
+            pQty = adapter2.getPLines(iNum).Rows(i).Item(1)
+            pPrice = adapter2.getPLines(iNum).Rows(i).Item(2)
+            pSub = adapter2.getPLines(iNum).Rows(i).Item(2)
 
             'Write to sheet
-            xlWorkSheet.Cells(pNum, 1) = pNum
-            xlWorkSheet.Cells(pName, 2) = pNum
-            xlWorkSheet.Cells(pQty, 3) = pNum
-            xlWorkSheet.Cells(pPrice, 4) = pNum
-            xlWorkSheet.Cells(pSub, 5) = pNum
+            xlWorkSheet.Cells(currRow, 1) = pNum
+            xlWorkSheet.Cells(currRow, 2) = pName
+            xlWorkSheet.Cells(currRow, 5) = pQty
+            xlWorkSheet.Cells(currRow, 6) = pPrice
+            xlWorkSheet.Cells(currRow, 7) = pSub
             'Next row
             currRow = currRow + 1
         Next
         'Finally, write the total
-        pTotal = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(16)
+        pTotal = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(17)
         xlWorkSheet.Cells(33, 7) = pTotal
     End Sub
 
@@ -105,6 +105,7 @@ Module InvoiceFileGenerator
     Private Sub fillUpCompanyFields()
 
         Dim adapter As New POSDataSetTableAdapters.DataTable3TableAdapter
+
         'Company Name
         xlWorkSheet.Cells(1, 1) = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(0)
         'Phone
