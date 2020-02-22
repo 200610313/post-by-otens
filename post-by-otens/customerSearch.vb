@@ -66,7 +66,7 @@
     End Sub
 
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
-        generateInvoiceForCustomer(DataGridView1.Rows(curRowIndex).Cells(0).Value)
+        generateInvoiceForCustomer(DataGridView1.Rows(curRowIndex).Cells(0).Value, " ")
         updateDBStock()
         RegisterTab.resetView()
         Me.Close()

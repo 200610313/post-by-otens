@@ -41,14 +41,14 @@
         Dim customerID As Integer
             adapter.InsertQuery(cFname, cLName, cMinit, cCity, cState, cZip, cPhone)
             customerID = adapter.getCustID
-            generateInvoiceForCustomer(customerID)
+        generateInvoiceForCustomer(customerID, cFname)
         'Catch ex As Exception
         'MessageBox.Show(ex.Message)
         'End Try
     End Sub
 
     'Generate invoice for the customer
-    Public Sub generateInvoiceForCustomer(customerID As Integer)
+    Public Sub generateInvoiceForCustomer(customerID As Integer, cFname As String)
         Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter
         Dim total As Double
         Dim customerInvoiceNumber As Integer
@@ -63,19 +63,23 @@
         'then fill invoice
         adapter.fillInvoiceForRecentCustomer(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), total, RegisterTab.loggedInBusinessName, customerID)
         customerInvoiceNumber = adapter.getCustomerInvoice
-        generateProductLine(customerID, customerInvoiceNumber)
+        generateProductLine(customerID, customerInvoiceNumber, cFname)
 
     End Sub
 
-    Public Sub generateProductLine(customerID As Integer, InvoiceNumber As Integer)
+    Public Sub generateProductLine(customerID As Integer, InvoiceNumber As Integer, cFname As String)
         Dim adapter As New POSDataSetTableAdapters.productDetailTableAdapter
         For Each shoppingcartitem In RegisterTab.shoppingCartItems
             'insert row in product detail
             adapter.newProductLine(shoppingcartitem.getShoppingCartCount, shoppingcartitem.getShoppingCartSubtotal, RegisterTab.loggedInBusinessName, InvoiceNumber, shoppingcartitem.getProdNum, RegisterTab.loggedInBusinessName)
         Next
 
-        'Generate sheet file.
-        generate(customerID, InvoiceNumber, RegisterTab.loggedInBusinessName)
+        'dont generate if customer is unnamed
+        If Not String.IsNullOrEmpty(cFname) Then
+            'Generate sheet file.
+            generate(customerID, InvoiceNumber, RegisterTab.loggedInBusinessName)
+        End If
+
     End Sub
     'And then correct renders in products list
 
