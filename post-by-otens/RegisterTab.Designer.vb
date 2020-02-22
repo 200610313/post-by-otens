@@ -48,9 +48,12 @@ Partial Class RegisterTab
         Me.changeAmt = New System.Windows.Forms.Label()
         Me.phptotal = New System.Windows.Forms.Label()
         Me.totalAmt = New System.Windows.Forms.Label()
+        Me.savePathbtn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.savePath = New System.Windows.Forms.TextBox()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.register_pnl.SuspendLayout()
         Me.shoppingCard_pnl.SuspendLayout()
         Me.BunifuCards1.SuspendLayout()
@@ -59,6 +62,7 @@ Partial Class RegisterTab
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.totals.SuspendLayout()
         Me.card.SuspendLayout()
+        CType(Me.savePathbtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -385,6 +389,18 @@ Partial Class RegisterTab
         Me.totalAmt.TabIndex = 1
         Me.totalAmt.Text = "0"
         '
+        'savePathbtn
+        '
+        Me.savePathbtn.Image = Global.post_by_otens.My.Resources.Resources.icons8_save_24px1
+        Me.savePathbtn.ImageActive = Nothing
+        Me.savePathbtn.Location = New System.Drawing.Point(975, 20)
+        Me.savePathbtn.Name = "savePathbtn"
+        Me.savePathbtn.Size = New System.Drawing.Size(21, 31)
+        Me.savePathbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.savePathbtn.TabIndex = 4
+        Me.savePathbtn.TabStop = False
+        Me.savePathbtn.Zoom = 10
+        '
         'PictureBox2
         '
         Me.PictureBox2.BackgroundImage = Global.post_by_otens.My.Resources.Resources.icons8_filled_circle_30px_3
@@ -405,6 +421,16 @@ Partial Class RegisterTab
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'savePath
+        '
+        Me.savePath.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.savePath.ForeColor = System.Drawing.Color.Silver
+        Me.savePath.Location = New System.Drawing.Point(1002, 25)
+        Me.savePath.Name = "savePath"
+        Me.savePath.ReadOnly = True
+        Me.savePath.Size = New System.Drawing.Size(239, 22)
+        Me.savePath.TabIndex = 5
+        '
         'RegisterTab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -412,6 +438,8 @@ Partial Class RegisterTab
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1513, 719)
+        Me.Controls.Add(Me.savePath)
+        Me.Controls.Add(Me.savePathbtn)
         Me.Controls.Add(Me.register_pnl)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
@@ -430,10 +458,12 @@ Partial Class RegisterTab
         Me.totals.ResumeLayout(False)
         Me.card.ResumeLayout(False)
         Me.card.PerformLayout()
+        CType(Me.savePathbtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -465,4 +495,7 @@ Partial Class RegisterTab
     Friend WithEvents void As Bunifu.Framework.UI.BunifuTileButton
     Friend WithEvents confirmWreceipt As Bunifu.Framework.UI.BunifuTileButton
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents savePathbtn As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents savePath As TextBox
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
 End Class

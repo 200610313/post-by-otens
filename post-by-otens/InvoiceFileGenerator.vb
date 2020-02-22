@@ -25,7 +25,7 @@ Module InvoiceFileGenerator
         Dim fileName As String
 
         fileName = getFullNameOf(cID, iNum, bName)
-        filePath = "C:\Users\angelu.angelu-PC\Desktop\"
+        filePath = RegisterTab.savePath.Text + "\" '"C:\Users\angelu.angelu-PC\Desktop\"
         filePath = filePath & fileName
         filePath = filePath & " - " & iNum.ToString
         xlWorkBook.SaveAs(filePath)

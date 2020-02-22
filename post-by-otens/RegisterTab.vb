@@ -34,6 +34,7 @@ Public Class RegisterTab
 
         void.Font = New Font("Open Sans Light", void.Font.Size)
 
+        savePath.Text = My.Application.Info.DirectoryPath
     End Sub
 
     Private Sub initShoppingCart()
@@ -126,12 +127,27 @@ Public Class RegisterTab
     End Sub
 
     Private Sub confirmWreceipt_Click(sender As Object, e As EventArgs) Handles confirmWreceipt.Click
-        If shoppingCartItems.Count <> 0 Then
+        If shoppingCartItems.Count <> 0 And IsValidFileNameOrPath(savePath.Text) = True Then
             Me.Hide()
             Dim choice As New popUpBox
         End If
     End Sub
+    Function IsValidFileNameOrPath(ByVal name As String) As Boolean
+        ' Determines if the name is Nothing.
+        If name Is Nothing Then
+            Return False
+        End If
 
+        ' Determines if there are bad characters in the name.
+        For Each badChar As Char In System.IO.Path.GetInvalidPathChars
+            If InStr(name, badChar) > 0 Then
+                Return False
+            End If
+        Next
+
+        ' The name passes basic validation.
+        Return True
+    End Function
     Public Sub resetView()
         Me.shoppingCartItems = New List(Of shoppingCartItem)
         shoppingCart_flow.Controls.Clear()
@@ -153,5 +169,11 @@ Public Class RegisterTab
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.Close()
+    End Sub
+
+    Private Sub savePathbtn_Click(sender As Object, e As EventArgs) Handles savePathbtn.Click
+        If (FolderBrowserDialog1.ShowDialog() = DialogResult.OK) Then
+            savePath.Text = FolderBrowserDialog1.SelectedPath
+        End If
     End Sub
 End Class
