@@ -28,9 +28,6 @@ Public Class MainManagevb
 
     End Sub
 
-
-
-
     Private Sub ButtonSend_Click(sender As Object, e As EventArgs) Handles Send_bttn.Click
 
         'Disable Button while processing. . .
@@ -60,7 +57,7 @@ Public Class MainManagevb
         MessagePanel.Visible = False
         StockPanel.Visible = False
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
-        ProductDataGrid.DataSource = adapter.GetProductData("Boboy's Refreshers")
+        'ProductDataGrid.DataSource = adapter.GetProductData("Boboy's Refreshers")
 
         'Add button on datagrid
         Dim btn As New DataGridViewCheckBoxColumn

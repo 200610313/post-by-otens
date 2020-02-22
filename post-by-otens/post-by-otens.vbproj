@@ -236,6 +236,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\posInvoice.xlsx" />
     <None Include="bin\Debug\post-by-otens.exe.config" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

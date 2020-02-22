@@ -73,9 +73,9 @@
         Dim a As String = "Boboy's Refreshers"
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
         Dim up As New POSDataSet.productDataTable
-        adapter.AddStock(ProductName_txt.Text, Val(Price_txt.Text), CInt(Price_txt.Text), a)
+        ' adapter.AddStock(ProductName_txt.Text, Val(Price_txt.Text), CInt(Price_txt.Text), a)
         adapter.Update(up)
-        MainManagevb.ProductDataGrid.DataSource = adapter.GetProductData("Boboy's Refreshers")
+        ' MainManagevb.ProductDataGrid.DataSource = adapter.GetProductData("Boboy's Refreshers")
         Me.Hide()
         Refresh()
     End Sub
