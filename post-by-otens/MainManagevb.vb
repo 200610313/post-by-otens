@@ -55,22 +55,15 @@ Public Class MainManagevb
 
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'POSDataSet.product' table. You can move, or remove it, as needed.
-
+        Refresh()
         LogoPanel.Visible = True
         MessagePanel.Visible = False
         StockPanel.Visible = False
+        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
+        ProductDataGrid.DataSource = adapter.GetProductData("Boboy's Refreshers")
 
-        'Add header in datagridview
-        ' ProductDataGrid.DataSource = table
-        '   With ProductDataGrid
-        '.RowHeadersVisible = False
-        '  .Columns(0).HeaderCell.Value = "Product Name"
-        '   .Columns(1).HeaderCell.Value = "Stock"
-        ' .Columns(2).HeaderCell.Value = "Price"
-        'olumns(3).HeaderCell.Value = "ID"
-        ' .Columns(4).HeaderCell.Value = "Owner"
-        ' End With
-
+        'Add button on datagrid
+        Dim btn As New DataGridViewCheckBoxColumn
 
 
 
@@ -96,6 +89,7 @@ Public Class MainManagevb
     End Sub
 
     Private Sub AddStock_bttn_Click(sender As Object, e As EventArgs) Handles AddStock_bttn.Click
+        RegisterStock.Show()
         '  Dim adapter As New POSDataSet.productDataTable
         ' ProductBindingSource.DataSource = adapter
         ' ProductDataGrid.DataSource = ProductBindingSource
@@ -110,14 +104,11 @@ Public Class MainManagevb
         ' End With
         ' adapter.Rows.Add(newRow)
         '  adapter.AcceptChanges()
-        index += 1
-        Me.ProductDataGrid.Rows.Add("", 0, 0, index, "Check")
+
 
     End Sub
 
-    Private Sub ProductDataGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProductDataGrid.CellContentClick
 
-    End Sub
 
     Private Sub Edit_btn_Click(sender As Object, e As EventArgs) Handles Edit_btn.Click
 
@@ -127,6 +118,11 @@ Public Class MainManagevb
         End If
 
     End Sub
+
+    Private Sub StockPanel_Paint(sender As Object, e As PaintEventArgs) Handles StockPanel.Paint
+
+    End Sub
+
 
 
 

@@ -28,6 +28,8 @@ Partial Class MainManagevb
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim Animation2 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Elipse_Form = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.PanelTop = New Bunifu.Framework.UI.BunifuGradientPanel()
@@ -41,6 +43,9 @@ Partial Class MainManagevb
         Me.BunifuMaterialTextbox1 = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ProductDataGrid = New Bunifu.Framework.UI.BunifuCustomDataGrid()
+        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.POSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.POSDataSet = New post_by_otens.POSDataSet()
         Me.Panel_Delete_btn = New System.Windows.Forms.Panel()
         Me.Delete_btn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Panel_Save_btn = New System.Windows.Forms.Panel()
@@ -66,29 +71,31 @@ Partial Class MainManagevb
         Me.Stocks_bttn = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BunifuFlatButton1 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.SendSMS = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.ProductBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.POSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.POSDataSet = New post_by_otens.POSDataSet()
         Me.PanelTransition2 = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.Elipse_AddStock = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.Elipse_Delete = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.Elipse_Edit = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.Elipse_Save_btn = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
-        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductTableAdapter = New post_by_otens.POSDataSetTableAdapters.productTableAdapter()
         Me.POSDataSet1 = New post_by_otens.POSDataSet()
         Me.POSDataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.pName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pPrice = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PStockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Edit = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PanelTop.SuspendLayout()
         CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainPanel.SuspendLayout()
         Me.StockPanel.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Delete_btn.SuspendLayout()
         CType(Me.Delete_btn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Save_btn.SuspendLayout()
@@ -103,10 +110,8 @@ Partial Class MainManagevb
         Me.SlidingPanel.SuspendLayout()
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Menu_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.POSDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.POSDataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -293,6 +298,7 @@ Partial Class MainManagevb
         Me.ProductDataGrid.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ProductDataGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.ProductDataGrid.AutoGenerateColumns = False
         Me.ProductDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.ProductDataGrid.BackgroundColor = System.Drawing.Color.White
         Me.ProductDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -307,7 +313,8 @@ Partial Class MainManagevb
         Me.ProductDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.ProductDataGrid.ColumnHeadersHeight = 29
         Me.ProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.ProductDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.pName, Me.pStock, Me.pPrice, Me.pNumber})
+        Me.ProductDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PNameDataGridViewTextBoxColumn, Me.PPriceDataGridViewTextBoxColumn, Me.PStockDataGridViewTextBoxColumn, Me.PNumberDataGridViewTextBoxColumn, Me.Edit})
+        Me.ProductDataGrid.DataSource = Me.ProductBindingSource
         Me.PanelTransition.SetDecoration(Me.ProductDataGrid, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.ProductDataGrid, BunifuAnimatorNS.DecorationType.None)
         Me.ProductDataGrid.DoubleBuffered = True
@@ -318,13 +325,29 @@ Partial Class MainManagevb
         Me.ProductDataGrid.HeaderForeColor = System.Drawing.Color.Black
         Me.ProductDataGrid.Location = New System.Drawing.Point(3, 225)
         Me.ProductDataGrid.Name = "ProductDataGrid"
+        Me.ProductDataGrid.ReadOnly = True
         Me.ProductDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.ProductDataGrid.RowHeadersWidth = 18
         Me.ProductDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.ProductDataGrid.RowTemplate.Height = 24
         Me.ProductDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.ProductDataGrid.Size = New System.Drawing.Size(794, 258)
+        Me.ProductDataGrid.Size = New System.Drawing.Size(791, 474)
         Me.ProductDataGrid.TabIndex = 3
+        '
+        'ProductBindingSource
+        '
+        Me.ProductBindingSource.DataMember = "product"
+        Me.ProductBindingSource.DataSource = Me.POSDataSetBindingSource
+        '
+        'POSDataSetBindingSource
+        '
+        Me.POSDataSetBindingSource.DataSource = Me.POSDataSet
+        Me.POSDataSetBindingSource.Position = 0
+        '
+        'POSDataSet
+        '
+        Me.POSDataSet.DataSetName = "POSDataSet"
+        Me.POSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Panel_Delete_btn
         '
@@ -720,20 +743,15 @@ Partial Class MainManagevb
         Me.SendSMS.Textcolor = System.Drawing.Color.White
         Me.SendSMS.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
+        'ProductBindingSource2
+        '
+        Me.ProductBindingSource2.DataMember = "product"
+        Me.ProductBindingSource2.DataSource = Me.POSDataSet
+        '
         'ProductBindingSource1
         '
         Me.ProductBindingSource1.DataMember = "product"
         Me.ProductBindingSource1.DataSource = Me.POSDataSetBindingSource
-        '
-        'POSDataSetBindingSource
-        '
-        Me.POSDataSetBindingSource.DataSource = Me.POSDataSet
-        Me.POSDataSetBindingSource.Position = 0
-        '
-        'POSDataSet
-        '
-        Me.POSDataSet.DataSetName = "POSDataSet"
-        Me.POSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'PanelTransition2
         '
@@ -782,11 +800,6 @@ Partial Class MainManagevb
         Me.BunifuElipse1.ElipseRadius = 5
         Me.BunifuElipse1.TargetControl = Me
         '
-        'ProductBindingSource
-        '
-        Me.ProductBindingSource.DataMember = "product"
-        Me.ProductBindingSource.DataSource = Me.POSDataSetBindingSource
-        '
         'ProductTableAdapter
         '
         Me.ProductTableAdapter.ClearBeforeFill = True
@@ -801,33 +814,61 @@ Partial Class MainManagevb
         Me.POSDataSet1BindingSource.DataSource = Me.POSDataSet1
         Me.POSDataSet1BindingSource.Position = 0
         '
-        'pName
+        'PNameDataGridViewTextBoxColumn
         '
-        Me.pName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.pName.HeaderText = "ProductName"
-        Me.pName.MinimumWidth = 6
-        Me.pName.Name = "pName"
+        Me.PNameDataGridViewTextBoxColumn.DataPropertyName = "pName"
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.PNameDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
+        Me.PNameDataGridViewTextBoxColumn.HeaderText = "Product Name"
+        Me.PNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PNameDataGridViewTextBoxColumn.Name = "PNameDataGridViewTextBoxColumn"
+        Me.PNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PNameDataGridViewTextBoxColumn.Width = 142
         '
-        'pStock
+        'PPriceDataGridViewTextBoxColumn
         '
-        Me.pStock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.pStock.HeaderText = "Stock"
-        Me.pStock.MinimumWidth = 6
-        Me.pStock.Name = "pStock"
+        Me.PPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.PPriceDataGridViewTextBoxColumn.DataPropertyName = "pPrice"
+        Me.PPriceDataGridViewTextBoxColumn.HeaderText = "Price"
+        Me.PPriceDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PPriceDataGridViewTextBoxColumn.Name = "PPriceDataGridViewTextBoxColumn"
+        Me.PPriceDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'pPrice
+        'PStockDataGridViewTextBoxColumn
         '
-        Me.pPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.pPrice.HeaderText = "Price"
-        Me.pPrice.MinimumWidth = 6
-        Me.pPrice.Name = "pPrice"
+        Me.PStockDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.PStockDataGridViewTextBoxColumn.DataPropertyName = "pStock"
+        Me.PStockDataGridViewTextBoxColumn.HeaderText = "Stock"
+        Me.PStockDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PStockDataGridViewTextBoxColumn.Name = "PStockDataGridViewTextBoxColumn"
+        Me.PStockDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'pNumber
+        'PNumberDataGridViewTextBoxColumn
         '
-        Me.pNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.pNumber.HeaderText = "ID"
-        Me.pNumber.MinimumWidth = 6
-        Me.pNumber.Name = "pNumber"
+        Me.PNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.PNumberDataGridViewTextBoxColumn.DataPropertyName = "pNumber"
+        Me.PNumberDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.PNumberDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PNumberDataGridViewTextBoxColumn.Name = "PNumberDataGridViewTextBoxColumn"
+        Me.PNumberDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'Edit
+        '
+        Me.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Maroon
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        Me.Edit.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Edit.HeaderText = "Edit"
+        Me.Edit.MinimumWidth = 6
+        Me.Edit.Name = "Edit"
+        Me.Edit.ReadOnly = True
+        Me.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
         'MainManagevb
         '
@@ -851,6 +892,9 @@ Partial Class MainManagevb
         Me.StockPanel.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Delete_btn.ResumeLayout(False)
         CType(Me.Delete_btn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Save_btn.ResumeLayout(False)
@@ -867,10 +911,8 @@ Partial Class MainManagevb
         Me.SlidingPanel.ResumeLayout(False)
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Menu_bttn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.POSDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.POSDataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -928,8 +970,10 @@ Partial Class MainManagevb
     Friend WithEvents ProductBindingSource1 As BindingSource
     Friend WithEvents POSDataSet1BindingSource As BindingSource
     Friend WithEvents POSDataSet1 As POSDataSet
-    Friend WithEvents pName As DataGridViewTextBoxColumn
-    Friend WithEvents pStock As DataGridViewTextBoxColumn
-    Friend WithEvents pPrice As DataGridViewTextBoxColumn
-    Friend WithEvents pNumber As DataGridViewTextBoxColumn
+    Friend WithEvents ProductBindingSource2 As BindingSource
+    Friend WithEvents PNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PStockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PNumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Edit As DataGridViewButtonColumn
 End Class
