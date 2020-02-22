@@ -5,7 +5,6 @@
     Private invoiceNum As String
     Private caller As invoiceSearch
     Public Sub New(invoiceNum As String, businessName As String, invoiceSearch As invoiceSearch)
-
         ' This call is required by the designer.
         InitializeComponent()
         Me.Show()

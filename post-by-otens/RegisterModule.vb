@@ -9,7 +9,8 @@
             Dim prodPrice = adapter.getProductsOf(loggedInBusinessName).Rows(i).Item(1)
             Dim prodStock = adapter.getProductsOf(loggedInBusinessName).Rows(i).Item(2)
             Dim prodNumber = adapter.getProductsOf(loggedInBusinessName).Rows(i).Item(3)
-            products.Add(New product(prodName, prodNumber, prodPrice, prodStock))
+            Dim imageUrl = adapter.getProductsOf(loggedInBusinessName).Rows(i).Item(5)
+            products.Add(New product(prodName, prodNumber, prodPrice, prodStock, imageUrl))
         Next
     End Sub
 

@@ -11,7 +11,7 @@
     Private item As shoppingCartItem 'Product can only be added once in shopping cart, so only one instance of this is created
     Private visualProductStock As Integer
 
-    Public Sub New(prodName As String, prodNum As String, prodPrice As Double, prodStock As Integer)
+    Public Sub New(prodName As String, prodNum As String, prodPrice As Double, prodStock As Integer, imageUrl As String)
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
@@ -19,6 +19,7 @@
         Me.prodNum = prodNum 'from DB
         Me.prodPrice = prodPrice 'from DB
         Me.prodStock = prodStock 'from DB
+        pImage.Load(imageUrl) 'set the image
 
         Me.visualProductStock = Me.prodStock 'This is a copy of prodStock; edit of prodStock is illegal
         shoppingCartCount = 0

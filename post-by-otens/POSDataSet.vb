@@ -1,4 +1,12 @@
 ﻿Partial Class POSDataSet
+    Partial Public Class businessDataTable
+        Private Sub businessDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
+
+
+        End Sub
+
+    End Class
+
     Partial Public Class DataTable3DataTable
         Private Sub DataTable3DataTable_DataTable3RowChanging(sender As Object, e As DataTable3RowChangeEvent) Handles Me.DataTable3RowChanging
 

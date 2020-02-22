@@ -82,6 +82,7 @@ Partial Class LoginFrm
         '
         Me.BunifuCustomLabel1.AutoSize = True
         Me.BunifuCustomLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
+        Me.BunifuCustomLabel1.ForeColor = System.Drawing.SystemColors.ActiveBorder
         Me.BunifuCustomLabel1.Location = New System.Drawing.Point(206, 313)
         Me.BunifuCustomLabel1.Name = "BunifuCustomLabel1"
         Me.BunifuCustomLabel1.Size = New System.Drawing.Size(144, 44)

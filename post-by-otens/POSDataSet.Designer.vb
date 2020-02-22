@@ -1421,6 +1421,10 @@ Partial Public Class POSDataSet
         
         Private columnmanagerPW As Global.System.Data.DataColumn
         
+        Private columnuName As Global.System.Data.DataColumn
+        
+        Private columnpWord As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1513,6 +1517,22 @@ Partial Public Class POSDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property uNameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnuName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property pWordColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpWord
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1549,9 +1569,9 @@ Partial Public Class POSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddbusinessRow(ByVal bName As String, ByVal bPhone As Decimal, ByVal bContactFName As String, ByVal bContactLName As String, ByVal bContactMInit As String, ByVal bContactEmail As String, ByVal managerPW As String) As businessRow
+        Public Overloads Function AddbusinessRow(ByVal bName As String, ByVal bPhone As Decimal, ByVal bContactFName As String, ByVal bContactLName As String, ByVal bContactMInit As String, ByVal bContactEmail As String, ByVal managerPW As String, ByVal uName As String, ByVal pWord As String) As businessRow
             Dim rowbusinessRow As businessRow = CType(Me.NewRow,businessRow)
-            Dim columnValuesArray() As Object = New Object() {bName, bPhone, bContactFName, bContactLName, bContactMInit, bContactEmail, managerPW}
+            Dim columnValuesArray() As Object = New Object() {bName, bPhone, bContactFName, bContactLName, bContactMInit, bContactEmail, managerPW, uName, pWord}
             rowbusinessRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowbusinessRow)
             Return rowbusinessRow
@@ -1587,6 +1607,8 @@ Partial Public Class POSDataSet
             Me.columnbContactMInit = MyBase.Columns("bContactMInit")
             Me.columnbContactEmail = MyBase.Columns("bContactEmail")
             Me.columnmanagerPW = MyBase.Columns("managerPW")
+            Me.columnuName = MyBase.Columns("uName")
+            Me.columnpWord = MyBase.Columns("pWord")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1606,6 +1628,10 @@ Partial Public Class POSDataSet
             MyBase.Columns.Add(Me.columnbContactEmail)
             Me.columnmanagerPW = New Global.System.Data.DataColumn("managerPW", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnmanagerPW)
+            Me.columnuName = New Global.System.Data.DataColumn("uName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnuName)
+            Me.columnpWord = New Global.System.Data.DataColumn("pWord", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpWord)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnbName}, true))
             Me.columnbName.AllowDBNull = false
             Me.columnbName.Unique = true
@@ -1620,6 +1646,8 @@ Partial Public Class POSDataSet
             Me.columnbContactEmail.AllowDBNull = false
             Me.columnbContactEmail.MaxLength = 50
             Me.columnmanagerPW.MaxLength = 50
+            Me.columnuName.MaxLength = 50
+            Me.columnpWord.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2462,6 +2490,8 @@ Partial Public Class POSDataSet
         
         Private columnbName As Global.System.Data.DataColumn
         
+        Private columnimageUrl As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -2538,6 +2568,14 @@ Partial Public Class POSDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property imageUrlColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnimageUrl
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2574,9 +2612,9 @@ Partial Public Class POSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function Addproduct1Row(ByVal pName As String, ByVal pPrice As Decimal, ByVal pStock As Integer, ByVal parentbusinessRowByFK_product_business11 As businessRow) As product1Row
+        Public Overloads Function Addproduct1Row(ByVal pName As String, ByVal pPrice As Decimal, ByVal pStock As Integer, ByVal parentbusinessRowByFK_product_business11 As businessRow, ByVal imageUrl As String) As product1Row
             Dim rowproduct1Row As product1Row = CType(Me.NewRow,product1Row)
-            Dim columnValuesArray() As Object = New Object() {pName, pPrice, pStock, Nothing, Nothing}
+            Dim columnValuesArray() As Object = New Object() {pName, pPrice, pStock, Nothing, Nothing, imageUrl}
             If (Not (parentbusinessRowByFK_product_business11) Is Nothing) Then
                 columnValuesArray(4) = parentbusinessRowByFK_product_business11(0)
             End If
@@ -2613,6 +2651,7 @@ Partial Public Class POSDataSet
             Me.columnpStock = MyBase.Columns("pStock")
             Me.columnpNumber = MyBase.Columns("pNumber")
             Me.columnbName = MyBase.Columns("bName")
+            Me.columnimageUrl = MyBase.Columns("imageUrl")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2628,6 +2667,8 @@ Partial Public Class POSDataSet
             MyBase.Columns.Add(Me.columnpNumber)
             Me.columnbName = New Global.System.Data.DataColumn("bName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnbName)
+            Me.columnimageUrl = New Global.System.Data.DataColumn("imageUrl", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnimageUrl)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnpNumber, Me.columnbName}, true))
             Me.columnpName.AllowDBNull = false
             Me.columnpName.MaxLength = 50
@@ -2638,6 +2679,7 @@ Partial Public Class POSDataSet
             Me.columnpNumber.ReadOnly = true
             Me.columnbName.AllowDBNull = false
             Me.columnbName.MaxLength = 50
+            Me.columnimageUrl.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5447,6 +5489,36 @@ Partial Public Class POSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property uName() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablebusiness.uNameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'uName' in table 'business' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablebusiness.uNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property pWord() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablebusiness.pWordColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'pWord' in table 'business' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablebusiness.pWordColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsmanagerPWNull() As Boolean
             Return Me.IsNull(Me.tablebusiness.managerPWColumn)
         End Function
@@ -5455,6 +5527,30 @@ Partial Public Class POSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetmanagerPWNull()
             Me(Me.tablebusiness.managerPWColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsuNameNull() As Boolean
+            Return Me.IsNull(Me.tablebusiness.uNameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetuNameNull()
+            Me(Me.tablebusiness.uNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IspWordNull() As Boolean
+            Return Me.IsNull(Me.tablebusiness.pWordColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetpWordNull()
+            Me(Me.tablebusiness.pWordColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5859,6 +5955,21 @@ Partial Public Class POSDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property imageUrl() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableproduct1.imageUrlColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'imageUrl' in table 'product1' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableproduct1.imageUrlColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property businessRow() As businessRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_product_business11")),businessRow)
@@ -5901,6 +6012,18 @@ Partial Public Class POSDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetpStockNull()
             Me(Me.tableproduct1.pStockColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsimageUrlNull() As Boolean
+            Return Me.IsNull(Me.tableproduct1.imageUrlColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetimageUrlNull()
+            Me(Me.tableproduct1.imageUrlColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8392,14 +8515,18 @@ Namespace POSDataSetTableAdapters
             tableMapping.ColumnMappings.Add("bContactMInit", "bContactMInit")
             tableMapping.ColumnMappings.Add("bContactEmail", "bContactEmail")
             tableMapping.ColumnMappings.Add("managerPW", "managerPW")
+            tableMapping.ColumnMappings.Add("uName", "uName")
+            tableMapping.ColumnMappings.Add("pWord", "pWord")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[business] WHERE (([bName] = @Original_bName) AND ([bPhone] = @"& _ 
-                "Original_bPhone) AND ([bContactFName] = @Original_bContactFName) AND ([bContactL"& _ 
-                "Name] = @Original_bContactLName) AND ([bContactMInit] = @Original_bContactMInit)"& _ 
-                " AND ([bContactEmail] = @Original_bContactEmail) AND ((@IsNull_managerPW = 1 AND"& _ 
-                " [managerPW] IS NULL) OR ([managerPW] = @Original_managerPW)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [business] WHERE (([bName] = @Original_bName) AND ([bPhone] = @Origin"& _ 
+                "al_bPhone) AND ([bContactFName] = @Original_bContactFName) AND ([bContactLName] "& _ 
+                "= @Original_bContactLName) AND ([bContactMInit] = @Original_bContactMInit) AND ("& _ 
+                "[bContactEmail] = @Original_bContactEmail) AND ((@IsNull_managerPW = 1 AND [mana"& _ 
+                "gerPW] IS NULL) OR ([managerPW] = @Original_managerPW)) AND ((@IsNull_uName = 1 "& _ 
+                "AND [uName] IS NULL) OR ([uName] = @Original_uName)) AND ((@IsNull_pWord = 1 AND"& _ 
+                " [pWord] IS NULL) OR ([pWord] = @Original_pWord)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_bName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_bPhone", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 11, 0, "bPhone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -8409,13 +8536,18 @@ Namespace POSDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_bContactEmail", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bContactEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_managerPW", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "managerPW", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_managerPW", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "managerPW", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_uName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "uName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_uName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "uName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_pWord", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pWord", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_pWord", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pWord", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[business] ([bName], [bPhone], [bContactFName], [bContactLName]"& _ 
-                ", [bContactMInit], [bContactEmail], [managerPW]) VALUES (@bName, @bPhone, @bCont"& _ 
-                "actFName, @bContactLName, @bContactMInit, @bContactEmail, @managerPW);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT b"& _ 
-                "Name, bPhone, bContactFName, bContactLName, bContactMInit, bContactEmail, manage"& _ 
-                "rPW FROM business WHERE (bName = @bName)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [business] ([bName], [bPhone], [bContactFName], [bContactLName], [bCo"& _ 
+                "ntactMInit], [bContactEmail], [managerPW], [uName], [pWord]) VALUES (@bName, @bP"& _ 
+                "hone, @bContactFName, @bContactLName, @bContactMInit, @bContactEmail, @managerPW"& _ 
+                ", @uName, @pWord);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT bName, bPhone, bContactFName, bContactLName, bContact"& _ 
+                "MInit, bContactEmail, managerPW, uName, pWord FROM business WHERE (bName = @bNam"& _ 
+                "e)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bPhone", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 11, 0, "bPhone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8424,17 +8556,22 @@ Namespace POSDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bContactMInit", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bContactMInit", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bContactEmail", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bContactEmail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@managerPW", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "managerPW", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@uName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "uName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pWord", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pWord", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[business] SET [bName] = @bName, [bPhone] = @bPhone, [bContactFName]"& _ 
-                " = @bContactFName, [bContactLName] = @bContactLName, [bContactMInit] = @bContact"& _ 
-                "MInit, [bContactEmail] = @bContactEmail, [managerPW] = @managerPW WHERE (([bName"& _ 
-                "] = @Original_bName) AND ([bPhone] = @Original_bPhone) AND ([bContactFName] = @O"& _ 
-                "riginal_bContactFName) AND ([bContactLName] = @Original_bContactLName) AND ([bCo"& _ 
-                "ntactMInit] = @Original_bContactMInit) AND ([bContactEmail] = @Original_bContact"& _ 
-                "Email) AND ((@IsNull_managerPW = 1 AND [managerPW] IS NULL) OR ([managerPW] = @O"& _ 
-                "riginal_managerPW)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT bName, bPhone, bContactFName, bContactLName, bCont"& _ 
-                "actMInit, bContactEmail, managerPW FROM business WHERE (bName = @bName)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [business] SET [bName] = @bName, [bPhone] = @bPhone, [bContactFName] = @bC"& _ 
+                "ontactFName, [bContactLName] = @bContactLName, [bContactMInit] = @bContactMInit,"& _ 
+                " [bContactEmail] = @bContactEmail, [managerPW] = @managerPW, [uName] = @uName, ["& _ 
+                "pWord] = @pWord WHERE (([bName] = @Original_bName) AND ([bPhone] = @Original_bPh"& _ 
+                "one) AND ([bContactFName] = @Original_bContactFName) AND ([bContactLName] = @Ori"& _ 
+                "ginal_bContactLName) AND ([bContactMInit] = @Original_bContactMInit) AND ([bCont"& _ 
+                "actEmail] = @Original_bContactEmail) AND ((@IsNull_managerPW = 1 AND [managerPW]"& _ 
+                " IS NULL) OR ([managerPW] = @Original_managerPW)) AND ((@IsNull_uName = 1 AND [u"& _ 
+                "Name] IS NULL) OR ([uName] = @Original_uName)) AND ((@IsNull_pWord = 1 AND [pWor"& _ 
+                "d] IS NULL) OR ([pWord] = @Original_pWord)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT bName, bPhone, bContactFNa"& _ 
+                "me, bContactLName, bContactMInit, bContactEmail, managerPW, uName, pWord FROM bu"& _ 
+                "siness WHERE (bName = @bName)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bPhone", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 11, 0, "bPhone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8443,6 +8580,8 @@ Namespace POSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bContactMInit", Global.System.Data.SqlDbType.[Char], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bContactMInit", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bContactEmail", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bContactEmail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@managerPW", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "managerPW", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@uName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "uName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pWord", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pWord", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_bName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_bPhone", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 11, 0, "bPhone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_bContactFName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bContactFName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -8451,6 +8590,10 @@ Namespace POSDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_bContactEmail", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bContactEmail", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_managerPW", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "managerPW", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_managerPW", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "managerPW", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_uName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "uName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_uName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "uName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_pWord", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pWord", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_pWord", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pWord", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8466,11 +8609,12 @@ Namespace POSDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT * FROM dbo.business"
+            Me._commandCollection(0).CommandText = "SELECT bName, bPhone, bContactFName, bContactLName, bContactMInit, bContactEmail,"& _ 
+                " managerPW,uName,pWord FROM business"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT managerPW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     business"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (bName = @bName)"
+            Me._commandCollection(1).CommandText = "SELECT managerPW FROM business WHERE (bName = @bName)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -9759,6 +9903,7 @@ Namespace POSDataSetTableAdapters
             tableMapping.ColumnMappings.Add("pStock", "pStock")
             tableMapping.ColumnMappings.Add("pNumber", "pNumber")
             tableMapping.ColumnMappings.Add("bName", "bName")
+            tableMapping.ColumnMappings.Add("imageUrl", "imageUrl")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -9776,27 +9921,31 @@ Namespace POSDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_bName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [product] ([pName], [pPrice], [pStock], [bName]) VALUES (@pName, @pPr"& _ 
-                "ice, @pStock, @bName);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT pName, pNumber, pPrice, pStock, bName FROM produc"& _ 
-                "t WHERE (bName = @bName) AND (pNumber = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [product] ([pName], [pPrice], [pStock], [bName], [imageUrl]) VALUES ("& _ 
+                "@pName, @pPrice, @pStock, @bName, @imageUrl);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT pName, pNumber, pPrice, pS"& _ 
+                "tock, bName, imageUrl FROM product WHERE (bName = @bName) AND (pNumber = SCOPE_I"& _ 
+                "DENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pPrice", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "pPrice", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pStock", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pStock", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@imageUrl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "imageUrl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [product] SET [pName] = @pName, [pPrice] = @pPrice, [pStock] = @pStock, [b"& _ 
-                "Name] = @bName WHERE (([pName] = @Original_pName) AND ([pNumber] = @Original_pNu"& _ 
-                "mber) AND ((@IsNull_pPrice = 1 AND [pPrice] IS NULL) OR ([pPrice] = @Original_pP"& _ 
-                "rice)) AND ((@IsNull_pStock = 1 AND [pStock] IS NULL) OR ([pStock] = @Original_p"& _ 
-                "Stock)) AND ([bName] = @Original_bName));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT pName, pNumber, pPrice, pStock"& _ 
-                ", bName FROM product WHERE (bName = @bName) AND (pNumber = @pNumber)"
+                "Name] = @bName, [imageUrl] = @imageUrl WHERE (([pName] = @Original_pName) AND (["& _ 
+                "pNumber] = @Original_pNumber) AND ((@IsNull_pPrice = 1 AND [pPrice] IS NULL) OR "& _ 
+                "([pPrice] = @Original_pPrice)) AND ((@IsNull_pStock = 1 AND [pStock] IS NULL) OR"& _ 
+                " ([pStock] = @Original_pStock)) AND ([bName] = @Original_bName));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT pName,"& _ 
+                " pNumber, pPrice, pStock, bName, imageUrl FROM product WHERE (bName = @bName) AN"& _ 
+                "D (pNumber = @pNumber)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pPrice", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "pPrice", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pStock", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pStock", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@imageUrl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "imageUrl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_pName", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_pNumber", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pNumber", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_pPrice", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "pPrice", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -9820,14 +9969,14 @@ Namespace POSDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT pName, pNumber, pPrice, pStock, bName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     product"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (bName = @"& _ 
-                "userBusinessName)"
+            Me._commandCollection(0).CommandText = "SELECT pName, pNumber, pPrice, pStock, bName, imageUrl"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     product"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  "& _ 
+                "(bName = @userBusinessName)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@userBusinessName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT pName, pNumber, bName"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     product"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (pName LIKE @productName +"& _ 
-                " '%') AND (bName = @businessName)"
+            Me._commandCollection(1).CommandText = "SELECT bName, imageUrl, pName, pNumber, pPrice, pStock FROM product WHERE (pName "& _ 
+                "LIKE @productName + '%') AND (bName = @businessName)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@productName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "pName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@businessName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))

@@ -5,7 +5,6 @@ Public Class RegisterTab
     Public loggedInBusinessName As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'MessageBox.Show(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
 
