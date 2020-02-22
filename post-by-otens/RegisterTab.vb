@@ -119,7 +119,7 @@ Public Class RegisterTab
     End Sub
     'Saves to database but does not produce invoice form
     Private Sub BunifuTileButton4_Click(sender As Object, e As EventArgs) Handles confirm.Click
-        If shoppingCartItems.Count <> 0 Then
+        If shoppingCartItems.Count <> 0 And CDbl(Val(totalAmt.Text)) >= CDbl(Val(amtRecvd.Text)) And CDbl(Val(amtRecvd.Text)) <> 0 Then
             registerCustomer("", "", "", "", "", "", "")
             updateDBStock()
             resetView()
@@ -174,6 +174,12 @@ Public Class RegisterTab
     Private Sub savePathbtn_Click(sender As Object, e As EventArgs) Handles savePathbtn.Click
         If (FolderBrowserDialog1.ShowDialog() = DialogResult.OK) Then
             savePath.Text = FolderBrowserDialog1.SelectedPath
+        End If
+    End Sub
+
+    Private Sub amtRecvd_KeyPress(sender As Object, e As KeyPressEventArgs) Handles amtRecvd.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
         End If
     End Sub
 End Class

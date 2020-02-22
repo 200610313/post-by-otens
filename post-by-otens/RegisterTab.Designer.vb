@@ -289,10 +289,10 @@ Partial Class RegisterTab
         Me.amtRecvd.BorderThickness = 3
         Me.amtRecvd.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.amtRecvd.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.amtRecvd.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.amtRecvd.Font = New System.Drawing.Font("Century Gothic", 15.0!)
         Me.amtRecvd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.amtRecvd.isPassword = False
-        Me.amtRecvd.Location = New System.Drawing.Point(112, 54)
+        Me.amtRecvd.Location = New System.Drawing.Point(112, 53)
         Me.amtRecvd.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.amtRecvd.MaxLength = 32767
         Me.amtRecvd.Name = "amtRecvd"
