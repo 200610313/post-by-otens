@@ -5,18 +5,24 @@ Module InvoiceFileGenerator
     Private iNum As Integer
     Private bName As String
     Public Sub generate(customerID As Integer, invoiceNumber As Integer, loggedInBusinessName As String)
+
         cID = customerID
         iNum = invoiceNumber
         bName = loggedInBusinessName
 
         xlApp = New Excel.Application
-        xlWorkBook = xlApp.Workbooks.Open("C:\Users\angelu.angelu-PC\Desktop\posInvoice.xlsx")
+
+        Dim templatePath As String
+        templatePath = My.Application.Info.DirectoryPath
+        templatePath = templatePath & "\posInvoice.xlsx"
+
+        xlWorkBook = xlApp.Workbooks.Open(templatePath)
         xlWorkSheet = xlWorkBook.Worksheets("Invoice1a")
-        ''display the cells value B2
-        'MsgBox(xlWorkSheet.Cells(2, 2).value)
-        'edit the cell with new value
 
         fillUpForm()
+        Dim fileName As String
+
+        xlWorkBook.SaveAs("C:\Users\angelu.angelu-PC\Desktop\wadada")
         xlWorkBook.Close()
         xlApp.Quit()
 
@@ -62,12 +68,13 @@ Module InvoiceFileGenerator
         numberOfProdLines = adapter2.getPLines(iNum).Rows.Count
 
         Dim currRow, currColumn As Integer
+
         currRow = 18
         For i = 0 To numberOfProdLines - 1
             pNum = adapter2.getPLines(iNum).Rows(i).Item(0)
             pName = adapter3.getProdName(pNum)
             pQty = adapter2.getPLines(iNum).Rows(i).Item(1)
-            pPrice = adapter2.getPLines(iNum).Rows(i).Item(2)
+            pPrice = adapter3.getProdPrice(pNum)
             pSub = adapter2.getPLines(iNum).Rows(i).Item(2)
 
             'Write to sheet
@@ -86,21 +93,44 @@ Module InvoiceFileGenerator
 
     Private Sub fillUPCustomerData()
         Dim adapter As New POSDataSetTableAdapters.DataTable3TableAdapter
+
+        Dim fullName, addr, phone As String
+
+        fullName = getFullNameOf(cID, iNum, bName)
+        addr = getFullAddrOf(cID, iNum, bName)
+        phone = getPhoneNumOf(cID, iNum, bName)
+
         'Customer Full Name
-        Dim fullName, addr As String
-        fullName = ""
-        fullName = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(5)
-        fullName = fullName & " " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(6)
-        fullName = fullName & " " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(7)
         xlWorkSheet.Cells(10, 1) = fullName
-        addr = ""
+        'Customer Full Address
+        xlWorkSheet.Cells(11, 1) = addr
+        'Customer Phone
+        xlWorkSheet.Cells(12, 1) = phone
+    End Sub
+
+    Private Function getPhoneNumOf(cID As Integer, iNum As Integer, bName As String) As String
+        Dim adapter As New POSDataSetTableAdapters.DataTable3TableAdapter
+        Return adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(11)
+    End Function
+
+    Private Function getFullAddrOf(cID As Integer, iNum As Integer, bName As String) As String
+        Dim adapter As New POSDataSetTableAdapters.DataTable3TableAdapter
+        Dim addr As String
         addr = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(8)
         addr = addr & ", " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(9)
         addr = addr & " " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(10)
-        xlWorkSheet.Cells(11, 1) = addr
-        'Customer Phone
-        xlWorkSheet.Cells(12, 1) = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(11)
-    End Sub
+        Return addr
+    End Function
+
+    Private Function getFullNameOf(cID As Integer, iNum As Integer, bName As String) As String
+        Dim adapter As New POSDataSetTableAdapters.DataTable3TableAdapter
+        Dim fullName As String
+
+        fullName = adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(5)
+        fullName = fullName & " " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(6)
+        fullName = fullName & " " & adapter.getInvoiceData(cID, iNum, bName).Rows(0).Item(7)
+        Return fullName
+    End Function
 
     Private Sub fillUpCompanyFields()
 
