@@ -4,6 +4,7 @@ Module InvoiceFileGenerator
     Private cID As Integer
     Private iNum As Integer
     Private bName As String
+    Private filePath As String
     Public Sub generate(customerID As Integer, invoiceNumber As Integer, loggedInBusinessName As String)
 
         cID = customerID
@@ -20,9 +21,14 @@ Module InvoiceFileGenerator
         xlWorkSheet = xlWorkBook.Worksheets("Invoice1a")
 
         fillUpForm()
+        Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter
+        Dim fileName As String
 
-
-        xlWorkBook.SaveAs("C:\Users\angelu.angelu-PC\Desktop\wadada")
+        fileName = getFullNameOf(cID, iNum, bName)
+        filePath = "C:\Users\angelu.angelu-PC\Desktop\"
+        filePath = filePath & fileName
+        filePath = filePath & " - " & iNum.ToString
+        xlWorkBook.SaveAs(filePath)
         xlWorkBook.Close()
         xlApp.Quit()
 
