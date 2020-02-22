@@ -20,7 +20,7 @@ Module InvoiceFileGenerator
         xlWorkSheet = xlWorkBook.Worksheets("Invoice1a")
 
         fillUpForm()
-        Dim fileName As String
+
 
         xlWorkBook.SaveAs("C:\Users\angelu.angelu-PC\Desktop\wadada")
         xlWorkBook.Close()
@@ -67,7 +67,7 @@ Module InvoiceFileGenerator
         Dim numberOfProdLines As String
         numberOfProdLines = adapter2.getPLines(iNum).Rows.Count
 
-        Dim currRow, currColumn As Integer
+        Dim currRow As Integer
 
         currRow = 18
         For i = 0 To numberOfProdLines - 1
