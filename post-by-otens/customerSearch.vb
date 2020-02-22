@@ -48,21 +48,8 @@
         Next
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        'Dim x As Integer    
-        'x = dgvName.Rows(yourRowIndex).Cells(yourColumnIndex).Value
-
-
-        'There Is the RowIndex property for the CurrentCell property for the DataGridView.
-
-        '
-        'Handle the SelectionChanged event And find the index of the selected row as above.
-    End Sub
-
     Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
         curRowIndex = DataGridView1.CurrentCell.RowIndex
-
-
     End Sub
 
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click

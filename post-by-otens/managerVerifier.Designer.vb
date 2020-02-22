@@ -24,7 +24,7 @@ Partial Class managerVerifier
     Private Sub InitializeComponent()
         Me.exitForm = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.searchBox = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.actualpass = New System.Windows.Forms.TextBox()
         CType(Me.exitForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -49,35 +49,21 @@ Partial Class managerVerifier
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "MANAGER PASSWORD"
         '
-        'searchBox
+        'actualpass
         '
-        Me.searchBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
-        Me.searchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
-        Me.searchBox.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.searchBox.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.searchBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.searchBox.HintForeColor = System.Drawing.Color.Empty
-        Me.searchBox.HintText = ""
-        Me.searchBox.isPassword = False
-        Me.searchBox.LineFocusedColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.searchBox.LineIdleColor = System.Drawing.Color.Gray
-        Me.searchBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.searchBox.LineThickness = 3
-        Me.searchBox.Location = New System.Drawing.Point(43, 24)
-        Me.searchBox.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.searchBox.MaxLength = 32767
-        Me.searchBox.Name = "searchBox"
-        Me.searchBox.Size = New System.Drawing.Size(224, 30)
-        Me.searchBox.TabIndex = 7
-        Me.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.actualpass.Location = New System.Drawing.Point(37, 32)
+        Me.actualpass.Name = "actualpass"
+        Me.actualpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.actualpass.Size = New System.Drawing.Size(240, 22)
+        Me.actualpass.TabIndex = 8
+        Me.actualpass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'managerVerifier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(310, 79)
-        Me.Controls.Add(Me.searchBox)
+        Me.Controls.Add(Me.actualpass)
         Me.Controls.Add(Me.exitForm)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -92,5 +78,5 @@ Partial Class managerVerifier
 
     Friend WithEvents exitForm As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents searchBox As Bunifu.Framework.UI.BunifuMaterialTextbox
+    Friend WithEvents actualpass As TextBox
 End Class

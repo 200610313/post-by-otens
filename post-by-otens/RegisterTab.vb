@@ -12,29 +12,10 @@ Public Class RegisterTab
         loggedInBusinessName = "Boboy's Refreshers" 'set businessname
 
         loadProducts()
-
         initShoppingCart()
 
-
-        searchBox.Font = New Font("Century Gothic", searchBox.Font.Size)
-        amtRecvd.Font = New Font("Century Gothic", amtRecvd.Font.Size)
-
-        amountreceived.Font = New Font("Roboto Th", amountreceived.Font.Size)
-        change.Font = New Font("Roboto Th", change.Font.Size)
-        total.Font = New Font("Roboto Th", total.Font.Size)
-
-        php.Font = New Font("Roboto Lt", php.Font.Size)
-        phptotal.Font = New Font("Roboto Lt", phptotal.Font.Size)
-        totalAmt.Font = New Font("Roboto Lt", totalAmt.Font.Size)
-
-        changeAmt.Font = New Font("Roboto Lt", changeAmt.Font.Size)
-        Label6.Font = New Font("Roboto Lt", Label6.Font.Size)
-
-        Label7.Font = New Font("Roboto Lt", Label7.Font.Size)
-
-        void.Font = New Font("Open Sans Light", void.Font.Size)
-
         savePath.Text = My.Application.Info.DirectoryPath
+
     End Sub
 
     Private Sub initShoppingCart()

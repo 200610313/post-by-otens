@@ -15,8 +15,14 @@
         Dim adapter As New POSDataSetTableAdapters.businessTableAdapter
         managerPW = adapter.getManagerPW(businessName)
     End Sub
-    Private Sub searchBox_OnValueChanged(sender As Object, e As EventArgs) Handles searchBox.OnValueChanged
-        If managerPW = searchBox.Text Then
+
+    Private Sub exitForm_Click(sender As Object, e As EventArgs) Handles exitForm.Click
+        Me.Close()
+    End Sub
+
+    Private Sub actualpass_TextChanged(sender As Object, e As EventArgs) Handles actualpass.TextChanged
+        actualpass.PasswordChar = ""
+        If managerPW = actualpass.Text Then
             Dim adapter2 As New POSDataSetTableAdapters.invoiceTableAdapter
             Dim x As Integer
             'delete invoice
@@ -41,11 +47,6 @@
             Next
             Me.Close()
         End If
+        actualpass.PasswordChar = "*"
     End Sub
-
-    Private Sub exitForm_Click(sender As Object, e As EventArgs) Handles exitForm.Click
-        Me.Close()
-    End Sub
-
-
 End Class
