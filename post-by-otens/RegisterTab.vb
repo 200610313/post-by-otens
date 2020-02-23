@@ -8,7 +8,7 @@ Public Class RegisterTab
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
 
-        loggedInBusinessName = "Boboy's Refreshers" 'set businessname
+        loggedInBusinessName = EditStock.getName 'set businessname
 
         loadProducts()
         initShoppingCart()

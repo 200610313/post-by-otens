@@ -5,6 +5,10 @@
 
         End Sub
 
+        Private Sub businessDataTable_businessRowChanging(sender As Object, e As businessRowChangeEvent) Handles Me.businessRowChanging
+
+        End Sub
+
     End Class
 
     Partial Public Class DataTable3DataTable

@@ -71,15 +71,15 @@
 
     Private Sub AddStock_bttn_Click(sender As Object, e As EventArgs) Handles AddStock_bttn.Click
 
-        Dim businessName As String = "Boboy's Refreshers"
+
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
         Dim up As New POSDataSet.productDataTable
 
         Dim imageUrl As String = imgurl.Text
-
-        adapter.AddStock(ProductName_txt.Text, Val(Price_txt.Text), CInt(Price_txt.Text), businessName, imageUrl)
+        Dim bName As String = EditStock.getName()
+        adapter.AddStock(ProductName_txt.Text, Val(Price_txt.Text), CInt(Price_txt.Text), bName, imageUrl)
         adapter.Update(up)
-        MainManagevb.ProductDataGrid.DataSource = adapter.GetProductData("Boboy's Refreshers")
+        MainManagevb.ProductDataGrid.DataSource = adapter.GetProductData(bName)
         Me.Hide()
         Refresh()
     End Sub

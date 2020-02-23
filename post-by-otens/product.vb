@@ -19,7 +19,7 @@
         Me.prodNum = prodNum 'from DB
         Me.prodPrice = prodPrice 'from DB
         Me.prodStock = prodStock 'from DB
-        pImage.Load(imageUrl) 'set the image
+        'pImage.Load(imageUrl) 'set the image
 
         Me.visualProductStock = Me.prodStock 'This is a copy of prodStock; edit of prodStock is illegal
         shoppingCartCount = 0

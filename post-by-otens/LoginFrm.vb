@@ -1,21 +1,19 @@
 ﻿Public Class LoginFrm
 
-
-
-
+    Public businessName As String
 
     Private Sub SignIn_bttm_Click(sender As Object, e As EventArgs) Handles SignIn_bttm.Click
 
 
-        Dim businessName As String
-            businessName = bName.Text
+        businessName = bName.Text
         '   If logging in as manager
-        If asManager.Checked = False Then
+        EditStock.setName(businessName)
+        If asManager.Checked = True Then
             Dim managerUsername = Username_txt.Text
             Dim managerPword = Password_txt.Text
             Dim adapter As New POSDataSetTableAdapters.businessTableAdapter
             If adapter.validateManager(businessName, managerPword, managerUsername) <> 0 Then
-                RegisterTab.Show()
+                MainManagevb.Show()
                 Me.Close()
             End If
         Else
@@ -23,7 +21,7 @@
             Dim registerP = Password_txt.Text
             Dim adapter As New POSDataSetTableAdapters.businessTableAdapter
             If adapter.validateRegister(businessName, registerP, registerU) <> 0 Then
-                RegisterTab.Show()
+                MainManagevb.Show()
                 Me.Close()
             End If
         End If
@@ -38,4 +36,6 @@
 
 
     End Sub
+
+
 End Class

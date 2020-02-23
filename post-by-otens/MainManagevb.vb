@@ -1,11 +1,11 @@
 ﻿Imports System.Data.DataTable
+
 Public Class MainManagevb
+    Public adp As Odbc.OdbcDataAdapter
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
     Public loggedInBusinessName As String
-    Public table As New DataTable("product")
-    Public index As Integer = 0
-    Public ck As Integer = 0
+
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles Exit_bttn.Click
         Me.Close()
     End Sub
@@ -56,11 +56,14 @@ Public Class MainManagevb
         LogoPanel.Visible = True
         MessagePanel.Visible = False
         StockPanel.Visible = False
+        Panel_Save_btn.Visible = False
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
-        'ProductDataGrid.DataSource = adapter.GetProductData("Boboy's Refreshers")
+        Dim bName As String = EditStock.getName
+
+        ProductDataGrid.DataSource = adapter.GetProductData(bName)
 
         'Add button on datagrid
-        Dim btn As New DataGridViewCheckBoxColumn
+
 
 
 
@@ -87,34 +90,42 @@ Public Class MainManagevb
 
     Private Sub AddStock_bttn_Click(sender As Object, e As EventArgs) Handles AddStock_bttn.Click
         RegisterStock.Show()
-        Dim adapter As New POSDataSet.productDataTable
-        ProductBindingSource.DataSource = adapter
-        ProductDataGrid.DataSource = ProductBindingSource
-        Dim newRow As DataRow
-        newRow = adapter.NewRow
-        With newRow
-            .Item(0) = "NewProduct"
-            .Item(1) = 0
-            .Item(2) = 0
-            .Item(3) = 12345678911
-            .Item(4) = "Boboy's Refreshers"
-        End With
-        adapter.Rows.Add(newRow)
-        adapter.AcceptChanges()
-    End Sub
 
+    End Sub
 
 
     Private Sub Edit_btn_Click(sender As Object, e As EventArgs) Handles Edit_btn.Click
 
-        If ProductDataGrid.SelectedRows.ToString Then
+        BunifuTransition1.ShowSync(Panel_Save_btn)
 
-
-        End If
-
+        ProductDataGrid.Columns(4).ReadOnly = False
     End Sub
 
-    Private Sub StockPanel_Paint(sender As Object, e As PaintEventArgs) Handles StockPanel.Paint
+    Private Sub Save_btn_Click(sender As Object, e As EventArgs) Handles Save_btn.Click
+        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
+        Dim bName As String = EditStock.getName
+        Dim up As New POSDataSet.productDataTable
+        Dim nStock As Integer
+        Dim prodId
+        For i As Integer = 0 To ProductDataGrid.Rows.Count - 1
+            ProductDataGrid.BeginEdit(i)
+            nStock = ProductDataGrid.Rows(i).Cells(4).Value
+            prodID = ProductDataGrid.Rows(i).Cells(0).Value
+            adapter.UpdateStock(nStock, bName, prodId)
+            ProductDataGrid.EndEdit(i)
+        Next
+        adapter.Update(up)
+        ProductDataGrid.DataSource = adapter.GetProductData(bName)
+        BunifuTransition1.ShowSync(Panel_Save_btn)
+        Panel_Save_btn.Visible = False
+        ProductDataGrid.Columns(4).ReadOnly = True
+    End Sub
+
+    Private Sub ProductDataGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProductDataGrid.CellContentClick
+        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
+        Dim bName = EditStock.getName
+
+
 
     End Sub
 

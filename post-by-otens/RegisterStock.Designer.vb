@@ -26,40 +26,41 @@ Partial Class RegisterStock
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegisterStock))
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.Clear_Panel = New System.Windows.Forms.Panel()
+        Me.BunifuImageButton3 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Add_Panel = New System.Windows.Forms.Panel()
+        Me.AddStock_bttn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.ProductName_Panel = New System.Windows.Forms.Panel()
+        Me.ProductName_txt = New System.Windows.Forms.TextBox()
         Me.BunifuElipse3 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.Quantity_Panel = New System.Windows.Forms.Panel()
+        Me.Qty_txt = New System.Windows.Forms.TextBox()
         Me.BunifuElipse4 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.Price_Panel = New System.Windows.Forms.Panel()
+        Me.Price_txt = New System.Windows.Forms.TextBox()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.pImage = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.imgurl = New System.Windows.Forms.TextBox()
         Me.BunifuElipse5 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse6 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.BunifuDragControl2 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.Exit_bttn = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
-        Me.pImage = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.imgurl = New System.Windows.Forms.TextBox()
-        Me.Quantity_Panel = New System.Windows.Forms.Panel()
-        Me.Qty_txt = New System.Windows.Forms.TextBox()
-        Me.Price_Panel = New System.Windows.Forms.Panel()
-        Me.Price_txt = New System.Windows.Forms.TextBox()
-        Me.ProductName_Panel = New System.Windows.Forms.Panel()
-        Me.ProductName_txt = New System.Windows.Forms.TextBox()
-        Me.AddStock_bttn = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuImageButton3 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BunifuElipse7 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.Clear_Panel.SuspendLayout()
+        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Add_Panel.SuspendLayout()
-        CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AddStock_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ProductName_Panel.SuspendLayout()
+        Me.Quantity_Panel.SuspendLayout()
+        Me.Price_Panel.SuspendLayout()
         Me.BunifuGradientPanel1.SuspendLayout()
         CType(Me.pImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.Quantity_Panel.SuspendLayout()
-        Me.Price_Panel.SuspendLayout()
-        Me.ProductName_Panel.SuspendLayout()
-        CType(Me.AddStock_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BunifuElipse1
@@ -76,6 +77,18 @@ Partial Class RegisterStock
         Me.Clear_Panel.Size = New System.Drawing.Size(138, 80)
         Me.Clear_Panel.TabIndex = 1
         '
+        'BunifuImageButton3
+        '
+        Me.BunifuImageButton3.Image = Global.post_by_otens.My.Resources.Resources.icons8_delete_301
+        Me.BunifuImageButton3.ImageActive = Nothing
+        Me.BunifuImageButton3.Location = New System.Drawing.Point(44, 13)
+        Me.BunifuImageButton3.Name = "BunifuImageButton3"
+        Me.BunifuImageButton3.Size = New System.Drawing.Size(55, 52)
+        Me.BunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BunifuImageButton3.TabIndex = 0
+        Me.BunifuImageButton3.TabStop = False
+        Me.BunifuImageButton3.Zoom = 10
+        '
         'Add_Panel
         '
         Me.Add_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
@@ -84,6 +97,18 @@ Partial Class RegisterStock
         Me.Add_Panel.Name = "Add_Panel"
         Me.Add_Panel.Size = New System.Drawing.Size(138, 80)
         Me.Add_Panel.TabIndex = 1
+        '
+        'AddStock_bttn
+        '
+        Me.AddStock_bttn.Image = Global.post_by_otens.My.Resources.Resources.icons8_add_property_80
+        Me.AddStock_bttn.ImageActive = Nothing
+        Me.AddStock_bttn.Location = New System.Drawing.Point(44, 12)
+        Me.AddStock_bttn.Name = "AddStock_bttn"
+        Me.AddStock_bttn.Size = New System.Drawing.Size(55, 52)
+        Me.AddStock_bttn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.AddStock_bttn.TabIndex = 0
+        Me.AddStock_bttn.TabStop = False
+        Me.AddStock_bttn.Zoom = 10
         '
         'Panel4
         '
@@ -98,15 +123,82 @@ Partial Class RegisterStock
         Me.BunifuElipse2.ElipseRadius = 20
         Me.BunifuElipse2.TargetControl = Me.ProductName_Panel
         '
+        'ProductName_Panel
+        '
+        Me.ProductName_Panel.BackColor = System.Drawing.Color.Gainsboro
+        Me.ProductName_Panel.Controls.Add(Me.ProductName_txt)
+        Me.ProductName_Panel.Location = New System.Drawing.Point(340, 46)
+        Me.ProductName_Panel.Name = "ProductName_Panel"
+        Me.ProductName_Panel.Size = New System.Drawing.Size(352, 45)
+        Me.ProductName_Panel.TabIndex = 5
+        '
+        'ProductName_txt
+        '
+        Me.ProductName_txt.BackColor = System.Drawing.Color.Gainsboro
+        Me.ProductName_txt.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ProductName_txt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ProductName_txt.ForeColor = System.Drawing.Color.Silver
+        Me.ProductName_txt.Location = New System.Drawing.Point(16, 9)
+        Me.ProductName_txt.Name = "ProductName_txt"
+        Me.ProductName_txt.Size = New System.Drawing.Size(316, 23)
+        Me.ProductName_txt.TabIndex = 0
+        Me.ProductName_txt.Text = "Product Name"
+        Me.ProductName_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'BunifuElipse3
         '
         Me.BunifuElipse3.ElipseRadius = 20
         Me.BunifuElipse3.TargetControl = Me.Quantity_Panel
         '
+        'Quantity_Panel
+        '
+        Me.Quantity_Panel.BackColor = System.Drawing.Color.Gainsboro
+        Me.Quantity_Panel.Controls.Add(Me.Qty_txt)
+        Me.Quantity_Panel.Location = New System.Drawing.Point(341, 98)
+        Me.Quantity_Panel.Name = "Quantity_Panel"
+        Me.Quantity_Panel.Size = New System.Drawing.Size(167, 45)
+        Me.Quantity_Panel.TabIndex = 5
+        '
+        'Qty_txt
+        '
+        Me.Qty_txt.BackColor = System.Drawing.Color.Gainsboro
+        Me.Qty_txt.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Qty_txt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Qty_txt.ForeColor = System.Drawing.Color.Silver
+        Me.Qty_txt.Location = New System.Drawing.Point(18, 9)
+        Me.Qty_txt.MaxLength = 3
+        Me.Qty_txt.Name = "Qty_txt"
+        Me.Qty_txt.Size = New System.Drawing.Size(126, 23)
+        Me.Qty_txt.TabIndex = 0
+        Me.Qty_txt.Text = "Qty."
+        Me.Qty_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'BunifuElipse4
         '
         Me.BunifuElipse4.ElipseRadius = 20
         Me.BunifuElipse4.TargetControl = Me.Price_Panel
+        '
+        'Price_Panel
+        '
+        Me.Price_Panel.BackColor = System.Drawing.Color.Gainsboro
+        Me.Price_Panel.Controls.Add(Me.Price_txt)
+        Me.Price_Panel.Location = New System.Drawing.Point(514, 97)
+        Me.Price_Panel.Name = "Price_Panel"
+        Me.Price_Panel.Size = New System.Drawing.Size(178, 45)
+        Me.Price_Panel.TabIndex = 5
+        '
+        'Price_txt
+        '
+        Me.Price_txt.BackColor = System.Drawing.Color.Gainsboro
+        Me.Price_txt.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Price_txt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Price_txt.ForeColor = System.Drawing.Color.Silver
+        Me.Price_txt.Location = New System.Drawing.Point(22, 9)
+        Me.Price_txt.Name = "Price_txt"
+        Me.Price_txt.Size = New System.Drawing.Size(137, 23)
+        Me.Price_txt.TabIndex = 0
+        Me.Price_txt.Text = "Price."
+        Me.Price_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'BunifuDragControl1
         '
@@ -114,36 +206,6 @@ Partial Class RegisterStock
         Me.BunifuDragControl1.Horizontal = True
         Me.BunifuDragControl1.TargetControl = Me.BunifuGradientPanel1
         Me.BunifuDragControl1.Vertical = True
-        '
-        'BunifuElipse5
-        '
-        Me.BunifuElipse5.ElipseRadius = 20
-        Me.BunifuElipse5.TargetControl = Me.Add_Panel
-        '
-        'BunifuElipse6
-        '
-        Me.BunifuElipse6.ElipseRadius = 20
-        Me.BunifuElipse6.TargetControl = Me.Clear_Panel
-        '
-        'BunifuDragControl2
-        '
-        Me.BunifuDragControl2.Fixed = True
-        Me.BunifuDragControl2.Horizontal = True
-        Me.BunifuDragControl2.TargetControl = Me
-        Me.BunifuDragControl2.Vertical = True
-        '
-        'Exit_bttn
-        '
-        Me.Exit_bttn.BackColor = System.Drawing.Color.Transparent
-        Me.Exit_bttn.Image = CType(resources.GetObject("Exit_bttn.Image"), System.Drawing.Image)
-        Me.Exit_bttn.ImageActive = Nothing
-        Me.Exit_bttn.Location = New System.Drawing.Point(917, 4)
-        Me.Exit_bttn.Name = "Exit_bttn"
-        Me.Exit_bttn.Size = New System.Drawing.Size(20, 20)
-        Me.Exit_bttn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Exit_bttn.TabIndex = 5
-        Me.Exit_bttn.TabStop = False
-        Me.Exit_bttn.Zoom = 10
         '
         'BunifuGradientPanel1
         '
@@ -197,96 +259,40 @@ Partial Class RegisterStock
         Me.imgurl.Text = "Image URL"
         Me.imgurl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Quantity_Panel
+        'BunifuElipse5
         '
-        Me.Quantity_Panel.BackColor = System.Drawing.Color.Gainsboro
-        Me.Quantity_Panel.Controls.Add(Me.Qty_txt)
-        Me.Quantity_Panel.Location = New System.Drawing.Point(341, 98)
-        Me.Quantity_Panel.Name = "Quantity_Panel"
-        Me.Quantity_Panel.Size = New System.Drawing.Size(167, 45)
-        Me.Quantity_Panel.TabIndex = 5
+        Me.BunifuElipse5.ElipseRadius = 20
+        Me.BunifuElipse5.TargetControl = Me.Add_Panel
         '
-        'Qty_txt
+        'BunifuElipse6
         '
-        Me.Qty_txt.BackColor = System.Drawing.Color.Gainsboro
-        Me.Qty_txt.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Qty_txt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Qty_txt.ForeColor = System.Drawing.Color.Silver
-        Me.Qty_txt.Location = New System.Drawing.Point(18, 9)
-        Me.Qty_txt.MaxLength = 3
-        Me.Qty_txt.Name = "Qty_txt"
-        Me.Qty_txt.Size = New System.Drawing.Size(126, 23)
-        Me.Qty_txt.TabIndex = 0
-        Me.Qty_txt.Text = "Qty."
-        Me.Qty_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.BunifuElipse6.ElipseRadius = 20
+        Me.BunifuElipse6.TargetControl = Me.Clear_Panel
         '
-        'Price_Panel
+        'BunifuDragControl2
         '
-        Me.Price_Panel.BackColor = System.Drawing.Color.Gainsboro
-        Me.Price_Panel.Controls.Add(Me.Price_txt)
-        Me.Price_Panel.Location = New System.Drawing.Point(514, 97)
-        Me.Price_Panel.Name = "Price_Panel"
-        Me.Price_Panel.Size = New System.Drawing.Size(178, 45)
-        Me.Price_Panel.TabIndex = 5
+        Me.BunifuDragControl2.Fixed = True
+        Me.BunifuDragControl2.Horizontal = True
+        Me.BunifuDragControl2.TargetControl = Me
+        Me.BunifuDragControl2.Vertical = True
         '
-        'Price_txt
+        'Exit_bttn
         '
-        Me.Price_txt.BackColor = System.Drawing.Color.Gainsboro
-        Me.Price_txt.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Price_txt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Price_txt.ForeColor = System.Drawing.Color.Silver
-        Me.Price_txt.Location = New System.Drawing.Point(22, 9)
-        Me.Price_txt.Name = "Price_txt"
-        Me.Price_txt.Size = New System.Drawing.Size(137, 23)
-        Me.Price_txt.TabIndex = 0
-        Me.Price_txt.Text = "Price."
-        Me.Price_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Exit_bttn.BackColor = System.Drawing.Color.Transparent
+        Me.Exit_bttn.Image = CType(resources.GetObject("Exit_bttn.Image"), System.Drawing.Image)
+        Me.Exit_bttn.ImageActive = Nothing
+        Me.Exit_bttn.Location = New System.Drawing.Point(917, 4)
+        Me.Exit_bttn.Name = "Exit_bttn"
+        Me.Exit_bttn.Size = New System.Drawing.Size(20, 20)
+        Me.Exit_bttn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Exit_bttn.TabIndex = 5
+        Me.Exit_bttn.TabStop = False
+        Me.Exit_bttn.Zoom = 10
         '
-        'ProductName_Panel
+        'BunifuElipse7
         '
-        Me.ProductName_Panel.BackColor = System.Drawing.Color.Gainsboro
-        Me.ProductName_Panel.Controls.Add(Me.ProductName_txt)
-        Me.ProductName_Panel.Location = New System.Drawing.Point(340, 46)
-        Me.ProductName_Panel.Name = "ProductName_Panel"
-        Me.ProductName_Panel.Size = New System.Drawing.Size(352, 45)
-        Me.ProductName_Panel.TabIndex = 5
-        '
-        'ProductName_txt
-        '
-        Me.ProductName_txt.BackColor = System.Drawing.Color.Gainsboro
-        Me.ProductName_txt.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ProductName_txt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ProductName_txt.ForeColor = System.Drawing.Color.Silver
-        Me.ProductName_txt.Location = New System.Drawing.Point(16, 9)
-        Me.ProductName_txt.Name = "ProductName_txt"
-        Me.ProductName_txt.Size = New System.Drawing.Size(316, 23)
-        Me.ProductName_txt.TabIndex = 0
-        Me.ProductName_txt.Text = "zzzzzzzzzzz"
-        Me.ProductName_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'AddStock_bttn
-        '
-        Me.AddStock_bttn.Image = Global.post_by_otens.My.Resources.Resources.icons8_add_property_80
-        Me.AddStock_bttn.ImageActive = Nothing
-        Me.AddStock_bttn.Location = New System.Drawing.Point(44, 12)
-        Me.AddStock_bttn.Name = "AddStock_bttn"
-        Me.AddStock_bttn.Size = New System.Drawing.Size(55, 52)
-        Me.AddStock_bttn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.AddStock_bttn.TabIndex = 0
-        Me.AddStock_bttn.TabStop = False
-        Me.AddStock_bttn.Zoom = 10
-        '
-        'BunifuImageButton3
-        '
-        Me.BunifuImageButton3.Image = Global.post_by_otens.My.Resources.Resources.icons8_delete_301
-        Me.BunifuImageButton3.ImageActive = Nothing
-        Me.BunifuImageButton3.Location = New System.Drawing.Point(44, 13)
-        Me.BunifuImageButton3.Name = "BunifuImageButton3"
-        Me.BunifuImageButton3.Size = New System.Drawing.Size(55, 52)
-        Me.BunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton3.TabIndex = 0
-        Me.BunifuImageButton3.TabStop = False
-        Me.BunifuImageButton3.Zoom = 10
+        Me.BunifuElipse7.ElipseRadius = 20
+        Me.BunifuElipse7.TargetControl = Me.pImage
         '
         'RegisterStock
         '
@@ -305,20 +311,20 @@ Partial Class RegisterStock
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RegisterStock"
         Me.Clear_Panel.ResumeLayout(False)
+        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Add_Panel.ResumeLayout(False)
-        CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.BunifuGradientPanel1.ResumeLayout(False)
-        CType(Me.pImage, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        CType(Me.AddStock_bttn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ProductName_Panel.ResumeLayout(False)
+        Me.ProductName_Panel.PerformLayout()
         Me.Quantity_Panel.ResumeLayout(False)
         Me.Quantity_Panel.PerformLayout()
         Me.Price_Panel.ResumeLayout(False)
         Me.Price_Panel.PerformLayout()
-        Me.ProductName_Panel.ResumeLayout(False)
-        Me.ProductName_Panel.PerformLayout()
-        CType(Me.AddStock_bttn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.BunifuGradientPanel1.ResumeLayout(False)
+        CType(Me.pImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -347,4 +353,5 @@ Partial Class RegisterStock
     Friend WithEvents Panel1 As Panel
     Friend WithEvents imgurl As TextBox
     Friend WithEvents Exit_bttn As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BunifuElipse7 As Bunifu.Framework.UI.BunifuElipse
 End Class
