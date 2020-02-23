@@ -91,6 +91,10 @@ Partial Class MainManagevb
         Me.PanelTop = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.Exit_bttn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Send_btn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.Panel_Delete_btn = New System.Windows.Forms.Panel()
+        Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.Label_Delete = New System.Windows.Forms.Label()
+        Me.BunifuElipse3 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.MainPanel.SuspendLayout()
         Me.StockPanel.SuspendLayout()
         CType(Me.ProductDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -118,6 +122,8 @@ Partial Class MainManagevb
         Me.PanelTop.SuspendLayout()
         CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Send_btn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_Delete_btn.SuspendLayout()
+        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Elipse_Form
@@ -174,6 +180,7 @@ Partial Class MainManagevb
         '
         Me.StockPanel.BackColor = System.Drawing.Color.White
         Me.StockPanel.Controls.Add(Me.Search_btn)
+        Me.StockPanel.Controls.Add(Me.Label_Delete)
         Me.StockPanel.Controls.Add(Me.Label_EditStocks)
         Me.StockPanel.Controls.Add(Me.Label_AddProduct)
         Me.StockPanel.Controls.Add(Me.PictureBox2)
@@ -182,6 +189,7 @@ Partial Class MainManagevb
         Me.StockPanel.Controls.Add(Me.SearchBar)
         Me.StockPanel.Controls.Add(Me.Panel1)
         Me.StockPanel.Controls.Add(Me.ProductDataGrid)
+        Me.StockPanel.Controls.Add(Me.Panel_Delete_btn)
         Me.StockPanel.Controls.Add(Me.Panel_Save_btn)
         Me.StockPanel.Controls.Add(Me.Panel_Edit_btn)
         Me.StockPanel.Controls.Add(Me.Panel_AddStock_btn)
@@ -997,6 +1005,52 @@ Partial Class MainManagevb
         Me.Send_btn.TabStop = False
         Me.Send_btn.Zoom = 10
         '
+        'Panel_Delete_btn
+        '
+        Me.Panel_Delete_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Panel_Delete_btn.Controls.Add(Me.BunifuImageButton1)
+        Me.PanelTransition.SetDecoration(Me.Panel_Delete_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Panel_Delete_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Panel_Delete_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.Panel_Delete_btn.Location = New System.Drawing.Point(280, 74)
+        Me.Panel_Delete_btn.Name = "Panel_Delete_btn"
+        Me.Panel_Delete_btn.Size = New System.Drawing.Size(86, 48)
+        Me.Panel_Delete_btn.TabIndex = 2
+        '
+        'BunifuImageButton1
+        '
+        Me.PanelTransition.SetDecoration(Me.BunifuImageButton1, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.BunifuImageButton1, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.BunifuImageButton1, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuImageButton1.Image = Global.post_by_otens.My.Resources.Resources.icons8_delete_bin_24
+        Me.BunifuImageButton1.ImageActive = Nothing
+        Me.BunifuImageButton1.Location = New System.Drawing.Point(26, 8)
+        Me.BunifuImageButton1.Name = "BunifuImageButton1"
+        Me.BunifuImageButton1.Size = New System.Drawing.Size(36, 32)
+        Me.BunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BunifuImageButton1.TabIndex = 1
+        Me.BunifuImageButton1.TabStop = False
+        Me.BunifuImageButton1.Zoom = 10
+        '
+        'Label_Delete
+        '
+        Me.Label_Delete.AutoSize = True
+        Me.Label_Delete.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuTransition1.SetDecoration(Me.Label_Delete, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label_Delete, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Label_Delete, BunifuAnimatorNS.DecorationType.None)
+        Me.Label_Delete.Font = New System.Drawing.Font("Roboto Condensed", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Delete.Location = New System.Drawing.Point(291, 46)
+        Me.Label_Delete.Name = "Label_Delete"
+        Me.Label_Delete.Size = New System.Drawing.Size(61, 26)
+        Me.Label_Delete.TabIndex = 7
+        Me.Label_Delete.Text = "Delete"
+        '
+        'BunifuElipse3
+        '
+        Me.BunifuElipse3.ElipseRadius = 20
+        Me.BunifuElipse3.TargetControl = Me.Panel_Delete_btn
+        '
         'MainManagevb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1043,6 +1097,8 @@ Partial Class MainManagevb
         Me.PanelTop.ResumeLayout(False)
         CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Send_btn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_Delete_btn.ResumeLayout(False)
+        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1108,4 +1164,8 @@ Partial Class MainManagevb
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Send_btn As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents Label_Delete As Label
+    Friend WithEvents Panel_Delete_btn As Panel
+    Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BunifuElipse3 As Bunifu.Framework.UI.BunifuElipse
 End Class

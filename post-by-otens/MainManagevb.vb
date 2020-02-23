@@ -39,9 +39,10 @@ Public Class MainManagevb
         Panel_Save_btn.Visible = False
         Panel_AddStock_btn.Visible = False
         Panel_Edit_btn.Visible = False
+        Panel_Delete_btn.Visible = False
         Label_AddProduct.Visible = False
         Label_EditStocks.Visible = False
-
+        Label_Delete.Visible = False
 
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
         Dim bName As String = EditStock.getName
@@ -56,8 +57,10 @@ Public Class MainManagevb
         StockPanel.Visible = False
         Panel_AddStock_btn.Visible = False
         Panel_Edit_btn.Visible = False
+        Panel_Delete_btn.Visible = False
         Label_AddProduct.Visible = False
         Label_EditStocks.Visible = False
+        Label_Delete.Visible = False
     End Sub
 
     Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click, Elipse_Edit.TargetControlResized
@@ -67,8 +70,11 @@ Public Class MainManagevb
 
         BunifuTransition1.ShowSync(Panel_AddStock_btn)
         BunifuTransition1.ShowSync(Panel_Edit_btn)
+        BunifuTransition1.ShowSync(Panel_Delete_btn)
         BunifuTransition1.ShowSync(Label_AddProduct)
         BunifuTransition1.ShowSync(Label_EditStocks)
+        BunifuTransition1.ShowSync(Label_Delete)
+
 
     End Sub
 
@@ -84,7 +90,7 @@ Public Class MainManagevb
     End Sub
 
 
-    Private Sub Edit_btn_Click(sender As Object, e As EventArgs) Handles Edit_btn.Click
+    Private Sub Edit_btn_Click(sender As Object, e As EventArgs) Handles Edit_btn.Click, BunifuImageButton1.Click
 
         BunifuTransition1.ShowSync(Panel_Save_btn)
 
