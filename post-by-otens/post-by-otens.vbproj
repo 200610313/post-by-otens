@@ -374,6 +374,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\invalid.jpg" />
     <None Include="Resources\icons8_save_24px1.png" />
     <None Include="Resources\icons8_save_24px.png" />
     <None Include="Resources\icons8-delete-302.png" />

@@ -87,22 +87,20 @@ Public Class MainManagevb
 
     Private Sub AddStock_bttn_Click(sender As Object, e As EventArgs) Handles AddStock_bttn.Click
         RegisterStock.Show()
-        '  Dim adapter As New POSDataSet.productDataTable
-        ' ProductBindingSource.DataSource = adapter
-        ' ProductDataGrid.DataSource = ProductBindingSource
-        ' Dim newRow As DataRow
-        ' newRow = adapter.NewRow
-        ' With newRow
-        '.Item(0) = "NewProduct"
-        '.Item(1) = 0
-        '   .Item(2) = 0
-        '.Item(3) = 12345678911
-        '  .Item(4) = "Boboy's Refreshers"
-        ' End With
-        ' adapter.Rows.Add(newRow)
-        '  adapter.AcceptChanges()
-
-
+        Dim adapter As New POSDataSet.productDataTable
+        ProductBindingSource.DataSource = adapter
+        ProductDataGrid.DataSource = ProductBindingSource
+        Dim newRow As DataRow
+        newRow = adapter.NewRow
+        With newRow
+            .Item(0) = "NewProduct"
+            .Item(1) = 0
+            .Item(2) = 0
+            .Item(3) = 12345678911
+            .Item(4) = "Boboy's Refreshers"
+        End With
+        adapter.Rows.Add(newRow)
+        adapter.AcceptChanges()
     End Sub
 
 

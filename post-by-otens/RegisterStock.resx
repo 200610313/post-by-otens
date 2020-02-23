@@ -121,6 +121,18 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Exit_bttn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAWVJREFUSEvt
+        lkFKw0AYhXMIFwoKLryKrgVBLP1nmi4VEfUUnsBFV4K7HqC0F1FRPIErWyElk3Z8A3+gzExrkhmIi37w
+        IJD/vUfgTzLJln+HJtrLpbxSRBMlxAv0xTLX45zoUqfpLo+HMyc6QvAQWkD6D5mZofGwvRkF0RmCflaC
+        q2oG7ynH1ENJeY+ApRVYR4tciFuOq0YhxAWMIaWllnjyc47djO5292GYWgEh+jaLyfHrwXY+e8xBQuYT
+        x/vJ0vQQg1W2t64K3e8fcI0LluHOY4oiZN9wjQsGxrYhmohGXOOCbf7wmuLojWtccHNmDcfUlGtccLPJ
+        V6qqNhRL+e4xxNIr17jgZjvLhRf92muKIPPb5BqX1j4gBrxSA48xSIWUjxy/ntZ+EgbV653AUFgBTaSw
+        VMccW41WDgIlrRx9SnSns4Onf0BYZoX7lJlZ42F7OKvHW2z+J0rmRnwd/3i7JQ5J8gtGafqcoPL7kAAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
   <data name="BunifuGradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

@@ -7800,14 +7800,16 @@ Namespace POSDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "INSERT INTO [dbo].[product] ([pName], [pPrice], [pStock], [bName]) VALUES (@pName"& _ 
-                ", @pPrice, @pStock, @bName);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT pName, pPrice, pStock, pNumber, bName FROM "& _ 
-                "product WHERE (bName = @bName) AND (pNumber = SCOPE_IDENTITY())"
+            Me._commandCollection(1).CommandText = "INSERT INTO product"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (pName, pPrice, pStock, bName, imageUrl)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "VALUES (@pName,@pPrice,@pStock,@bName,@imageUrl); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT pName, pPrice, pStock"& _ 
+                ", pNumber, bName FROM product WHERE (bName = @bName) AND (pNumber = SCOPE_IDENTI"& _ 
+                "TY())"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "pName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pPrice", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 2, "pPrice", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@pStock", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "pStock", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bName", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "bName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@imageUrl", Global.System.Data.SqlDbType.VarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "imageUrl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "UPDATE product"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET          pStock = pStock - @pStock"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (bName = @bName) A"& _ 
@@ -7925,7 +7927,7 @@ Namespace POSDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function AddStock(ByVal pName As String, ByVal pPrice As Global.System.Nullable(Of Decimal), ByVal pStock As Global.System.Nullable(Of Integer), ByVal bName As String) As Integer
+        Public Overloads Overridable Function AddStock(ByVal pName As String, ByVal pPrice As Global.System.Nullable(Of Decimal), ByVal pStock As Global.System.Nullable(Of Integer), ByVal bName As String, ByVal imageUrl As String) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
             If (pName Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("pName")
@@ -7946,6 +7948,11 @@ Namespace POSDataSetTableAdapters
                 Throw New Global.System.ArgumentNullException("bName")
             Else
                 command.Parameters(3).Value = CType(bName,String)
+            End If
+            If (imageUrl Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(imageUrl,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _

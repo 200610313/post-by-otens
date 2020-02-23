@@ -533,6 +533,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property invalid() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("invalid", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property newminus() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("newminus", resourceCulture)

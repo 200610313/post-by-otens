@@ -25,19 +25,20 @@
     End Sub
 
 
-    Private Sub Qty_txt_MouseEnter(sender As Object, e As EventArgs) Handles Qty_txt.MouseEnter
+
+    Private Sub Qty_txt_MouseEnter(sender As Object, e As EventArgs) Handles Qty_txt.MouseEnter, imgurl.MouseEnter
         If Qty_txt.Text = "Qty." Then
             Qty_txt.Text = ""
         End If
     End Sub
 
-    Private Sub Qty_txt_MouseLeave(sender As Object, e As EventArgs) Handles Qty_txt.MouseLeave
+    Private Sub Qty_txt_MouseLeave(sender As Object, e As EventArgs) Handles Qty_txt.MouseLeave, imgurl.MouseLeave
         If Qty_txt.Text = "" Then
             Qty_txt.Text = "Qty."
         End If
     End Sub
 
-    Private Sub Qty_txt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Qty_txt.KeyPress
+    Private Sub Qty_txt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Qty_txt.KeyPress, imgurl.KeyPress
         If Char.IsLetter(e.KeyChar) Or Char.IsNumber(e.KeyChar) Then
             If Qty_txt.Text = "Qty." Then
                 Qty_txt.Text = ""
@@ -70,12 +71,15 @@
 
     Private Sub AddStock_bttn_Click(sender As Object, e As EventArgs) Handles AddStock_bttn.Click
 
-        Dim a As String = "Boboy's Refreshers"
+        Dim businessName As String = "Boboy's Refreshers"
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
         Dim up As New POSDataSet.productDataTable
-        ' adapter.AddStock(ProductName_txt.Text, Val(Price_txt.Text), CInt(Price_txt.Text), a)
+
+        Dim imageUrl As String = imgurl.Text
+
+        adapter.AddStock(ProductName_txt.Text, Val(Price_txt.Text), CInt(Price_txt.Text), businessName, imageUrl)
         adapter.Update(up)
-        ' MainManagevb.ProductDataGrid.DataSource = adapter.GetProductData("Boboy's Refreshers")
+        MainManagevb.ProductDataGrid.DataSource = adapter.GetProductData("Boboy's Refreshers")
         Me.Hide()
         Refresh()
     End Sub
@@ -87,5 +91,18 @@
 
     Private Sub RegisterStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub imgurl_mouseleave(sender As Object, e As EventArgs) Handles imgurl.MouseLeave
+        Try
+            pImage.Load(imgurl.Text)
+            pImage.Refresh()
+        Catch ex As Exception
+            'MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Exit_bttn_Click(sender As Object, e As EventArgs) Handles Exit_bttn.Click
+        Me.Close()
     End Sub
 End Class
