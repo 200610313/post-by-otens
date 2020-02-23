@@ -28,27 +28,7 @@ Public Class MainManagevb
 
     End Sub
 
-    Private Sub ButtonSend_Click(sender As Object, e As EventArgs) Handles Send_bttn.Click
 
-        'Disable Button while processing. . .
-        Send_bttn.Enabled = False
-        'Try to send http Web request
-        Try
-            Dim res As String = itexmo(TextBoxNumber.Text, TextBoxMessage.Text, TextBoxApiCode.Text)
-            If res = "0" Then
-                'If result = 0 then show a success messagebox
-                MsgBox("Success! Message is now on its way...")
-            Else
-                'Oops error. . .
-                MsgBox("Error """ & res & """ encountered..." & Environment.NewLine & Environment.NewLine & "Visit ""www.itexmo.com/Developers"" for more details...")
-            End If
-        Catch ex As Exception
-            'Oops TRY error. . .
-            MsgBox("Error """ & ex.ToString & """ encountered...")
-        End Try
-        'RE enable button
-        Send_bttn.Enabled = True
-    End Sub
 
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'POSDataSet.product' table. You can move, or remove it, as needed.
@@ -57,15 +37,15 @@ Public Class MainManagevb
         MessagePanel.Visible = False
         StockPanel.Visible = False
         Panel_Save_btn.Visible = False
+        Panel_AddStock_btn.Visible = False
+        Panel_Edit_btn.Visible = False
+        Label_AddProduct.Visible = False
+        Label_EditStocks.Visible = False
+
+
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
         Dim bName As String = EditStock.getName
-
         ProductDataGrid.DataSource = adapter.GetProductData(bName)
-
-  
-
-
-
 
 
     End Sub
@@ -74,12 +54,22 @@ Public Class MainManagevb
         LogoPanel.Visible = False
         MessagePanel.Visible = True
         StockPanel.Visible = False
+        Panel_AddStock_btn.Visible = False
+        Panel_Edit_btn.Visible = False
+        Label_AddProduct.Visible = False
+        Label_EditStocks.Visible = False
     End Sub
 
     Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click, Elipse_Edit.TargetControlResized
         LogoPanel.Visible = False
         MessagePanel.Visible = False
         StockPanel.Visible = True
+
+        BunifuTransition1.ShowSync(Panel_AddStock_btn)
+        BunifuTransition1.ShowSync(Panel_Edit_btn)
+        BunifuTransition1.ShowSync(Label_AddProduct)
+        BunifuTransition1.ShowSync(Label_EditStocks)
+
     End Sub
 
     Private Sub Logo_Click(sender As Object, e As EventArgs) Handles Logo.Click
@@ -98,7 +88,7 @@ Public Class MainManagevb
 
         BunifuTransition1.ShowSync(Panel_Save_btn)
 
-        ProductDataGrid.Columns(3).ReadOnly = False
+        ProductDataGrid.Columns(4).ReadOnly = False
     End Sub
 
     Private Sub Save_btn_Click(sender As Object, e As EventArgs) Handles Save_btn.Click
@@ -107,18 +97,23 @@ Public Class MainManagevb
         Dim up As New POSDataSet.productDataTable
         Dim nStock As Integer
         Dim prodId
+
         For i As Integer = 0 To ProductDataGrid.Rows.Count - 1
             ProductDataGrid.BeginEdit(i)
-            nStock = ProductDataGrid.Rows(i).Cells(3).Value
+            ProductDataGrid.Rows(i).Cells(4).Value = ProductDataGrid.Rows(i).Cells(3).Value
+            nStock = ProductDataGrid.Rows(i).Cells(4).Value
             prodId = ProductDataGrid.Rows(i).Cells(0).Value
             adapter.UpdateStock(nStock, bName, prodId)
             ProductDataGrid.EndEdit(i)
         Next
+
         adapter.Update(up)
         ProductDataGrid.DataSource = adapter.GetProductData(bName)
         BunifuTransition1.ShowSync(Panel_Save_btn)
         Panel_Save_btn.Visible = False
-        ProductDataGrid.Columns(3).ReadOnly = True
+        ProductDataGrid.Columns(4).ReadOnly = True
+
+
     End Sub
 
 
@@ -147,6 +142,28 @@ Public Class MainManagevb
 
     Private Sub Search_btn_Click(sender As Object, e As EventArgs) Handles Search_btn.Click
         FilterData()
+    End Sub
+
+    Private Sub Send_btn_Click(sender As Object, e As EventArgs) Handles Send_btn.Click
+        Dim aPiCode As String = "TR-ONETR657728_JVZWJ"
+        'Disable Button while processing. . .
+        Send_btn.Enabled = False
+        'Try to send http Web request
+        Try
+            Dim res As String = itexmo(Number_tb.Text, Message_tb.Text, aPiCode)
+            If res = "0" Then
+                'If result = 0 then show a success messagebox
+                MsgBox("Success! Message is now on its way...")
+            Else
+                'Oops error. . .
+                MsgBox("Error """ & res & """ encountered..." & Environment.NewLine & Environment.NewLine & "Visit ""www.itexmo.com/Developers"" for more details...")
+            End If
+        Catch ex As Exception
+            'Oops TRY error. . .
+            MsgBox("Error """ & ex.ToString & """ encountered...")
+        End Try
+        'RE enable button
+        Search_btn.Enabled = True
     End Sub
 
 

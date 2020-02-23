@@ -1,4 +1,6 @@
-﻿Module SendMessageModule
+﻿Imports Globe
+
+Module SendMessageModule
     Function itexmo(ByVal Number As String, ByVal Message As String, ByVal API_CODE As String)
         Using client As New Net.WebClient
             Dim parameter As New Specialized.NameValueCollection
@@ -10,4 +12,6 @@
             itexmo = (New System.Text.UTF8Encoding).GetString(rpb)
         End Using
     End Function
+
+
 End Module

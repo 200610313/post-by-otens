@@ -19,6 +19,7 @@
         If Char.IsLetter(e.KeyChar) Or Char.IsNumber(e.KeyChar) Then
             If ProductName_txt.Text = "Product Name" Then
                 ProductName_txt.Text = ""
+
             End If
 
         End If
@@ -64,6 +65,7 @@
         If Char.IsLetter(e.KeyChar) Or Char.IsNumber(e.KeyChar) Then
             If Price_txt.Text = "Price." Then
                 Price_txt.Text = ""
+
             End If
 
         End If
@@ -85,8 +87,10 @@
     End Sub
 
     Private Sub BunifuImageButton3_Click(sender As Object, e As EventArgs) Handles BunifuImageButton3.Click
-        Me.Hide()
-        MainManagevb.Show()
+        Price_txt.Text = "Price."
+        Qty_txt.Text = "Qty."
+        ProductName_txt.Text = "Product Name"
+
     End Sub
 
     Private Sub RegisterStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -104,5 +108,9 @@
 
     Private Sub Exit_bttn_Click(sender As Object, e As EventArgs) Handles Exit_bttn.Click
         Me.Close()
+    End Sub
+
+    Private Sub imgurl_TextChanged(sender As Object, e As EventArgs) Handles imgurl.TextChanged
+
     End Sub
 End Class
