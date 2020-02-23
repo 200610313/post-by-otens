@@ -379,9 +379,6 @@
         LCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLDzo0+f/AC0WkX3pocbCAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="NewStock.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="ProductBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>254, 95</value>
   </metadata>
@@ -764,5 +761,8 @@
   </metadata>
   <metadata name="POSDataSet1BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1027, 95</value>
+  </metadata>
+  <metadata name="BunifuElipse2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 138</value>
   </metadata>
 </root>

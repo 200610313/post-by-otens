@@ -62,7 +62,7 @@ Public Class MainManagevb
 
         ProductDataGrid.DataSource = adapter.GetProductData(bName)
 
-        'Add button on datagrid
+  
 
 
 
@@ -98,7 +98,7 @@ Public Class MainManagevb
 
         BunifuTransition1.ShowSync(Panel_Save_btn)
 
-        ProductDataGrid.Columns(4).ReadOnly = False
+        ProductDataGrid.Columns(3).ReadOnly = False
     End Sub
 
     Private Sub Save_btn_Click(sender As Object, e As EventArgs) Handles Save_btn.Click
@@ -109,8 +109,8 @@ Public Class MainManagevb
         Dim prodId
         For i As Integer = 0 To ProductDataGrid.Rows.Count - 1
             ProductDataGrid.BeginEdit(i)
-            nStock = ProductDataGrid.Rows(i).Cells(4).Value
-            prodID = ProductDataGrid.Rows(i).Cells(0).Value
+            nStock = ProductDataGrid.Rows(i).Cells(3).Value
+            prodId = ProductDataGrid.Rows(i).Cells(0).Value
             adapter.UpdateStock(nStock, bName, prodId)
             ProductDataGrid.EndEdit(i)
         Next
@@ -118,17 +118,36 @@ Public Class MainManagevb
         ProductDataGrid.DataSource = adapter.GetProductData(bName)
         BunifuTransition1.ShowSync(Panel_Save_btn)
         Panel_Save_btn.Visible = False
-        ProductDataGrid.Columns(4).ReadOnly = True
+        ProductDataGrid.Columns(3).ReadOnly = True
     End Sub
 
-    Private Sub ProductDataGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ProductDataGrid.CellContentClick
-        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
-        Dim bName = EditStock.getName
 
 
+    Public Sub FilterData()
+
+        Dim str As String = SearchBar.Text
+        Try
+            If SearchBar.Text.Trim(" ") = " " Then
+            Else
+                For i As Integer = 0 To ProductDataGrid.Rows.Count - 1
+                    For j As Integer = 0 To ProductDataGrid.Rows(i).Cells.Count - 1
+                        If ProductDataGrid.Item(j, i).Value.ToString().ToLower.StartsWith(str.ToLower) Then
+                            ProductDataGrid.Rows(i).Selected = True
+                            ProductDataGrid.CurrentCell = ProductDataGrid.Rows(i).Cells(j)
+                            Exit Try
+                        End If
+                    Next
+                Next i
+            End If
+        Catch abc As Exception
+            MessageBox.Show("Sorry!")
+        End Try
 
     End Sub
 
+    Private Sub Search_btn_Click(sender As Object, e As EventArgs) Handles Search_btn.Click
+        FilterData()
+    End Sub
 
 
 
