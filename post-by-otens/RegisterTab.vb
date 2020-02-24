@@ -8,13 +8,11 @@ Public Class RegisterTab
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
 
-        loggedInBusinessName = EditStock.getName 'set businessname
+        loggedInBusinessName = "Boboy's Refreshers" 'EditStock.getName 'set businessname
 
         loadProducts()
         initShoppingCart()
-
         savePath.Text = My.Application.Info.DirectoryPath
-
     End Sub
 
     Private Sub initShoppingCart()

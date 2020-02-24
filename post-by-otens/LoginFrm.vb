@@ -12,8 +12,9 @@
             Dim managerUsername = Username_txt.Text
             Dim managerPword = Password_txt.Text
             Dim adapter As New POSDataSetTableAdapters.businessTableAdapter
-            If adapter.validateManager(businessName, managerPword, managerUsername) <> 0 Then
-                Dim managerView As New MainManagevb(businessName)
+
+            If adapter.validateManager(businessName, managerPword, managerUsername) = 1 Then
+                MainManagevb.Show()
                 Me.Close()
             End If
         Else
@@ -21,8 +22,9 @@
             Dim registerU = Username_txt.Text
             Dim registerP = Password_txt.Text
             Dim adapter As New POSDataSetTableAdapters.businessTableAdapter
-            If adapter.validateRegister(businessName, registerP, registerU) <> 0 Then
-                Dim managerView As New MainManagevb(businessName)
+            If adapter.validateRegister(businessName, registerU, registerP) <> 0 Then
+                'Dim managerView As New MainManagevb(businessName)
+                RegisterTab.Show()
                 Me.Close()
             End If
         End If

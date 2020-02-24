@@ -40,13 +40,17 @@
         Dim adapter As New POSDataSetTableAdapters.customerTableAdapter
         'Try
         Dim customerID As Integer
-            adapter.InsertQuery(cFname, cLName, cMinit, cCity, cState, cZip, cPhone)
-            customerID = adapter.getCustID
+        adapter.InsertQuery(cFname, cLName, cMinit, cCity, cState, cZip, cPhone)
+        customerID = adapter.getCustID
         generateInvoiceForCustomer(customerID, cFname)
         'Catch ex As Exception
         'MessageBox.Show(ex.Message)
         'End Try
     End Sub
+
+
+
+
 
     'Generate invoice for the customer
     Public Sub generateInvoiceForCustomer(customerID As Integer, cFname As String)

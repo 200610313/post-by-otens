@@ -23,7 +23,9 @@ Partial Class custRegistrationForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.managerClose_btn = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.submit_managerbtn = New System.Windows.Forms.PictureBox()
         Me.submitbutton = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -41,14 +43,18 @@ Partial Class custRegistrationForm
         Me.mI = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.fN = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.Panel1.SuspendLayout()
+        CType(Me.managerClose_btn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.submit_managerbtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.submitbutton, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.managerClose_btn)
         Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.submit_managerbtn)
         Me.Panel1.Controls.Add(Me.submitbutton)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label6)
@@ -70,6 +76,17 @@ Partial Class custRegistrationForm
         Me.Panel1.Size = New System.Drawing.Size(286, 457)
         Me.Panel1.TabIndex = 0
         '
+        'managerClose_btn
+        '
+        Me.managerClose_btn.Image = Global.post_by_otens.My.Resources.Resources.icons8_multiply_16px1
+        Me.managerClose_btn.Location = New System.Drawing.Point(262, 37)
+        Me.managerClose_btn.Name = "managerClose_btn"
+        Me.managerClose_btn.Size = New System.Drawing.Size(16, 16)
+        Me.managerClose_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.managerClose_btn.TabIndex = 5
+        Me.managerClose_btn.TabStop = False
+        Me.managerClose_btn.Visible = False
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.post_by_otens.My.Resources.Resources.icons8_multiply_16px1
@@ -79,6 +96,17 @@ Partial Class custRegistrationForm
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
+        '
+        'submit_managerbtn
+        '
+        Me.submit_managerbtn.Image = Global.post_by_otens.My.Resources.Resources.icons8_ok_48px
+        Me.submit_managerbtn.Location = New System.Drawing.Point(114, 404)
+        Me.submit_managerbtn.Name = "submit_managerbtn"
+        Me.submit_managerbtn.Size = New System.Drawing.Size(47, 43)
+        Me.submit_managerbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.submit_managerbtn.TabIndex = 4
+        Me.submit_managerbtn.TabStop = False
+        Me.submit_managerbtn.Visible = False
         '
         'submitbutton
         '
@@ -351,7 +379,9 @@ Partial Class custRegistrationForm
         Me.Text = "custRegistrationForm"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.managerClose_btn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.submit_managerbtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.submitbutton, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -374,4 +404,6 @@ Partial Class custRegistrationForm
     Friend WithEvents phone As Bunifu.Framework.UI.BunifuMaterialTextbox
     Friend WithEvents submitbutton As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents submit_managerbtn As PictureBox
+    Friend WithEvents managerClose_btn As PictureBox
 End Class

@@ -44,8 +44,9 @@ Public Class custRegistrationForm
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
         RegisterTab.Show()
+
+
         Me.Close()
     End Sub
 
@@ -55,6 +56,10 @@ Public Class custRegistrationForm
         ' Add any initialization after the InitializeComponent() call.
         Me.StartPosition = FormStartPosition.CenterScreen
         Me.Show()
+    End Sub
+
+    Private Sub managerClose_btn_Click(sender As Object, e As EventArgs) Handles managerClose_btn.Click
+        Me.Close()
     End Sub
 
     Private Sub fN_OnValueChanged(sender As Object, e As EventArgs) Handles fN.OnValueChanged
@@ -113,6 +118,15 @@ Public Class custRegistrationForm
             state.LineFocusedColor = Color.FromArgb(192, 255, 192)
             state.LineIdleColor = Color.FromArgb(192, 255, 192)
             state.LineMouseHoverColor = Color.FromArgb(192, 255, 192)
+        End If
+    End Sub
+
+    Private Sub submit_managerbtn_Click(sender As Object, e As EventArgs) Handles submit_managerbtn.Click
+        If fN.LineIdleColor <> Color.FromArgb(192, 255, 192) Or mI.LineIdleColor <> Color.FromArgb(192, 255, 192) Or lN.LineIdleColor <> Color.FromArgb(192, 255, 192) Or city.LineIdleColor <> Color.FromArgb(192, 255, 192) Or state.LineIdleColor <> Color.FromArgb(192, 255, 192) Or zip.LineIdleColor <> Color.FromArgb(192, 255, 192) Or phone.LineIdleColor <> Color.FromArgb(192, 255, 192) Then
+
+        Else
+            queryUpdate(fN.Text, lN.Text, mI.Text, city.Text, state.Text, zip.Text, phone.Text)
+            Me.Close()
         End If
     End Sub
 End Class

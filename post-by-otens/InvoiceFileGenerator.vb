@@ -15,7 +15,7 @@ Module InvoiceFileGenerator
 
         Dim templatePath As String
         templatePath = My.Application.Info.DirectoryPath
-        templatePath = templatePath & "\posInvoice.xlsx"
+        templatePath = templatePath & "\InvoiceTemplate.xlsx"
 
         xlWorkBook = xlApp.Workbooks.Open(templatePath)
         xlWorkSheet = xlWorkBook.Worksheets("Invoice1a")
@@ -128,7 +128,7 @@ Module InvoiceFileGenerator
         Return addr
     End Function
 
-    Private Function getFullNameOf(cID As Integer, iNum As Integer, bName As String) As String
+    Public Function getFullNameOf(cID As Integer, iNum As Integer, bName As String) As String
         Dim adapter As New POSDataSetTableAdapters.DataTable3TableAdapter
         Dim fullName As String
 

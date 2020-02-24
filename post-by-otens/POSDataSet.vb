@@ -58,8 +58,7 @@ Namespace POSDataSetTableAdapters
 
     End Class
 
-    Partial Public Class customerTableAdapter
-    End Class
+
 
     Partial Public Class product1TableAdapter
     End Class

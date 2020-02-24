@@ -1,18 +1,32 @@
-﻿Imports System.Data.DataTable
+﻿Imports System.ComponentModel
+Imports System.Data.DataTable
 
 Public Class MainManagevb
     Public adp As Odbc.OdbcDataAdapter
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
     Public businessName As String
+    Public targetInvoiceNum As Integer
+    Public cIDOld As Integer
+    Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        businessName = EditStock.getName
+        'TODO: This line of code loads data into the 'POSDataSet.product' table. You can move, or remove it, as needed.
+        Refresh()
+        LogoPanel.Visible = True
+        MessagePanel.Visible = False
+        genInvoice.Visible = False
+        StockPanel.Visible = False
+        Panel_Save_btn.Visible = False
+        Panel_AddStock_btn.Visible = False
+        Panel_Edit_btn.Visible = False
+        Panel_Delete_btn.Visible = False
+        Label_AddProduct.Visible = False
+        Label_EditStocks.Visible = False
+        Label_Delete.Visible = False
 
-    Public Sub New(businessName As String)
-
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
-        Me.businessName = Me.businessName
+        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
+        'Dim bName As String = EditStock.getName
+        ProductDataGrid.DataSource = adapter.GetProductData(businessName)
     End Sub
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles Exit_bttn.Click
         Me.Close()
@@ -38,28 +52,10 @@ Public Class MainManagevb
 
 
 
-    Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'POSDataSet.product' table. You can move, or remove it, as needed.
-        Refresh()
-        LogoPanel.Visible = True
-        MessagePanel.Visible = False
-        StockPanel.Visible = False
-        Panel_Save_btn.Visible = False
-        Panel_AddStock_btn.Visible = False
-        Panel_Edit_btn.Visible = False
-        Panel_Delete_btn.Visible = False
-        Label_AddProduct.Visible = False
-        Label_EditStocks.Visible = False
-        Label_Delete.Visible = False
 
-        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
-        Dim bName As String = EditStock.getName
-        ProductDataGrid.DataSource = adapter.GetProductData(bName)
-
-
-    End Sub
 
     Private Sub SendSMS_Click(sender As Object, e As EventArgs) Handles SendSMS.Click
+        genInvoice.Visible = False
         LogoPanel.Visible = False
         MessagePanel.Visible = True
         StockPanel.Visible = False
@@ -72,6 +68,7 @@ Public Class MainManagevb
     End Sub
 
     Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click, Elipse_Edit.TargetControlResized
+        genInvoice.Visible = False
         LogoPanel.Visible = False
         MessagePanel.Visible = False
         StockPanel.Visible = True
@@ -107,7 +104,7 @@ Public Class MainManagevb
 
     Private Sub Save_btn_Click(sender As Object, e As EventArgs) Handles Save_btn.Click
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
-        Dim bName As String = EditStock.getName
+
         Dim up As New POSDataSet.productDataTable
         Dim nStock As Integer
         Dim prodId
@@ -117,12 +114,12 @@ Public Class MainManagevb
             ProductDataGrid.Rows(i).Cells(4).Value = ProductDataGrid.Rows(i).Cells(3).Value
             nStock = ProductDataGrid.Rows(i).Cells(4).Value
             prodId = ProductDataGrid.Rows(i).Cells(0).Value
-            adapter.UpdateStock(nStock, bName, prodId)
+            adapter.UpdateStock(nStock, businessName, prodId)
             ProductDataGrid.EndEdit(i)
         Next
 
         adapter.Update(up)
-        ProductDataGrid.DataSource = adapter.GetProductData(bName)
+        ProductDataGrid.DataSource = adapter.GetProductData(businessName)
         BunifuTransition1.ShowSync(Panel_Save_btn)
         Panel_Save_btn.Visible = False
         ProductDataGrid.Columns(4).ReadOnly = True
@@ -181,10 +178,17 @@ Public Class MainManagevb
     End Sub
 
     Private Sub genInvoices_Click(sender As Object, e As EventArgs) Handles genInvoices.Click
+
         LogoPanel.Visible = False
         MessagePanel.Visible = False
         StockPanel.Visible = False
         genInvoice.Visible = True
+        loadTable()
+
+
+    End Sub
+
+    Public Sub loadTable()
 
         CustomerDataGrid1.Rows.Clear()
 
@@ -214,15 +218,71 @@ Public Class MainManagevb
                     entry = entry & pCount & "x" & " " & pName
                 End If
             Next
+            Dim adap As New POSDataSetTableAdapters.invoiceTableAdapter
 
-            CustomerDataGrid1.Rows.Add(invoiceNum, dateP, total, entry)
+            Dim cID As String
+            cID = adap.getCID(invoiceNum)
+            CustomerDataGrid1.Rows.Add(invoiceNum, dateP, total, entry, getFullNameOf(cID, invoiceNum, businessName), cID)
         Next
     End Sub
 
+    Private Sub ContextMenuStrip1_Opening(sender As Object, e As CancelEventArgs) Handles ContextMenuStrip1.Opening
+        Try
+            Dim rowIndex = CustomerDataGrid1.CurrentCell.RowIndex
+            Dim selectedRowCount As Integer
+            selectedRowCount = CustomerDataGrid1.Rows.GetRowCount(DataGridViewElementStates.Selected)
+            Dim nameCharCount = CustomerDataGrid1.Rows(rowIndex).Cells(4).Value.ToString.Trim.Length
+
+            If selectedRowCount = 1 And nameCharCount = 1 Then
+                targetInvoiceNum = CustomerDataGrid1.Rows(rowIndex).Cells(0).Value
+                cIDOld = CustomerDataGrid1.Rows(rowIndex).Cells(5).Value
+            Else
+                SendKeys.Send("{ESC}")
+            End If
+
+        Catch ex As Exception
+
+        End Try
 
 
+    End Sub
 
+    Private Sub TransferOwnershipToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TransferOwnershipToolStripMenuItem.Click
+        custIDPrompter.Visible = True
+    End Sub
 
+    Private Sub custId_txtbox_TextChanged(sender As Object, e As EventArgs) Handles custId_txtbox.TextChanged
+        Dim custID As Integer
+        Dim adapter As New POSDataSetTableAdapters.customerTableAdapter
+        Try
+            custID = custId_txtbox.Text
+            newowner.Text = adapter.getFullName(custID, businessName)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub custId_txtbox_KeyDown(sender As Object, e As KeyEventArgs) Handles custId_txtbox.KeyDown
+        Try
+            If e.KeyCode = Keys.Enter And newowner.Text.Trim.Length <> 0 Then
+                Dim cIDNew As Integer
+                cIDNew = custId_txtbox.Text
+
+                replaceOwner(cIDOld, cIDNew, targetInvoiceNum, businessName)
+                custIDPrompter.Visible = False
+                loadTable()
+                e.Handled = True
+            Else
+                e.Handled = True
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub FillinBasicInfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FillinBasicInfoToolStripMenuItem.Click
+        updateCustInfo(cIDOld, Me)
+    End Sub
 
     ' Private Sub Label4_Click(sender As Object, e As EventArgs)
     '   Label4.Text = RegisterTab.loggedInBusinessName

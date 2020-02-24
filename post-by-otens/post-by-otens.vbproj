@@ -188,12 +188,14 @@
     <Compile Include="product.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="replaceInvoiceOwner.vb" />
     <Compile Include="shoppingCartItem.Designer.vb">
       <DependentUpon>shoppingCartItem.vb</DependentUpon>
     </Compile>
     <Compile Include="shoppingCartItem.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="upCustInfo.vb" />
     <Compile Include="voidInvoice.vb" />
   </ItemGroup>
   <ItemGroup>
