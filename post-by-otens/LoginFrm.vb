@@ -12,8 +12,7 @@
             Dim managerUsername = Username_txt.Text
             Dim managerPword = Password_txt.Text
             Dim adapter As New POSDataSetTableAdapters.businessTableAdapter
-
-            If adapter.validateManager(businessName, managerPword, managerUsername) = 1 Then
+            If adapter.validateManager(businessName, managerUsername, managerPword) = 1 Then
                 MainManagevb.Show()
                 Me.Close()
             End If
@@ -40,5 +39,7 @@
 
     End Sub
 
+    Private Sub LoginFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

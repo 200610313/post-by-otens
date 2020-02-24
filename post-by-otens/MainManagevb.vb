@@ -1,15 +1,19 @@
 ﻿Imports System.ComponentModel
-Imports System.Data.DataTable
+Imports System.Data.SqlClient
 
 Public Class MainManagevb
     Public adp As Odbc.OdbcDataAdapter
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public businessName As String
+    Public businessName As String = EditStock.getName
     Public targetInvoiceNum As Integer
     Public cIDOld As Integer
+    Public rowIndex As Integer = 0
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        businessName = EditStock.getName
+        'TODO: This line of code loads data into the 'POSDataSet.customer' table. You can move, or remove it, as needed.
+
+
+        ' Me.CustomerTableAdapter.Fill(Me.POSDataSet.customer)
         'TODO: This line of code loads data into the 'POSDataSet.product' table. You can move, or remove it, as needed.
         Refresh()
         LogoPanel.Visible = True
@@ -95,11 +99,13 @@ Public Class MainManagevb
     End Sub
 
 
-    Private Sub Edit_btn_Click(sender As Object, e As EventArgs) Handles Edit_btn.Click, BunifuImageButton1.Click
+    Private Sub Edit_btn_Click(sender As Object, e As EventArgs) Handles Edit_btn.Click
 
         BunifuTransition1.ShowSync(Panel_Save_btn)
 
-        ProductDataGrid.Columns(4).ReadOnly = False
+        For i As Integer = 0 To ProductDataGrid.SelectedRows.Count - 1
+            ProductDataGrid.SelectedRows(i).DataGridView.Rows(i).Cells(3).ReadOnly = False
+        Next
     End Sub
 
     Private Sub Save_btn_Click(sender As Object, e As EventArgs) Handles Save_btn.Click
@@ -109,13 +115,12 @@ Public Class MainManagevb
         Dim nStock As Integer
         Dim prodId
 
-        For i As Integer = 0 To ProductDataGrid.Rows.Count - 1
+        For i As Integer = 0 To ProductDataGrid.SelectedRows.Count - 1
             ProductDataGrid.BeginEdit(i)
-            ProductDataGrid.Rows(i).Cells(4).Value = ProductDataGrid.Rows(i).Cells(3).Value
-            nStock = ProductDataGrid.Rows(i).Cells(4).Value
-            prodId = ProductDataGrid.Rows(i).Cells(0).Value
+            nStock = ProductDataGrid.SelectedRows(i).DataGridView.Rows(i).Cells(3).Value
+            prodId = ProductDataGrid.SelectedRows(i).DataGridView.Rows(i).Cells(0).Value
             adapter.UpdateStock(nStock, businessName, prodId)
-            ProductDataGrid.EndEdit(i)
+            ProductDataGrid.CommitEdit(i)
         Next
 
         adapter.Update(up)
@@ -129,53 +134,72 @@ Public Class MainManagevb
 
 
 
-    Public Sub FilterData()
 
-        Dim str As String = SearchBar.Text
-        Try
-            If SearchBar.Text.Trim(" ") = " " Then
-            Else
-                For i As Integer = 0 To ProductDataGrid.Rows.Count - 1
-                    For j As Integer = 0 To ProductDataGrid.Rows(i).Cells.Count - 1
-                        If ProductDataGrid.Item(j, i).Value.ToString().ToLower.StartsWith(str.ToLower) Then
-                            ProductDataGrid.Rows(i).Selected = True
-                            ProductDataGrid.CurrentCell = ProductDataGrid.Rows(i).Cells(j)
-                            Exit Try
-                        End If
-                    Next
-                Next i
-            End If
-        Catch abc As Exception
-            MessageBox.Show("Sorry!")
-        End Try
 
-    End Sub
 
-    Private Sub Search_btn_Click(sender As Object, e As EventArgs) Handles Search_btn.Click
-        FilterData()
-    End Sub
 
-    Private Sub Send_btn_Click(sender As Object, e As EventArgs) Handles Send_btn.Click
+    Private Sub Send_btn_Click(sender As Object, e As EventArgs)
         Dim aPiCode As String = "TR-ONETR657728_JVZWJ"
         'Disable Button while processing. . .
-        Send_btn.Enabled = False
+        ' Send_btn.Enabled = False
         'Try to send http Web request
-        Try
-            Dim res As String = itexmo(Number_tb.Text, Message_tb.Text, aPiCode)
-            If res = "0" Then
-                'If result = 0 then show a success messagebox
-                MsgBox("Success! Message is now on its way...")
-            Else
-                'Oops error. . .
-                MsgBox("Error """ & res & """ encountered..." & Environment.NewLine & Environment.NewLine & "Visit ""www.itexmo.com/Developers"" for more details...")
-            End If
-        Catch ex As Exception
-            'Oops TRY error. . .
-            MsgBox("Error """ & ex.ToString & """ encountered...")
-        End Try
+        '  Try
+        '   Dim res As String = itexmo(Number_tb.Text, Message_tb.Text, aPiCode)
+        '  If res = "0" Then
+        'If result = 0 then show a success messagebox
+        'MsgBox("Success! Message is now on its way...")
+        '   Else
+        'Oops error. . .
+        '    MsgBox("Error """ & res & """ encountered..." & Environment.NewLine & Environment.NewLine & "Visit ""www.itexmo.com/Developers"" for more details...")
+        'End If
+        '  Catch ex As Exception
+        'Oops TRY error. . .
+        ' MsgBox("Error """ & ex.ToString & """ encountered...")
+        '  End Try
         'RE enable button
-        Search_btn.Enabled = True
+        '  Search_btn.Enabled = True
+
     End Sub
+
+
+    Private Sub SearchBar_OnValueChanged(sender As Object, e As EventArgs) Handles SearchBar.OnValueChanged
+        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
+        If SearchBar.Text = "" Then
+            ProductDataGrid.DataSource = adapter.GetProductData(businessName)
+        Else
+            ProductDataGrid.DataSource = adapter.SearchProduct(SearchBar.Text, businessName)
+        End If
+
+    End Sub
+
+    Private Sub SearchBar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles SearchBar.KeyPress
+        If Char.IsLetter(e.KeyChar) Or Char.IsNumber(e.KeyChar) Then
+            If SearchBar.Text = "Search" Then
+                SearchBar.Text = ""
+            End If
+        End If
+    End Sub
+
+    Private Sub Delete_btn_Click(sender As Object, e As EventArgs) Handles Delete_btn.Click
+        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
+        If ProductDataGrid.SelectedRows.Count > 0 Then
+            For i As Integer = 0 To ProductDataGrid.SelectedRows.Count - 1
+                Dim prodID = ProductDataGrid.SelectedRows(i).DataGridView.Rows(i).Cells(0).Value
+                ProductDataGrid.Rows.Remove(ProductDataGrid.SelectedRows(i))
+                adapter.DeleteProduct(prodID)
+            Next
+        Else
+            MessageBox.Show("Select 1 row before you hit Delete")
+        End If
+
+
+    End Sub
+
+
+
+
+
+
 
     Private Sub genInvoices_Click(sender As Object, e As EventArgs) Handles genInvoices.Click
 
@@ -187,6 +211,8 @@ Public Class MainManagevb
 
 
     End Sub
+
+
 
     Public Sub loadTable()
 
@@ -280,9 +306,19 @@ Public Class MainManagevb
         End Try
     End Sub
 
-    Private Sub FillinBasicInfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FillinBasicInfoToolStripMenuItem.Click
+    Private Sub FillinBasicInfoToolStripMenuItem_Click(sender As Object, e As EventArgs)
         updateCustInfo(cIDOld, Me)
     End Sub
+
+
+
+
+
+
+
+
+
+
 
     ' Private Sub Label4_Click(sender As Object, e As EventArgs)
     '   Label4.Text = RegisterTab.loggedInBusinessName
