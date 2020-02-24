@@ -4,16 +4,8 @@ Public Class MainManagevb
     Public adp As Odbc.OdbcDataAdapter
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public businessName As String
+    Public loggedInBusinessName As String
 
-    Public Sub New(businessName As String)
-
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
-        Me.businessName = Me.businessName
-    End Sub
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles Exit_bttn.Click
         Me.Close()
     End Sub
@@ -178,45 +170,6 @@ Public Class MainManagevb
         End Try
         'RE enable button
         Search_btn.Enabled = True
-    End Sub
-
-    Private Sub genInvoices_Click(sender As Object, e As EventArgs) Handles genInvoices.Click
-        LogoPanel.Visible = False
-        MessagePanel.Visible = False
-        StockPanel.Visible = False
-        genInvoice.Visible = True
-
-        CustomerDataGrid1.Rows.Clear()
-
-        Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter
-        Dim adapter2 As New POSDataSetTableAdapters.DataTable2TableAdapter
-
-        For i = 0 To adapter.getAllInvoice(businessName).Rows.Count - 1
-            Dim invoiceNum, dateP, total As String
-            invoiceNum = adapter.getAllInvoice(businessName).Rows(i).Item(0)
-            dateP = adapter.getAllInvoice(businessName).Rows(i).Item(1)
-            total = adapter.getAllInvoice(businessName).Rows(i).Item(2)
-
-            Dim j As Integer
-            Dim entry As String
-            entry = ""
-
-            For j = 0 To adapter2.getProductsOfInvoice(businessName, invoiceNum).Rows.Count - 1
-                Dim pCount As String
-                Dim pName As String
-
-                pCount = adapter2.getProductsOfInvoice(businessName, invoiceNum).Rows(j).Item(0)
-                pName = adapter2.getProductsOfInvoice(businessName, invoiceNum).Rows(j).Item(1)
-
-                If j <> adapter2.getProductsOfInvoice(businessName, invoiceNum).Rows.Count - 1 Then
-                    entry = entry & pCount & "x" & " " & pName & vbCrLf
-                Else
-                    entry = entry & pCount & "x" & " " & pName
-                End If
-            Next
-
-            CustomerDataGrid1.Rows.Add(invoiceNum, dateP, total, entry)
-        Next
     End Sub
 
 
