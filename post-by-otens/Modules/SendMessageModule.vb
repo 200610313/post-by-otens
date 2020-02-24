@@ -1,5 +1,4 @@
-﻿Imports Globe
-
+﻿
 Module SendMessageModule
     Function itexmo(ByVal Number As String, ByVal Message As String, ByVal API_CODE As String)
         Using client As New Net.WebClient

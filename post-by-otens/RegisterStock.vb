@@ -73,7 +73,6 @@
 
     Private Sub AddStock_bttn_Click(sender As Object, e As EventArgs) Handles AddStock_bttn.Click
 
-
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
         Dim up As New POSDataSet.productDataTable
 
@@ -81,7 +80,8 @@
         Dim bName As String = EditStock.getName()
         adapter.AddStock(ProductName_txt.Text, Val(Price_txt.Text), CInt(Price_txt.Text), bName, imageUrl)
         adapter.Update(up)
-        MainManagevb.ProductDataGrid.DataSource = adapter.GetProductData(bName)
+        'pls fix I modified main manage vb to accept businessName as parameter in new to save the businessName
+        'MainManagevb.ProductDataGrid.DataSource = adapter.GetProductData(bName)
         Me.Hide()
         Refresh()
     End Sub
