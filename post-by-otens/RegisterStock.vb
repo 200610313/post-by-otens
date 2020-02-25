@@ -78,10 +78,10 @@
 
         Dim imageUrl As String = imgurl.Text
         Dim bName As String = EditStock.getName()
-        adapter.AddStock(ProductName_txt.Text, Val(Price_txt.Text), CInt(Price_txt.Text), bName, imageUrl)
+        adapter.AddStock(ProductName_txt.Text, Val(Price_txt.Text), CInt(Qty_txt.Text), bName, imageUrl)
         adapter.Update(up)
-        'pls fix I modified main manage vb to accept businessName as parameter in new to save the businessName
-        'MainManagevb.ProductDataGrid.DataSource = adapter.GetProductData(bName)
+
+        MainManagevb.ProductDataGrid.DataSource = adapter.GetProductData(EditStock.getName)
         Me.Hide()
         Refresh()
     End Sub
@@ -111,6 +111,10 @@
     End Sub
 
     Private Sub imgurl_TextChanged(sender As Object, e As EventArgs) Handles imgurl.TextChanged
+
+    End Sub
+
+    Private Sub BunifuGradientPanel1_Paint(sender As Object, e As PaintEventArgs) Handles BunifuGradientPanel1.Paint
 
     End Sub
 End Class

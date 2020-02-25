@@ -5,11 +5,11 @@ Public Class MainManagevb
     Public adp As Odbc.OdbcDataAdapter
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public businessName As String
+    Public businessName As String = EditStock.getName
     Public targetInvoiceNum As Integer
     Public cIDOld As Integer
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        businessName = "Boboy's Refreshers" 'EditStock.getName
+
         'TODO: This line of code loads data into the 'POSDataSet.product' table. You can move, or remove it, as needed.
         Refresh()
         LogoPanel.Visible = True
@@ -101,12 +101,27 @@ Public Class MainManagevb
     End Sub
 
 
-    Private Sub Edit_btn_Click(sender As Object, e As EventArgs) Handles Edit_btn.Click, BunifuImageButton1.Click
+    Private Sub Edit_btn_Click(sender As Object, e As EventArgs) Handles Edit_btn.Click
 
         BunifuTransition1.ShowSync(Panel_Save_btn)
 
         ProductDataGrid.Columns(4).ReadOnly = False
     End Sub
+
+    Private Sub Delete_btn_Click(sender As Object, e As EventArgs) Handles Delete_btn.Click
+        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
+        Dim i As Integer = ProductDataGrid.CurrentCell.RowIndex
+        If ProductDataGrid.SelectedCells.Count > 0 Then
+
+            Dim prodID = ProductDataGrid.Rows(i).Cells(0).Value
+            adapter.DeleteProduct(prodID)
+            ProductDataGrid.DataSource = adapter.GetProductData(businessName)
+        Else
+            MessageBox.Show("Select 1 row before you hit Delete")
+        End If
+
+    End Sub
+
 
     Private Sub Save_btn_Click(sender As Object, e As EventArgs) Handles Save_btn.Click
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
@@ -135,30 +150,25 @@ Public Class MainManagevb
 
 
 
-    Public Sub FilterData()
 
-        Dim str As String = SearchBar.Text
-        Try
-            If SearchBar.Text.Trim(" ") = " " Then
-            Else
-                For i As Integer = 0 To ProductDataGrid.Rows.Count - 1
-                    For j As Integer = 0 To ProductDataGrid.Rows(i).Cells.Count - 1
-                        If ProductDataGrid.Item(j, i).Value.ToString().ToLower.StartsWith(str.ToLower) Then
-                            ProductDataGrid.Rows(i).Selected = True
-                            ProductDataGrid.CurrentCell = ProductDataGrid.Rows(i).Cells(j)
-                            Exit Try
-                        End If
-                    Next
-                Next i
-            End If
-        Catch abc As Exception
-            MessageBox.Show("Sorry!")
-        End Try
+    Private Sub SearchBar_OnValueChanged(sender As Object, e As EventArgs) Handles SearchBar.OnValueChanged
+        Dim adapter As New POSDataSetTableAdapters.productTableAdapter
+        If SearchBar.Text = "" Then
+            ProductDataGrid.DataSource = adapter.GetProductData(businessName)
+        Else
+            ProductDataGrid.DataSource = adapter.SearchProduct(SearchBar.Text, businessName)
+        End If
 
     End Sub
 
-    Private Sub Search_btn_Click(sender As Object, e As EventArgs) Handles Search_btn.Click
-        FilterData()
+    Private Sub SearchBar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles SearchBar.KeyPress
+        If Char.IsLetter(e.KeyChar) Or Char.IsNumber(e.KeyChar) Then
+            If SearchBar.Text = "Search" Then
+                SearchBar.Text = ""
+            ElseIf SearchBar.Text = "" Then
+
+            End If
+        End If
     End Sub
 
     Private Sub Send_btn_Click(sender As Object, e As EventArgs) Handles Send_btn.Click
@@ -325,6 +335,10 @@ Public Class MainManagevb
         ' The name passes basic validation.
         Return True
     End Function
+
+
+
+
 
 
     ' Private Sub Label4_Click(sender As Object, e As EventArgs)
