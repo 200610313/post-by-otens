@@ -104,8 +104,13 @@ Public Class MainManagevb
     Private Sub Edit_btn_Click(sender As Object, e As EventArgs) Handles Edit_btn.Click
 
         BunifuTransition1.ShowSync(Panel_Save_btn)
+        If ProductDataGrid.SelectedCells.Count > 0 Then
+            Dim i As Integer = ProductDataGrid.CurrentCell.RowIndex
 
-        ProductDataGrid.Columns(4).ReadOnly = False
+        Else
+            MessageBox.Show("Select 1 Stock Cell before you hit Edit")
+        End If
+        NewStock_tb.ReadOnly = False
     End Sub
 
     Private Sub Delete_btn_Click(sender As Object, e As EventArgs) Handles Delete_btn.Click
@@ -130,20 +135,33 @@ Public Class MainManagevb
         Dim nStock As Integer
         Dim prodId
 
-        For i As Integer = 0 To ProductDataGrid.Rows.Count - 1
-            ProductDataGrid.BeginEdit(i)
-            ProductDataGrid.Rows(i).Cells(4).Value = ProductDataGrid.Rows(i).Cells(3).Value
-            nStock = ProductDataGrid.Rows(i).Cells(4).Value
-            prodId = ProductDataGrid.Rows(i).Cells(0).Value
-            adapter.UpdateStock(nStock, businessName, prodId)
-            ProductDataGrid.EndEdit(i)
+        For j As Integer = 0 To ProductDataGrid.SelectedCells.Count
+            ProductDataGrid.SelectedCells(j).DataGridView.Rows
         Next
 
-        adapter.Update(up)
+
+
+
+        prodId = ProductDataGrid.Rows(i).Cells(0).Value
+
+            nStock = NewStock_tb.Text
+
+
+            adapter.UpdateStock(nStock, businessName, prodId)
+            ProductDataGrid.DataSource = adapter.GetProductData(businessName)
+            ProductDataGrid.EndEdit()
+
+        Else
+            MessageBox.Show("Select 1 Stock Cell before you hit save")
+        End If
+
+        NewStock_tb.ReadOnly = True
+
+
         ProductDataGrid.DataSource = adapter.GetProductData(businessName)
         BunifuTransition1.ShowSync(Panel_Save_btn)
         Panel_Save_btn.Visible = False
-        ProductDataGrid.Columns(4).ReadOnly = True
+
 
 
     End Sub
@@ -190,7 +208,7 @@ Public Class MainManagevb
             MsgBox("Error """ & ex.ToString & """ encountered...")
         End Try
         'RE enable button
-        Search_btn.Enabled = True
+        ' Search_btn.Enabled = True
     End Sub
 
     Private Sub genInvoices_Click(sender As Object, e As EventArgs) Handles genInvoices.Click
@@ -336,8 +354,9 @@ Public Class MainManagevb
         Return True
     End Function
 
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
 
-
+    End Sub
 
 
 
