@@ -5,7 +5,7 @@ Public Class MainManagevb
     Public adp As Odbc.OdbcDataAdapter
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public businessName As String = EditStock.getName
+    Public businessName As String = "Boboy's Refreshers" 'EditStock.getName
     Public targetInvoiceNum As Integer
     Public cIDOld As Integer
     Public rowIndex As Integer = 0
@@ -132,12 +132,6 @@ Public Class MainManagevb
 
     End Sub
 
-
-
-
-
-
-
     Private Sub Send_btn_Click(sender As Object, e As EventArgs)
         Dim aPiCode As String = "TR-ONETR657728_JVZWJ"
         'Disable Button while processing. . .
@@ -160,7 +154,6 @@ Public Class MainManagevb
         '  Search_btn.Enabled = True
 
     End Sub
-
 
     Private Sub SearchBar_OnValueChanged(sender As Object, e As EventArgs) Handles SearchBar.OnValueChanged
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
@@ -209,7 +202,6 @@ Public Class MainManagevb
         genInvoice.Visible = True
         loadTable()
 
-
     End Sub
 
 
@@ -245,9 +237,9 @@ Public Class MainManagevb
                 End If
             Next
             Dim adap As New POSDataSetTableAdapters.invoiceTableAdapter
-
             Dim cID As String
             cID = adap.getCID(invoiceNum)
+            MessageBox.Show(entry)
             CustomerDataGrid1.Rows.Add(invoiceNum, dateP, total, entry, getFullNameOf(cID, invoiceNum, businessName), cID)
         Next
     End Sub
@@ -310,6 +302,43 @@ Public Class MainManagevb
         updateCustInfo(cIDOld, Me)
     End Sub
 
+    Private Sub generate_btn_Click(sender As Object, e As EventArgs) Handles generate_btn.Click
+        Dim mySelectedRows As List(Of Integer) = New List(Of Integer)
+        Try
+            If IsValidFileNameOrPath(savePath.Text) Then
+                MessageBox.Show("Valid path detected")
+                For Each selectedRow As DataGridViewRow In CustomerDataGrid1.SelectedRows
+                    Dim cName As String = CustomerDataGrid1.Rows(9).Cells(5).Value
+                    If cName.Trim.Length <> 1 Then
+                        Dim index As Integer = selectedRow.Index
+                        Dim custID = CustomerDataGrid1.Rows(index).Cells(5).Value
+                        Dim iNum = CustomerDataGrid1.Rows(index).Cells(0).Value
+                        generate(custID, iNum, businessName)
+                    End If
+                Next selectedRow
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Function IsValidFileNameOrPath(ByVal name As String) As Boolean
+        ' Determines if the name is Nothing.
+        If name Is Nothing Then
+            Return False
+        End If
+
+        ' Determines if there are bad characters in the name.
+        For Each badChar As Char In System.IO.Path.GetInvalidPathChars
+            If InStr(name, badChar) > 0 Then
+                Return False
+            End If
+        Next
+
+        ' The name passes basic validation.
+        Return True
+    End Function
 
 
 
