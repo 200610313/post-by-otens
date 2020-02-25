@@ -160,4 +160,8 @@ Public Class RegisterTab
             e.Handled = True
         End If
     End Sub
+
+    Private Sub savePath_TextChanged(sender As Object, e As EventArgs) Handles savePath.TextChanged
+
+    End Sub
 End Class

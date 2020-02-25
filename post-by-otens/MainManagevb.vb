@@ -9,7 +9,7 @@ Public Class MainManagevb
     Public targetInvoiceNum As Integer
     Public cIDOld As Integer
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        businessName = EditStock.getName
+        businessName = "Boboy's Refreshers" 'EditStock.getName
         'TODO: This line of code loads data into the 'POSDataSet.product' table. You can move, or remove it, as needed.
         Refresh()
         LogoPanel.Visible = True
@@ -52,7 +52,11 @@ Public Class MainManagevb
 
 
 
-
+    Private Sub savePathbtn_Click(sender As Object, e As EventArgs) Handles savePathbtn.Click
+        If (FolderBrowserDialog1.ShowDialog() = DialogResult.OK) Then
+            savePath.Text = FolderBrowserDialog1.SelectedPath
+        End If
+    End Sub
 
     Private Sub SendSMS_Click(sender As Object, e As EventArgs) Handles SendSMS.Click
         genInvoice.Visible = False
@@ -284,6 +288,41 @@ Public Class MainManagevb
         updateCustInfo(cIDOld, Me)
     End Sub
 
+    Private Sub generate_btn_Click(sender As Object, e As EventArgs) Handles generate_btn.Click
+        Dim mySelectedRows As List(Of Integer) = New List(Of Integer)
+        Try
+            If IsValidFileNameOrPath(savePath.Text) Then
+
+                For Each selectedRow As DataGridViewRow In CustomerDataGrid1.SelectedRows
+                    Dim cName As String = CustomerDataGrid1.Rows(9).Cells(5).Value
+                    If cName.Trim.Length <> 1 Then
+                        Dim index As Integer = selectedRow.Index
+                        Dim custID = CustomerDataGrid1.Rows(index).Cells(5).Value
+                        Dim iNum = CustomerDataGrid1.Rows(index).Cells(0).Value
+                        generate(custID, iNum, businessName, savePath.Text)
+                    End If
+                Next selectedRow
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Function IsValidFileNameOrPath(ByVal name As String) As Boolean
+        ' Determines if the name is Nothing.
+        If name Is Nothing Then
+            Return False
+        End If
+
+        ' Determines if there are bad characters in the name.
+        For Each badChar As Char In System.IO.Path.GetInvalidPathChars
+            If InStr(name, badChar) > 0 Then
+                Return False
+            End If
+        Next
+
+        ' The name passes basic validation.
+        Return True
+    End Function
     ' Private Sub Label4_Click(sender As Object, e As EventArgs)
     '   Label4.Text = RegisterTab.loggedInBusinessName
     '  End Sub

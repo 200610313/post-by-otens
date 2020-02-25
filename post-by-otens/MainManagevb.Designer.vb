@@ -30,10 +30,10 @@ Partial Class MainManagevb
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim Animation3 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainManagevb))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Elipse_Form = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.PanelTop = New Bunifu.Framework.UI.BunifuGradientPanel()
@@ -44,6 +44,9 @@ Partial Class MainManagevb
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.TransferOwnershipToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FillinBasicInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.savePath = New System.Windows.Forms.TextBox()
+        Me.savePathbtn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.generate_btn = New Bunifu.Framework.UI.BunifuTileButton()
         Me.custIDPrompter = New System.Windows.Forms.Panel()
         Me.newowner = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -68,8 +71,14 @@ Partial Class MainManagevb
         Me.SearchBar = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ProductDataGrid = New Bunifu.Framework.UI.BunifuCustomDataGrid()
+        Me.PNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PStockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.POSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.POSDataSet = New post_by_otens.POSDataSet()
         Me.Panel_Delete_btn = New System.Windows.Forms.Panel()
         Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Panel_Save_btn = New System.Windows.Forms.Panel()
@@ -105,28 +114,26 @@ Partial Class MainManagevb
         Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse3 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
-        Me.PNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PStockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.POSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.POSDataSet = New post_by_otens.POSDataSet()
         Me.ProductBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductTableAdapter = New post_by_otens.POSDataSetTableAdapters.productTableAdapter()
         Me.POSDataSet1 = New post_by_otens.POSDataSet()
         Me.POSDataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BusinessTableAdapter1 = New post_by_otens.POSDataSetTableAdapters.businessTableAdapter()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.PanelTop.SuspendLayout()
         CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainPanel.SuspendLayout()
         Me.genInvoice.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
+        CType(Me.savePathbtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.custIDPrompter.SuspendLayout()
         CType(Me.CustomerDataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StockPanel.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Delete_btn.SuspendLayout()
         CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Save_btn.SuspendLayout()
@@ -144,8 +151,6 @@ Partial Class MainManagevb
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Menu_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.POSDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.POSDataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -241,6 +246,9 @@ Partial Class MainManagevb
         '
         Me.genInvoice.BackColor = System.Drawing.Color.White
         Me.genInvoice.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.genInvoice.Controls.Add(Me.savePath)
+        Me.genInvoice.Controls.Add(Me.savePathbtn)
+        Me.genInvoice.Controls.Add(Me.generate_btn)
         Me.genInvoice.Controls.Add(Me.custIDPrompter)
         Me.genInvoice.Controls.Add(Me.CustomerDataGrid1)
         Me.genInvoice.Controls.Add(Me.Label10)
@@ -260,19 +268,69 @@ Partial Class MainManagevb
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TransferOwnershipToolStripMenuItem, Me.FillinBasicInfoToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(211, 80)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(204, 52)
         '
         'TransferOwnershipToolStripMenuItem
         '
         Me.TransferOwnershipToolStripMenuItem.Name = "TransferOwnershipToolStripMenuItem"
-        Me.TransferOwnershipToolStripMenuItem.Size = New System.Drawing.Size(210, 24)
+        Me.TransferOwnershipToolStripMenuItem.Size = New System.Drawing.Size(203, 24)
         Me.TransferOwnershipToolStripMenuItem.Text = "Transfer ownership"
         '
         'FillinBasicInfoToolStripMenuItem
         '
         Me.FillinBasicInfoToolStripMenuItem.Name = "FillinBasicInfoToolStripMenuItem"
-        Me.FillinBasicInfoToolStripMenuItem.Size = New System.Drawing.Size(210, 24)
+        Me.FillinBasicInfoToolStripMenuItem.Size = New System.Drawing.Size(203, 24)
         Me.FillinBasicInfoToolStripMenuItem.Text = "Fill-in basic info"
+        '
+        'savePath
+        '
+        Me.savePath.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.BunifuTransition1.SetDecoration(Me.savePath, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.savePath, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.savePath, BunifuAnimatorNS.DecorationType.None)
+        Me.savePath.ForeColor = System.Drawing.Color.Silver
+        Me.savePath.Location = New System.Drawing.Point(543, 13)
+        Me.savePath.Name = "savePath"
+        Me.savePath.ReadOnly = True
+        Me.savePath.Size = New System.Drawing.Size(239, 22)
+        Me.savePath.TabIndex = 7
+        '
+        'savePathbtn
+        '
+        Me.PanelTransition.SetDecoration(Me.savePathbtn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.savePathbtn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.savePathbtn, BunifuAnimatorNS.DecorationType.None)
+        Me.savePathbtn.Image = Global.post_by_otens.My.Resources.Resources.icons8_save_24px1
+        Me.savePathbtn.ImageActive = Nothing
+        Me.savePathbtn.Location = New System.Drawing.Point(516, 8)
+        Me.savePathbtn.Name = "savePathbtn"
+        Me.savePathbtn.Size = New System.Drawing.Size(21, 31)
+        Me.savePathbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.savePathbtn.TabIndex = 6
+        Me.savePathbtn.TabStop = False
+        Me.savePathbtn.Zoom = 10
+        '
+        'generate_btn
+        '
+        Me.generate_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.generate_btn.color = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.generate_btn.colorActive = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.generate_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PanelTransition2.SetDecoration(Me.generate_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.generate_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.generate_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.generate_btn.Font = New System.Drawing.Font("Century Gothic", 15.75!)
+        Me.generate_btn.ForeColor = System.Drawing.Color.White
+        Me.generate_btn.Image = Nothing
+        Me.generate_btn.ImagePosition = 20
+        Me.generate_btn.ImageZoom = 50
+        Me.generate_btn.LabelPosition = 55
+        Me.generate_btn.LabelText = "GENERATE"
+        Me.generate_btn.Location = New System.Drawing.Point(220, 637)
+        Me.generate_btn.Margin = New System.Windows.Forms.Padding(6)
+        Me.generate_btn.Name = "generate_btn"
+        Me.generate_btn.Size = New System.Drawing.Size(344, 79)
+        Me.generate_btn.TabIndex = 4
         '
         'custIDPrompter
         '
@@ -391,7 +449,7 @@ Partial Class MainManagevb
         Me.CustomerDataGrid1.RowTemplate.Height = 24
         Me.CustomerDataGrid1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.CustomerDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.CustomerDataGrid1.Size = New System.Drawing.Size(792, 675)
+        Me.CustomerDataGrid1.Size = New System.Drawing.Size(792, 569)
         Me.CustomerDataGrid1.TabIndex = 3
         '
         'DataGridViewTextBoxColumn5
@@ -676,6 +734,47 @@ Partial Class MainManagevb
         Me.ProductDataGrid.Size = New System.Drawing.Size(791, 474)
         Me.ProductDataGrid.TabIndex = 3
         '
+        'PNumberDataGridViewTextBoxColumn
+        '
+        Me.PNumberDataGridViewTextBoxColumn.DataPropertyName = "pNumber"
+        Me.PNumberDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.PNumberDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PNumberDataGridViewTextBoxColumn.Name = "PNumberDataGridViewTextBoxColumn"
+        Me.PNumberDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PNumberDataGridViewTextBoxColumn.Width = 52
+        '
+        'PNameDataGridViewTextBoxColumn
+        '
+        Me.PNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.PNameDataGridViewTextBoxColumn.DataPropertyName = "pName"
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
+        Me.PNameDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle7
+        Me.PNameDataGridViewTextBoxColumn.HeaderText = "Product Name"
+        Me.PNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PNameDataGridViewTextBoxColumn.Name = "PNameDataGridViewTextBoxColumn"
+        Me.PNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PPriceDataGridViewTextBoxColumn
+        '
+        Me.PPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.PPriceDataGridViewTextBoxColumn.DataPropertyName = "pPrice"
+        Me.PPriceDataGridViewTextBoxColumn.HeaderText = "Price"
+        Me.PPriceDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PPriceDataGridViewTextBoxColumn.Name = "PPriceDataGridViewTextBoxColumn"
+        Me.PPriceDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PStockDataGridViewTextBoxColumn
+        '
+        Me.PStockDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.PStockDataGridViewTextBoxColumn.DataPropertyName = "pStock"
+        Me.PStockDataGridViewTextBoxColumn.HeaderText = "Stock"
+        Me.PStockDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PStockDataGridViewTextBoxColumn.Name = "PStockDataGridViewTextBoxColumn"
+        Me.PStockDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'nStock
         '
         Me.nStock.HeaderText = "New Stock"
@@ -688,6 +787,16 @@ Partial Class MainManagevb
         '
         Me.ProductBindingSource.DataMember = "product"
         Me.ProductBindingSource.DataSource = Me.POSDataSetBindingSource
+        '
+        'POSDataSetBindingSource
+        '
+        Me.POSDataSetBindingSource.DataSource = Me.POSDataSet
+        Me.POSDataSetBindingSource.Position = 0
+        '
+        'POSDataSet
+        '
+        Me.POSDataSet.DataSetName = "POSDataSet"
+        Me.POSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Panel_Delete_btn
         '
@@ -1215,57 +1324,6 @@ Partial Class MainManagevb
         Me.BunifuElipse3.ElipseRadius = 20
         Me.BunifuElipse3.TargetControl = Me.Panel_Delete_btn
         '
-        'PNumberDataGridViewTextBoxColumn
-        '
-        Me.PNumberDataGridViewTextBoxColumn.DataPropertyName = "pNumber"
-        Me.PNumberDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.PNumberDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PNumberDataGridViewTextBoxColumn.Name = "PNumberDataGridViewTextBoxColumn"
-        Me.PNumberDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PNumberDataGridViewTextBoxColumn.Width = 52
-        '
-        'PNameDataGridViewTextBoxColumn
-        '
-        Me.PNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.PNameDataGridViewTextBoxColumn.DataPropertyName = "pName"
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
-        Me.PNameDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle7
-        Me.PNameDataGridViewTextBoxColumn.HeaderText = "Product Name"
-        Me.PNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PNameDataGridViewTextBoxColumn.Name = "PNameDataGridViewTextBoxColumn"
-        Me.PNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PPriceDataGridViewTextBoxColumn
-        '
-        Me.PPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.PPriceDataGridViewTextBoxColumn.DataPropertyName = "pPrice"
-        Me.PPriceDataGridViewTextBoxColumn.HeaderText = "Price"
-        Me.PPriceDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PPriceDataGridViewTextBoxColumn.Name = "PPriceDataGridViewTextBoxColumn"
-        Me.PPriceDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PStockDataGridViewTextBoxColumn
-        '
-        Me.PStockDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.PStockDataGridViewTextBoxColumn.DataPropertyName = "pStock"
-        Me.PStockDataGridViewTextBoxColumn.HeaderText = "Stock"
-        Me.PStockDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PStockDataGridViewTextBoxColumn.Name = "PStockDataGridViewTextBoxColumn"
-        Me.PStockDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'POSDataSetBindingSource
-        '
-        Me.POSDataSetBindingSource.DataSource = Me.POSDataSet
-        Me.POSDataSetBindingSource.Position = 0
-        '
-        'POSDataSet
-        '
-        Me.POSDataSet.DataSetName = "POSDataSet"
-        Me.POSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ProductBindingSource2
         '
         Me.ProductBindingSource2.DataMember = "product"
@@ -1311,6 +1369,7 @@ Partial Class MainManagevb
         Me.genInvoice.ResumeLayout(False)
         Me.genInvoice.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
+        CType(Me.savePathbtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.custIDPrompter.ResumeLayout(False)
         Me.custIDPrompter.PerformLayout()
         CType(Me.CustomerDataGrid1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1319,6 +1378,8 @@ Partial Class MainManagevb
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Delete_btn.ResumeLayout(False)
         CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Save_btn.ResumeLayout(False)
@@ -1338,8 +1399,6 @@ Partial Class MainManagevb
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Menu_bttn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.POSDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.POSDataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1429,4 +1488,8 @@ Partial Class MainManagevb
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents the_owner As DataGridViewTextBoxColumn
     Friend WithEvents cID As DataGridViewTextBoxColumn
+    Friend WithEvents generate_btn As Bunifu.Framework.UI.BunifuTileButton
+    Friend WithEvents savePath As TextBox
+    Friend WithEvents savePathbtn As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
 End Class

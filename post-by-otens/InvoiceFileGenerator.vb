@@ -36,6 +36,40 @@ Module InvoiceFileGenerator
         releaseObject(xlWorkBook)
         releaseObject(xlWorkSheet)
     End Sub
+    'Used only be manager
+    Public Sub generate(customerID As Integer, invoiceNumber As Integer, loggedInBusinessName As String, pat As String)
+
+        cID = customerID
+        iNum = invoiceNumber
+        bName = loggedInBusinessName
+
+        xlApp = New Excel.Application
+
+        Dim templatePath As String
+        templatePath = My.Application.Info.DirectoryPath
+        templatePath = templatePath & "\InvoiceTemplate.xlsx"
+
+        xlWorkBook = xlApp.Workbooks.Open(templatePath)
+        xlWorkSheet = xlWorkBook.Worksheets("Invoice1a")
+
+        fillUpForm()
+        Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter
+        Dim fileName As String
+
+        fileName = getFullNameOf(cID, iNum, bName)
+
+        filePath = pat + "\"
+        'filePath = RegisterTab.savePath.Text + "\" '"C:\Users\angelu.angelu-PC\Desktop\"
+        filePath = filePath & fileName
+        filePath = filePath & " - " & iNum.ToString
+        xlWorkBook.SaveAs(filePath)
+        xlWorkBook.Close()
+        xlApp.Quit()
+
+        releaseObject(xlApp)
+        releaseObject(xlWorkBook)
+        releaseObject(xlWorkSheet)
+    End Sub
 
     Private Sub releaseObject(ByVal obj As Object)
         Try
