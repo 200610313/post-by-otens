@@ -27,6 +27,8 @@ Public Class MainManagevb
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
         'Dim bName As String = EditStock.getName
         ProductDataGrid.DataSource = adapter.GetProductData(businessName)
+
+        MessageBox.Show(dateStart.Value)
     End Sub
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles Exit_bttn.Click
         Me.Close()
