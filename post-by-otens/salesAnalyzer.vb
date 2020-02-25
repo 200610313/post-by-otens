@@ -1,10 +1,12 @@
 ﻿Module salesAnalyzer
-    Public Sub loadAnalytics(bName As String, value As Date)
-        Dim adapter1 As POSDataSetTableAdapters.productTableAdapter
-        Dim adapter2 As POSDataSetTableAdapters.invoiceTableAdapter
+    Public Sub loadAnalytics(bName As String, value As Date, chart1 As DataVisualization.Charting.Chart, daysC As Integer)
+        Dim adapter1 As New POSDataSetTableAdapters.productTableAdapter
+        Dim adapter2 As New POSDataSetTableAdapters.invoiceTableAdapter
+        Dim adapter3 As New POSDataSetTableAdapters.invoiceTableAdapter
+        Dim adapter4 As New POSDataSetTableAdapters.DataTable2TableAdapter
         Dim dayEnd As Integer
-
-        dayEnd = 6
+        chart1.Series.Clear()
+        dayEnd = daysC
         Dim finalStartDate As String = Format(value, "yyyy-MM-dd")
         Dim finalEndDate As String = Format(DateAdd("d", dayEnd, value), "yyyy-MM-dd")
 
@@ -17,26 +19,57 @@
 
         'First, get the number of products that the business sells
         'AKA get all unique product numbers of the business
-        Dim productNums As New List(Of Integer)
+
+        Dim productNums As New List(Of Integer) 'pNums
+        Dim adapapter As New POSDataSetTableAdapters.productTableAdapter
         For i = 0 To adapter1.getProdNumAndNames(bName).Rows.Count - 1
-            productNums.Add(adapter1.getProdNumAndNames(bName).Rows(i).Item(0))
+            productNums.Add(adapter1.getProdNumAndNames(bName).Rows(i).Item(3))
+            chart1.Series.Add(adapapter.getProdName(productNums.Item(i)))
         Next
+        'Show chart labels
+        For z = 0 To chart1.Series.Count - 1
+            'coloring labels
+            chart1.Series.Item(z).IsValueShownAsLabel = True
+            chart1.Series.Item(z).LabelBackColor = Color.Black
+            chart1.Series.Item(z).LabelForeColor = Color.White
+
+
+        Next
+
+        chart1.ChartAreas(0).AxisX.MajorGrid.LineWidth = 0
+        chart1.ChartAreas(0).AxisY.MajorGrid.LineWidth = 0
+
 
         'Get invoices for each day
         Dim numOfInvoices As Integer
-
+        Dim currInvoiceNum As Integer
         For i = 0 To dayEnd
+            Dim productTotalCount(productNums.Count - 1) As Integer 'count per pNum
             numOfInvoices = adapter2.getInvoicesWithinDay(days.Item(i), bName).Count
-            For j = 0 To numOfInvoices - 1
+            For j = 0 To productNums.Count - 1
+                'for each invoice
+                For k = 0 To numOfInvoices - 1
+                    currInvoiceNum = adapter2.getInvoicesWithinDay(days.Item(i), bName).Rows(k).Item(0)
+                    'for each productLine that belongs to invoice
+                    Dim countProductLineOfInvoice As Integer = adapter4.getProductsOfInvoice(bName, currInvoiceNum).Rows.Count
+                    For l = 0 To countProductLineOfInvoice - 1
+                        Dim productNumInProductLine, productQtyInProductLine As Integer
+                        productNumInProductLine = adapter4.getProductsOfInvoice(bName, currInvoiceNum).Rows(l).Item(6)
+                        productQtyInProductLine = adapter4.getProductsOfInvoice(bName, currInvoiceNum).Rows(l).Item(0)
+                        'for each product number that appears in invoice
+                        If productNums.Item(j) = productNumInProductLine Then
+                            productTotalCount(j) = productTotalCount(j) + productQtyInProductLine
+                        End If
+                    Next l
+                Next k
+            Next j
+            For m = 0 To productNums.Count - 1
+                chart1.Series(adapapter.getProdName(productNums.Item(m))).Points.AddXY(days.Item(i), productTotalCount(m))
+            Next m
 
-            Next
-        Next
+        Next i
 
         'For i = 0 To 
-
-
-
-
 
         'For each products each day, 
 
