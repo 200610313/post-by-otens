@@ -34,6 +34,9 @@ Partial Class MainManagevb
         Dim Animation3 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainManagevb))
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Elipse_Form = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.PanelTop = New Bunifu.Framework.UI.BunifuGradientPanel()
@@ -99,6 +102,7 @@ Partial Class MainManagevb
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SlidingPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.BunifuFlatButton1 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Logo = New System.Windows.Forms.PictureBox()
         Me.Menu_bttn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.genInvoices = New Bunifu.Framework.UI.BunifuFlatButton()
@@ -120,6 +124,9 @@ Partial Class MainManagevb
         Me.POSDataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BusinessTableAdapter1 = New post_by_otens.POSDataSetTableAdapters.businessTableAdapter()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.sales_panel = New System.Windows.Forms.Panel()
+        Me.BunifuDatepicker1 = New Bunifu.Framework.UI.BunifuDatepicker()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.PanelTop.SuspendLayout()
         CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainPanel.SuspendLayout()
@@ -154,6 +161,8 @@ Partial Class MainManagevb
         CType(Me.ProductBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.POSDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.POSDataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.sales_panel.SuspendLayout()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Elipse_Form
@@ -246,6 +255,7 @@ Partial Class MainManagevb
         '
         Me.genInvoice.BackColor = System.Drawing.Color.White
         Me.genInvoice.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.genInvoice.Controls.Add(Me.sales_panel)
         Me.genInvoice.Controls.Add(Me.savePath)
         Me.genInvoice.Controls.Add(Me.savePathbtn)
         Me.genInvoice.Controls.Add(Me.generate_btn)
@@ -1074,6 +1084,7 @@ Partial Class MainManagevb
         '
         Me.SlidingPanel.BackgroundImage = CType(resources.GetObject("SlidingPanel.BackgroundImage"), System.Drawing.Image)
         Me.SlidingPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.SlidingPanel.Controls.Add(Me.BunifuFlatButton1)
         Me.SlidingPanel.Controls.Add(Me.Logo)
         Me.SlidingPanel.Controls.Add(Me.Menu_bttn)
         Me.SlidingPanel.Controls.Add(Me.genInvoices)
@@ -1092,6 +1103,45 @@ Partial Class MainManagevb
         Me.SlidingPanel.Quality = 10
         Me.SlidingPanel.Size = New System.Drawing.Size(310, 733)
         Me.SlidingPanel.TabIndex = 2
+        '
+        'BunifuFlatButton1
+        '
+        Me.BunifuFlatButton1.Active = False
+        Me.BunifuFlatButton1.Activecolor = System.Drawing.Color.Transparent
+        Me.BunifuFlatButton1.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuFlatButton1.BorderRadius = 0
+        Me.BunifuFlatButton1.ButtonText = "       Sales Analytics"
+        Me.BunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BunifuTransition1.SetDecoration(Me.BunifuFlatButton1, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.BunifuFlatButton1, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.BunifuFlatButton1, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray
+        Me.BunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent
+        Me.BunifuFlatButton1.Iconimage = CType(resources.GetObject("BunifuFlatButton1.Iconimage"), System.Drawing.Image)
+        Me.BunifuFlatButton1.Iconimage_right = Nothing
+        Me.BunifuFlatButton1.Iconimage_right_Selected = Nothing
+        Me.BunifuFlatButton1.Iconimage_Selected = Nothing
+        Me.BunifuFlatButton1.IconMarginLeft = 0
+        Me.BunifuFlatButton1.IconMarginRight = 0
+        Me.BunifuFlatButton1.IconRightVisible = True
+        Me.BunifuFlatButton1.IconRightZoom = 0R
+        Me.BunifuFlatButton1.IconVisible = True
+        Me.BunifuFlatButton1.IconZoom = 50.0R
+        Me.BunifuFlatButton1.IsTab = False
+        Me.BunifuFlatButton1.Location = New System.Drawing.Point(0, 330)
+        Me.BunifuFlatButton1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BunifuFlatButton1.Name = "BunifuFlatButton1"
+        Me.BunifuFlatButton1.Normalcolor = System.Drawing.Color.Transparent
+        Me.BunifuFlatButton1.OnHovercolor = System.Drawing.Color.Transparent
+        Me.BunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(162, Byte), Integer))
+        Me.BunifuFlatButton1.selected = False
+        Me.BunifuFlatButton1.Size = New System.Drawing.Size(300, 59)
+        Me.BunifuFlatButton1.TabIndex = 3
+        Me.BunifuFlatButton1.Text = "       Sales Analytics"
+        Me.BunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BunifuFlatButton1.Textcolor = System.Drawing.Color.White
+        Me.BunifuFlatButton1.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'Logo
         '
@@ -1156,7 +1206,7 @@ Partial Class MainManagevb
         Me.genInvoices.OnHovercolor = System.Drawing.Color.Transparent
         Me.genInvoices.OnHoverTextColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(162, Byte), Integer))
         Me.genInvoices.selected = False
-        Me.genInvoices.Size = New System.Drawing.Size(349, 59)
+        Me.genInvoices.Size = New System.Drawing.Size(300, 59)
         Me.genInvoices.TabIndex = 2
         Me.genInvoices.Text = "       Generate Invoices"
         Me.genInvoices.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1195,7 +1245,7 @@ Partial Class MainManagevb
         Me.Stocks_bttn.OnHovercolor = System.Drawing.Color.Transparent
         Me.Stocks_bttn.OnHoverTextColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(162, Byte), Integer))
         Me.Stocks_bttn.selected = False
-        Me.Stocks_bttn.Size = New System.Drawing.Size(349, 59)
+        Me.Stocks_bttn.Size = New System.Drawing.Size(300, 59)
         Me.Stocks_bttn.TabIndex = 2
         Me.Stocks_bttn.Text = "       Inventory"
         Me.Stocks_bttn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1234,7 +1284,7 @@ Partial Class MainManagevb
         Me.SendSMS.OnHovercolor = System.Drawing.Color.Transparent
         Me.SendSMS.OnHoverTextColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(162, Byte), Integer))
         Me.SendSMS.selected = False
-        Me.SendSMS.Size = New System.Drawing.Size(349, 59)
+        Me.SendSMS.Size = New System.Drawing.Size(281, 59)
         Me.SendSMS.TabIndex = 2
         Me.SendSMS.Text = "       Message"
         Me.SendSMS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1347,6 +1397,54 @@ Partial Class MainManagevb
         '
         Me.BusinessTableAdapter1.ClearBeforeFill = True
         '
+        'sales_panel
+        '
+        Me.sales_panel.Controls.Add(Me.Chart1)
+        Me.sales_panel.Controls.Add(Me.BunifuDatepicker1)
+        Me.PanelTransition.SetDecoration(Me.sales_panel, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.sales_panel, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.sales_panel, BunifuAnimatorNS.DecorationType.None)
+        Me.sales_panel.Location = New System.Drawing.Point(0, 0)
+        Me.sales_panel.Name = "sales_panel"
+        Me.sales_panel.Size = New System.Drawing.Size(794, 733)
+        Me.sales_panel.TabIndex = 8
+        '
+        'BunifuDatepicker1
+        '
+        Me.BunifuDatepicker1.BackColor = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.BunifuDatepicker1.BorderRadius = 0
+        Me.PanelTransition.SetDecoration(Me.BunifuDatepicker1, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.BunifuDatepicker1, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.BunifuDatepicker1, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuDatepicker1.ForeColor = System.Drawing.Color.White
+        Me.BunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.BunifuDatepicker1.FormatCustom = Nothing
+        Me.BunifuDatepicker1.Location = New System.Drawing.Point(606, 7)
+        Me.BunifuDatepicker1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BunifuDatepicker1.Name = "BunifuDatepicker1"
+        Me.BunifuDatepicker1.Size = New System.Drawing.Size(181, 27)
+        Me.BunifuDatepicker1.TabIndex = 0
+        Me.BunifuDatepicker1.Value = New Date(2020, 2, 25, 10, 19, 29, 660)
+        '
+        'Chart1
+        '
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Me.PanelTransition.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
+        Me.Chart1.Location = New System.Drawing.Point(0, 169)
+        Me.Chart1.Name = "Chart1"
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
+        Me.Chart1.Size = New System.Drawing.Size(791, 558)
+        Me.Chart1.TabIndex = 1
+        Me.Chart1.Text = "Chart1"
+        '
         'MainManagevb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1402,6 +1500,8 @@ Partial Class MainManagevb
         CType(Me.ProductBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.POSDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.POSDataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.sales_panel.ResumeLayout(False)
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1492,4 +1592,8 @@ Partial Class MainManagevb
     Friend WithEvents savePath As TextBox
     Friend WithEvents savePathbtn As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents BunifuFlatButton1 As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents sales_panel As Panel
+    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
+    Friend WithEvents BunifuDatepicker1 As Bunifu.Framework.UI.BunifuDatepicker
 End Class

@@ -323,6 +323,8 @@ Public Class MainManagevb
         ' The name passes basic validation.
         Return True
     End Function
+
+
     ' Private Sub Label4_Click(sender As Object, e As EventArgs)
     '   Label4.Text = RegisterTab.loggedInBusinessName
     '  End Sub
