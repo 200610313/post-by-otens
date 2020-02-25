@@ -26,9 +26,7 @@ Partial Class MainManagevb
         Dim Animation3 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -36,42 +34,19 @@ Partial Class MainManagevb
         Dim Animation2 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainManagevb))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Me.Elipse_Form = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.PanelTop = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.Exit_bttn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.PanelTransition = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.MainPanel = New System.Windows.Forms.Panel()
-        Me.StockPanel = New System.Windows.Forms.Panel()
-        Me.Search_btn = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.Label_Delete = New System.Windows.Forms.Label()
-        Me.Label_EditStocks = New System.Windows.Forms.Label()
-        Me.Label_AddProduct = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.SearchBar = New Bunifu.Framework.UI.BunifuMaterialTextbox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ProductDataGrid = New Bunifu.Framework.UI.BunifuCustomDataGrid()
-        Me.nStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Panel_Delete_btn = New System.Windows.Forms.Panel()
-        Me.Delete_btn = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.Panel_Save_btn = New System.Windows.Forms.Panel()
-        Me.Save_btn = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.Panel_Edit_btn = New System.Windows.Forms.Panel()
-        Me.Edit_btn = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.Panel_AddStock_btn = New System.Windows.Forms.Panel()
-        Me.AddStock_bttn = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.genInvoice = New System.Windows.Forms.Panel()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.TransferOwnershipToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FillinBasicInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.sales_panel = New System.Windows.Forms.Panel()
-        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.dateStart = New Bunifu.Framework.UI.BunifuDatepicker()
         Me.savePath = New System.Windows.Forms.TextBox()
         Me.savePathbtn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.generate_btn = New Bunifu.Framework.UI.BunifuTileButton()
@@ -98,6 +73,34 @@ Partial Class MainManagevb
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.StockPanel = New System.Windows.Forms.Panel()
+        Me.Search_btn = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.Label_Delete = New System.Windows.Forms.Label()
+        Me.Label_EditStocks = New System.Windows.Forms.Label()
+        Me.Label_AddProduct = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.SearchBar = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ProductDataGrid = New Bunifu.Framework.UI.BunifuCustomDataGrid()
+        Me.PNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PStockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.POSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.POSDataSet = New post_by_otens.POSDataSet()
+        Me.Panel_Delete_btn = New System.Windows.Forms.Panel()
+        Me.Delete_btn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.Panel_Save_btn = New System.Windows.Forms.Panel()
+        Me.Save_btn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.Panel_Edit_btn = New System.Windows.Forms.Panel()
+        Me.Edit_btn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.Panel_AddStock_btn = New System.Windows.Forms.Panel()
+        Me.AddStock_bttn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SlidingPanel = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.BunifuFlatButton1 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Logo = New System.Windows.Forms.PictureBox()
@@ -116,36 +119,22 @@ Partial Class MainManagevb
         Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse3 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.PNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PStockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.POSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.POSDataSet = New post_by_otens.POSDataSet()
         Me.ProductBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductTableAdapter = New post_by_otens.POSDataSetTableAdapters.productTableAdapter()
         Me.POSDataSet1 = New post_by_otens.POSDataSet()
         Me.POSDataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BusinessTableAdapter1 = New post_by_otens.POSDataSetTableAdapters.businessTableAdapter()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.dateStart = New System.Windows.Forms.DateTimePicker()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.PanelTop.SuspendLayout()
         CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainPanel.SuspendLayout()
-        Me.StockPanel.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel_Delete_btn.SuspendLayout()
-        CType(Me.Delete_btn, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel_Save_btn.SuspendLayout()
-        CType(Me.Save_btn, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel_Edit_btn.SuspendLayout()
-        CType(Me.Edit_btn, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel_AddStock_btn.SuspendLayout()
-        CType(Me.AddStock_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.genInvoice.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.sales_panel.SuspendLayout()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.savePathbtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.custIDPrompter.SuspendLayout()
         CType(Me.CustomerDataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -154,15 +143,28 @@ Partial Class MainManagevb
         Me.MessagePanel.SuspendLayout()
         CType(Me.Send_btn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Sendbtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.StockPanel.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_Delete_btn.SuspendLayout()
+        CType(Me.Delete_btn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_Save_btn.SuspendLayout()
+        CType(Me.Save_btn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_Edit_btn.SuspendLayout()
+        CType(Me.Edit_btn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel_AddStock_btn.SuspendLayout()
+        CType(Me.AddStock_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SlidingPanel.SuspendLayout()
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Menu_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.POSDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.POSDataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Elipse_Form
@@ -239,10 +241,11 @@ Partial Class MainManagevb
         Me.MainPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MainPanel.Controls.Add(Me.StockPanel)
+        Me.MainPanel.Controls.Add(Me.sales_panel)
         Me.MainPanel.Controls.Add(Me.genInvoice)
         Me.MainPanel.Controls.Add(Me.LogoPanel)
         Me.MainPanel.Controls.Add(Me.MessagePanel)
+        Me.MainPanel.Controls.Add(Me.StockPanel)
         Me.PanelTransition.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
         Me.BunifuTransition1.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
@@ -251,372 +254,10 @@ Partial Class MainManagevb
         Me.MainPanel.Size = New System.Drawing.Size(791, 730)
         Me.MainPanel.TabIndex = 3
         '
-        'StockPanel
-        '
-        Me.StockPanel.BackColor = System.Drawing.Color.White
-        Me.StockPanel.Controls.Add(Me.Search_btn)
-        Me.StockPanel.Controls.Add(Me.Label_Delete)
-        Me.StockPanel.Controls.Add(Me.Label_EditStocks)
-        Me.StockPanel.Controls.Add(Me.Label_AddProduct)
-        Me.StockPanel.Controls.Add(Me.PictureBox2)
-        Me.StockPanel.Controls.Add(Me.Panel2)
-        Me.StockPanel.Controls.Add(Me.Label5)
-        Me.StockPanel.Controls.Add(Me.SearchBar)
-        Me.StockPanel.Controls.Add(Me.Panel1)
-        Me.StockPanel.Controls.Add(Me.ProductDataGrid)
-        Me.StockPanel.Controls.Add(Me.Panel_Delete_btn)
-        Me.StockPanel.Controls.Add(Me.Panel_Save_btn)
-        Me.StockPanel.Controls.Add(Me.Panel_Edit_btn)
-        Me.StockPanel.Controls.Add(Me.Panel_AddStock_btn)
-        Me.StockPanel.Controls.Add(Me.Label4)
-        Me.PanelTransition.SetDecoration(Me.StockPanel, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.StockPanel, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.StockPanel, BunifuAnimatorNS.DecorationType.None)
-        Me.StockPanel.Location = New System.Drawing.Point(0, 0)
-        Me.StockPanel.Name = "StockPanel"
-        Me.StockPanel.Size = New System.Drawing.Size(811, 730)
-        Me.StockPanel.TabIndex = 20
-        '
-        'Search_btn
-        '
-        Me.Search_btn.Active = False
-        Me.Search_btn.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.Search_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Search_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Search_btn.BorderRadius = 0
-        Me.Search_btn.ButtonText = "Search Filter"
-        Me.Search_btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTransition1.SetDecoration(Me.Search_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Search_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Search_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.Search_btn.DisabledColor = System.Drawing.Color.Gray
-        Me.Search_btn.Iconcolor = System.Drawing.Color.Transparent
-        Me.Search_btn.Iconimage = Nothing
-        Me.Search_btn.Iconimage_right = Nothing
-        Me.Search_btn.Iconimage_right_Selected = Nothing
-        Me.Search_btn.Iconimage_Selected = Nothing
-        Me.Search_btn.IconMarginLeft = 0
-        Me.Search_btn.IconMarginRight = 0
-        Me.Search_btn.IconRightVisible = True
-        Me.Search_btn.IconRightZoom = 0R
-        Me.Search_btn.IconVisible = True
-        Me.Search_btn.IconZoom = 90.0R
-        Me.Search_btn.IsTab = False
-        Me.Search_btn.Location = New System.Drawing.Point(363, 145)
-        Me.Search_btn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Search_btn.Name = "Search_btn"
-        Me.Search_btn.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Search_btn.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Search_btn.OnHoverTextColor = System.Drawing.Color.White
-        Me.Search_btn.selected = False
-        Me.Search_btn.Size = New System.Drawing.Size(133, 33)
-        Me.Search_btn.TabIndex = 8
-        Me.Search_btn.Text = "Search Filter"
-        Me.Search_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Search_btn.Textcolor = System.Drawing.Color.White
-        Me.Search_btn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'Label_Delete
-        '
-        Me.Label_Delete.AutoSize = True
-        Me.Label_Delete.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTransition1.SetDecoration(Me.Label_Delete, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Label_Delete, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Label_Delete, BunifuAnimatorNS.DecorationType.None)
-        Me.Label_Delete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_Delete.Location = New System.Drawing.Point(291, 46)
-        Me.Label_Delete.Name = "Label_Delete"
-        Me.Label_Delete.Size = New System.Drawing.Size(68, 25)
-        Me.Label_Delete.TabIndex = 7
-        Me.Label_Delete.Text = "Delete"
-        '
-        'Label_EditStocks
-        '
-        Me.Label_EditStocks.AutoSize = True
-        Me.Label_EditStocks.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTransition1.SetDecoration(Me.Label_EditStocks, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Label_EditStocks, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Label_EditStocks, BunifuAnimatorNS.DecorationType.None)
-        Me.Label_EditStocks.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_EditStocks.Location = New System.Drawing.Point(152, 46)
-        Me.Label_EditStocks.Name = "Label_EditStocks"
-        Me.Label_EditStocks.Size = New System.Drawing.Size(110, 25)
-        Me.Label_EditStocks.TabIndex = 7
-        Me.Label_EditStocks.Text = "Edit Stocks"
-        '
-        'Label_AddProduct
-        '
-        Me.Label_AddProduct.AutoSize = True
-        Me.Label_AddProduct.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTransition1.SetDecoration(Me.Label_AddProduct, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Label_AddProduct, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Label_AddProduct, BunifuAnimatorNS.DecorationType.None)
-        Me.Label_AddProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label_AddProduct.Location = New System.Drawing.Point(18, 45)
-        Me.Label_AddProduct.Name = "Label_AddProduct"
-        Me.Label_AddProduct.Size = New System.Drawing.Size(120, 25)
-        Me.Label_AddProduct.TabIndex = 7
-        Me.Label_AddProduct.Text = "Add Product"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuTransition1.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(533, 6)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(251, 116)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 3
-        Me.PictureBox2.TabStop = False
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.PanelTransition.SetDecoration(Me.Panel2, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Panel2, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Panel2, BunifuAnimatorNS.DecorationType.None)
-        Me.Panel2.Location = New System.Drawing.Point(517, 6)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(10, 211)
-        Me.Panel2.TabIndex = 5
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.Label5, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Label5, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Label5, BunifuAnimatorNS.DecorationType.None)
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(3, 183)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(119, 36)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Product"
-        '
-        'SearchBar
-        '
-        Me.SearchBar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
-        Me.SearchBar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
-        Me.SearchBar.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.SearchBar.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.PanelTransition2.SetDecoration(Me.SearchBar, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.SearchBar, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.SearchBar, BunifuAnimatorNS.DecorationType.None)
-        Me.SearchBar.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.SearchBar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.SearchBar.HintForeColor = System.Drawing.Color.Empty
-        Me.SearchBar.HintText = ""
-        Me.SearchBar.isPassword = False
-        Me.SearchBar.LineFocusedColor = System.Drawing.Color.Blue
-        Me.SearchBar.LineIdleColor = System.Drawing.Color.Gray
-        Me.SearchBar.LineMouseHoverColor = System.Drawing.Color.Blue
-        Me.SearchBar.LineThickness = 3
-        Me.SearchBar.Location = New System.Drawing.Point(10, 142)
-        Me.SearchBar.Margin = New System.Windows.Forms.Padding(4)
-        Me.SearchBar.MaxLength = 32767
-        Me.SearchBar.Name = "SearchBar"
-        Me.SearchBar.Size = New System.Drawing.Size(345, 33)
-        Me.SearchBar.TabIndex = 5
-        Me.SearchBar.Text = "Search"
-        Me.SearchBar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.PanelTransition.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
-        Me.Panel1.Location = New System.Drawing.Point(9, 128)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(775, 10)
-        Me.Panel1.TabIndex = 4
-        '
-        'ProductDataGrid
-        '
-        Me.ProductDataGrid.AllowUserToAddRows = False
-        Me.ProductDataGrid.AllowUserToDeleteRows = False
-        Me.ProductDataGrid.AllowUserToResizeColumns = False
-        Me.ProductDataGrid.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ProductDataGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.ProductDataGrid.AutoGenerateColumns = False
-        Me.ProductDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
-        Me.ProductDataGrid.BackgroundColor = System.Drawing.Color.White
-        Me.ProductDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ProductDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProductDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.ProductDataGrid.ColumnHeadersHeight = 29
-        Me.ProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.ProductDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PNumberDataGridViewTextBoxColumn, Me.PNameDataGridViewTextBoxColumn, Me.PPriceDataGridViewTextBoxColumn, Me.PStockDataGridViewTextBoxColumn, Me.nStock})
-        Me.ProductDataGrid.DataSource = Me.ProductBindingSource
-        Me.BunifuTransition1.SetDecoration(Me.ProductDataGrid, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.ProductDataGrid, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.ProductDataGrid, BunifuAnimatorNS.DecorationType.None)
-        Me.ProductDataGrid.DoubleBuffered = True
-        Me.ProductDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.ProductDataGrid.EnableHeadersVisualStyles = False
-        Me.ProductDataGrid.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ProductDataGrid.HeaderBgColor = System.Drawing.Color.Gainsboro
-        Me.ProductDataGrid.HeaderForeColor = System.Drawing.Color.Black
-        Me.ProductDataGrid.Location = New System.Drawing.Point(3, 225)
-        Me.ProductDataGrid.Name = "ProductDataGrid"
-        Me.ProductDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.ProductDataGrid.RowHeadersWidth = 18
-        Me.ProductDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.ProductDataGrid.RowTemplate.Height = 24
-        Me.ProductDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.ProductDataGrid.Size = New System.Drawing.Size(791, 474)
-        Me.ProductDataGrid.TabIndex = 3
-        '
-        'nStock
-        '
-        Me.nStock.HeaderText = "New Stock"
-        Me.nStock.MinimumWidth = 6
-        Me.nStock.Name = "nStock"
-        Me.nStock.ReadOnly = True
-        Me.nStock.Width = 115
-        '
-        'ProductBindingSource
-        '
-        Me.ProductBindingSource.DataMember = "product"
-        Me.ProductBindingSource.DataSource = Me.POSDataSetBindingSource
-        '
-        'Panel_Delete_btn
-        '
-        Me.Panel_Delete_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Panel_Delete_btn.Controls.Add(Me.Delete_btn)
-        Me.PanelTransition.SetDecoration(Me.Panel_Delete_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Panel_Delete_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Panel_Delete_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.Panel_Delete_btn.Location = New System.Drawing.Point(280, 74)
-        Me.Panel_Delete_btn.Name = "Panel_Delete_btn"
-        Me.Panel_Delete_btn.Size = New System.Drawing.Size(86, 48)
-        Me.Panel_Delete_btn.TabIndex = 2
-        '
-        'Delete_btn
-        '
-        Me.PanelTransition.SetDecoration(Me.Delete_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Delete_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Delete_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.Delete_btn.Image = Global.post_by_otens.My.Resources.Resources.icons8_delete_bin_24
-        Me.Delete_btn.ImageActive = Nothing
-        Me.Delete_btn.Location = New System.Drawing.Point(26, 8)
-        Me.Delete_btn.Name = "Delete_btn"
-        Me.Delete_btn.Size = New System.Drawing.Size(36, 32)
-        Me.Delete_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Delete_btn.TabIndex = 1
-        Me.Delete_btn.TabStop = False
-        Me.Delete_btn.Zoom = 10
-        '
-        'Panel_Save_btn
-        '
-        Me.Panel_Save_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Panel_Save_btn.Controls.Add(Me.Save_btn)
-        Me.PanelTransition.SetDecoration(Me.Panel_Save_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Panel_Save_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Panel_Save_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.Panel_Save_btn.Location = New System.Drawing.Point(582, 150)
-        Me.Panel_Save_btn.Name = "Panel_Save_btn"
-        Me.Panel_Save_btn.Size = New System.Drawing.Size(147, 59)
-        Me.Panel_Save_btn.TabIndex = 2
-        '
-        'Save_btn
-        '
-        Me.PanelTransition.SetDecoration(Me.Save_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Save_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Save_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.Save_btn.Image = Global.post_by_otens.My.Resources.Resources.icons8_save_641
-        Me.Save_btn.ImageActive = Nothing
-        Me.Save_btn.Location = New System.Drawing.Point(38, 6)
-        Me.Save_btn.Name = "Save_btn"
-        Me.Save_btn.Size = New System.Drawing.Size(69, 48)
-        Me.Save_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Save_btn.TabIndex = 1
-        Me.Save_btn.TabStop = False
-        Me.Save_btn.Zoom = 10
-        '
-        'Panel_Edit_btn
-        '
-        Me.Panel_Edit_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Panel_Edit_btn.Controls.Add(Me.Edit_btn)
-        Me.PanelTransition.SetDecoration(Me.Panel_Edit_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Panel_Edit_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Panel_Edit_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.Panel_Edit_btn.Location = New System.Drawing.Point(157, 75)
-        Me.Panel_Edit_btn.Name = "Panel_Edit_btn"
-        Me.Panel_Edit_btn.Size = New System.Drawing.Size(86, 48)
-        Me.Panel_Edit_btn.TabIndex = 2
-        '
-        'Edit_btn
-        '
-        Me.PanelTransition.SetDecoration(Me.Edit_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Edit_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Edit_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.Edit_btn.Image = Global.post_by_otens.My.Resources.Resources.icons8_edit_property_26
-        Me.Edit_btn.ImageActive = Nothing
-        Me.Edit_btn.Location = New System.Drawing.Point(26, 8)
-        Me.Edit_btn.Name = "Edit_btn"
-        Me.Edit_btn.Size = New System.Drawing.Size(36, 32)
-        Me.Edit_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Edit_btn.TabIndex = 1
-        Me.Edit_btn.TabStop = False
-        Me.Edit_btn.Zoom = 10
-        '
-        'Panel_AddStock_btn
-        '
-        Me.Panel_AddStock_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.Panel_AddStock_btn.Controls.Add(Me.AddStock_bttn)
-        Me.PanelTransition.SetDecoration(Me.Panel_AddStock_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Panel_AddStock_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Panel_AddStock_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.Panel_AddStock_btn.Location = New System.Drawing.Point(27, 74)
-        Me.Panel_AddStock_btn.Name = "Panel_AddStock_btn"
-        Me.Panel_AddStock_btn.Size = New System.Drawing.Size(86, 48)
-        Me.Panel_AddStock_btn.TabIndex = 2
-        '
-        'AddStock_bttn
-        '
-        Me.PanelTransition.SetDecoration(Me.AddStock_bttn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.AddStock_bttn, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.AddStock_bttn, BunifuAnimatorNS.DecorationType.None)
-        Me.AddStock_bttn.Image = Global.post_by_otens.My.Resources.Resources.icons8_box_64
-        Me.AddStock_bttn.ImageActive = Nothing
-        Me.AddStock_bttn.Location = New System.Drawing.Point(20, 0)
-        Me.AddStock_bttn.Name = "AddStock_bttn"
-        Me.AddStock_bttn.Size = New System.Drawing.Size(44, 40)
-        Me.AddStock_bttn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.AddStock_bttn.TabIndex = 1
-        Me.AddStock_bttn.TabStop = False
-        Me.AddStock_bttn.Zoom = 10
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.Label4, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Label4, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Label4, BunifuAnimatorNS.DecorationType.None)
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(3, -2)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(304, 32)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Inventory Management"
-        '
         'genInvoice
         '
         Me.genInvoice.BackColor = System.Drawing.Color.White
         Me.genInvoice.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.genInvoice.Controls.Add(Me.sales_panel)
         Me.genInvoice.Controls.Add(Me.savePath)
         Me.genInvoice.Controls.Add(Me.savePathbtn)
         Me.genInvoice.Controls.Add(Me.generate_btn)
@@ -639,24 +280,27 @@ Partial Class MainManagevb
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TransferOwnershipToolStripMenuItem, Me.FillinBasicInfoToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(203, 52)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(204, 52)
         '
         'TransferOwnershipToolStripMenuItem
         '
         Me.TransferOwnershipToolStripMenuItem.Name = "TransferOwnershipToolStripMenuItem"
-        Me.TransferOwnershipToolStripMenuItem.Size = New System.Drawing.Size(202, 24)
+        Me.TransferOwnershipToolStripMenuItem.Size = New System.Drawing.Size(203, 24)
         Me.TransferOwnershipToolStripMenuItem.Text = "Transfer ownership"
         '
         'FillinBasicInfoToolStripMenuItem
         '
         Me.FillinBasicInfoToolStripMenuItem.Name = "FillinBasicInfoToolStripMenuItem"
-        Me.FillinBasicInfoToolStripMenuItem.Size = New System.Drawing.Size(202, 24)
+        Me.FillinBasicInfoToolStripMenuItem.Size = New System.Drawing.Size(203, 24)
         Me.FillinBasicInfoToolStripMenuItem.Text = "Fill-in basic info"
         '
         'sales_panel
         '
-        Me.sales_panel.Controls.Add(Me.Chart1)
         Me.sales_panel.Controls.Add(Me.dateStart)
+        Me.sales_panel.Controls.Add(Me.Label9)
+        Me.sales_panel.Controls.Add(Me.Label8)
+        Me.sales_panel.Controls.Add(Me.TextBox1)
+        Me.sales_panel.Controls.Add(Me.Chart1)
         Me.PanelTransition.SetDecoration(Me.sales_panel, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.sales_panel, BunifuAnimatorNS.DecorationType.None)
         Me.BunifuTransition1.SetDecoration(Me.sales_panel, BunifuAnimatorNS.DecorationType.None)
@@ -664,42 +308,6 @@ Partial Class MainManagevb
         Me.sales_panel.Name = "sales_panel"
         Me.sales_panel.Size = New System.Drawing.Size(794, 733)
         Me.sales_panel.TabIndex = 8
-        '
-        'Chart1
-        '
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
-        Me.PanelTransition.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
-        Me.Chart1.Location = New System.Drawing.Point(0, 169)
-        Me.Chart1.Name = "Chart1"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.Chart1.Series.Add(Series1)
-        Me.Chart1.Size = New System.Drawing.Size(791, 558)
-        Me.Chart1.TabIndex = 1
-        Me.Chart1.Text = "Chart1"
-        '
-        'dateStart
-        '
-        Me.dateStart.BackColor = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.dateStart.BorderRadius = 0
-        Me.PanelTransition.SetDecoration(Me.dateStart, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.dateStart, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.dateStart, BunifuAnimatorNS.DecorationType.None)
-        Me.dateStart.ForeColor = System.Drawing.Color.White
-        Me.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.dateStart.FormatCustom = Nothing
-        Me.dateStart.Location = New System.Drawing.Point(606, 7)
-        Me.dateStart.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.dateStart.Name = "dateStart"
-        Me.dateStart.Size = New System.Drawing.Size(181, 27)
-        Me.dateStart.TabIndex = 0
-        Me.dateStart.Value = New Date(2020, 2, 25, 10, 19, 29, 660)
         '
         'savePath
         '
@@ -822,35 +430,35 @@ Partial Class MainManagevb
         Me.CustomerDataGrid1.AllowUserToDeleteRows = False
         Me.CustomerDataGrid1.AllowUserToResizeColumns = False
         Me.CustomerDataGrid1.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CustomerDataGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CustomerDataGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.CustomerDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.CustomerDataGrid1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.CustomerDataGrid1.BackgroundColor = System.Drawing.Color.White
         Me.CustomerDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CustomerDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CustomerDataGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CustomerDataGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.CustomerDataGrid1.ColumnHeadersHeight = 29
         Me.CustomerDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.CustomerDataGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn5, Me.wad, Me.Column1, Me.Column2, Me.the_owner, Me.cID})
         Me.BunifuTransition1.SetDecoration(Me.CustomerDataGrid1, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.CustomerDataGrid1, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition.SetDecoration(Me.CustomerDataGrid1, BunifuAnimatorNS.DecorationType.None)
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CustomerDataGrid1.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CustomerDataGrid1.DefaultCellStyle = DataGridViewCellStyle3
         Me.CustomerDataGrid1.DoubleBuffered = True
         Me.CustomerDataGrid1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.CustomerDataGrid1.EnableHeadersVisualStyles = False
@@ -863,8 +471,8 @@ Partial Class MainManagevb
         Me.CustomerDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.CustomerDataGrid1.RowHeadersWidth = 18
         Me.CustomerDataGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CustomerDataGrid1.RowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CustomerDataGrid1.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.CustomerDataGrid1.RowTemplate.Height = 24
         Me.CustomerDataGrid1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.CustomerDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -1076,6 +684,418 @@ Partial Class MainManagevb
         Me.Label1.Size = New System.Drawing.Size(130, 32)
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Message"
+        '
+        'StockPanel
+        '
+        Me.StockPanel.BackColor = System.Drawing.Color.White
+        Me.StockPanel.Controls.Add(Me.Search_btn)
+        Me.StockPanel.Controls.Add(Me.Label_Delete)
+        Me.StockPanel.Controls.Add(Me.Label_EditStocks)
+        Me.StockPanel.Controls.Add(Me.Label_AddProduct)
+        Me.StockPanel.Controls.Add(Me.PictureBox2)
+        Me.StockPanel.Controls.Add(Me.Panel2)
+        Me.StockPanel.Controls.Add(Me.Label5)
+        Me.StockPanel.Controls.Add(Me.SearchBar)
+        Me.StockPanel.Controls.Add(Me.Panel1)
+        Me.StockPanel.Controls.Add(Me.ProductDataGrid)
+        Me.StockPanel.Controls.Add(Me.Panel_Delete_btn)
+        Me.StockPanel.Controls.Add(Me.Panel_Save_btn)
+        Me.StockPanel.Controls.Add(Me.Panel_Edit_btn)
+        Me.StockPanel.Controls.Add(Me.Panel_AddStock_btn)
+        Me.StockPanel.Controls.Add(Me.Label4)
+        Me.PanelTransition.SetDecoration(Me.StockPanel, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.StockPanel, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.StockPanel, BunifuAnimatorNS.DecorationType.None)
+        Me.StockPanel.Location = New System.Drawing.Point(0, 0)
+        Me.StockPanel.Name = "StockPanel"
+        Me.StockPanel.Size = New System.Drawing.Size(811, 730)
+        Me.StockPanel.TabIndex = 20
+        '
+        'Search_btn
+        '
+        Me.Search_btn.Active = False
+        Me.Search_btn.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.Search_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Search_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Search_btn.BorderRadius = 0
+        Me.Search_btn.ButtonText = "Search Filter"
+        Me.Search_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BunifuTransition1.SetDecoration(Me.Search_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Search_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Search_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.Search_btn.DisabledColor = System.Drawing.Color.Gray
+        Me.Search_btn.Iconcolor = System.Drawing.Color.Transparent
+        Me.Search_btn.Iconimage = Nothing
+        Me.Search_btn.Iconimage_right = Nothing
+        Me.Search_btn.Iconimage_right_Selected = Nothing
+        Me.Search_btn.Iconimage_Selected = Nothing
+        Me.Search_btn.IconMarginLeft = 0
+        Me.Search_btn.IconMarginRight = 0
+        Me.Search_btn.IconRightVisible = True
+        Me.Search_btn.IconRightZoom = 0R
+        Me.Search_btn.IconVisible = True
+        Me.Search_btn.IconZoom = 90.0R
+        Me.Search_btn.IsTab = False
+        Me.Search_btn.Location = New System.Drawing.Point(363, 145)
+        Me.Search_btn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Search_btn.Name = "Search_btn"
+        Me.Search_btn.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Search_btn.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Search_btn.OnHoverTextColor = System.Drawing.Color.White
+        Me.Search_btn.selected = False
+        Me.Search_btn.Size = New System.Drawing.Size(133, 33)
+        Me.Search_btn.TabIndex = 8
+        Me.Search_btn.Text = "Search Filter"
+        Me.Search_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Search_btn.Textcolor = System.Drawing.Color.White
+        Me.Search_btn.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'Label_Delete
+        '
+        Me.Label_Delete.AutoSize = True
+        Me.Label_Delete.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuTransition1.SetDecoration(Me.Label_Delete, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label_Delete, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Label_Delete, BunifuAnimatorNS.DecorationType.None)
+        Me.Label_Delete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_Delete.Location = New System.Drawing.Point(291, 46)
+        Me.Label_Delete.Name = "Label_Delete"
+        Me.Label_Delete.Size = New System.Drawing.Size(68, 25)
+        Me.Label_Delete.TabIndex = 7
+        Me.Label_Delete.Text = "Delete"
+        '
+        'Label_EditStocks
+        '
+        Me.Label_EditStocks.AutoSize = True
+        Me.Label_EditStocks.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuTransition1.SetDecoration(Me.Label_EditStocks, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label_EditStocks, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Label_EditStocks, BunifuAnimatorNS.DecorationType.None)
+        Me.Label_EditStocks.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_EditStocks.Location = New System.Drawing.Point(152, 46)
+        Me.Label_EditStocks.Name = "Label_EditStocks"
+        Me.Label_EditStocks.Size = New System.Drawing.Size(110, 25)
+        Me.Label_EditStocks.TabIndex = 7
+        Me.Label_EditStocks.Text = "Edit Stocks"
+        '
+        'Label_AddProduct
+        '
+        Me.Label_AddProduct.AutoSize = True
+        Me.Label_AddProduct.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuTransition1.SetDecoration(Me.Label_AddProduct, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label_AddProduct, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Label_AddProduct, BunifuAnimatorNS.DecorationType.None)
+        Me.Label_AddProduct.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_AddProduct.Location = New System.Drawing.Point(18, 45)
+        Me.Label_AddProduct.Name = "Label_AddProduct"
+        Me.Label_AddProduct.Size = New System.Drawing.Size(120, 25)
+        Me.Label_AddProduct.TabIndex = 7
+        Me.Label_AddProduct.Text = "Add Product"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuTransition1.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.PictureBox2, BunifuAnimatorNS.DecorationType.None)
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(533, 6)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(251, 116)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.PanelTransition.SetDecoration(Me.Panel2, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Panel2, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Panel2, BunifuAnimatorNS.DecorationType.None)
+        Me.Panel2.Location = New System.Drawing.Point(517, 6)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(10, 211)
+        Me.Panel2.TabIndex = 5
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.Label5, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label5, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Label5, BunifuAnimatorNS.DecorationType.None)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(3, 183)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(119, 36)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "Product"
+        '
+        'SearchBar
+        '
+        Me.SearchBar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
+        Me.SearchBar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
+        Me.SearchBar.characterCasing = System.Windows.Forms.CharacterCasing.Normal
+        Me.SearchBar.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.PanelTransition2.SetDecoration(Me.SearchBar, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.SearchBar, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.SearchBar, BunifuAnimatorNS.DecorationType.None)
+        Me.SearchBar.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.SearchBar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.SearchBar.HintForeColor = System.Drawing.Color.Empty
+        Me.SearchBar.HintText = ""
+        Me.SearchBar.isPassword = False
+        Me.SearchBar.LineFocusedColor = System.Drawing.Color.Blue
+        Me.SearchBar.LineIdleColor = System.Drawing.Color.Gray
+        Me.SearchBar.LineMouseHoverColor = System.Drawing.Color.Blue
+        Me.SearchBar.LineThickness = 3
+        Me.SearchBar.Location = New System.Drawing.Point(10, 142)
+        Me.SearchBar.Margin = New System.Windows.Forms.Padding(4)
+        Me.SearchBar.MaxLength = 32767
+        Me.SearchBar.Name = "SearchBar"
+        Me.SearchBar.Size = New System.Drawing.Size(345, 33)
+        Me.SearchBar.TabIndex = 5
+        Me.SearchBar.Text = "Search"
+        Me.SearchBar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.PanelTransition.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
+        Me.Panel1.Location = New System.Drawing.Point(9, 128)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(775, 10)
+        Me.Panel1.TabIndex = 4
+        '
+        'ProductDataGrid
+        '
+        Me.ProductDataGrid.AllowUserToAddRows = False
+        Me.ProductDataGrid.AllowUserToDeleteRows = False
+        Me.ProductDataGrid.AllowUserToResizeColumns = False
+        Me.ProductDataGrid.AllowUserToResizeRows = False
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ProductDataGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.ProductDataGrid.AutoGenerateColumns = False
+        Me.ProductDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.ProductDataGrid.BackgroundColor = System.Drawing.Color.White
+        Me.ProductDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ProductDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProductDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.ProductDataGrid.ColumnHeadersHeight = 29
+        Me.ProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.ProductDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PNumberDataGridViewTextBoxColumn, Me.PNameDataGridViewTextBoxColumn, Me.PPriceDataGridViewTextBoxColumn, Me.PStockDataGridViewTextBoxColumn, Me.nStock})
+        Me.ProductDataGrid.DataSource = Me.ProductBindingSource
+        Me.BunifuTransition1.SetDecoration(Me.ProductDataGrid, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.ProductDataGrid, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.ProductDataGrid, BunifuAnimatorNS.DecorationType.None)
+        Me.ProductDataGrid.DoubleBuffered = True
+        Me.ProductDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
+        Me.ProductDataGrid.EnableHeadersVisualStyles = False
+        Me.ProductDataGrid.GridColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.ProductDataGrid.HeaderBgColor = System.Drawing.Color.Gainsboro
+        Me.ProductDataGrid.HeaderForeColor = System.Drawing.Color.Black
+        Me.ProductDataGrid.Location = New System.Drawing.Point(3, 225)
+        Me.ProductDataGrid.Name = "ProductDataGrid"
+        Me.ProductDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.ProductDataGrid.RowHeadersWidth = 18
+        Me.ProductDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.ProductDataGrid.RowTemplate.Height = 24
+        Me.ProductDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.ProductDataGrid.Size = New System.Drawing.Size(791, 474)
+        Me.ProductDataGrid.TabIndex = 3
+        '
+        'PNumberDataGridViewTextBoxColumn
+        '
+        Me.PNumberDataGridViewTextBoxColumn.DataPropertyName = "pNumber"
+        Me.PNumberDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.PNumberDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PNumberDataGridViewTextBoxColumn.Name = "PNumberDataGridViewTextBoxColumn"
+        Me.PNumberDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PNumberDataGridViewTextBoxColumn.Width = 52
+        '
+        'PNameDataGridViewTextBoxColumn
+        '
+        Me.PNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.PNameDataGridViewTextBoxColumn.DataPropertyName = "pName"
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
+        Me.PNameDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle7
+        Me.PNameDataGridViewTextBoxColumn.HeaderText = "Product Name"
+        Me.PNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PNameDataGridViewTextBoxColumn.Name = "PNameDataGridViewTextBoxColumn"
+        Me.PNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PPriceDataGridViewTextBoxColumn
+        '
+        Me.PPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.PPriceDataGridViewTextBoxColumn.DataPropertyName = "pPrice"
+        Me.PPriceDataGridViewTextBoxColumn.HeaderText = "Price"
+        Me.PPriceDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PPriceDataGridViewTextBoxColumn.Name = "PPriceDataGridViewTextBoxColumn"
+        Me.PPriceDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PStockDataGridViewTextBoxColumn
+        '
+        Me.PStockDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.PStockDataGridViewTextBoxColumn.DataPropertyName = "pStock"
+        Me.PStockDataGridViewTextBoxColumn.HeaderText = "Stock"
+        Me.PStockDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.PStockDataGridViewTextBoxColumn.Name = "PStockDataGridViewTextBoxColumn"
+        Me.PStockDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'nStock
+        '
+        Me.nStock.HeaderText = "New Stock"
+        Me.nStock.MinimumWidth = 6
+        Me.nStock.Name = "nStock"
+        Me.nStock.ReadOnly = True
+        Me.nStock.Width = 115
+        '
+        'ProductBindingSource
+        '
+        Me.ProductBindingSource.DataMember = "product"
+        Me.ProductBindingSource.DataSource = Me.POSDataSetBindingSource
+        '
+        'POSDataSetBindingSource
+        '
+        Me.POSDataSetBindingSource.DataSource = Me.POSDataSet
+        Me.POSDataSetBindingSource.Position = 0
+        '
+        'POSDataSet
+        '
+        Me.POSDataSet.DataSetName = "POSDataSet"
+        Me.POSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Panel_Delete_btn
+        '
+        Me.Panel_Delete_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Panel_Delete_btn.Controls.Add(Me.Delete_btn)
+        Me.PanelTransition.SetDecoration(Me.Panel_Delete_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Panel_Delete_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Panel_Delete_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.Panel_Delete_btn.Location = New System.Drawing.Point(280, 74)
+        Me.Panel_Delete_btn.Name = "Panel_Delete_btn"
+        Me.Panel_Delete_btn.Size = New System.Drawing.Size(86, 48)
+        Me.Panel_Delete_btn.TabIndex = 2
+        '
+        'Delete_btn
+        '
+        Me.PanelTransition.SetDecoration(Me.Delete_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Delete_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Delete_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.Delete_btn.Image = Global.post_by_otens.My.Resources.Resources.icons8_delete_bin_24
+        Me.Delete_btn.ImageActive = Nothing
+        Me.Delete_btn.Location = New System.Drawing.Point(26, 8)
+        Me.Delete_btn.Name = "Delete_btn"
+        Me.Delete_btn.Size = New System.Drawing.Size(36, 32)
+        Me.Delete_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Delete_btn.TabIndex = 1
+        Me.Delete_btn.TabStop = False
+        Me.Delete_btn.Zoom = 10
+        '
+        'Panel_Save_btn
+        '
+        Me.Panel_Save_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Panel_Save_btn.Controls.Add(Me.Save_btn)
+        Me.PanelTransition.SetDecoration(Me.Panel_Save_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Panel_Save_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Panel_Save_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.Panel_Save_btn.Location = New System.Drawing.Point(582, 150)
+        Me.Panel_Save_btn.Name = "Panel_Save_btn"
+        Me.Panel_Save_btn.Size = New System.Drawing.Size(147, 59)
+        Me.Panel_Save_btn.TabIndex = 2
+        '
+        'Save_btn
+        '
+        Me.PanelTransition.SetDecoration(Me.Save_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Save_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Save_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.Save_btn.Image = Global.post_by_otens.My.Resources.Resources.icons8_save_641
+        Me.Save_btn.ImageActive = Nothing
+        Me.Save_btn.Location = New System.Drawing.Point(38, 6)
+        Me.Save_btn.Name = "Save_btn"
+        Me.Save_btn.Size = New System.Drawing.Size(69, 48)
+        Me.Save_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Save_btn.TabIndex = 1
+        Me.Save_btn.TabStop = False
+        Me.Save_btn.Zoom = 10
+        '
+        'Panel_Edit_btn
+        '
+        Me.Panel_Edit_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Panel_Edit_btn.Controls.Add(Me.Edit_btn)
+        Me.PanelTransition.SetDecoration(Me.Panel_Edit_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Panel_Edit_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Panel_Edit_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.Panel_Edit_btn.Location = New System.Drawing.Point(157, 75)
+        Me.Panel_Edit_btn.Name = "Panel_Edit_btn"
+        Me.Panel_Edit_btn.Size = New System.Drawing.Size(86, 48)
+        Me.Panel_Edit_btn.TabIndex = 2
+        '
+        'Edit_btn
+        '
+        Me.PanelTransition.SetDecoration(Me.Edit_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Edit_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Edit_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.Edit_btn.Image = Global.post_by_otens.My.Resources.Resources.icons8_edit_property_26
+        Me.Edit_btn.ImageActive = Nothing
+        Me.Edit_btn.Location = New System.Drawing.Point(26, 8)
+        Me.Edit_btn.Name = "Edit_btn"
+        Me.Edit_btn.Size = New System.Drawing.Size(36, 32)
+        Me.Edit_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Edit_btn.TabIndex = 1
+        Me.Edit_btn.TabStop = False
+        Me.Edit_btn.Zoom = 10
+        '
+        'Panel_AddStock_btn
+        '
+        Me.Panel_AddStock_btn.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
+        Me.Panel_AddStock_btn.Controls.Add(Me.AddStock_bttn)
+        Me.PanelTransition.SetDecoration(Me.Panel_AddStock_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Panel_AddStock_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Panel_AddStock_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.Panel_AddStock_btn.Location = New System.Drawing.Point(27, 74)
+        Me.Panel_AddStock_btn.Name = "Panel_AddStock_btn"
+        Me.Panel_AddStock_btn.Size = New System.Drawing.Size(86, 48)
+        Me.Panel_AddStock_btn.TabIndex = 2
+        '
+        'AddStock_bttn
+        '
+        Me.PanelTransition.SetDecoration(Me.AddStock_bttn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.AddStock_bttn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.AddStock_bttn, BunifuAnimatorNS.DecorationType.None)
+        Me.AddStock_bttn.Image = Global.post_by_otens.My.Resources.Resources.icons8_box_64
+        Me.AddStock_bttn.ImageActive = Nothing
+        Me.AddStock_bttn.Location = New System.Drawing.Point(20, 0)
+        Me.AddStock_bttn.Name = "AddStock_bttn"
+        Me.AddStock_bttn.Size = New System.Drawing.Size(44, 40)
+        Me.AddStock_bttn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.AddStock_bttn.TabIndex = 1
+        Me.AddStock_bttn.TabStop = False
+        Me.AddStock_bttn.Zoom = 10
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.Label4, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label4, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Label4, BunifuAnimatorNS.DecorationType.None)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(3, -2)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(304, 32)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Inventory Management"
         '
         'SlidingPanel
         '
@@ -1371,57 +1391,6 @@ Partial Class MainManagevb
         Me.BunifuElipse3.ElipseRadius = 20
         Me.BunifuElipse3.TargetControl = Me.Panel_Delete_btn
         '
-        'PNumberDataGridViewTextBoxColumn
-        '
-        Me.PNumberDataGridViewTextBoxColumn.DataPropertyName = "pNumber"
-        Me.PNumberDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.PNumberDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PNumberDataGridViewTextBoxColumn.Name = "PNumberDataGridViewTextBoxColumn"
-        Me.PNumberDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PNumberDataGridViewTextBoxColumn.Width = 52
-        '
-        'PNameDataGridViewTextBoxColumn
-        '
-        Me.PNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.PNameDataGridViewTextBoxColumn.DataPropertyName = "pName"
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        Me.PNameDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
-        Me.PNameDataGridViewTextBoxColumn.HeaderText = "Product Name"
-        Me.PNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PNameDataGridViewTextBoxColumn.Name = "PNameDataGridViewTextBoxColumn"
-        Me.PNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PPriceDataGridViewTextBoxColumn
-        '
-        Me.PPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.PPriceDataGridViewTextBoxColumn.DataPropertyName = "pPrice"
-        Me.PPriceDataGridViewTextBoxColumn.HeaderText = "Price"
-        Me.PPriceDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PPriceDataGridViewTextBoxColumn.Name = "PPriceDataGridViewTextBoxColumn"
-        Me.PPriceDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PStockDataGridViewTextBoxColumn
-        '
-        Me.PStockDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.PStockDataGridViewTextBoxColumn.DataPropertyName = "pStock"
-        Me.PStockDataGridViewTextBoxColumn.HeaderText = "Stock"
-        Me.PStockDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PStockDataGridViewTextBoxColumn.Name = "PStockDataGridViewTextBoxColumn"
-        Me.PStockDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'POSDataSetBindingSource
-        '
-        Me.POSDataSetBindingSource.DataSource = Me.POSDataSet
-        Me.POSDataSetBindingSource.Position = 0
-        '
-        'POSDataSet
-        '
-        Me.POSDataSet.DataSetName = "POSDataSet"
-        Me.POSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ProductBindingSource2
         '
         Me.ProductBindingSource2.DataMember = "product"
@@ -1445,6 +1414,71 @@ Partial Class MainManagevb
         '
         Me.BusinessTableAdapter1.ClearBeforeFill = True
         '
+        'Chart1
+        '
+        ChartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
+        ChartArea1.AxisX.Title = "DATE"
+        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.AxisY.Title = "Quantity"
+        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Me.PanelTransition.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
+        Me.Chart1.Location = New System.Drawing.Point(6, 31)
+        Me.Chart1.Name = "Chart1"
+        Me.Chart1.Size = New System.Drawing.Size(782, 631)
+        Me.Chart1.TabIndex = 7
+        Me.Chart1.Text = "Chart1"
+        '
+        'TextBox1
+        '
+        Me.BunifuTransition1.SetDecoration(Me.TextBox1, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.TextBox1, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.TextBox1, BunifuAnimatorNS.DecorationType.None)
+        Me.TextBox1.Location = New System.Drawing.Point(757, 4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(30, 22)
+        Me.TextBox1.TabIndex = 8
+        Me.TextBox1.Text = "6"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.Label8, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label8, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Label8, BunifuAnimatorNS.DecorationType.None)
+        Me.Label8.Location = New System.Drawing.Point(419, 6)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(67, 17)
+        Me.Label8.TabIndex = 9
+        Me.Label8.Text = "Day Start"
+        '
+        'dateStart
+        '
+        Me.BunifuTransition1.SetDecoration(Me.dateStart, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.dateStart, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.dateStart, BunifuAnimatorNS.DecorationType.None)
+        Me.dateStart.Location = New System.Drawing.Point(488, 3)
+        Me.dateStart.Name = "dateStart"
+        Me.dateStart.Size = New System.Drawing.Size(227, 22)
+        Me.dateStart.TabIndex = 10
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.Label9, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label9, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Label9, BunifuAnimatorNS.DecorationType.None)
+        Me.Label9.Location = New System.Drawing.Point(721, 5)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(35, 17)
+        Me.Label9.TabIndex = 9
+        Me.Label9.Text = "Gap"
+        '
         'MainManagevb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1464,24 +1498,11 @@ Partial Class MainManagevb
         Me.PanelTop.ResumeLayout(False)
         CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MainPanel.ResumeLayout(False)
-        Me.StockPanel.ResumeLayout(False)
-        Me.StockPanel.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel_Delete_btn.ResumeLayout(False)
-        CType(Me.Delete_btn, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel_Save_btn.ResumeLayout(False)
-        CType(Me.Save_btn, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel_Edit_btn.ResumeLayout(False)
-        CType(Me.Edit_btn, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel_AddStock_btn.ResumeLayout(False)
-        CType(Me.AddStock_bttn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.genInvoice.ResumeLayout(False)
         Me.genInvoice.PerformLayout()
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.sales_panel.ResumeLayout(False)
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.sales_panel.PerformLayout()
         CType(Me.savePathbtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.custIDPrompter.ResumeLayout(False)
         Me.custIDPrompter.PerformLayout()
@@ -1493,15 +1514,29 @@ Partial Class MainManagevb
         Me.MessagePanel.PerformLayout()
         CType(Me.Send_btn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Sendbtn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.StockPanel.ResumeLayout(False)
+        Me.StockPanel.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_Delete_btn.ResumeLayout(False)
+        CType(Me.Delete_btn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_Save_btn.ResumeLayout(False)
+        CType(Me.Save_btn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_Edit_btn.ResumeLayout(False)
+        CType(Me.Edit_btn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel_AddStock_btn.ResumeLayout(False)
+        CType(Me.AddStock_bttn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SlidingPanel.ResumeLayout(False)
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Menu_bttn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.POSDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.POSDataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1595,5 +1630,8 @@ Partial Class MainManagevb
     Friend WithEvents BunifuFlatButton1 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents sales_panel As Panel
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
-    Friend WithEvents dateStart As Bunifu.Framework.UI.BunifuDatepicker
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents dateStart As DateTimePicker
+    Friend WithEvents Label9 As Label
 End Class

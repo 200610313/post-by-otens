@@ -1,11 +1,11 @@
 ﻿Module EditStock
-    Public bName As String
+    Public businessName As String
     Public Sub setName(businessName As String)
-        bName = businessName
+        EditStock.businessName = businessName
     End Sub
 
     Function getName() As String
-        Return bName
+        Return businessName
     End Function
 
 

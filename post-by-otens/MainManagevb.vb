@@ -5,7 +5,7 @@ Public Class MainManagevb
     Public adp As Odbc.OdbcDataAdapter
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public businessName As String = EditStock.getName
+    Public businessName As String = "Boboy's Refreshers" 'EditStock.getName
     Public targetInvoiceNum As Integer
     Public cIDOld As Integer
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -27,8 +27,6 @@ Public Class MainManagevb
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
         'Dim bName As String = EditStock.getName
         ProductDataGrid.DataSource = adapter.GetProductData(businessName)
-
-        MessageBox.Show(dateStart.Value)
     End Sub
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles Exit_bttn.Click
         Me.Close()
@@ -61,6 +59,7 @@ Public Class MainManagevb
     End Sub
 
     Private Sub SendSMS_Click(sender As Object, e As EventArgs) Handles SendSMS.Click
+        sales_panel.Visible = False
         genInvoice.Visible = False
         LogoPanel.Visible = False
         MessagePanel.Visible = True
@@ -74,6 +73,7 @@ Public Class MainManagevb
     End Sub
 
     Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click, Elipse_Edit.TargetControlResized
+        sales_panel.Visible = False
         genInvoice.Visible = False
         LogoPanel.Visible = False
         MessagePanel.Visible = False
@@ -194,7 +194,7 @@ Public Class MainManagevb
     End Sub
 
     Private Sub genInvoices_Click(sender As Object, e As EventArgs) Handles genInvoices.Click
-
+        sales_panel.Visible = False
         LogoPanel.Visible = False
         MessagePanel.Visible = False
         StockPanel.Visible = False
@@ -335,6 +335,33 @@ Public Class MainManagevb
         ' The name passes basic validation.
         Return True
     End Function
+
+    Private Sub BunifuFlatButton1_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton1.Click
+        sales_panel.Visible = False
+        LogoPanel.Visible = False
+        MessagePanel.Visible = False
+        StockPanel.Visible = False
+        genInvoice.Visible = False
+        sales_panel.Visible = True
+        Chart1.ChartAreas(0).AxisX.LabelStyle.Angle = -90
+        loadAnalytics(businessName, Date.Now.ToString("yyyy/MM/dd HH:mm:ss"), Chart1, CInt(Val(TextBox1.Text)))
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        Try
+            loadAnalytics(businessName, dateStart.Value, Chart1, CInt(Val(TextBox1.Text)))
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub dateStart_ValueChanged(sender As Object, e As EventArgs) Handles dateStart.ValueChanged
+        Try
+            loadAnalytics(businessName, dateStart.Value, Chart1, CInt(Val(TextBox1.Text)))
+        Catch ex As Exception
+
+        End Try
+    End Sub
 
 
 
