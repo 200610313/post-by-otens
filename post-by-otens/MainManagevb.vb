@@ -59,6 +59,7 @@ Public Class MainManagevb
     End Sub
 
     Private Sub SendSMS_Click(sender As Object, e As EventArgs) Handles SendSMS.Click
+        custIDPrompter.Visible = False
         sales_panel.Visible = False
         genInvoice.Visible = False
         LogoPanel.Visible = False
@@ -73,6 +74,7 @@ Public Class MainManagevb
     End Sub
 
     Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click, Elipse_Edit.TargetControlResized
+        custIDPrompter.Visible = False
         sales_panel.Visible = False
         genInvoice.Visible = False
         LogoPanel.Visible = False
@@ -194,6 +196,7 @@ Public Class MainManagevb
     End Sub
 
     Private Sub genInvoices_Click(sender As Object, e As EventArgs) Handles genInvoices.Click
+        custIDPrompter.Visible = False
         sales_panel.Visible = False
         LogoPanel.Visible = False
         MessagePanel.Visible = False
@@ -265,6 +268,7 @@ Public Class MainManagevb
 
     Private Sub TransferOwnershipToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TransferOwnershipToolStripMenuItem.Click
         custIDPrompter.Visible = True
+        custIDPrompter.BringToFront()
     End Sub
 
     Private Sub custId_txtbox_TextChanged(sender As Object, e As EventArgs) Handles custId_txtbox.TextChanged
@@ -337,6 +341,7 @@ Public Class MainManagevb
     End Function
 
     Private Sub BunifuFlatButton1_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton1.Click
+        custIDPrompter.Visible = False
         sales_panel.Visible = False
         LogoPanel.Visible = False
         MessagePanel.Visible = False
