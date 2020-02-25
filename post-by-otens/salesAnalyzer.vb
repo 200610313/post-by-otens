@@ -18,19 +18,20 @@
         'First, get the number of products that the business sells
         'AKA get all unique product numbers of the business
         Dim productNums As New List(Of Integer)
-        For i = 0 To adapter1.getProdNumAndNames(bName).Rows.Count - 1
-            productNums.Add(adapter1.getProdNumAndNames(bName).Rows(i).Item(0))
-        Next
+
+        ' For i = 0 To adapter1.getProdNumAndNames(bName).Rows.Count - 1
+        'productNums.Add(adapter1.getProdNumAndNames(bName).Rows(i).Item(0))
+        'Next
 
         'Get invoices for each day
         Dim numOfInvoices As Integer
 
-        For i = 0 To dayEnd
-            numOfInvoices = adapter2.getInvoicesWithinDay(days.Item(i), bName).Count
-            For j = 0 To numOfInvoices - 1
+        '  For i = 0 To dayEnd
+        'numOfInvoices = adapter2.getInvoicesWithinDay(days.Item(i), bName).Count
+        '     For j = 0 To numOfInvoices - 1
 
-            Next
-        Next
+        ' Next
+        'Next
 
         'For i = 0 To 
 
