@@ -41,15 +41,16 @@ Partial Class LoginFrm
         Me.asManager = New System.Windows.Forms.CheckBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.PanelBusiness = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.bName = New System.Windows.Forms.TextBox()
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel4.SuspendLayout()
+        Me.PanelBusiness.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -207,15 +208,15 @@ Partial Class LoginFrm
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
-        'Panel4
+        'PanelBusiness
         '
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel4.Controls.Add(Me.Label4)
-        Me.Panel4.Controls.Add(Me.bName)
-        Me.Panel4.Location = New System.Drawing.Point(92, 379)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(373, 47)
-        Me.Panel4.TabIndex = 5
+        Me.PanelBusiness.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.PanelBusiness.Controls.Add(Me.Label4)
+        Me.PanelBusiness.Controls.Add(Me.bName)
+        Me.PanelBusiness.Location = New System.Drawing.Point(92, 379)
+        Me.PanelBusiness.Name = "PanelBusiness"
+        Me.PanelBusiness.Size = New System.Drawing.Size(373, 47)
+        Me.PanelBusiness.TabIndex = 5
         '
         'Label4
         '
@@ -243,6 +244,11 @@ Partial Class LoginFrm
         Me.BunifuElipse1.ElipseRadius = 20
         Me.BunifuElipse1.TargetControl = Me
         '
+        'BunifuElipse2
+        '
+        Me.BunifuElipse2.ElipseRadius = 20
+        Me.BunifuElipse2.TargetControl = Me.PanelBusiness
+        '
         'LoginFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -253,7 +259,7 @@ Partial Class LoginFrm
         Me.Controls.Add(Me.asManager)
         Me.Controls.Add(Me.SignIn_bttm)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.PanelBusiness)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.BunifuCustomLabel1)
         Me.Controls.Add(Me.PictureBox1)
@@ -267,8 +273,8 @@ Partial Class LoginFrm
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
+        Me.PanelBusiness.ResumeLayout(False)
+        Me.PanelBusiness.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -290,10 +296,11 @@ Partial Class LoginFrm
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents ErrorProvider1 As ErrorProvider
-    Friend WithEvents Panel4 As Panel
+    Friend WithEvents PanelBusiness As Panel
     Friend WithEvents bName As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
+    Friend WithEvents BunifuElipse2 As Bunifu.Framework.UI.BunifuElipse
 End Class

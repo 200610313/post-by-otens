@@ -107,14 +107,19 @@ Public Class MainManagevb
 
         BunifuTransition1.ShowSync(Panel_Save_btn)
 
-        ProductDataGrid.Columns(4).ReadOnly = False
+        If ProductDataGrid.SelectedRows.Count > 0 Then
+            Dim i As Integer = ProductDataGrid.CurrentRow.Index
+
+        Else
+            MessageBox.Show("Select 1 row before you hit Edit")
+        End If
+        stock_tb.ReadOnly = False
     End Sub
 
     Private Sub Delete_btn_Click(sender As Object, e As EventArgs) Handles Delete_btn.Click
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
-        Dim i As Integer = ProductDataGrid.CurrentCell.RowIndex
+        Dim i As Integer = ProductDataGrid.CurrentRow.Index
         If ProductDataGrid.SelectedCells.Count > 0 Then
-
             Dim prodID = ProductDataGrid.Rows(i).Cells(0).Value
             adapter.DeleteProduct(prodID)
             ProductDataGrid.DataSource = adapter.GetProductData(businessName)
@@ -131,21 +136,27 @@ Public Class MainManagevb
         Dim up As New POSDataSet.productDataTable
         Dim nStock As Integer
         Dim prodId
-
-        For i As Integer = 0 To ProductDataGrid.Rows.Count - 1
-            ProductDataGrid.BeginEdit(i)
-            ProductDataGrid.Rows(i).Cells(4).Value = ProductDataGrid.Rows(i).Cells(3).Value
-            nStock = ProductDataGrid.Rows(i).Cells(4).Value
+        If ProductDataGrid.SelectedRows.Count > 0 Then
+            Dim i = ProductDataGrid.CurrentRow.Index
             prodId = ProductDataGrid.Rows(i).Cells(0).Value
+
+            nStock = stock_tb.Text
+
             adapter.UpdateStock(nStock, businessName, prodId)
-            ProductDataGrid.EndEdit(i)
-        Next
+            ProductDataGrid.DataSource = adapter.GetProductData(businessName)
+            ProductDataGrid.EndEdit()
+
+        Else
+            MessageBox.Show("Select 1 Stock Cell before you hit save")
+        End If
+
+        stock_tb.ReadOnly = True
 
         adapter.Update(up)
         ProductDataGrid.DataSource = adapter.GetProductData(businessName)
         BunifuTransition1.ShowSync(Panel_Save_btn)
         Panel_Save_btn.Visible = False
-        ProductDataGrid.Columns(4).ReadOnly = True
+        ProductDataGrid.Columns(3).ReadOnly = True
 
 
     End Sub
@@ -155,7 +166,7 @@ Public Class MainManagevb
 
     Private Sub SearchBar_OnValueChanged(sender As Object, e As EventArgs) Handles SearchBar.OnValueChanged
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
-        If SearchBar.Text = "" Then
+        If SearchBar.Text = "Search" Then
             ProductDataGrid.DataSource = adapter.GetProductData(businessName)
         Else
             ProductDataGrid.DataSource = adapter.SearchProduct(SearchBar.Text, businessName)
@@ -164,10 +175,15 @@ Public Class MainManagevb
     End Sub
 
     Private Sub SearchBar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles SearchBar.KeyPress
+        If SearchBar.Text = "" Then
+            SearchBar.Text = "Search"
+
+        End If
         If Char.IsLetter(e.KeyChar) Or Char.IsNumber(e.KeyChar) Then
+
+
             If SearchBar.Text = "Search" Then
                 SearchBar.Text = ""
-            ElseIf SearchBar.Text = "" Then
 
             End If
         End If
@@ -192,7 +208,7 @@ Public Class MainManagevb
             MsgBox("Error """ & ex.ToString & """ encountered...")
         End Try
         'RE enable button
-        Search_btn.Enabled = True
+        '  Search_btn.Enabled = True
     End Sub
 
     Private Sub genInvoices_Click(sender As Object, e As EventArgs) Handles genInvoices.Click
@@ -366,6 +382,10 @@ Public Class MainManagevb
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles stock_tb.TextChanged
+
     End Sub
 
 
