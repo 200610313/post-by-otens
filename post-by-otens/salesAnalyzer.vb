@@ -22,6 +22,22 @@
             productNums.Add(adapter1.getProdNumAndNames(bName).Rows(i).Item(0))
         Next
 
+        'Get invoices for each day
+        Dim numOfInvoices As Integer
+
+        For i = 0 To dayEnd
+            numOfInvoices = adapter2.getInvoicesWithinDay(days.Item(i), bName).Count
+            For j = 0 To numOfInvoices - 1
+
+            Next
+        Next
+
+        'For i = 0 To 
+
+
+
+
+
         'For each products each day, 
 
         'calculate the total count sold
