@@ -422,6 +422,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8_depot_64px_11.png" />
+    <None Include="Resources\repooot.png" />
+    <None Include="Resources\icons8_analyze_26px.png" />
+    <None Include="Resources\icons8_folder_48px.png" />
     <None Include="Resources\icons8-send-48.png" />
     <None Include="Resources\invalid.jpg" />
     <None Include="Resources\icons8_save_24px1.png" />

@@ -76,15 +76,20 @@ Public Class MainManagevb
         Label_AddProduct.Visible = False
         Label_EditStocks.Visible = False
         Label_Delete.Visible = False
-        Dim adapter As New POSDataSetTableAdapters.DataTable5TableAdapter
+
         'clear first
-        ContactsDataGrid.Rows.Clear()
-        For xD = 0 To adapter.GetContacts(businessName).Rows.Count - 1
-            ContactsDataGrid.Rows.Add(adapter.GetContacts(businessName).Rows(xD).Item(2), adapter.GetContacts(businessName).Rows(xD).Item(1)) '(xD).Cells(0).Value = adapter.GetContacts(businessName).Rows(xD).Item(0)
-            '(xD).Cells(1).Value = adapter.GetContacts(businessName).Rows(xD).Item(0)
-        Next
 
         'ContactsDataGrid.DataSource = adapter.GetContacts(businessName)
+        loadContacts()
+    End Sub
+
+    Private Sub loadContacts()
+        Dim wadwAdpater As New POSDataSetTableAdapters.DataTable5TableAdapter
+        ContactsDataGrid.Rows.Clear()
+        For xD = 0 To wadwAdpater.GetContacts(businessName).Rows.Count - 1
+            ContactsDataGrid.Rows.Add(wadwAdpater.GetContacts(businessName).Rows(xD).Item(2), wadwAdpater.GetContacts(businessName).Rows(xD).Item(1)) '(xD).Cells(0).Value = adapter.GetContacts(businessName).Rows(xD).Item(0)
+            '(xD).Cells(1).Value = adapter.GetContacts(businessName).Rows(xD).Item(0)
+        Next
     End Sub
 
     Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click, Elipse_Edit.TargetControlResized
@@ -415,6 +420,31 @@ Public Class MainManagevb
 
     Private Sub MessagePanel_Paint(sender As Object, e As PaintEventArgs) Handles MessagePanel.Paint
 
+    End Sub
+
+    Private Sub pathFinder_Click(sender As Object, e As EventArgs) Handles pathFinder.Click
+        Try
+            Process.Start(savePath.Text)
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub deleteInvoiceBTN_Click(sender As Object, e As EventArgs) Handles deleteInvoiceBTN.Click
+        Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter
+        Dim rowsAffected As Integer
+
+        Try
+            For Each RW As DataGridViewRow In CustomerDataGrid1.Rows
+                If RW.Selected = True Then
+                    rowsAffected = adapter.DeleteQuery(RW.Cells(0).Value)
+                End If
+            Next
+            loadTable()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
 
