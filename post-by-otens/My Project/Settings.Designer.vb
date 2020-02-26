@@ -57,8 +57,19 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\POS.mdf;Integ"& _ 
-            "rated Security=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf"& _ 
+            ";Integrated Security=True")>  _
+        Public ReadOnly Property POSDBCS() As String
+            Get
+                Return CType(Me("POSDBCS"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lance Parantar\sourc"& _ 
+            "e\repos\post-by-otensA\post-by-otens\POS.mdf;Integrated Security=True")>  _
         Public ReadOnly Property POSConnectionString() As String
             Get
                 Return CType(Me("POSConnectionString"),String)
@@ -68,11 +79,11 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf"& _ 
-            ";Integrated Security=True")>  _
-        Public ReadOnly Property POSDBCS() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\POS.mdf;Integ"& _ 
+            "rated Security=True")>  _
+        Public ReadOnly Property POSConnectionString1() As String
             Get
-                Return CType(Me("POSDBCS"),String)
+                Return CType(Me("POSConnectionString1"),String)
             End Get
         End Property
     End Class

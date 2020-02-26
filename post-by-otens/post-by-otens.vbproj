@@ -154,6 +154,16 @@
     <Compile Include="POSDataSet.vb">
       <DependentUpon>POSDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="POSDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="POSDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POSDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RegisterModule.vb" />
     <Compile Include="RegisterStock.Designer.vb">
       <DependentUpon>RegisterStock.vb</DependentUpon>
@@ -299,6 +309,28 @@
     <EmbeddedResource Include="Resources\GOTHICB.TTF" />
     <EmbeddedResource Include="Resources\GOTHICBI.TTF" />
     <EmbeddedResource Include="Resources\GOTHICI.TTF" />
+    <None Include="POSDataSet1.xsc">
+      <DependentUpon>POSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="POSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POSDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POSDataSet1.xss">
+      <DependentUpon>POSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="POSDataSet2.xsc">
+      <DependentUpon>POSDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="POSDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POSDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POSDataSet2.xss">
+      <DependentUpon>POSDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Resources\icons8_filled_circle_16px.png" />
   </ItemGroup>
   <ItemGroup>

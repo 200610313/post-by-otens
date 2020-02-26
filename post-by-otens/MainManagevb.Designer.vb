@@ -23,25 +23,33 @@ Partial Class MainManagevb
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation3 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Animation2 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
-        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation6 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Animation5 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation4 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainManagevb))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Elipse_Form = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.PanelTop = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.Exit_bttn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.PanelTransition = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.MainPanel = New System.Windows.Forms.Panel()
+        Me.MessagePanel = New System.Windows.Forms.Panel()
+        Me.ContactsDataGrid = New Bunifu.Framework.UI.BunifuCustomDataGrid()
+        Me.Send_btn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.Message_tb = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.StockPanel = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
@@ -60,8 +68,6 @@ Partial Class MainManagevb
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ProductDataGrid = New Bunifu.Framework.UI.BunifuCustomDataGrid()
         Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.POSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.POSDataSet = New post_by_otens.POSDataSet()
         Me.Panel_Delete_btn = New System.Windows.Forms.Panel()
         Me.Delete_btn = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Panel_Edit_btn = New System.Windows.Forms.Panel()
@@ -91,14 +97,6 @@ Partial Class MainManagevb
         Me.Label10 = New System.Windows.Forms.Label()
         Me.LogoPanel = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.MessagePanel = New System.Windows.Forms.Panel()
-        Me.Send_btn = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.Sendbtn = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.Message_tb = New System.Windows.Forms.TextBox()
-        Me.Number_tb = New Bunifu.Framework.UI.BunifuMaterialTextbox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.sales_panel = New System.Windows.Forms.Panel()
         Me.dateStart = New System.Windows.Forms.DateTimePicker()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -123,19 +121,38 @@ Partial Class MainManagevb
         Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse3 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.BunifuElipse4 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.POSDataSet11 = New post_by_otens.POSDataSet1()
+        Me.CustomerBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CustomerTableAdapter1 = New post_by_otens.POSDataSet1TableAdapters.customerTableAdapter()
+        Me.POSDataSet21 = New post_by_otens.POSDataSet2()
+        Me.CustomerBindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CustomerTableAdapter2 = New post_by_otens.POSDataSet2TableAdapters.customerTableAdapter()
+        Me.DataTable5BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.POSDataSet = New post_by_otens.POSDataSet()
+        Me.PNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PStockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.POSDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductTableAdapter = New post_by_otens.POSDataSetTableAdapters.productTableAdapter()
         Me.POSDataSet1 = New post_by_otens.POSDataSet()
         Me.POSDataSet1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BusinessTableAdapter1 = New post_by_otens.POSDataSetTableAdapters.businessTableAdapter()
-        Me.BunifuElipse4 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
-        Me.PNumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PStockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomerTableAdapter = New post_by_otens.POSDataSetTableAdapters.customerTableAdapter()
+        Me.POSDataSet2 = New post_by_otens.POSDataSet()
+        Me.CustomerBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataTable5TableAdapter = New post_by_otens.POSDataSetTableAdapters.DataTable5TableAdapter()
+        Me.CFNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cPhone = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelTop.SuspendLayout()
         CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MainPanel.SuspendLayout()
+        Me.MessagePanel.SuspendLayout()
+        CType(Me.ContactsDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Send_btn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StockPanel.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,8 +162,6 @@ Partial Class MainManagevb
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Delete_btn.SuspendLayout()
         CType(Me.Delete_btn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Edit_btn.SuspendLayout()
@@ -160,18 +175,25 @@ Partial Class MainManagevb
         CType(Me.CustomerDataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LogoPanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MessagePanel.SuspendLayout()
-        CType(Me.Send_btn, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Sendbtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.sales_panel.SuspendLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SlidingPanel.SuspendLayout()
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Menu_bttn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.POSDataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomerBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.POSDataSet21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomerBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable5BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProductBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.POSDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.POSDataSet1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.POSDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomerBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Elipse_Form
@@ -202,7 +224,7 @@ Partial Class MainManagevb
         Me.PanelTop.Location = New System.Drawing.Point(0, 0)
         Me.PanelTop.Name = "PanelTop"
         Me.PanelTop.Quality = 10
-        Me.PanelTop.Size = New System.Drawing.Size(1101, 51)
+        Me.PanelTop.Size = New System.Drawing.Size(1121, 51)
         Me.PanelTop.TabIndex = 3
         '
         'Exit_bttn
@@ -225,22 +247,22 @@ Partial Class MainManagevb
         '
         Me.PanelTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles
         Me.PanelTransition.Cursor = Nothing
-        Animation3.AnimateOnlyDifferences = True
-        Animation3.BlindCoeff = CType(resources.GetObject("Animation3.BlindCoeff"), System.Drawing.PointF)
-        Animation3.LeafCoeff = 0!
-        Animation3.MaxTime = 1.0!
-        Animation3.MinTime = 0!
-        Animation3.MosaicCoeff = CType(resources.GetObject("Animation3.MosaicCoeff"), System.Drawing.PointF)
-        Animation3.MosaicShift = CType(resources.GetObject("Animation3.MosaicShift"), System.Drawing.PointF)
-        Animation3.MosaicSize = 1
-        Animation3.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
-        Animation3.RotateCoeff = 0!
-        Animation3.RotateLimit = 0!
-        Animation3.ScaleCoeff = CType(resources.GetObject("Animation3.ScaleCoeff"), System.Drawing.PointF)
-        Animation3.SlideCoeff = CType(resources.GetObject("Animation3.SlideCoeff"), System.Drawing.PointF)
-        Animation3.TimeCoeff = 2.0!
-        Animation3.TransparencyCoeff = 0!
-        Me.PanelTransition.DefaultAnimation = Animation3
+        Animation6.AnimateOnlyDifferences = True
+        Animation6.BlindCoeff = CType(resources.GetObject("Animation6.BlindCoeff"), System.Drawing.PointF)
+        Animation6.LeafCoeff = 0!
+        Animation6.MaxTime = 1.0!
+        Animation6.MinTime = 0!
+        Animation6.MosaicCoeff = CType(resources.GetObject("Animation6.MosaicCoeff"), System.Drawing.PointF)
+        Animation6.MosaicShift = CType(resources.GetObject("Animation6.MosaicShift"), System.Drawing.PointF)
+        Animation6.MosaicSize = 1
+        Animation6.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
+        Animation6.RotateCoeff = 0!
+        Animation6.RotateLimit = 0!
+        Animation6.ScaleCoeff = CType(resources.GetObject("Animation6.ScaleCoeff"), System.Drawing.PointF)
+        Animation6.SlideCoeff = CType(resources.GetObject("Animation6.SlideCoeff"), System.Drawing.PointF)
+        Animation6.TimeCoeff = 2.0!
+        Animation6.TransparencyCoeff = 0!
+        Me.PanelTransition.DefaultAnimation = Animation6
         Me.PanelTransition.Interval = 20
         '
         'MainPanel
@@ -248,18 +270,126 @@ Partial Class MainManagevb
         Me.MainPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MainPanel.Controls.Add(Me.MessagePanel)
         Me.MainPanel.Controls.Add(Me.StockPanel)
         Me.MainPanel.Controls.Add(Me.genInvoice)
         Me.MainPanel.Controls.Add(Me.LogoPanel)
-        Me.MainPanel.Controls.Add(Me.MessagePanel)
         Me.MainPanel.Controls.Add(Me.sales_panel)
         Me.PanelTransition.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
         Me.BunifuTransition1.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
         Me.MainPanel.Location = New System.Drawing.Point(307, 51)
         Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(791, 730)
+        Me.MainPanel.Size = New System.Drawing.Size(811, 733)
         Me.MainPanel.TabIndex = 3
+        '
+        'MessagePanel
+        '
+        Me.MessagePanel.Controls.Add(Me.ContactsDataGrid)
+        Me.MessagePanel.Controls.Add(Me.Send_btn)
+        Me.MessagePanel.Controls.Add(Me.Message_tb)
+        Me.MessagePanel.Controls.Add(Me.Label3)
+        Me.MessagePanel.Controls.Add(Me.Label1)
+        Me.PanelTransition.SetDecoration(Me.MessagePanel, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.MessagePanel, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.MessagePanel, BunifuAnimatorNS.DecorationType.None)
+        Me.MessagePanel.Location = New System.Drawing.Point(0, 0)
+        Me.MessagePanel.Name = "MessagePanel"
+        Me.MessagePanel.Size = New System.Drawing.Size(814, 733)
+        Me.MessagePanel.TabIndex = 1
+        '
+        'ContactsDataGrid
+        '
+        Me.ContactsDataGrid.AllowUserToAddRows = False
+        Me.ContactsDataGrid.AllowUserToDeleteRows = False
+        Me.ContactsDataGrid.AllowUserToResizeColumns = False
+        Me.ContactsDataGrid.AllowUserToResizeRows = False
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ContactsDataGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        Me.ContactsDataGrid.AutoGenerateColumns = False
+        Me.ContactsDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro
+        Me.ContactsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ContactsDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.Silver
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ContactsDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        Me.ContactsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ContactsDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CFNameDataGridViewTextBoxColumn, Me.cPhone})
+        Me.ContactsDataGrid.DataSource = Me.DataTable5BindingSource
+        Me.BunifuTransition1.SetDecoration(Me.ContactsDataGrid, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.ContactsDataGrid, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.ContactsDataGrid, BunifuAnimatorNS.DecorationType.None)
+        Me.ContactsDataGrid.DoubleBuffered = True
+        Me.ContactsDataGrid.EnableHeadersVisualStyles = False
+        Me.ContactsDataGrid.HeaderBgColor = System.Drawing.Color.Silver
+        Me.ContactsDataGrid.HeaderForeColor = System.Drawing.Color.Black
+        Me.ContactsDataGrid.Location = New System.Drawing.Point(0, 64)
+        Me.ContactsDataGrid.Name = "ContactsDataGrid"
+        Me.ContactsDataGrid.ReadOnly = True
+        Me.ContactsDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.ContactsDataGrid.RowHeadersWidth = 51
+        Me.ContactsDataGrid.RowTemplate.Height = 24
+        Me.ContactsDataGrid.Size = New System.Drawing.Size(366, 567)
+        Me.ContactsDataGrid.TabIndex = 25
+        '
+        'Send_btn
+        '
+        Me.Send_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PanelTransition.SetDecoration(Me.Send_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Send_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuTransition1.SetDecoration(Me.Send_btn, BunifuAnimatorNS.DecorationType.None)
+        Me.Send_btn.Image = Global.post_by_otens.My.Resources.Resources.icons8_send_48
+        Me.Send_btn.ImageActive = Nothing
+        Me.Send_btn.Location = New System.Drawing.Point(645, 240)
+        Me.Send_btn.Name = "Send_btn"
+        Me.Send_btn.Size = New System.Drawing.Size(89, 60)
+        Me.Send_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.Send_btn.TabIndex = 24
+        Me.Send_btn.TabStop = False
+        Me.Send_btn.Zoom = 10
+        '
+        'Message_tb
+        '
+        Me.Message_tb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.BunifuTransition1.SetDecoration(Me.Message_tb, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Message_tb, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Message_tb, BunifuAnimatorNS.DecorationType.None)
+        Me.Message_tb.Location = New System.Drawing.Point(476, 64)
+        Me.Message_tb.Multiline = True
+        Me.Message_tb.Name = "Message_tb"
+        Me.Message_tb.Size = New System.Drawing.Size(258, 170)
+        Me.Message_tb.TabIndex = 21
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.Label3, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label3, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Label3, BunifuAnimatorNS.DecorationType.None)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(377, 64)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 25)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = "Message"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.BunifuTransition1.SetDecoration(Me.Label1, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition2.SetDecoration(Me.Label1, BunifuAnimatorNS.DecorationType.None)
+        Me.PanelTransition.SetDecoration(Me.Label1, BunifuAnimatorNS.DecorationType.None)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 8)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(130, 32)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "Message"
         '
         'StockPanel
         '
@@ -503,20 +633,21 @@ Partial Class MainManagevb
         Me.ProductDataGrid.AllowUserToDeleteRows = False
         Me.ProductDataGrid.AllowUserToResizeColumns = False
         Me.ProductDataGrid.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ProductDataGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ProductDataGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.ProductDataGrid.AutoGenerateColumns = False
         Me.ProductDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.ProductDataGrid.BackgroundColor = System.Drawing.Color.White
+        Me.ProductDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ProductDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProductDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProductDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.ProductDataGrid.ColumnHeadersHeight = 29
         Me.ProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.ProductDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PNumberDataGridViewTextBoxColumn, Me.PNameDataGridViewTextBoxColumn, Me.PPriceDataGridViewTextBoxColumn, Me.PStockDataGridViewTextBoxColumn})
@@ -545,16 +676,6 @@ Partial Class MainManagevb
         '
         Me.ProductBindingSource.DataMember = "product"
         Me.ProductBindingSource.DataSource = Me.POSDataSetBindingSource
-        '
-        'POSDataSetBindingSource
-        '
-        Me.POSDataSetBindingSource.DataSource = Me.POSDataSet
-        Me.POSDataSetBindingSource.Position = 0
-        '
-        'POSDataSet
-        '
-        Me.POSDataSet.DataSetName = "POSDataSet"
-        Me.POSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Panel_Delete_btn
         '
@@ -811,35 +932,35 @@ Partial Class MainManagevb
         Me.CustomerDataGrid1.AllowUserToDeleteRows = False
         Me.CustomerDataGrid1.AllowUserToResizeColumns = False
         Me.CustomerDataGrid1.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CustomerDataGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CustomerDataGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle12
         Me.CustomerDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.CustomerDataGrid1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.CustomerDataGrid1.BackgroundColor = System.Drawing.Color.White
         Me.CustomerDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CustomerDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CustomerDataGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CustomerDataGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.CustomerDataGrid1.ColumnHeadersHeight = 29
         Me.CustomerDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.CustomerDataGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn5, Me.wad, Me.Column1, Me.Column2, Me.the_owner, Me.cID})
         Me.BunifuTransition1.SetDecoration(Me.CustomerDataGrid1, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.CustomerDataGrid1, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition.SetDecoration(Me.CustomerDataGrid1, BunifuAnimatorNS.DecorationType.None)
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CustomerDataGrid1.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CustomerDataGrid1.DefaultCellStyle = DataGridViewCellStyle14
         Me.CustomerDataGrid1.DoubleBuffered = True
         Me.CustomerDataGrid1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.CustomerDataGrid1.EnableHeadersVisualStyles = False
@@ -852,8 +973,8 @@ Partial Class MainManagevb
         Me.CustomerDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.CustomerDataGrid1.RowHeadersWidth = 18
         Me.CustomerDataGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CustomerDataGrid1.RowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CustomerDataGrid1.RowsDefaultCellStyle = DataGridViewCellStyle15
         Me.CustomerDataGrid1.RowTemplate.Height = 24
         Me.CustomerDataGrid1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.CustomerDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -939,133 +1060,6 @@ Partial Class MainManagevb
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'MessagePanel
-        '
-        Me.MessagePanel.Controls.Add(Me.Send_btn)
-        Me.MessagePanel.Controls.Add(Me.Sendbtn)
-        Me.MessagePanel.Controls.Add(Me.Message_tb)
-        Me.MessagePanel.Controls.Add(Me.Number_tb)
-        Me.MessagePanel.Controls.Add(Me.Label3)
-        Me.MessagePanel.Controls.Add(Me.Label2)
-        Me.MessagePanel.Controls.Add(Me.Label1)
-        Me.PanelTransition.SetDecoration(Me.MessagePanel, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.MessagePanel, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.MessagePanel, BunifuAnimatorNS.DecorationType.None)
-        Me.MessagePanel.Location = New System.Drawing.Point(0, 0)
-        Me.MessagePanel.Name = "MessagePanel"
-        Me.MessagePanel.Size = New System.Drawing.Size(794, 733)
-        Me.MessagePanel.TabIndex = 1
-        '
-        'Send_btn
-        '
-        Me.Send_btn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PanelTransition.SetDecoration(Me.Send_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Send_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Send_btn, BunifuAnimatorNS.DecorationType.None)
-        Me.Send_btn.Image = Global.post_by_otens.My.Resources.Resources.icons8_send_48
-        Me.Send_btn.ImageActive = Nothing
-        Me.Send_btn.Location = New System.Drawing.Point(533, 405)
-        Me.Send_btn.Name = "Send_btn"
-        Me.Send_btn.Size = New System.Drawing.Size(89, 60)
-        Me.Send_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Send_btn.TabIndex = 24
-        Me.Send_btn.TabStop = False
-        Me.Send_btn.Zoom = 10
-        '
-        'Sendbtn
-        '
-        Me.Sendbtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PanelTransition.SetDecoration(Me.Sendbtn, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Sendbtn, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Sendbtn, BunifuAnimatorNS.DecorationType.None)
-        Me.Sendbtn.Image = Global.post_by_otens.My.Resources.Resources.icons8_send_48
-        Me.Sendbtn.ImageActive = Nothing
-        Me.Sendbtn.Location = New System.Drawing.Point(533, 405)
-        Me.Sendbtn.Name = "Sendbtn"
-        Me.Sendbtn.Size = New System.Drawing.Size(99, 60)
-        Me.Sendbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.Sendbtn.TabIndex = 22
-        Me.Sendbtn.TabStop = False
-        Me.Sendbtn.Zoom = 10
-        '
-        'Message_tb
-        '
-        Me.Message_tb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.BunifuTransition1.SetDecoration(Me.Message_tb, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Message_tb, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Message_tb, BunifuAnimatorNS.DecorationType.None)
-        Me.Message_tb.Location = New System.Drawing.Point(145, 156)
-        Me.Message_tb.Multiline = True
-        Me.Message_tb.Name = "Message_tb"
-        Me.Message_tb.Size = New System.Drawing.Size(379, 309)
-        Me.Message_tb.TabIndex = 21
-        '
-        'Number_tb
-        '
-        Me.Number_tb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None
-        Me.Number_tb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
-        Me.Number_tb.characterCasing = System.Windows.Forms.CharacterCasing.Normal
-        Me.Number_tb.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.PanelTransition2.SetDecoration(Me.Number_tb, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Number_tb, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuTransition1.SetDecoration(Me.Number_tb, BunifuAnimatorNS.DecorationType.None)
-        Me.Number_tb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Number_tb.ForeColor = System.Drawing.Color.Silver
-        Me.Number_tb.HintForeColor = System.Drawing.Color.Empty
-        Me.Number_tb.HintText = ""
-        Me.Number_tb.isPassword = False
-        Me.Number_tb.LineFocusedColor = System.Drawing.Color.Blue
-        Me.Number_tb.LineIdleColor = System.Drawing.Color.Gray
-        Me.Number_tb.LineMouseHoverColor = System.Drawing.Color.Blue
-        Me.Number_tb.LineThickness = 3
-        Me.Number_tb.Location = New System.Drawing.Point(148, 101)
-        Me.Number_tb.Margin = New System.Windows.Forms.Padding(4)
-        Me.Number_tb.MaxLength = 32767
-        Me.Number_tb.Name = "Number_tb"
-        Me.Number_tb.Size = New System.Drawing.Size(379, 33)
-        Me.Number_tb.TabIndex = 20
-        Me.Number_tb.Text = "E.G 09561657728"
-        Me.Number_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.Label3, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Label3, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Label3, BunifuAnimatorNS.DecorationType.None)
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(49, 152)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 25)
-        Me.Label3.TabIndex = 19
-        Me.Label3.Text = "Message"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.Label2, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Label2, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Label2, BunifuAnimatorNS.DecorationType.None)
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(56, 112)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(81, 25)
-        Me.Label2.TabIndex = 19
-        Me.Label2.Text = "Number"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.BunifuTransition1.SetDecoration(Me.Label1, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition2.SetDecoration(Me.Label1, BunifuAnimatorNS.DecorationType.None)
-        Me.PanelTransition.SetDecoration(Me.Label1, BunifuAnimatorNS.DecorationType.None)
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 8)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(130, 32)
-        Me.Label1.TabIndex = 18
-        Me.Label1.Text = "Message"
-        '
         'sales_panel
         '
         Me.sales_panel.Controls.Add(Me.dateStart)
@@ -1128,18 +1122,18 @@ Partial Class MainManagevb
         '
         'Chart1
         '
-        ChartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
-        ChartArea1.AxisX.Title = "DATE"
-        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.AxisY.Title = "Quantity"
-        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
+        ChartArea2.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
+        ChartArea2.AxisX.Title = "DATE"
+        ChartArea2.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.AxisY.Title = "Quantity"
+        ChartArea2.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
         Me.PanelTransition.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
         Me.BunifuTransition1.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
         Me.Chart1.Location = New System.Drawing.Point(6, 31)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Size = New System.Drawing.Size(782, 631)
@@ -1167,7 +1161,7 @@ Partial Class MainManagevb
         Me.SlidingPanel.Location = New System.Drawing.Point(0, 51)
         Me.SlidingPanel.Name = "SlidingPanel"
         Me.SlidingPanel.Quality = 10
-        Me.SlidingPanel.Size = New System.Drawing.Size(310, 733)
+        Me.SlidingPanel.Size = New System.Drawing.Size(310, 736)
         Me.SlidingPanel.TabIndex = 2
         '
         'BunifuFlatButton1
@@ -1232,7 +1226,7 @@ Partial Class MainManagevb
         Me.BunifuTransition1.SetDecoration(Me.Menu_bttn, BunifuAnimatorNS.DecorationType.None)
         Me.Menu_bttn.Image = CType(resources.GetObject("Menu_bttn.Image"), System.Drawing.Image)
         Me.Menu_bttn.ImageActive = Nothing
-        Me.Menu_bttn.Location = New System.Drawing.Point(268, 6)
+        Me.Menu_bttn.Location = New System.Drawing.Point(268, 8)
         Me.Menu_bttn.Name = "Menu_bttn"
         Me.Menu_bttn.Size = New System.Drawing.Size(33, 29)
         Me.Menu_bttn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1366,22 +1360,22 @@ Partial Class MainManagevb
         '
         Me.PanelTransition2.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide
         Me.PanelTransition2.Cursor = Nothing
-        Animation2.AnimateOnlyDifferences = True
-        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
-        Animation2.LeafCoeff = 0!
-        Animation2.MaxTime = 1.0!
-        Animation2.MinTime = 0!
-        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
-        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
-        Animation2.MosaicSize = 0
-        Animation2.Padding = New System.Windows.Forms.Padding(0)
-        Animation2.RotateCoeff = 0!
-        Animation2.RotateLimit = 0!
-        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
-        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
-        Animation2.TimeCoeff = 0!
-        Animation2.TransparencyCoeff = 0!
-        Me.PanelTransition2.DefaultAnimation = Animation2
+        Animation5.AnimateOnlyDifferences = True
+        Animation5.BlindCoeff = CType(resources.GetObject("Animation5.BlindCoeff"), System.Drawing.PointF)
+        Animation5.LeafCoeff = 0!
+        Animation5.MaxTime = 1.0!
+        Animation5.MinTime = 0!
+        Animation5.MosaicCoeff = CType(resources.GetObject("Animation5.MosaicCoeff"), System.Drawing.PointF)
+        Animation5.MosaicShift = CType(resources.GetObject("Animation5.MosaicShift"), System.Drawing.PointF)
+        Animation5.MosaicSize = 0
+        Animation5.Padding = New System.Windows.Forms.Padding(0)
+        Animation5.RotateCoeff = 0!
+        Animation5.RotateLimit = 0!
+        Animation5.ScaleCoeff = CType(resources.GetObject("Animation5.ScaleCoeff"), System.Drawing.PointF)
+        Animation5.SlideCoeff = CType(resources.GetObject("Animation5.SlideCoeff"), System.Drawing.PointF)
+        Animation5.TimeCoeff = 0!
+        Animation5.TransparencyCoeff = 0!
+        Me.PanelTransition2.DefaultAnimation = Animation5
         Me.PanelTransition2.Interval = 14
         '
         'Elipse_AddStock
@@ -1413,22 +1407,22 @@ Partial Class MainManagevb
         '
         Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndRotate
         Me.BunifuTransition1.Cursor = Nothing
-        Animation1.AnimateOnlyDifferences = True
-        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
-        Animation1.LeafCoeff = 0!
-        Animation1.MaxTime = 1.0!
-        Animation1.MinTime = 0!
-        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
-        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
-        Animation1.MosaicSize = 0
-        Animation1.Padding = New System.Windows.Forms.Padding(30)
-        Animation1.RotateCoeff = 0.5!
-        Animation1.RotateLimit = 0.2!
-        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
-        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
-        Animation1.TimeCoeff = 0!
-        Animation1.TransparencyCoeff = 0!
-        Me.BunifuTransition1.DefaultAnimation = Animation1
+        Animation4.AnimateOnlyDifferences = True
+        Animation4.BlindCoeff = CType(resources.GetObject("Animation4.BlindCoeff"), System.Drawing.PointF)
+        Animation4.LeafCoeff = 0!
+        Animation4.MaxTime = 1.0!
+        Animation4.MinTime = 0!
+        Animation4.MosaicCoeff = CType(resources.GetObject("Animation4.MosaicCoeff"), System.Drawing.PointF)
+        Animation4.MosaicShift = CType(resources.GetObject("Animation4.MosaicShift"), System.Drawing.PointF)
+        Animation4.MosaicSize = 0
+        Animation4.Padding = New System.Windows.Forms.Padding(30)
+        Animation4.RotateCoeff = 0.5!
+        Animation4.RotateLimit = 0.2!
+        Animation4.ScaleCoeff = CType(resources.GetObject("Animation4.ScaleCoeff"), System.Drawing.PointF)
+        Animation4.SlideCoeff = CType(resources.GetObject("Animation4.SlideCoeff"), System.Drawing.PointF)
+        Animation4.TimeCoeff = 0!
+        Animation4.TransparencyCoeff = 0!
+        Me.BunifuTransition1.DefaultAnimation = Animation4
         '
         'BunifuElipse2
         '
@@ -1440,33 +1434,48 @@ Partial Class MainManagevb
         Me.BunifuElipse3.ElipseRadius = 20
         Me.BunifuElipse3.TargetControl = Me.Panel_Delete_btn
         '
-        'ProductBindingSource2
-        '
-        Me.ProductBindingSource2.DataMember = "product"
-        Me.ProductBindingSource2.DataSource = Me.POSDataSet
-        '
-        'ProductTableAdapter
-        '
-        Me.ProductTableAdapter.ClearBeforeFill = True
-        '
-        'POSDataSet1
-        '
-        Me.POSDataSet1.DataSetName = "POSDataSet"
-        Me.POSDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'POSDataSet1BindingSource
-        '
-        Me.POSDataSet1BindingSource.DataSource = Me.POSDataSet1
-        Me.POSDataSet1BindingSource.Position = 0
-        '
-        'BusinessTableAdapter1
-        '
-        Me.BusinessTableAdapter1.ClearBeforeFill = True
-        '
         'BunifuElipse4
         '
         Me.BunifuElipse4.ElipseRadius = 20
         Me.BunifuElipse4.TargetControl = Me.Panel_Add_Stocks
+        '
+        'POSDataSet11
+        '
+        Me.POSDataSet11.DataSetName = "POSDataSet1"
+        Me.POSDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CustomerBindingSource2
+        '
+        Me.CustomerBindingSource2.DataMember = "customer"
+        Me.CustomerBindingSource2.DataSource = Me.POSDataSet11
+        '
+        'CustomerTableAdapter1
+        '
+        Me.CustomerTableAdapter1.ClearBeforeFill = True
+        '
+        'POSDataSet21
+        '
+        Me.POSDataSet21.DataSetName = "POSDataSet2"
+        Me.POSDataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CustomerBindingSource3
+        '
+        Me.CustomerBindingSource3.DataMember = "customer"
+        Me.CustomerBindingSource3.DataSource = Me.POSDataSet21
+        '
+        'CustomerTableAdapter2
+        '
+        Me.CustomerTableAdapter2.ClearBeforeFill = True
+        '
+        'DataTable5BindingSource
+        '
+        Me.DataTable5BindingSource.DataMember = "DataTable5"
+        Me.DataTable5BindingSource.DataSource = Me.POSDataSet
+        '
+        'POSDataSet
+        '
+        Me.POSDataSet.DataSetName = "POSDataSet"
+        Me.POSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'PNumberDataGridViewTextBoxColumn
         '
@@ -1481,11 +1490,11 @@ Partial Class MainManagevb
         '
         Me.PNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.PNameDataGridViewTextBoxColumn.DataPropertyName = "pName"
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        Me.PNameDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black
+        Me.PNameDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle18
         Me.PNameDataGridViewTextBoxColumn.HeaderText = "Product Name"
         Me.PNameDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.PNameDataGridViewTextBoxColumn.Name = "PNameDataGridViewTextBoxColumn"
@@ -1511,12 +1520,81 @@ Partial Class MainManagevb
         Me.PStockDataGridViewTextBoxColumn.ReadOnly = True
         Me.PStockDataGridViewTextBoxColumn.Width = 76
         '
+        'POSDataSetBindingSource
+        '
+        Me.POSDataSetBindingSource.DataSource = Me.POSDataSet
+        Me.POSDataSetBindingSource.Position = 0
+        '
+        'CustomerBindingSource
+        '
+        Me.CustomerBindingSource.DataMember = "customer"
+        Me.CustomerBindingSource.DataSource = Me.POSDataSet
+        '
+        'ProductBindingSource2
+        '
+        Me.ProductBindingSource2.DataMember = "product"
+        Me.ProductBindingSource2.DataSource = Me.POSDataSet
+        '
+        'ProductTableAdapter
+        '
+        Me.ProductTableAdapter.ClearBeforeFill = True
+        '
+        'POSDataSet1
+        '
+        Me.POSDataSet1.DataSetName = "POSDataSet"
+        Me.POSDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'POSDataSet1BindingSource
+        '
+        Me.POSDataSet1BindingSource.DataSource = Me.POSDataSet1
+        Me.POSDataSet1BindingSource.Position = 0
+        '
+        'BusinessTableAdapter1
+        '
+        Me.BusinessTableAdapter1.ClearBeforeFill = True
+        '
+        'CustomerTableAdapter
+        '
+        Me.CustomerTableAdapter.ClearBeforeFill = True
+        '
+        'POSDataSet2
+        '
+        Me.POSDataSet2.DataSetName = "POSDataSet"
+        Me.POSDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CustomerBindingSource1
+        '
+        Me.CustomerBindingSource1.DataMember = "customer"
+        Me.CustomerBindingSource1.DataSource = Me.POSDataSet2
+        '
+        'DataTable5TableAdapter
+        '
+        Me.DataTable5TableAdapter.ClearBeforeFill = True
+        '
+        'CFNameDataGridViewTextBoxColumn
+        '
+        Me.CFNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.CFNameDataGridViewTextBoxColumn.DataPropertyName = "cLName"
+        Me.CFNameDataGridViewTextBoxColumn.HeaderText = "Surname"
+        Me.CFNameDataGridViewTextBoxColumn.MinimumWidth = 6
+        Me.CFNameDataGridViewTextBoxColumn.Name = "CFNameDataGridViewTextBoxColumn"
+        Me.CFNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'cPhone
+        '
+        Me.cPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.cPhone.DataPropertyName = "cPhone"
+        Me.cPhone.HeaderText = "Phone"
+        Me.cPhone.MinimumWidth = 6
+        Me.cPhone.Name = "cPhone"
+        Me.cPhone.ReadOnly = True
+        '
         'MainManagevb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(176, Byte), Integer), CType(CType(216, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1101, 784)
+        Me.ClientSize = New System.Drawing.Size(1121, 787)
         Me.Controls.Add(Me.MainPanel)
         Me.Controls.Add(Me.SlidingPanel)
         Me.Controls.Add(Me.PanelTop)
@@ -1530,6 +1608,10 @@ Partial Class MainManagevb
         Me.PanelTop.ResumeLayout(False)
         CType(Me.Exit_bttn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MainPanel.ResumeLayout(False)
+        Me.MessagePanel.ResumeLayout(False)
+        Me.MessagePanel.PerformLayout()
+        CType(Me.ContactsDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Send_btn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StockPanel.ResumeLayout(False)
         Me.StockPanel.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -1542,8 +1624,6 @@ Partial Class MainManagevb
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Delete_btn.ResumeLayout(False)
         CType(Me.Delete_btn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Edit_btn.ResumeLayout(False)
@@ -1560,10 +1640,6 @@ Partial Class MainManagevb
         Me.LogoPanel.ResumeLayout(False)
         Me.LogoPanel.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MessagePanel.ResumeLayout(False)
-        Me.MessagePanel.PerformLayout()
-        CType(Me.Send_btn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Sendbtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.sales_panel.ResumeLayout(False)
         Me.sales_panel.PerformLayout()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1571,9 +1647,19 @@ Partial Class MainManagevb
         CType(Me.Logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Menu_bttn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.POSDataSet11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomerBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.POSDataSet21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomerBindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable5BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.POSDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.POSDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProductBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.POSDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.POSDataSet1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.POSDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomerBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1592,7 +1678,6 @@ Partial Class MainManagevb
     Friend WithEvents MainPanel As Panel
     Friend WithEvents LogoPanel As Panel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents MessagePanel As Panel
     Friend WithEvents StockPanel As Panel
     Friend WithEvents Panel_AddStock_btn As Panel
     Friend WithEvents Label4 As Label
@@ -1624,14 +1709,7 @@ Partial Class MainManagevb
     Friend WithEvents Label_EditStocks As Label
     Friend WithEvents Label_AddProduct As Label
     Friend WithEvents BunifuElipse2 As Bunifu.Framework.UI.BunifuElipse
-    Friend WithEvents Label1 As Label
     Friend WithEvents BusinessTableAdapter1 As POSDataSetTableAdapters.businessTableAdapter
-    Friend WithEvents Sendbtn As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents Message_tb As TextBox
-    Friend WithEvents Number_tb As Bunifu.Framework.UI.BunifuMaterialTextbox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Send_btn As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents Label_Delete As Label
     Friend WithEvents Panel_Delete_btn As Panel
     Friend WithEvents Delete_btn As Bunifu.Framework.UI.BunifuImageButton
@@ -1675,4 +1753,24 @@ Partial Class MainManagevb
     Friend WithEvents PNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PStockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustomerBindingSource As BindingSource
+    Friend WithEvents CustomerTableAdapter As POSDataSetTableAdapters.customerTableAdapter
+    Friend WithEvents POSDataSet2 As POSDataSet
+    Friend WithEvents CustomerBindingSource1 As BindingSource
+    Friend WithEvents MessagePanel As Panel
+    Friend WithEvents ContactsDataGrid As Bunifu.Framework.UI.BunifuCustomDataGrid
+    Friend WithEvents Send_btn As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents Message_tb As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents POSDataSet11 As POSDataSet1
+    Friend WithEvents CustomerBindingSource2 As BindingSource
+    Friend WithEvents CustomerTableAdapter1 As POSDataSet1TableAdapters.customerTableAdapter
+    Friend WithEvents POSDataSet21 As POSDataSet2
+    Friend WithEvents CustomerBindingSource3 As BindingSource
+    Friend WithEvents CustomerTableAdapter2 As POSDataSet2TableAdapters.customerTableAdapter
+    Friend WithEvents DataTable5BindingSource As BindingSource
+    Friend WithEvents DataTable5TableAdapter As POSDataSetTableAdapters.DataTable5TableAdapter
+    Friend WithEvents CFNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents cPhone As DataGridViewTextBoxColumn
 End Class

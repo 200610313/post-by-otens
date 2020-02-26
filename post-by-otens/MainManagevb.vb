@@ -5,10 +5,15 @@ Public Class MainManagevb
     Public adp As Odbc.OdbcDataAdapter
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public businessName As String = "Boboy's Refreshers" 'EditStock.getName
+    Public businessName As String = EditStock.getName
     Public targetInvoiceNum As Integer
     Public cIDOld As Integer
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'POSDataSet21.customer' table. You can move, or remove it, as needed.
+        Me.CustomerTableAdapter2.Fill(Me.POSDataSet21.customer)
+        'TODO: This line of code loads data into the 'POSDataSet11.customer' table. You can move, or remove it, as needed.
+        Me.CustomerTableAdapter1.Fill(Me.POSDataSet11.customer)
+
 
         'TODO: This line of code loads data into the 'POSDataSet.product' table. You can move, or remove it, as needed.
         Refresh()
@@ -71,6 +76,8 @@ Public Class MainManagevb
         Label_AddProduct.Visible = False
         Label_EditStocks.Visible = False
         Label_Delete.Visible = False
+        Dim adapter As New POSDataSetTableAdapters.DataTable5TableAdapter
+        ContactsDataGrid.DataSource = adapter.GetContacts(businessName)
     End Sub
 
     Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click, Elipse_Edit.TargetControlResized
@@ -194,21 +201,26 @@ Public Class MainManagevb
         'Disable Button while processing. . .
         Send_btn.Enabled = False
         'Try to send http Web request
-        Try
-            Dim res As String = itexmo(Number_tb.Text, Message_tb.Text, aPiCode)
-            If res = "0" Then
-                'If result = 0 then show a success messagebox
-                MsgBox("Success! Message is now on its way...")
-            Else
-                'Oops error. . .
-                MsgBox("Error """ & res & """ encountered..." & Environment.NewLine & Environment.NewLine & "Visit ""www.itexmo.com/Developers"" for more details...")
-            End If
-        Catch ex As Exception
-            'Oops TRY error. . .
-            MsgBox("Error """ & ex.ToString & """ encountered...")
-        End Try
+
+        For i As Integer = 0 To ContactsDataGrid.Rows.Count - 1
+            Dim num = ContactsDataGrid.Rows(i).Cells(1).Value
+            Try
+                Dim res As String = itexmo(num, Message_tb.Text, aPiCode)
+                If res = "0" Then
+                    'If result = 0 then show a success messagebox
+                    MsgBox("Success! Message is now on its way...")
+                Else
+                    'Oops error. . .
+                    MsgBox("Error """ & res & """ encountered..." & Environment.NewLine & Environment.NewLine & "Visit ""www.itexmo.com/Developers"" for more details...")
+                End If
+            Catch ex As Exception
+                'Oops TRY error. . .
+                MsgBox("Error """ & ex.ToString & """ encountered...")
+            End Try
+        Next
+
         'RE enable button
-        '  Search_btn.Enabled = True
+        Send_btn.Enabled = True
     End Sub
 
     Private Sub genInvoices_Click(sender As Object, e As EventArgs) Handles genInvoices.Click
@@ -387,6 +399,18 @@ Public Class MainManagevb
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles stock_tb.TextChanged
 
     End Sub
+
+    Private Sub ContactsDataGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ContactsDataGrid.CellContentClick
+        Dim j = ContactsDataGrid.CurrentRow.Index
+        Dim i = ContactsDataGrid.SelectedCells(0).DataGridView.Rows(j).Cells(0).Value
+
+
+        Number_tb.Text = i
+
+    End Sub
+
+
+
 
 
 
