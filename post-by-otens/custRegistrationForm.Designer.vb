@@ -79,7 +79,7 @@ Partial Class custRegistrationForm
         'managerClose_btn
         '
         Me.managerClose_btn.Image = Global.post_by_otens.My.Resources.Resources.icons8_multiply_16px1
-        Me.managerClose_btn.Location = New System.Drawing.Point(262, 37)
+        Me.managerClose_btn.Location = New System.Drawing.Point(262, 8)
         Me.managerClose_btn.Name = "managerClose_btn"
         Me.managerClose_btn.Size = New System.Drawing.Size(16, 16)
         Me.managerClose_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize

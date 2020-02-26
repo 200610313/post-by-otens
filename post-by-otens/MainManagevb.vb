@@ -5,7 +5,7 @@ Public Class MainManagevb
     Public adp As Odbc.OdbcDataAdapter
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public businessName As String = EditStock.getName
+    Public businessName As String = "Boboy's Refreshers" 'EditStock.getName
     Public targetInvoiceNum As Integer
     Public cIDOld As Integer
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -77,7 +77,14 @@ Public Class MainManagevb
         Label_EditStocks.Visible = False
         Label_Delete.Visible = False
         Dim adapter As New POSDataSetTableAdapters.DataTable5TableAdapter
-        ContactsDataGrid.DataSource = adapter.GetContacts(businessName)
+        'clear first
+        ContactsDataGrid.Rows.Clear()
+        For xD = 0 To adapter.GetContacts(businessName).Rows.Count - 1
+            ContactsDataGrid.Rows.Add(adapter.GetContacts(businessName).Rows(xD).Item(2), adapter.GetContacts(businessName).Rows(xD).Item(1)) '(xD).Cells(0).Value = adapter.GetContacts(businessName).Rows(xD).Item(0)
+            '(xD).Cells(1).Value = adapter.GetContacts(businessName).Rows(xD).Item(0)
+        Next
+
+        'ContactsDataGrid.DataSource = adapter.GetContacts(businessName)
     End Sub
 
     Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click, Elipse_Edit.TargetControlResized
@@ -400,14 +407,18 @@ Public Class MainManagevb
 
     End Sub
 
-    Private Sub ContactsDataGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ContactsDataGrid.CellContentClick
-        Dim j = ContactsDataGrid.CurrentRow.Index
-        Dim i = ContactsDataGrid.SelectedCells(0).DataGridView.Rows(j).Cells(0).Value
 
 
-        Number_tb.Text = i
+    Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
+        custIDPrompter.Visible = False
+    End Sub
+
+    Private Sub MessagePanel_Paint(sender As Object, e As PaintEventArgs) Handles MessagePanel.Paint
 
     End Sub
+
+
+
 
 
 
