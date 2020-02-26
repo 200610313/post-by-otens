@@ -5,7 +5,7 @@ Public Class MainManagevb
     Public adp As Odbc.OdbcDataAdapter
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public businessName As String = "Boboy's Refreshers" 'EditStock.getName
+    Public businessName As String = EditStock.getName
     Public targetInvoiceNum As Integer
     Public cIDOld As Integer
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -446,6 +446,29 @@ Public Class MainManagevb
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    Private Sub monthlySales_Click(sender As Object, e As EventArgs) Handles monthlySales.Click
+        monthlysalesPNL.Visible = True
+    End Sub
+
+    Private Sub genBTN_Click(sender As Object, e As EventArgs) Handles genBTN.Click
+        Try
+            If Not String.IsNullOrEmpty(ComboBox1.Text) Then
+                generateSales(ComboBox1.Text, Me, businessName, reportPath.Text)
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub BunifuImageButton2_Click_1(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+        If (FolderBrowserDialog1.ShowDialog() = DialogResult.OK) Then
+            reportPath.Text = FolderBrowserDialog1.SelectedPath
+        End If
+    End Sub
+
+
 
 
 

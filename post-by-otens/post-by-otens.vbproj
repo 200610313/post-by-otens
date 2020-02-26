@@ -140,6 +140,7 @@
     </Compile>
     <Compile Include="Modules\EditStock.vb" />
     <Compile Include="Modules\SendMessageModule.vb" />
+    <Compile Include="monthlySalesGenerator.vb" />
     <Compile Include="popUpBox.Designer.vb">
       <DependentUpon>popUpBox.vb</DependentUpon>
     </Compile>

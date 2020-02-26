@@ -8,7 +8,7 @@ Public Class RegisterTab
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
 
-        loggedInBusinessName = EditStock.getName 'set businessname
+        loggedInBusinessName = "Boboy's Refreshers" 'EditStock.getName 'set businessname
 
         loadProducts()
         initShoppingCart()
@@ -97,7 +97,7 @@ Public Class RegisterTab
     End Sub
     'Saves to database but does not produce invoice form
     Private Sub BunifuTileButton4_Click(sender As Object, e As EventArgs) Handles confirm.Click
-        If shoppingCartItems.Count <> 0 And CDbl(Val(totalAmt.Text)) >= CDbl(Val(amtRecvd.Text)) And CDbl(Val(amtRecvd.Text)) <> 0 Then
+        If shoppingCartItems.Count <> 0 And CDbl(Val(totalAmt.Text)) <= CDbl(Val(amtRecvd.Text)) And CDbl(Val(amtRecvd.Text)) <> 0 Then
             registerCustomer("", "", "", "", "", "", "")
             updateDBStock()
             resetView()
@@ -105,7 +105,7 @@ Public Class RegisterTab
     End Sub
 
     Private Sub confirmWreceipt_Click(sender As Object, e As EventArgs) Handles confirmWreceipt.Click
-        If shoppingCartItems.Count <> 0 And IsValidFileNameOrPath(savePath.Text) = True Then
+        If shoppingCartItems.Count <> 0 And IsValidFileNameOrPath(savePath.Text) = True And CDbl(Val(totalAmt.Text)) <= CDbl(Val(amtRecvd.Text)) And CDbl(Val(amtRecvd.Text)) <> 0 Then
             Me.Hide()
             Dim choice As New popUpBox
         End If
