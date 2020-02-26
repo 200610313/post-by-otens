@@ -23,20 +23,20 @@ Partial Class MainManagevb
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation2 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Animation3 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
-        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation9 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Animation8 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation7 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainManagevb))
         Me.Elipse_Form = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
@@ -250,22 +250,22 @@ Partial Class MainManagevb
         '
         Me.PanelTransition.AnimationType = BunifuAnimatorNS.AnimationType.Particles
         Me.PanelTransition.Cursor = Nothing
-        Animation2.AnimateOnlyDifferences = True
-        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
-        Animation2.LeafCoeff = 0!
-        Animation2.MaxTime = 1.0!
-        Animation2.MinTime = 0!
-        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
-        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
-        Animation2.MosaicSize = 1
-        Animation2.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
-        Animation2.RotateCoeff = 0!
-        Animation2.RotateLimit = 0!
-        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
-        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
-        Animation2.TimeCoeff = 2.0!
-        Animation2.TransparencyCoeff = 0!
-        Me.PanelTransition.DefaultAnimation = Animation2
+        Animation9.AnimateOnlyDifferences = True
+        Animation9.BlindCoeff = CType(resources.GetObject("Animation9.BlindCoeff"), System.Drawing.PointF)
+        Animation9.LeafCoeff = 0!
+        Animation9.MaxTime = 1.0!
+        Animation9.MinTime = 0!
+        Animation9.MosaicCoeff = CType(resources.GetObject("Animation9.MosaicCoeff"), System.Drawing.PointF)
+        Animation9.MosaicShift = CType(resources.GetObject("Animation9.MosaicShift"), System.Drawing.PointF)
+        Animation9.MosaicSize = 1
+        Animation9.Padding = New System.Windows.Forms.Padding(100, 50, 100, 150)
+        Animation9.RotateCoeff = 0!
+        Animation9.RotateLimit = 0!
+        Animation9.ScaleCoeff = CType(resources.GetObject("Animation9.ScaleCoeff"), System.Drawing.PointF)
+        Animation9.SlideCoeff = CType(resources.GetObject("Animation9.SlideCoeff"), System.Drawing.PointF)
+        Animation9.TimeCoeff = 2.0!
+        Animation9.TransparencyCoeff = 0!
+        Me.PanelTransition.DefaultAnimation = Animation9
         Me.PanelTransition.Interval = 20
         '
         'MainPanel
@@ -273,11 +273,11 @@ Partial Class MainManagevb
         Me.MainPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MainPanel.Controls.Add(Me.genInvoice)
-        Me.MainPanel.Controls.Add(Me.LogoPanel)
         Me.MainPanel.Controls.Add(Me.sales_panel)
         Me.MainPanel.Controls.Add(Me.MessagePanel)
         Me.MainPanel.Controls.Add(Me.StockPanel)
+        Me.MainPanel.Controls.Add(Me.genInvoice)
+        Me.MainPanel.Controls.Add(Me.LogoPanel)
         Me.PanelTransition.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
         Me.BunifuTransition1.SetDecoration(Me.MainPanel, BunifuAnimatorNS.DecorationType.None)
@@ -307,20 +307,20 @@ Partial Class MainManagevb
         Me.ContactsDataGrid.AllowUserToDeleteRows = False
         Me.ContactsDataGrid.AllowUserToResizeColumns = False
         Me.ContactsDataGrid.AllowUserToResizeRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ContactsDataGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ContactsDataGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle23
         Me.ContactsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ContactsDataGrid.BackgroundColor = System.Drawing.Color.White
         Me.ContactsDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ContactsDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ContactsDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ContactsDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle24
         Me.ContactsDataGrid.ColumnHeadersHeight = 29
         Me.ContactsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.ContactsDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fn, Me.pho})
@@ -655,21 +655,21 @@ Partial Class MainManagevb
         Me.ProductDataGrid.AllowUserToDeleteRows = False
         Me.ProductDataGrid.AllowUserToResizeColumns = False
         Me.ProductDataGrid.AllowUserToResizeRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ProductDataGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ProductDataGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle25
         Me.ProductDataGrid.AutoGenerateColumns = False
         Me.ProductDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.ProductDataGrid.BackgroundColor = System.Drawing.Color.White
         Me.ProductDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ProductDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProductDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle26.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle26.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProductDataGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle26
         Me.ProductDataGrid.ColumnHeadersHeight = 29
         Me.ProductDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.ProductDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PNumberDataGridViewTextBoxColumn, Me.PNameDataGridViewTextBoxColumn, Me.PPriceDataGridViewTextBoxColumn, Me.PStockDataGridViewTextBoxColumn})
@@ -707,11 +707,11 @@ Partial Class MainManagevb
         '
         Me.PNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.PNameDataGridViewTextBoxColumn.DataPropertyName = "pName"
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black
-        Me.PNameDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle27.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black
+        Me.PNameDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle27
         Me.PNameDataGridViewTextBoxColumn.HeaderText = "Product Name"
         Me.PNameDataGridViewTextBoxColumn.MinimumWidth = 6
         Me.PNameDataGridViewTextBoxColumn.Name = "PNameDataGridViewTextBoxColumn"
@@ -1024,35 +1024,35 @@ Partial Class MainManagevb
         Me.CustomerDataGrid1.AllowUserToDeleteRows = False
         Me.CustomerDataGrid1.AllowUserToResizeColumns = False
         Me.CustomerDataGrid1.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CustomerDataGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CustomerDataGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle19
         Me.CustomerDataGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.CustomerDataGrid1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.CustomerDataGrid1.BackgroundColor = System.Drawing.Color.White
         Me.CustomerDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CustomerDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CustomerDataGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.Color.Gainsboro
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CustomerDataGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
         Me.CustomerDataGrid1.ColumnHeadersHeight = 29
         Me.CustomerDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.CustomerDataGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn5, Me.wad, Me.Column1, Me.Column2, Me.the_owner, Me.cID})
         Me.BunifuTransition1.SetDecoration(Me.CustomerDataGrid1, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.CustomerDataGrid1, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition.SetDecoration(Me.CustomerDataGrid1, BunifuAnimatorNS.DecorationType.None)
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CustomerDataGrid1.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CustomerDataGrid1.DefaultCellStyle = DataGridViewCellStyle21
         Me.CustomerDataGrid1.DoubleBuffered = True
         Me.CustomerDataGrid1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.CustomerDataGrid1.EnableHeadersVisualStyles = False
@@ -1065,8 +1065,8 @@ Partial Class MainManagevb
         Me.CustomerDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.CustomerDataGrid1.RowHeadersWidth = 18
         Me.CustomerDataGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.CustomerDataGrid1.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.CustomerDataGrid1.RowsDefaultCellStyle = DataGridViewCellStyle22
         Me.CustomerDataGrid1.RowTemplate.Height = 24
         Me.CustomerDataGrid1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.CustomerDataGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -1172,7 +1172,7 @@ Partial Class MainManagevb
         Me.BunifuTransition1.SetDecoration(Me.dateStart, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.dateStart, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition.SetDecoration(Me.dateStart, BunifuAnimatorNS.DecorationType.None)
-        Me.dateStart.Location = New System.Drawing.Point(488, 3)
+        Me.dateStart.Location = New System.Drawing.Point(488, 4)
         Me.dateStart.Name = "dateStart"
         Me.dateStart.Size = New System.Drawing.Size(227, 22)
         Me.dateStart.TabIndex = 10
@@ -1183,11 +1183,11 @@ Partial Class MainManagevb
         Me.BunifuTransition1.SetDecoration(Me.Label9, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.Label9, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition.SetDecoration(Me.Label9, BunifuAnimatorNS.DecorationType.None)
-        Me.Label9.Location = New System.Drawing.Point(721, 5)
+        Me.Label9.Location = New System.Drawing.Point(716, 7)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(35, 17)
+        Me.Label9.Size = New System.Drawing.Size(40, 17)
         Me.Label9.TabIndex = 9
-        Me.Label9.Text = "Gap"
+        Me.Label9.Text = "Days"
         '
         'Label8
         '
@@ -1195,7 +1195,7 @@ Partial Class MainManagevb
         Me.BunifuTransition1.SetDecoration(Me.Label8, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.Label8, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition.SetDecoration(Me.Label8, BunifuAnimatorNS.DecorationType.None)
-        Me.Label8.Location = New System.Drawing.Point(419, 6)
+        Me.Label8.Location = New System.Drawing.Point(419, 7)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(67, 17)
         Me.Label8.TabIndex = 9
@@ -1214,18 +1214,18 @@ Partial Class MainManagevb
         '
         'Chart1
         '
-        ChartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
-        ChartArea1.AxisX.Title = "DATE"
-        ChartArea1.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.AxisY.Title = "Quantity"
-        ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea1)
+        ChartArea3.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount
+        ChartArea3.AxisX.Title = "DATE"
+        ChartArea3.AxisX.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea3.AxisY.Title = "Quantity"
+        ChartArea3.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ChartArea3.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea3)
         Me.PanelTransition.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
         Me.PanelTransition2.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
         Me.BunifuTransition1.SetDecoration(Me.Chart1, BunifuAnimatorNS.DecorationType.None)
-        Legend1.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend1)
+        Legend3.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend3)
         Me.Chart1.Location = New System.Drawing.Point(6, 31)
         Me.Chart1.Name = "Chart1"
         Me.Chart1.Size = New System.Drawing.Size(782, 631)
@@ -1452,22 +1452,22 @@ Partial Class MainManagevb
         '
         Me.PanelTransition2.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide
         Me.PanelTransition2.Cursor = Nothing
-        Animation3.AnimateOnlyDifferences = True
-        Animation3.BlindCoeff = CType(resources.GetObject("Animation3.BlindCoeff"), System.Drawing.PointF)
-        Animation3.LeafCoeff = 0!
-        Animation3.MaxTime = 1.0!
-        Animation3.MinTime = 0!
-        Animation3.MosaicCoeff = CType(resources.GetObject("Animation3.MosaicCoeff"), System.Drawing.PointF)
-        Animation3.MosaicShift = CType(resources.GetObject("Animation3.MosaicShift"), System.Drawing.PointF)
-        Animation3.MosaicSize = 0
-        Animation3.Padding = New System.Windows.Forms.Padding(0)
-        Animation3.RotateCoeff = 0!
-        Animation3.RotateLimit = 0!
-        Animation3.ScaleCoeff = CType(resources.GetObject("Animation3.ScaleCoeff"), System.Drawing.PointF)
-        Animation3.SlideCoeff = CType(resources.GetObject("Animation3.SlideCoeff"), System.Drawing.PointF)
-        Animation3.TimeCoeff = 0!
-        Animation3.TransparencyCoeff = 0!
-        Me.PanelTransition2.DefaultAnimation = Animation3
+        Animation8.AnimateOnlyDifferences = True
+        Animation8.BlindCoeff = CType(resources.GetObject("Animation8.BlindCoeff"), System.Drawing.PointF)
+        Animation8.LeafCoeff = 0!
+        Animation8.MaxTime = 1.0!
+        Animation8.MinTime = 0!
+        Animation8.MosaicCoeff = CType(resources.GetObject("Animation8.MosaicCoeff"), System.Drawing.PointF)
+        Animation8.MosaicShift = CType(resources.GetObject("Animation8.MosaicShift"), System.Drawing.PointF)
+        Animation8.MosaicSize = 0
+        Animation8.Padding = New System.Windows.Forms.Padding(0)
+        Animation8.RotateCoeff = 0!
+        Animation8.RotateLimit = 0!
+        Animation8.ScaleCoeff = CType(resources.GetObject("Animation8.ScaleCoeff"), System.Drawing.PointF)
+        Animation8.SlideCoeff = CType(resources.GetObject("Animation8.SlideCoeff"), System.Drawing.PointF)
+        Animation8.TimeCoeff = 0!
+        Animation8.TransparencyCoeff = 0!
+        Me.PanelTransition2.DefaultAnimation = Animation8
         Me.PanelTransition2.Interval = 14
         '
         'Elipse_AddStock
@@ -1499,22 +1499,22 @@ Partial Class MainManagevb
         '
         Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndRotate
         Me.BunifuTransition1.Cursor = Nothing
-        Animation1.AnimateOnlyDifferences = True
-        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
-        Animation1.LeafCoeff = 0!
-        Animation1.MaxTime = 1.0!
-        Animation1.MinTime = 0!
-        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
-        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
-        Animation1.MosaicSize = 0
-        Animation1.Padding = New System.Windows.Forms.Padding(30)
-        Animation1.RotateCoeff = 0.5!
-        Animation1.RotateLimit = 0.2!
-        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
-        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
-        Animation1.TimeCoeff = 0!
-        Animation1.TransparencyCoeff = 0!
-        Me.BunifuTransition1.DefaultAnimation = Animation1
+        Animation7.AnimateOnlyDifferences = True
+        Animation7.BlindCoeff = CType(resources.GetObject("Animation7.BlindCoeff"), System.Drawing.PointF)
+        Animation7.LeafCoeff = 0!
+        Animation7.MaxTime = 1.0!
+        Animation7.MinTime = 0!
+        Animation7.MosaicCoeff = CType(resources.GetObject("Animation7.MosaicCoeff"), System.Drawing.PointF)
+        Animation7.MosaicShift = CType(resources.GetObject("Animation7.MosaicShift"), System.Drawing.PointF)
+        Animation7.MosaicSize = 0
+        Animation7.Padding = New System.Windows.Forms.Padding(30)
+        Animation7.RotateCoeff = 0.5!
+        Animation7.RotateLimit = 0.2!
+        Animation7.ScaleCoeff = CType(resources.GetObject("Animation7.ScaleCoeff"), System.Drawing.PointF)
+        Animation7.SlideCoeff = CType(resources.GetObject("Animation7.SlideCoeff"), System.Drawing.PointF)
+        Animation7.TimeCoeff = 0!
+        Animation7.TransparencyCoeff = 0!
+        Me.BunifuTransition1.DefaultAnimation = Animation7
         '
         'BunifuElipse2
         '

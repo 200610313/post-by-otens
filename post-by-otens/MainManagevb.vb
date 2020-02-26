@@ -384,12 +384,12 @@ Public Class MainManagevb
         genInvoice.Visible = False
         sales_panel.Visible = True
         Chart1.ChartAreas(0).AxisX.LabelStyle.Angle = -90
-        loadAnalytics(businessName, Date.Now.ToString("yyyy/MM/dd HH:mm:ss"), Chart1, CInt(Val(TextBox1.Text)))
+        loadAnalytics(businessName, Date.Now.ToString("yyyy/MM/dd HH:mm:ss"), Chart1, CInt(Val(TextBox1.Text) - 1))
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         Try
-            loadAnalytics(businessName, dateStart.Value, Chart1, CInt(Val(TextBox1.Text)))
+            loadAnalytics(businessName, dateStart.Value, Chart1, CInt(Val(TextBox1.Text) - 1))
         Catch ex As Exception
 
         End Try
@@ -397,7 +397,7 @@ Public Class MainManagevb
 
     Private Sub dateStart_ValueChanged(sender As Object, e As EventArgs) Handles dateStart.ValueChanged
         Try
-            loadAnalytics(businessName, dateStart.Value, Chart1, CInt(Val(TextBox1.Text)))
+            loadAnalytics(businessName, dateStart.Value, Chart1, CInt(Val(TextBox1.Text) - 1))
         Catch ex As Exception
 
         End Try
