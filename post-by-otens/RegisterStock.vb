@@ -27,19 +27,19 @@
 
 
 
-    Private Sub Qty_txt_MouseEnter(sender As Object, e As EventArgs) Handles Qty_txt.MouseEnter, imgurl.MouseEnter
+    Private Sub Qty_txt_MouseEnter(sender As Object, e As EventArgs) Handles Qty_txt.MouseEnter
         If Qty_txt.Text = "Qty." Then
             Qty_txt.Text = ""
         End If
     End Sub
 
-    Private Sub Qty_txt_MouseLeave(sender As Object, e As EventArgs) Handles Qty_txt.MouseLeave, imgurl.MouseLeave
+    Private Sub Qty_txt_MouseLeave(sender As Object, e As EventArgs) Handles Qty_txt.MouseLeave
         If Qty_txt.Text = "" Then
             Qty_txt.Text = "Qty."
         End If
     End Sub
 
-    Private Sub Qty_txt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Qty_txt.KeyPress, imgurl.KeyPress
+    Private Sub Qty_txt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Qty_txt.KeyPress
         If Char.IsLetter(e.KeyChar) Or Char.IsNumber(e.KeyChar) Then
             If Qty_txt.Text = "Qty." Then
                 Qty_txt.Text = ""
@@ -90,14 +90,15 @@
         Price_txt.Text = "Price."
         Qty_txt.Text = "Qty."
         ProductName_txt.Text = "Product Name"
+        imgurl.Text = "Image Url"
 
     End Sub
 
-    Private Sub RegisterStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub imgurl_mouseleave(sender As Object, e As EventArgs) Handles imgurl.MouseLeave
+        If imgurl.Text = "" Then
+            imgurl.Text = "Image URL"
+        End If
         Try
             pImage.Load(imgurl.Text)
             pImage.Refresh()
@@ -110,11 +111,23 @@
         Me.Close()
     End Sub
 
-    Private Sub imgurl_TextChanged(sender As Object, e As EventArgs) Handles imgurl.TextChanged
 
+
+    Private Sub imgurl_MouseEnter(sender As Object, e As EventArgs) Handles imgurl.MouseEnter
+        If imgurl.Text = "Image URL" Then
+            imgurl.Text = ""
+        End If
     End Sub
 
-    Private Sub BunifuGradientPanel1_Paint(sender As Object, e As PaintEventArgs) Handles BunifuGradientPanel1.Paint
+    Private Sub imgurl_KeyPress(sender As Object, e As KeyPressEventArgs) Handles imgurl.KeyPress
+        If Char.IsLetter(e.KeyChar) Or Char.IsNumber(e.KeyChar) Then
+            If imgurl.Text = "Image Url" Then
+                imgurl.Text = ""
 
+            End If
+
+        End If
     End Sub
+
+
 End Class

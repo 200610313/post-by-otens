@@ -25,6 +25,7 @@
         For i = 0 To adapter1.getProdNumAndNames(bName).Rows.Count - 1
             productNums.Add(adapter1.getProdNumAndNames(bName).Rows(i).Item(3))
             chart1.Series.Add(adapapter.getProdName(productNums.Item(i)))
+            chart1.Series(i).ChartType = DataVisualization.Charting.SeriesChartType.FastLine
         Next
         'Show chart labels
         For z = 0 To chart1.Series.Count - 1

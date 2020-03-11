@@ -17,7 +17,8 @@
 
         If adapter.checkManager(businessName, un, pw) = 1 Then
             'success login mngr
-            MainManagevb.Show()
+
+            MainManagevb.BunifuTransition1.ShowSync(MainManagevb)
             Me.Close()
         ElseIf adapter.checkRegister(businessName, un, pw) = 1 Then
             'success login register
@@ -53,7 +54,7 @@
             verify(new_BName.Text, new_BPhone.Text, bmail_txtbx.Text, new_BFName.Text, new_BMinit.Text, new_BLName.Text, mun_txtbx.Text, mpw_txtbx.Text, run_txtbx.Text, rpw_txtbx.Text, mpin_txtbx.Text)
             bReg_pnl.Visible = False
         Catch ex As Exception
-
+            MessageBox.Show(ex.Message)
         End Try
 
     End Sub

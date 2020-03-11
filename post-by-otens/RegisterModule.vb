@@ -84,7 +84,6 @@
             'Generate sheet file.
             generate(customerID, InvoiceNumber, RegisterTab.loggedInBusinessName)
         End If
-
     End Sub
     'And then correct renders in products list
 

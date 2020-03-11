@@ -33,11 +33,11 @@ Partial Class popUpBox
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Open Sans Light", 5.0!)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 5.0!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveBorder
         Me.Label1.Location = New System.Drawing.Point(5, 5)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(76, 13)
+        Me.Label1.Size = New System.Drawing.Size(83, 12)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "CUSTOMER TYPE"
         '
@@ -57,12 +57,12 @@ Partial Class popUpBox
         Me.existingbtn.color = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.existingbtn.colorActive = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.existingbtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.existingbtn.Font = New System.Drawing.Font("Roboto Th", 13.2!, System.Drawing.FontStyle.Italic)
+        Me.existingbtn.Font = New System.Drawing.Font("Roboto Light", 13.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.existingbtn.ForeColor = System.Drawing.Color.White
         Me.existingbtn.Image = CType(resources.GetObject("existingbtn.Image"), System.Drawing.Image)
-        Me.existingbtn.ImagePosition = 17
+        Me.existingbtn.ImagePosition = 18
         Me.existingbtn.ImageZoom = 50
-        Me.existingbtn.LabelPosition = 35
+        Me.existingbtn.LabelPosition = 36
         Me.existingbtn.LabelText = "Existing"
         Me.existingbtn.Location = New System.Drawing.Point(148, 22)
         Me.existingbtn.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
@@ -76,12 +76,12 @@ Partial Class popUpBox
         Me.newbtn.color = System.Drawing.Color.FromArgb(CType(CType(97, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(242, Byte), Integer))
         Me.newbtn.colorActive = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(245, Byte), Integer))
         Me.newbtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.newbtn.Font = New System.Drawing.Font("Roboto Th", 13.2!, System.Drawing.FontStyle.Italic)
+        Me.newbtn.Font = New System.Drawing.Font("Roboto Light", 13.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.newbtn.ForeColor = System.Drawing.Color.White
         Me.newbtn.Image = CType(resources.GetObject("newbtn.Image"), System.Drawing.Image)
-        Me.newbtn.ImagePosition = 17
+        Me.newbtn.ImagePosition = 18
         Me.newbtn.ImageZoom = 50
-        Me.newbtn.LabelPosition = 35
+        Me.newbtn.LabelPosition = 36
         Me.newbtn.LabelText = "New"
         Me.newbtn.Location = New System.Drawing.Point(0, 22)
         Me.newbtn.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
@@ -91,7 +91,7 @@ Partial Class popUpBox
         '
         'popUpBox
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.HighlightText
         Me.ClientSize = New System.Drawing.Size(310, 79)
@@ -99,7 +99,7 @@ Partial Class popUpBox
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.existingbtn)
         Me.Controls.Add(Me.newbtn)
-        Me.Font = New System.Drawing.Font("Roboto Cn", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Name = "popUpBox"

@@ -6,8 +6,8 @@
             If new_BPhone.Chars(0) = "0" And new_BPhone.Chars(1) = "9" And new_BPhone.Length = 11 And AllDigits(new_BPhone) And CheckForAlphaCharacters(new_BFName) And CheckForAlphaCharacters(new_BMinit) And CheckForAlphaCharacters(new_BLName) And pin.Length = 6 And AllDigits(pin) Then
                 Dim adp As New POSDataSetTableAdapters.businessTableAdapter
                 Dim rowsaff As Integer
-                rowsaff = adp.InsertQuery(bname, new_BPhone, new_BFName, new_BLName, new_BMinit, bmail_txtbx, pin, run_txtbx, rpw_txtbx)
-            End If
+            rowsaff = adp.regbiz(bname, new_BPhone, new_BFName, new_BLName, new_BMinit, bmail_txtbx, pin, run_txtbx, rpw_txtbx, mun_txtbx, mpw_txtbx)
+        End If
 
     End Sub
     ' Return True if the string contains only digits.

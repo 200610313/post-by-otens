@@ -101,6 +101,11 @@ Public Class RegisterTab
             registerCustomer("", "", "", "", "", "", "")
             updateDBStock()
             resetView()
+            Dim hint As New ToolTip
+            hint.IsBalloon = True
+            hint.ToolTipIcon = ToolTipIcon.Info
+            hint.UseFading = True
+            hint.Show("Transaction complete", confirm)
         End If
     End Sub
 

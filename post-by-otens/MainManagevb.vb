@@ -5,7 +5,7 @@ Public Class MainManagevb
     Public adp As Odbc.OdbcDataAdapter
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public businessName As String = "Boboy's Refreshers" 'EditStock.getName
+    Public businessName As String = EditStock.getName
     Public targetInvoiceNum As Integer
     Public cIDOld As Integer
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -16,35 +16,17 @@ Public Class MainManagevb
 
 
         'TODO: This line of code loads data into the 'POSDataSet.product' table. You can move, or remove it, as needed.
-        Refresh()
+
         LogoPanel.Visible = True
-        MessagePanel.Visible = False
+
         genInvoice.Visible = False
         StockPanel.Visible = False
-        Panel_Save_btn.Visible = False
+        Save_btn.Visible = False
 
 
     End Sub
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles Exit_bttn.Click
-        Me.Close()
-    End Sub
-
-    Private Sub Menu_bttn_Click(sender As Object, e As EventArgs)
-
-        If SlidingPanel.Width = 50 Then
-            SlidingPanel.Visible = False
-            SlidingPanel.Width = 240
-            Logo.Show()
-            PanelTransition2.ShowSync(SlidingPanel)
-        Else
-            Logo.Hide()
-            SlidingPanel.Visible = False
-            SlidingPanel.Width = 50
-            PanelTransition.ShowSync(SlidingPanel)
-            MainPanel.Dock = DockStyle.Fill
-        End If
-
-
+        Close()
     End Sub
 
 
@@ -55,41 +37,22 @@ Public Class MainManagevb
         End If
     End Sub
 
-    Private Sub SendSMS_Click(sender As Object, e As EventArgs) Handles SendSMS.Click
-        custIDPrompter.Visible = False
-        sales_panel.Visible = False
-        genInvoice.Visible = False
-        LogoPanel.Visible = False
-        MessagePanel.Visible = True
-        StockPanel.Visible = False
 
-        'clear first
-
-        'ContactsDataGrid.DataSource = adapter.GetContacts(businessName)
-        loadContacts()
-    End Sub
-
-    Private Sub loadContacts()
-        Dim wadwAdpater As New POSDataSetTableAdapters.DataTable5TableAdapter
-        ContactsDataGrid.Rows.Clear()
-        For xD = 0 To wadwAdpater.GetContacts(businessName).Rows.Count - 1
-            ContactsDataGrid.Rows.Add(wadwAdpater.GetContacts(businessName).Rows(xD).Item(2), wadwAdpater.GetContacts(businessName).Rows(xD).Item(1)) '(xD).Cells(0).Value = adapter.GetContacts(businessName).Rows(xD).Item(0)
-            '(xD).Cells(1).Value = adapter.GetContacts(businessName).Rows(xD).Item(0)
-        Next
-    End Sub
 
     Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click, Elipse_Edit.TargetControlResized
+        monthlysalesPNL.Visible = False
         custIDPrompter.Visible = False
         sales_panel.Visible = False
         genInvoice.Visible = False
         LogoPanel.Visible = False
-        MessagePanel.Visible = False
         StockPanel.Visible = True
+        Save_btn.Visible = False
+        X_btn.Visible = False
 
 
 
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
-        'Dim bName As String = EditStock.getName
+
         ProductDataGrid.DataSource = adapter.GetProductData(businessName)
 
     End Sub
@@ -110,7 +73,7 @@ Public Class MainManagevb
 
     Private Sub Logo_Click(sender As Object, e As EventArgs) Handles Logo.Click
         LogoPanel.Visible = True
-        MessagePanel.Visible = False
+
         StockPanel.Visible = False
     End Sub
 
@@ -121,7 +84,8 @@ Public Class MainManagevb
 
     Private Sub Edit_btn_Click(sender As Object, e As EventArgs) Handles Edit_btn.Click
 
-        BunifuTransition1.ShowSync(Panel_Save_btn)
+        BunifuTransition1.Show(Save_btn)
+        BunifuTransition1.Show(X_btn)
 
         If ProductDataGrid.SelectedRows.Count > 0 Then
             Dim i As Integer = ProductDataGrid.SelectedRows(0).Index
@@ -174,50 +138,19 @@ Public Class MainManagevb
 
         adapter.Update(up)
         ProductDataGrid.DataSource = adapter.GetProductData(businessName)
-        BunifuTransition1.ShowSync(Panel_Save_btn)
-        Panel_Save_btn.Visible = False
+
+        Save_btn.Visible = False
 
 
 
-    End Sub
-
-
-
-
-
-
-    Private Sub Send_btn_Click(sender As Object, e As EventArgs) Handles Send_btn.Click
-        Dim aPiCode As String = "TR-ONETR657728_JVZWJ"
-        'Disable Button while processing. . .
-        Send_btn.Enabled = False
-        'Try to send http Web request
-
-        For i As Integer = 0 To ContactsDataGrid.Rows.Count - 1
-            Dim num = ContactsDataGrid.Rows(i).Cells(1).Value
-            Try
-                Dim res As String = itexmo(num, Message_tb.Text, aPiCode)
-                If res = "0" Then
-                    'If result = 0 then show a success messagebox
-                    MsgBox("Success! Message is now on its way...")
-                Else
-                    'Oops error. . .
-                    MsgBox("Error """ & res & """ encountered..." & Environment.NewLine & Environment.NewLine & "Visit ""www.itexmo.com/Developers"" for more details...")
-                End If
-            Catch ex As Exception
-                'Oops TRY error. . .
-                MsgBox("Error """ & ex.ToString & """ encountered...")
-            End Try
-        Next
-
-        'RE enable button
-        Send_btn.Enabled = True
     End Sub
 
     Private Sub genInvoices_Click(sender As Object, e As EventArgs) Handles genInvoices.Click
+        monthlysalesPNL.Visible = False
         custIDPrompter.Visible = False
         sales_panel.Visible = False
         LogoPanel.Visible = False
-        MessagePanel.Visible = False
+
         StockPanel.Visible = False
         genInvoice.Visible = True
         loadTable()
@@ -328,9 +261,10 @@ Public Class MainManagevb
             If IsValidFileNameOrPath(savePath.Text) Then
 
                 For Each selectedRow As DataGridViewRow In CustomerDataGrid1.SelectedRows
-                    Dim cName As String = CustomerDataGrid1.Rows(9).Cells(5).Value
+                    Dim Index As Integer = selectedRow.Index
+                    Dim cName As String = CustomerDataGrid1.Rows(Index).Cells(4).Value
                     If cName.Trim.Length <> 1 Then
-                        Dim index As Integer = selectedRow.Index
+                        'Dim index As Integer = selectedRow.Index
                         Dim custID = CustomerDataGrid1.Rows(index).Cells(5).Value
                         Dim iNum = CustomerDataGrid1.Rows(index).Cells(0).Value
                         generate(custID, iNum, businessName, savePath.Text)
@@ -359,10 +293,11 @@ Public Class MainManagevb
     End Function
 
     Private Sub BunifuFlatButton1_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton1.Click
+        monthlysalesPNL.Visible = False
         custIDPrompter.Visible = False
         sales_panel.Visible = False
         LogoPanel.Visible = False
-        MessagePanel.Visible = False
+
         StockPanel.Visible = False
         genInvoice.Visible = False
         sales_panel.Visible = True
@@ -386,9 +321,6 @@ Public Class MainManagevb
         End Try
     End Sub
 
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles stock_tb.TextChanged
-
-    End Sub
 
 
 
@@ -396,9 +328,7 @@ Public Class MainManagevb
         custIDPrompter.Visible = False
     End Sub
 
-    Private Sub MessagePanel_Paint(sender As Object, e As PaintEventArgs) Handles MessagePanel.Paint
 
-    End Sub
 
     Private Sub pathFinder_Click(sender As Object, e As EventArgs) Handles pathFinder.Click
         Try
@@ -446,301 +376,16 @@ Public Class MainManagevb
         End If
     End Sub
 
-    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    Private Sub Logut_bttn_Click(sender As Object, e As EventArgs) Handles Logut_bttn.Click
+
+        LoginFrm.Show()
+        Me.Dispose()
+        Me.Close()
 
     End Sub
 
-    Private Sub MainPanel_Paint(sender As Object, e As PaintEventArgs) Handles MainPanel.Paint
+    Private Sub BunifuImageButton3_Click(sender As Object, e As EventArgs) Handles X_btn.Click
 
     End Sub
-
-    Private Sub genInvoice_Paint(sender As Object, e As PaintEventArgs) Handles genInvoice.Paint
-
-    End Sub
-
-    Private Sub savePath_TextChanged(sender As Object, e As EventArgs) Handles savePath.TextChanged
-
-    End Sub
-
-    Private Sub custIDPrompter_Paint(sender As Object, e As PaintEventArgs) Handles custIDPrompter.Paint
-
-    End Sub
-
-    Private Sub newowner_Click(sender As Object, e As EventArgs) Handles newowner.Click
-
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-
-    Private Sub CustomerDataGrid1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles CustomerDataGrid1.CellContentClick
-
-    End Sub
-
-    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
-
-    End Sub
-
-    Private Sub LogoPanel_Paint(sender As Object, e As PaintEventArgs) Handles LogoPanel.Paint
-
-    End Sub
-
-    Private Sub sales_panel_Paint(sender As Object, e As PaintEventArgs) Handles sales_panel.Paint
-
-    End Sub
-
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
-
-    End Sub
-
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-
-    End Sub
-
-    Private Sub Chart1_Click(sender As Object, e As EventArgs) Handles Chart1.Click
-
-    End Sub
-
-    Private Sub ContactsDataGrid_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ContactsDataGrid.CellContentClick
-
-    End Sub
-
-    Private Sub Message_tb_TextChanged(sender As Object, e As EventArgs) Handles Message_tb.TextChanged
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub StockPanel_Paint(sender As Object, e As PaintEventArgs) Handles StockPanel.Paint
-
-    End Sub
-
-    Private Sub Panel_Add_Stocks_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Add_Stocks.Paint
-
-    End Sub
-
-    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-
-    End Sub
-
-    Private Sub Panel_Save_btn_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Save_btn.Paint
-
-    End Sub
-
-    Private Sub Label_Delete_Click(sender As Object, e As EventArgs) Handles Label_Delete.Click
-
-    End Sub
-
-    Private Sub Label_EditStocks_Click(sender As Object, e As EventArgs) Handles Label_EditStocks.Click
-
-    End Sub
-
-    Private Sub Label_AddProduct_Click(sender As Object, e As EventArgs) Handles Label_AddProduct.Click
-
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs)
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
-
-    End Sub
-
-
-
-    Private Sub ProductBindingSource_CurrentChanged(sender As Object, e As EventArgs) Handles ProductBindingSource.CurrentChanged
-
-    End Sub
-
-    Private Sub POSDataSetBindingSource_CurrentChanged(sender As Object, e As EventArgs) Handles POSDataSetBindingSource.CurrentChanged
-
-    End Sub
-
-    Private Sub Panel_Delete_btn_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Delete_btn.Paint
-
-    End Sub
-
-    Private Sub Panel_Edit_btn_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Edit_btn.Paint
-
-    End Sub
-
-    Private Sub Panel_AddStock_btn_Paint(sender As Object, e As PaintEventArgs) Handles Panel_AddStock_btn.Paint
-
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub ProductBindingSource1_CurrentChanged(sender As Object, e As EventArgs) Handles ProductBindingSource1.CurrentChanged
-
-    End Sub
-
-    Private Sub FolderBrowserDialog1_HelpRequest(sender As Object, e As EventArgs) Handles FolderBrowserDialog1.HelpRequest
-
-    End Sub
-
-    Private Sub CustomerBindingSource2_CurrentChanged(sender As Object, e As EventArgs) Handles CustomerBindingSource2.CurrentChanged
-
-    End Sub
-
-    Private Sub CustomerBindingSource3_CurrentChanged(sender As Object, e As EventArgs) Handles CustomerBindingSource3.CurrentChanged
-
-    End Sub
-
-    Private Sub DataTable5BindingSource_CurrentChanged(sender As Object, e As EventArgs) Handles DataTable5BindingSource.CurrentChanged
-
-    End Sub
-
-    Private Sub CustomerBindingSource_CurrentChanged(sender As Object, e As EventArgs) Handles CustomerBindingSource.CurrentChanged
-
-    End Sub
-
-    Private Sub ProductBindingSource2_CurrentChanged(sender As Object, e As EventArgs) Handles ProductBindingSource2.CurrentChanged
-
-    End Sub
-
-    Private Sub POSDataSet1BindingSource_CurrentChanged(sender As Object, e As EventArgs) Handles POSDataSet1BindingSource.CurrentChanged
-
-    End Sub
-
-    Private Sub CustomerBindingSource1_CurrentChanged(sender As Object, e As EventArgs) Handles CustomerBindingSource1.CurrentChanged
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub SlidingPanel_Paint(sender As Object, e As PaintEventArgs) Handles SlidingPanel.Paint
-
-    End Sub
-
-    Private Sub monthlysalesPNL_Paint(sender As Object, e As PaintEventArgs) Handles monthlysalesPNL.Paint
-
-    End Sub
-
-    Private Sub reportPath_TextChanged(sender As Object, e As EventArgs) Handles reportPath.TextChanged
-
-    End Sub
-
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub PanelTop_Paint(sender As Object, e As PaintEventArgs) Handles PanelTop.Paint
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel_prod.Paint
-
-    End Sub
-
-    Private Sub TextBox2_TextChanged_1(sender As Object, e As EventArgs) Handles prod_tb.TextChanged
-
-    End Sub
-
-    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
-
-    End Sub
-
-    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel_price.Paint
-
-    End Sub
-
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles price_tb.TextChanged
-
-    End Sub
-
-    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
-
-    End Sub
-
-    Private Sub Panel6_Paint(sender As Object, e As PaintEventArgs) Handles Panel_image.Paint
-
-    End Sub
-
-    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles image_tb.TextChanged
-
-    End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ' Private Sub Label4_Click(sender As Object, e As EventArgs)
-    '   Label4.Text = RegisterTab.loggedInBusinessName
-    '  End Sub
-
-
-
-
-
-    ' Private Sub stock_combotext_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MyBase.Load
-    'Dim adapter As New POSDataSetTableAdapters.product2TableAdapter
-    'Dim userBusinessName As String = "Boboy's Refreshers"
-    'If RegisterTab.loggedInBusinessName = userBusinessName Then
-    '       stock_combotext.DataSource = adapter.GetDataProduct(userBusinessName)
-    '       stock_combotext.DisplayMember = "pName"
-    '        stock_combotext.ValueMember = "pStock"
-    'End If
-    ' End Sub
-
-
-
-
-
-    ' Private Sub stock_combotext_SelectionChangeCommitted(sender As Object, e As EventArgs)
-    '    qty_txt.Text = stock_combotext.SelectedValue.ToString()
-    ' End Sub
-
-    ' Private Sub Add_Stock_Click(sender As Object, e As EventArgs)
-
-    ' Dim adapter As New POSDataSetTableAdapters.product2TableAdapter
-    ' Dim adapterupdate As New POSDataSetTableAdapters.TableAdapterManager
-    'Dim POS As New POSDataSet
-    '
-    'Dim userBusinessName As String = "Boboy's Refreshers"
-    'RegisterTab.loggedInBusinessName = userBusinessName Then
-    '      adapter.AddStock(AddStock_txt.Text, stock_combotext.Text)
-    '    adapter.Update(POS)
-    '  End If
-    '   End Sub
-
-    ' Private Sub StockPanel_Paint(sender As Object, e As PaintEventArgs) Handles StockPanel.Paint
-
-    ' End Sub
 End Class

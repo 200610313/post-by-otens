@@ -15,7 +15,7 @@ Module InvoiceFileGenerator
 
         Dim templatePath As String
         templatePath = My.Application.Info.DirectoryPath
-        templatePath = templatePath & "\InvoiceTemplate.xlsx"
+        templatePath = templatePath & "\posInvoice.xlsx"
 
         xlWorkBook = xlApp.Workbooks.Open(templatePath)
         xlWorkSheet = xlWorkBook.Worksheets("Invoice1a")
@@ -47,10 +47,10 @@ Module InvoiceFileGenerator
 
         Dim templatePath As String
         templatePath = My.Application.Info.DirectoryPath
-        templatePath = templatePath & "\InvoiceTemplate.xlsx"
+        templatePath = templatePath & "\salesReportTemplate.xlsx"
 
         xlWorkBook = xlApp.Workbooks.Open(templatePath)
-        xlWorkSheet = xlWorkBook.Worksheets("Invoice1a")
+        xlWorkSheet = xlWorkBook.Worksheets("month")
 
         fillUpForm()
         Dim adapter As New POSDataSetTableAdapters.invoiceTableAdapter

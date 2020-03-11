@@ -41,13 +41,13 @@ Partial Class managerVerifier
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Open Sans Light", 5.0!)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 5.0!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveBorder
         Me.Label1.Location = New System.Drawing.Point(5, 11)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 13)
+        Me.Label1.Size = New System.Drawing.Size(73, 12)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "MANAGER PASSWORD"
+        Me.Label1.Text = "MANAGER PIN"
         '
         'actualpass
         '

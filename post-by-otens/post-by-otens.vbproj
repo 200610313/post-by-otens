@@ -81,6 +81,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
@@ -103,6 +104,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="customerSearch.Designer.vb">
       <DependentUpon>customerSearch.vb</DependentUpon>
     </Compile>
@@ -426,6 +428,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-delete-30 %281%29.png" />
+    <None Include="Resources\icons8-save-16 %282%29.png" />
+    <None Include="Resources\icons8-export-26.png" />
     <None Include="Resources\449907.jpg" />
     <None Include="Resources\icons8-exit-32.png" />
     <None Include="Resources\otens.png" />

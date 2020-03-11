@@ -187,11 +187,11 @@ Partial Class custRegistrationForm
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Open Sans", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(15, 8)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(225, 26)
+        Me.Label7.Size = New System.Drawing.Size(215, 24)
         Me.Label7.TabIndex = 3
         Me.Label7.Text = "Customer Registration"
         '
@@ -212,7 +212,7 @@ Partial Class custRegistrationForm
         Me.phone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
         Me.phone.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.phone.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.phone.Font = New System.Drawing.Font("Open Sans", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.phone.Font = New System.Drawing.Font("Roboto Condensed Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.phone.ForeColor = System.Drawing.Color.White
         Me.phone.HintForeColor = System.Drawing.Color.Empty
         Me.phone.HintText = ""
@@ -227,7 +227,8 @@ Partial Class custRegistrationForm
         Me.phone.Name = "phone"
         Me.phone.Size = New System.Drawing.Size(190, 36)
         Me.phone.TabIndex = 2
-        Me.phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.phone.Text = "Hello There"
+        Me.phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'zip
         '
@@ -235,7 +236,7 @@ Partial Class custRegistrationForm
         Me.zip.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
         Me.zip.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.zip.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.zip.Font = New System.Drawing.Font("Open Sans", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.zip.Font = New System.Drawing.Font("Roboto Condensed Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.zip.ForeColor = System.Drawing.Color.White
         Me.zip.HintForeColor = System.Drawing.Color.Empty
         Me.zip.HintText = ""
@@ -250,7 +251,8 @@ Partial Class custRegistrationForm
         Me.zip.Name = "zip"
         Me.zip.Size = New System.Drawing.Size(190, 36)
         Me.zip.TabIndex = 2
-        Me.zip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.zip.Text = "Hello There"
+        Me.zip.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'state
         '
@@ -258,7 +260,7 @@ Partial Class custRegistrationForm
         Me.state.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
         Me.state.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.state.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.state.Font = New System.Drawing.Font("Open Sans", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.state.Font = New System.Drawing.Font("Roboto Condensed Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.state.ForeColor = System.Drawing.Color.White
         Me.state.HintForeColor = System.Drawing.Color.Empty
         Me.state.HintText = ""
@@ -273,7 +275,8 @@ Partial Class custRegistrationForm
         Me.state.Name = "state"
         Me.state.Size = New System.Drawing.Size(190, 36)
         Me.state.TabIndex = 2
-        Me.state.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.state.Text = "Hello There"
+        Me.state.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'city
         '
@@ -281,7 +284,7 @@ Partial Class custRegistrationForm
         Me.city.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
         Me.city.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.city.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.city.Font = New System.Drawing.Font("Open Sans", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.city.Font = New System.Drawing.Font("Roboto Condensed Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.city.ForeColor = System.Drawing.Color.White
         Me.city.HintForeColor = System.Drawing.Color.Empty
         Me.city.HintText = ""
@@ -296,7 +299,8 @@ Partial Class custRegistrationForm
         Me.city.Name = "city"
         Me.city.Size = New System.Drawing.Size(190, 36)
         Me.city.TabIndex = 2
-        Me.city.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.city.Text = "Hello There"
+        Me.city.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'lN
         '
@@ -304,7 +308,7 @@ Partial Class custRegistrationForm
         Me.lN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
         Me.lN.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.lN.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.lN.Font = New System.Drawing.Font("Open Sans", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lN.Font = New System.Drawing.Font("Roboto Condensed Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lN.ForeColor = System.Drawing.Color.White
         Me.lN.HintForeColor = System.Drawing.Color.Empty
         Me.lN.HintText = ""
@@ -319,7 +323,8 @@ Partial Class custRegistrationForm
         Me.lN.Name = "lN"
         Me.lN.Size = New System.Drawing.Size(190, 36)
         Me.lN.TabIndex = 2
-        Me.lN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.lN.Text = "Hello There"
+        Me.lN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'mI
         '
@@ -327,7 +332,7 @@ Partial Class custRegistrationForm
         Me.mI.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
         Me.mI.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.mI.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.mI.Font = New System.Drawing.Font("Open Sans", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mI.Font = New System.Drawing.Font("Roboto Condensed Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mI.ForeColor = System.Drawing.Color.White
         Me.mI.HintForeColor = System.Drawing.Color.Empty
         Me.mI.HintText = ""
@@ -342,7 +347,8 @@ Partial Class custRegistrationForm
         Me.mI.Name = "mI"
         Me.mI.Size = New System.Drawing.Size(70, 36)
         Me.mI.TabIndex = 2
-        Me.mI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.mI.Text = "Hello There"
+        Me.mI.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'fN
         '
@@ -350,7 +356,7 @@ Partial Class custRegistrationForm
         Me.fN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None
         Me.fN.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.fN.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.fN.Font = New System.Drawing.Font("Open Sans", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fN.Font = New System.Drawing.Font("Roboto Condensed Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.fN.ForeColor = System.Drawing.Color.White
         Me.fN.HintForeColor = System.Drawing.Color.Empty
         Me.fN.HintText = ""
@@ -365,7 +371,8 @@ Partial Class custRegistrationForm
         Me.fN.Name = "fN"
         Me.fN.Size = New System.Drawing.Size(190, 36)
         Me.fN.TabIndex = 2
-        Me.fN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.fN.Text = "Hello There"
+        Me.fN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'custRegistrationForm
         '
