@@ -67,9 +67,11 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\Latest Bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="AlphaBlendTextBox">
+      <HintPath>..\..\..\..\..\..\Some Useful things\AlphaBlendTextBox_demo\AlphaBlendTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\Desktop\Bunifu UI WinForms 1.11.5.21 (1)\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -138,6 +140,7 @@
     <Compile Include="managerVerifier.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="mngrAcctCreator.vb" />
     <Compile Include="Modules\EditStock.vb" />
     <Compile Include="Modules\SendMessageModule.vb" />
     <Compile Include="monthlySalesGenerator.vb" />
@@ -423,6 +426,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\449907.jpg" />
+    <None Include="Resources\icons8-exit-32.png" />
+    <None Include="Resources\otens.png" />
+    <None Include="Resources\JShine.jpg" />
     <None Include="Resources\icons8_depot_64px_11.png" />
     <None Include="Resources\repooot.png" />
     <None Include="Resources\icons8_analyze_26px.png" />

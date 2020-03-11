@@ -46,7 +46,7 @@ Public Class RegisterTab
         End If
     End Sub
 
-    Private Sub amtRecvd_OnValueChanged(sender As Object, e As EventArgs) Handles amtRecvd.OnValueChanged
+    Private Sub amtRecvd_OnValueChanged(sender As Object, e As EventArgs) Handles amtRecvd.TextChanged
         If String.IsNullOrEmpty(amtRecvd.Text) Then
             changeAmt.Text = totalAmt.Text
         End If
@@ -164,4 +164,10 @@ Public Class RegisterTab
     Private Sub savePath_TextChanged(sender As Object, e As EventArgs) Handles savePath.TextChanged
 
     End Sub
+
+    Private Sub logout_btn_Click(sender As Object, e As EventArgs) Handles logout_btn.Click
+        LoginFrm.Show()
+        Me.Close()
+    End Sub
+
 End Class
