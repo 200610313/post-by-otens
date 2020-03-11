@@ -1,12 +1,12 @@
 ﻿Public Class customerSearch
-    Public businessName As String
+    Public businessName As String = EditStock.getName
     Public curRowIndex As Integer
     Sub New()
         ' This call is required by the designer.
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
         Me.Show()
-        businessName = "Boboy's Refreshers"
+
         loadAll()
 
     End Sub
@@ -54,6 +54,8 @@
 
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
         generateInvoiceForCustomer(DataGridView1.Rows(curRowIndex).Cells(0).Value, " ")
+        Timer1.Start()
+        MessageBox.Show("Transaction complete", "Generated invoice")
         updateDBStock()
         RegisterTab.resetView()
         Me.Close()
@@ -63,5 +65,12 @@
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.Close()
         RegisterTab.Show()
+    End Sub
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        Dim seconds As Integer = 1000
+        seconds = seconds - 1
+        If seconds < 1 Then
+            Me.Close()
+        End If
     End Sub
 End Class

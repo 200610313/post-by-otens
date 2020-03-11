@@ -23,6 +23,7 @@ Partial Class RegisterTab
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegisterTab))
         Me.windowShape = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.register_pnl = New System.Windows.Forms.Panel()
         Me.shoppingCard_pnl = New System.Windows.Forms.Panel()
@@ -55,6 +56,8 @@ Partial Class RegisterTab
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.register_pnl.SuspendLayout()
         Me.shoppingCard_pnl.SuspendLayout()
         Me.BunifuCards1.SuspendLayout()
@@ -107,7 +110,7 @@ Partial Class RegisterTab
         Me.void.Image = Nothing
         Me.void.ImagePosition = 17
         Me.void.ImageZoom = 50
-        Me.void.LabelPosition = 40
+        Me.void.LabelPosition = 30
         Me.void.LabelText = "VOID"
         Me.void.Location = New System.Drawing.Point(9, 624)
         Me.void.Margin = New System.Windows.Forms.Padding(6)
@@ -433,6 +436,16 @@ Partial Class RegisterTab
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'Timer1
+        '
+        '
+        'BunifuDragControl1
+        '
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Me
+        Me.BunifuDragControl1.Vertical = True
+        '
         'RegisterTab
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -447,6 +460,7 @@ Partial Class RegisterTab
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(1513, 719)
         Me.Name = "RegisterTab"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -503,4 +517,6 @@ Partial Class RegisterTab
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
     Friend WithEvents logout_btn As PictureBox
     Friend WithEvents amtRecvd As TextBox
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
 End Class

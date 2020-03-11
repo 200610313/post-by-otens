@@ -126,6 +126,14 @@ Public Class custRegistrationForm
 
         Else
             queryUpdate(fN.Text, lN.Text, mI.Text, city.Text, state.Text, zip.Text, phone.Text)
+            MessageBox.Show("Transaction complete", "Invoice generated")
+            Me.Close()
+        End If
+    End Sub
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        Dim seconds As Integer = 1000
+        seconds = seconds - 1
+        If seconds < 1 Then
             Me.Close()
         End If
     End Sub

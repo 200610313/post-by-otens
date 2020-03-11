@@ -22,6 +22,7 @@ Partial Class custRegistrationForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.managerClose_btn = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -42,6 +43,7 @@ Partial Class custRegistrationForm
         Me.lN = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.mI = New Bunifu.Framework.UI.BunifuMaterialTextbox()
         Me.fN = New Bunifu.Framework.UI.BunifuMaterialTextbox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.managerClose_btn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,7 +102,7 @@ Partial Class custRegistrationForm
         'submit_managerbtn
         '
         Me.submit_managerbtn.Image = Global.post_by_otens.My.Resources.Resources.icons8_ok_48px
-        Me.submit_managerbtn.Location = New System.Drawing.Point(114, 404)
+        Me.submit_managerbtn.Location = New System.Drawing.Point(123, 404)
         Me.submit_managerbtn.Name = "submit_managerbtn"
         Me.submit_managerbtn.Size = New System.Drawing.Size(47, 43)
         Me.submit_managerbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -111,7 +113,7 @@ Partial Class custRegistrationForm
         'submitbutton
         '
         Me.submitbutton.Image = Global.post_by_otens.My.Resources.Resources.icons8_ok_48px
-        Me.submitbutton.Location = New System.Drawing.Point(114, 404)
+        Me.submitbutton.Location = New System.Drawing.Point(93, 404)
         Me.submitbutton.Name = "submitbutton"
         Me.submitbutton.Size = New System.Drawing.Size(47, 43)
         Me.submitbutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -227,7 +229,6 @@ Partial Class custRegistrationForm
         Me.phone.Name = "phone"
         Me.phone.Size = New System.Drawing.Size(190, 36)
         Me.phone.TabIndex = 2
-        Me.phone.Text = "Hello There"
         Me.phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'zip
@@ -251,7 +252,6 @@ Partial Class custRegistrationForm
         Me.zip.Name = "zip"
         Me.zip.Size = New System.Drawing.Size(190, 36)
         Me.zip.TabIndex = 2
-        Me.zip.Text = "Hello There"
         Me.zip.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'state
@@ -275,7 +275,6 @@ Partial Class custRegistrationForm
         Me.state.Name = "state"
         Me.state.Size = New System.Drawing.Size(190, 36)
         Me.state.TabIndex = 2
-        Me.state.Text = "Hello There"
         Me.state.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'city
@@ -299,7 +298,6 @@ Partial Class custRegistrationForm
         Me.city.Name = "city"
         Me.city.Size = New System.Drawing.Size(190, 36)
         Me.city.TabIndex = 2
-        Me.city.Text = "Hello There"
         Me.city.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'lN
@@ -323,7 +321,6 @@ Partial Class custRegistrationForm
         Me.lN.Name = "lN"
         Me.lN.Size = New System.Drawing.Size(190, 36)
         Me.lN.TabIndex = 2
-        Me.lN.Text = "Hello There"
         Me.lN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'mI
@@ -347,7 +344,6 @@ Partial Class custRegistrationForm
         Me.mI.Name = "mI"
         Me.mI.Size = New System.Drawing.Size(70, 36)
         Me.mI.TabIndex = 2
-        Me.mI.Text = "Hello There"
         Me.mI.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'fN
@@ -371,8 +367,10 @@ Partial Class custRegistrationForm
         Me.fN.Name = "fN"
         Me.fN.Size = New System.Drawing.Size(190, 36)
         Me.fN.TabIndex = 2
-        Me.fN.Text = "Hello There"
         Me.fN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'Timer1
+        '
         '
         'custRegistrationForm
         '
@@ -413,4 +411,5 @@ Partial Class custRegistrationForm
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents submit_managerbtn As PictureBox
     Friend WithEvents managerClose_btn As PictureBox
+    Friend WithEvents Timer1 As Timer
 End Class

@@ -17,8 +17,7 @@
 
         If adapter.checkManager(businessName, un, pw) = 1 Then
             'success login mngr
-
-            MainManagevb.BunifuTransition1.ShowSync(MainManagevb)
+            MainManagevb.Show()
             Me.Close()
         ElseIf adapter.checkRegister(businessName, un, pw) = 1 Then
             'success login register

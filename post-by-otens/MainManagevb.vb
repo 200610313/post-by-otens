@@ -2,17 +2,17 @@
 Imports System.Data.DataTable
 
 Public Class MainManagevb
-    Public adp As Odbc.OdbcDataAdapter
+
     Public products As List(Of product)
     Public shoppingCartItems As List(Of shoppingCartItem)
-    Public businessName As String = EditStock.getName
+    Public businessName As String = "Boboy's Refreshers" 'EditStock.getName
     Public targetInvoiceNum As Integer
     Public cIDOld As Integer
     Private Sub MainManagevb_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'POSDataSet21.customer' table. You can move, or remove it, as needed.
-        Me.CustomerTableAdapter2.Fill(Me.POSDataSet21.customer)
+        ' Me.CustomerTableAdapter2.Fill(Me.POSDataSet21.customer)
         'TODO: This line of code loads data into the 'POSDataSet11.customer' table. You can move, or remove it, as needed.
-        Me.CustomerTableAdapter1.Fill(Me.POSDataSet11.customer)
+        ' Me.CustomerTableAdapter1.Fill(Me.POSDataSet11.customer)
 
 
         'TODO: This line of code loads data into the 'POSDataSet.product' table. You can move, or remove it, as needed.
@@ -21,7 +21,7 @@ Public Class MainManagevb
 
         genInvoice.Visible = False
         StockPanel.Visible = False
-        Save_btn.Visible = False
+
 
 
     End Sub
@@ -39,7 +39,7 @@ Public Class MainManagevb
 
 
 
-    Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click, Elipse_Edit.TargetControlResized
+    Private Sub Stocks_bttn_Click(sender As Object, e As EventArgs) Handles Stocks_bttn.Click
         monthlysalesPNL.Visible = False
         custIDPrompter.Visible = False
         sales_panel.Visible = False
@@ -48,8 +48,12 @@ Public Class MainManagevb
         StockPanel.Visible = True
         Save_btn.Visible = False
         X_btn.Visible = False
-
-
+        AddStock_bttn.Visible = False
+        Edit_btn.Visible = False
+        Delete_btn.Visible = False
+        BunifuTransition1.Show(AddStock_bttn)
+        BunifuTransition1.Show(Edit_btn)
+        BunifuTransition1.Show(Delete_btn)
 
         Dim adapter As New POSDataSetTableAdapters.productTableAdapter
 
@@ -378,14 +382,21 @@ Public Class MainManagevb
 
 
     Private Sub Logut_bttn_Click(sender As Object, e As EventArgs) Handles Logut_bttn.Click
+        Try
+            Process.Start("C:\Users\Lance Parantar\source\repos\post-by-otensFINALLLLLL\post-by-otens\bin\Debug\post-by-otens.exe")
+            Close()
+        Catch ex As Exception
 
-        LoginFrm.Show()
-        Me.Dispose()
-        Me.Close()
+        End Try
+
+    End Sub
+
+    Private Sub X_btn_Click(sender As Object, e As EventArgs) Handles X_btn.Click
+
+        X_btn.Visible = False
+        Save_btn.Visible = False
 
     End Sub
 
-    Private Sub BunifuImageButton3_Click(sender As Object, e As EventArgs) Handles X_btn.Click
 
-    End Sub
 End Class

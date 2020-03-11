@@ -63,3 +63,8 @@ Namespace POSDataSetTableAdapters
     Partial Public Class product1TableAdapter
     End Class
 End Namespace
+
+Namespace POSDataSetTableAdapters
+    Partial Public Class businessTableAdapter
+    End Class
+End Namespace

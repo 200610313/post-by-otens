@@ -1,5 +1,5 @@
 ﻿Module EditStock
-    Public businessName As String = "Boboy's Refreshers"
+    Public businessName As String
 
     Public Sub setName(businessName As String)
         EditStock.businessName = businessName

@@ -62,7 +62,7 @@ Partial Class popUpBox
         Me.existingbtn.Image = CType(resources.GetObject("existingbtn.Image"), System.Drawing.Image)
         Me.existingbtn.ImagePosition = 18
         Me.existingbtn.ImageZoom = 50
-        Me.existingbtn.LabelPosition = 36
+        Me.existingbtn.LabelPosition = 30
         Me.existingbtn.LabelText = "Existing"
         Me.existingbtn.Location = New System.Drawing.Point(148, 22)
         Me.existingbtn.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)
@@ -81,7 +81,7 @@ Partial Class popUpBox
         Me.newbtn.Image = CType(resources.GetObject("newbtn.Image"), System.Drawing.Image)
         Me.newbtn.ImagePosition = 18
         Me.newbtn.ImageZoom = 50
-        Me.newbtn.LabelPosition = 36
+        Me.newbtn.LabelPosition = 30
         Me.newbtn.LabelText = "New"
         Me.newbtn.Location = New System.Drawing.Point(0, 22)
         Me.newbtn.Margin = New System.Windows.Forms.Padding(4, 7, 4, 7)

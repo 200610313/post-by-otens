@@ -66,6 +66,9 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Ypf-Transformers-Document-configuration-settings.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AlphaBlendTextBox">
       <HintPath>..\..\..\..\..\..\Some Useful things\AlphaBlendTextBox_demo\AlphaBlendTextBox.dll</HintPath>
@@ -146,6 +149,7 @@
     <Compile Include="Modules\EditStock.vb" />
     <Compile Include="Modules\SendMessageModule.vb" />
     <Compile Include="monthlySalesGenerator.vb" />
+    <Compile Include="popup.vb" />
     <Compile Include="popUpBox.Designer.vb">
       <DependentUpon>popUpBox.vb</DependentUpon>
     </Compile>
@@ -428,6 +432,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>POS.mdf</DependentUpon>
     </Content>
+    <Content Include="Ypf-Transformers-Document-configuration-settings.ico" />
+    <None Include="Resources\4499071.jpg" />
+    <None Include="Resources\icons8-delete-bin-32.png" />
+    <None Include="Resources\icons8-edit-24 %281%29.png" />
+    <None Include="Resources\icons8-add-property-24 %281%29.png" />
     <None Include="Resources\icons8-delete-30 %281%29.png" />
     <None Include="Resources\icons8-save-16 %282%29.png" />
     <None Include="Resources\icons8-export-26.png" />

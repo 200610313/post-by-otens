@@ -49,6 +49,10 @@ Partial Class LoginFrm
         Me.BunifuElipse3 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse4 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.bReg_pnl = New System.Windows.Forms.Panel()
+        Me.exitBreg_btn = New System.Windows.Forms.PictureBox()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.mpin_txtbx = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -85,10 +89,6 @@ Partial Class LoginFrm
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.new_BName = New System.Windows.Forms.TextBox()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.mpin_txtbx = New System.Windows.Forms.TextBox()
-        Me.exitBreg_btn = New System.Windows.Forms.PictureBox()
         Me.exitLogn = New System.Windows.Forms.PictureBox()
         Me.PanelBusiness.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,6 +96,8 @@ Partial Class LoginFrm
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.bReg_pnl.SuspendLayout()
+        CType(Me.exitBreg_btn, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel14.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.Panel12.SuspendLayout()
@@ -106,8 +108,6 @@ Partial Class LoginFrm
         Me.Panel6.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        Me.Panel14.SuspendLayout()
-        CType(Me.exitBreg_btn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.exitLogn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -334,6 +334,49 @@ Partial Class LoginFrm
         Me.bReg_pnl.Size = New System.Drawing.Size(405, 712)
         Me.bReg_pnl.TabIndex = 19
         Me.bReg_pnl.Visible = False
+        '
+        'exitBreg_btn
+        '
+        Me.exitBreg_btn.BackgroundImage = Global.post_by_otens.My.Resources.Resources.icons8_filled_circle_30px_1
+        Me.exitBreg_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.exitBreg_btn.Location = New System.Drawing.Point(375, 6)
+        Me.exitBreg_btn.Name = "exitBreg_btn"
+        Me.exitBreg_btn.Size = New System.Drawing.Size(24, 26)
+        Me.exitBreg_btn.TabIndex = 32
+        Me.exitBreg_btn.TabStop = False
+        '
+        'Panel14
+        '
+        Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.Panel14.Controls.Add(Me.Label19)
+        Me.Panel14.Controls.Add(Me.mpin_txtbx)
+        Me.Panel14.Location = New System.Drawing.Point(15, 492)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(182, 47)
+        Me.Panel14.TabIndex = 31
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!)
+        Me.Label19.ForeColor = System.Drawing.Color.Gray
+        Me.Label19.Location = New System.Drawing.Point(157, 33)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(24, 13)
+        Me.Label19.TabIndex = 7
+        Me.Label19.Text = "PIN"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'mpin_txtbx
+        '
+        Me.mpin_txtbx.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
+        Me.mpin_txtbx.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.mpin_txtbx.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.mpin_txtbx.Location = New System.Drawing.Point(15, 12)
+        Me.mpin_txtbx.MaxLength = 6
+        Me.mpin_txtbx.Name = "mpin_txtbx"
+        Me.mpin_txtbx.Size = New System.Drawing.Size(152, 23)
+        Me.mpin_txtbx.TabIndex = 6
         '
         'Label18
         '
@@ -744,49 +787,6 @@ Partial Class LoginFrm
         Me.new_BName.Size = New System.Drawing.Size(340, 23)
         Me.new_BName.TabIndex = 6
         '
-        'Panel14
-        '
-        Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.Panel14.Controls.Add(Me.Label19)
-        Me.Panel14.Controls.Add(Me.mpin_txtbx)
-        Me.Panel14.Location = New System.Drawing.Point(15, 492)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(182, 47)
-        Me.Panel14.TabIndex = 31
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!)
-        Me.Label19.ForeColor = System.Drawing.Color.Gray
-        Me.Label19.Location = New System.Drawing.Point(157, 33)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(24, 13)
-        Me.Label19.TabIndex = 7
-        Me.Label19.Text = "PIN"
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'mpin_txtbx
-        '
-        Me.mpin_txtbx.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(235, Byte), Integer))
-        Me.mpin_txtbx.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.mpin_txtbx.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.mpin_txtbx.Location = New System.Drawing.Point(15, 12)
-        Me.mpin_txtbx.MaxLength = 6
-        Me.mpin_txtbx.Name = "mpin_txtbx"
-        Me.mpin_txtbx.Size = New System.Drawing.Size(152, 23)
-        Me.mpin_txtbx.TabIndex = 6
-        '
-        'exitBreg_btn
-        '
-        Me.exitBreg_btn.BackgroundImage = Global.post_by_otens.My.Resources.Resources.icons8_filled_circle_30px_1
-        Me.exitBreg_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.exitBreg_btn.Location = New System.Drawing.Point(375, 6)
-        Me.exitBreg_btn.Name = "exitBreg_btn"
-        Me.exitBreg_btn.Size = New System.Drawing.Size(24, 26)
-        Me.exitBreg_btn.TabIndex = 32
-        Me.exitBreg_btn.TabStop = False
-        '
         'exitLogn
         '
         Me.exitLogn.BackgroundImage = Global.post_by_otens.My.Resources.Resources.icons8_filled_circle_30px_1
@@ -813,6 +813,7 @@ Partial Class LoginFrm
         Me.Controls.Add(Me.PanelBusiness)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "LoginFrm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LoginFrm"
@@ -826,6 +827,9 @@ Partial Class LoginFrm
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.bReg_pnl.ResumeLayout(False)
         Me.bReg_pnl.PerformLayout()
+        CType(Me.exitBreg_btn, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel14.ResumeLayout(False)
+        Me.Panel14.PerformLayout()
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
         Me.Panel13.ResumeLayout(False)
@@ -846,9 +850,6 @@ Partial Class LoginFrm
         Me.Panel5.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        Me.Panel14.ResumeLayout(False)
-        Me.Panel14.PerformLayout()
-        CType(Me.exitBreg_btn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.exitLogn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

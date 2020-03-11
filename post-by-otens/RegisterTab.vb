@@ -8,7 +8,7 @@ Public Class RegisterTab
         products = New List(Of product)
         shoppingCartItems = New List(Of shoppingCartItem)
 
-        loggedInBusinessName = "Boboy's Refreshers" 'EditStock.getName 'set businessname
+        loggedInBusinessName = EditStock.getName 'set businessname
 
         loadProducts()
         initShoppingCart()
@@ -101,18 +101,25 @@ Public Class RegisterTab
             registerCustomer("", "", "", "", "", "", "")
             updateDBStock()
             resetView()
-            Dim hint As New ToolTip
-            hint.IsBalloon = True
-            hint.ToolTipIcon = ToolTipIcon.Info
-            hint.UseFading = True
-            hint.Show("Transaction complete", confirm)
+            amtRecvd.Text = ""
+            Timer1.Start()
+            MessageBox.Show("Transaction complete", "Successful")
+        End If
+
+    End Sub
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        Dim seconds As Integer = 1000
+        seconds = seconds - 1
+        If seconds < 1 Then
+            Me.Close()
         End If
     End Sub
-
     Private Sub confirmWreceipt_Click(sender As Object, e As EventArgs) Handles confirmWreceipt.Click
         If shoppingCartItems.Count <> 0 And IsValidFileNameOrPath(savePath.Text) = True And CDbl(Val(totalAmt.Text)) <= CDbl(Val(amtRecvd.Text)) And CDbl(Val(amtRecvd.Text)) <> 0 Then
             Me.Hide()
+            amtRecvd.Text = 0
             Dim choice As New popUpBox
+
         End If
     End Sub
     Function IsValidFileNameOrPath(ByVal name As String) As Boolean
@@ -148,6 +155,7 @@ Public Class RegisterTab
 
     Private Sub void_Click(sender As Object, e As EventArgs) Handles void.Click
         Dim x As New invoiceSearch(loggedInBusinessName)
+
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click

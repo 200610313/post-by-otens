@@ -36,10 +36,11 @@
         RegisterTab.FlowLayoutPanel1.Refresh()
     End Sub
     'Insert customer data
-    Public Sub registerCustomer(cFname As String, cLName As String, cMinit As Char, cCity As String, cState As String, cZip As String, cPhone As String)
+    Public Sub registerCustomer(cFname As String, cLName As String, cMinit As String, cCity As String, cState As String, cZip As String, cPhone As String)
         Dim adapter As New POSDataSetTableAdapters.customerTableAdapter
         'Try
         Dim customerID As Integer
+
         adapter.InsertQuery(cFname, cLName, cMinit, cCity, cState, cZip, cPhone)
         customerID = adapter.getCustID
         generateInvoiceForCustomer(customerID, cFname)

@@ -65,11 +65,18 @@
             'RegisterTab.resetView()
             'Me.Close()
             'RegisterTab.Show()
+
         Catch ex As Exception
 
         End Try
     End Sub
-
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        Dim seconds As Integer = 1000
+        seconds = seconds - 1
+        If seconds < 1 Then
+            Me.Close()
+        End If
+    End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.Close()
         RegisterTab.Show()

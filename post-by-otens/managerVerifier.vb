@@ -44,6 +44,7 @@
                     adapter5.removeCustomer(listOfCid.Item(j))
                 End If
             Next
+            MessageBox.Show("Void complete")
             Me.Close()
         End If
         actualpass.PasswordChar = "*"
